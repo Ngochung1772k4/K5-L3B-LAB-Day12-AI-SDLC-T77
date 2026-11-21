@@ -10,7 +10,7 @@ import copy
 
 from ..contract import plan_ingredients
 from ..ids import IdAllocator
-from ..inventory import hold_to_items
+from ..items import sorted_by_id, to_list
 from ..rng import Streams
 from .gather import GatherSim
 from .quan import QuanSim
@@ -59,7 +59,7 @@ class ShopSim:
         return "bought", {"upgrade": action, "level": level, "price": price, "money": d.money}
 
     def snapshot(self):
-        return {"stock": {k: self.stock[k] for k in sorted(self.stock) if self.stock[k] > 0}}
+        return {"stock": to_list(sorted_by_id(self.stock))}  # hàng thô ở Shop không hao tươi
 
 
 class DaySim:
@@ -115,7 +115,10 @@ class DaySim:
         out.append(("day_start", {}, "gather", self.day))
         p = self.plan[self.day]
         out.append(("day_plan", {"dishes": p["dishes"], "ingredients": p["ingredients"]}, "gather", self.day))
-        self.cur = GatherSim(self.tuning, copy.deepcopy(self.scenario.get("gather", {})), self.rng, self.ids, ctx=ctx)
+        gsc = copy.deepcopy(self.scenario.get("gather", {}))
+        if self.day > 1 and gsc.get("hold"):  # Ngày kế: id mới theo thứ tự mảng, kind/fresh ban đầu
+            gsc["hold"] = [dict(it, id=self.ids.new("I")) for it in gsc["hold"]]
+        self.cur = GatherSim(self.tuning, gsc, self.rng, self.ids, ctx=ctx)
         self.phase_tick = 0
         out.append(("phase_start", {}, "gather", self.day))
 
@@ -141,11 +144,12 @@ class DaySim:
         if not self.cur.done:
             return out
         if isinstance(self.cur, GatherSim):
-            self._start_quan(out, hold_to_items(self.cur.hold))  # ngất: giỏ đã rỗng
+            # v1.2: bàn giao cá thể cùng tick, không hao thêm (ngất: giỏ đã rỗng)
+            self._start_quan(out, [dict(it) for it in self.cur.hold])
         elif isinstance(self.cur, QuanSim):
             q = self.cur
             self.money, self.earned, self.reputation = q.money, q.earned, q.reputation
-            self._start_shop(out, dict(q.stock))
+            self._start_shop(out, [dict(it) for it in q.stock])
         else:  # Shop đóng: Ngày hoàn tất
             self.days_completed += 1
             if self.days_completed >= self.days:

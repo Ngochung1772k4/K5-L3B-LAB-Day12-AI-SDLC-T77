@@ -3,7 +3,7 @@
 import json
 import unittest
 
-from helpers import Workdir, events, frames, read_jsonl, run_headless, snapshots, write_json
+from helpers import Workdir, counts, events, frames, items, read_jsonl, run_headless, snapshots, stock_of, write_json
 
 DISH = {"order_id": "C1", "dish_id": "goi_bong_sung", "base_price": 40}
 
@@ -31,7 +31,7 @@ def menu():
 class Customers(unittest.TestCase):
     def test_ac13_first_customer_at_120_reserves_recipe(self):
         with Workdir() as w:
-            rows = run_quan(w, {"stock": {"ca_loc": 5, "bong_sung": 6}}, 1100)
+            rows = run_quan(w, {"stock": stock_of({"ca_loc": 5, "bong_sung": 6})}, 1100)
             arr = events(rows, "customer_arrived")
             self.assertEqual([e["tick"] for e in arr], [120, 1020])  # v1.1: 4 bàn -> khách 2 vào T2
             self.assertEqual(arr[1]["data"]["table_id"], "T2")
@@ -39,10 +39,11 @@ class Customers(unittest.TestCase):
             self.assertEqual(set(d), {"order_id", "table_id", "dish_id"})
             self.assertEqual(d["table_id"], "T1")
             c = snap_at(rows, 120)["customers"][0]
-            self.assertEqual(c["reserved"], menu()[d["dish_id"]]["recipe"])
+            res = {i: k for i, k in ((it["id"], it["kind"]) for it in snap_at(rows, 120)["stock"])}
+            self.assertEqual(counts([{"kind": res[i]} for i in c["reserved"]]), menu()[d["dish_id"]]["recipe"])  # v1.2: giữ theo id
             self.assertEqual((c["order_tick"], c["state"], c["order_status"]), (120, "waiting", "reserved"))
             self.assertEqual(snap_at(rows, 121)["customers"][0]["patience_ticks_left"], 3599)
-            self.assertEqual(snap_at(rows, 120)["stock"], {"bong_sung": 6, "ca_loc": 5})  # giữ chỗ không trừ kho
+            self.assertEqual(counts(snap_at(rows, 120)["stock"]), {"bong_sung": 6, "ca_loc": 5})  # giữ chỗ không trừ kho
 
     def test_ac14_no_dish_when_stock_empty(self):
         with Workdir() as w:
@@ -54,28 +55,30 @@ class Customers(unittest.TestCase):
 
     def test_ac15_patience_out_left_reputation_and_stock_kept(self):
         with Workdir() as w:
-            rows = run_quan(w, {"stock": {"ca_loc": 1}}, 3725)
+            rows = run_quan(w, {"stock": stock_of({"ca_loc": 1})}, 3725)
             left = events(rows, "customer_left")
             self.assertEqual(len(left), 1)
             self.assertEqual(left[0]["tick"], 120 + 3600)
             self.assertEqual(left[0]["data"], {"order_id": "C1", "table_id": "T1", "reason": "patience",
                                                "reputation": 2.5})
-            self.assertEqual(snap_at(rows, 3725)["stock"], {"ca_loc": 1})  # nhả giữ chỗ, kho vật lý giữ nguyên
+            self.assertEqual(counts(snap_at(rows, 3725)["stock"]), {"ca_loc": 1})  # nhả giữ chỗ, kho vật lý giữ nguyên
 
 
 class Kitchen(unittest.TestCase):
     def test_ac16_cook_ready_pick(self):
-        sc = {"player": {"pos": [2, 8]}, "stock": {"bong_sung": 2}, "random_customers": False,
+        sc = {"player": {"pos": [2, 8]}, "stock": stock_of({"bong_sung": 2}), "random_customers": False,
               "customers": [{"id": "C1", "table_id": "T1", "dish_id": "goi_bong_sung"}]}
         inp = frames({"tick": 0, "interact": True}, {"tick": 1, "interact": False},
                      {"tick": 300, "interact": True})
         with Workdir() as w:
             rows = run_quan(w, sc, 305, inp)
             cs = events(rows, "cook_started")
-            self.assertEqual([(e["tick"], e["data"]) for e in cs],
-                             [(1, {"stove_id": "B1", "order_id": "C1", "dish_id": "goi_bong_sung",
-                                   "items": ["bong_sung", "bong_sung"], "base_price": 40})])
-            self.assertEqual(snap_at(rows, 1)["stock"], {})
+            d = cs[0]["data"]
+            self.assertEqual((cs[0]["tick"], d["stove_id"], d["order_id"], d["dish_id"]), (1, "B1", "C1", "goi_bong_sung"))
+            # v1.2: items là cá thể (theo kind rồi id); giá = floor(40 × tb fresh / 100), fresh sau 1 tick = 23999/240
+            self.assertEqual([(i["id"], i["kind"]) for i in d["items"]], [("I1", "bong_sung"), ("I2", "bong_sung")])
+            self.assertEqual(d["base_price"], 39)
+            self.assertEqual(snap_at(rows, 1)["stock"], [])
             self.assertEqual(snap_at(rows, 1)["customers"][0]["order_status"], "assigned")
             ready = events(rows, "dish_ready")
             self.assertEqual([(e["tick"], e["data"]) for e in ready],
@@ -84,7 +87,7 @@ class Kitchen(unittest.TestCase):
             self.assertEqual(snap_at(rows, 250)["stoves"][0]["ready_ticks"], 9)
             picked = events(rows, "dish_picked")
             self.assertEqual([e["tick"] for e in picked], [301])
-            self.assertEqual(snap_at(rows, 301)["hand"], DISH)
+            self.assertEqual(snap_at(rows, 301)["hand"], dict(DISH, base_price=39))
             self.assertEqual(snap_at(rows, 301)["stoves"][0]["state"], "idle")
 
     def _serve(self, patience, ticks=605):
@@ -146,7 +149,7 @@ class Closing(unittest.TestCase):
             self.assertEqual(rows[-1]["reason"], "time")
 
     def test_ac18_waiting_customer_leaves_closing_without_penalty(self):
-        sc = {"time_left_ticks": 10, "random_customers": False, "stock": {"bong_sung": 2},
+        sc = {"time_left_ticks": 10, "random_customers": False, "stock": stock_of({"bong_sung": 2}),
               "customers": [{"id": "C1", "table_id": "T1", "dish_id": "goi_bong_sung"}]}
         with Workdir() as w:
             rows = run_quan(w, sc, 50)
@@ -157,13 +160,13 @@ class Closing(unittest.TestCase):
 
     def test_schedule_uses_phase_tick_even_when_shift_shortened(self):
         with Workdir() as w:
-            rows = run_quan(w, {"time_left_ticks": 200, "stock": {"ca_loc": 1}}, 200)
+            rows = run_quan(w, {"time_left_ticks": 200, "stock": stock_of({"ca_loc": 1})}, 200)
             self.assertEqual([e["tick"] for e in events(rows, "customer_arrived")], [120])
 
 
 class Determinism(unittest.TestCase):
     def test_same_seed_same_bytes(self):
-        sc = {"quan": {"stock": {"ca_loc": 3, "bong_sung": 6, "ca_linh": 3, "bong_dien_dien": 1}}}
+        sc = {"quan": {"stock": stock_of({"ca_loc": 3, "bong_sung": 6, "ca_linh": 3, "bong_dien_dien": 1})}}
         inp = frames({"tick": 0, "move": [-1, 1]}, {"tick": 200, "interact": True}, {"tick": 201, "interact": False})
         with Workdir() as w:
             outs = []

@@ -4,7 +4,7 @@ import json
 import time
 import unittest
 
-from helpers import Workdir, events, frames, read_jsonl, run_headless, snapshots, write_json
+from helpers import Workdir, events, frames, items, read_jsonl, run_headless, snapshots, write_json
 
 
 def contract():
@@ -36,7 +36,7 @@ class ContractV11(unittest.TestCase):
     def test_p2_01_contract_and_data(self):
         c = contract()
         t = c["tuning"]
-        self.assertEqual(c["contract_version"], "1.1")
+        self.assertIn(c["contract_version"], ("1.1", "1.2"))  # v1.2 (P3) giữ toàn bộ dữ liệu v1.1
         self.assertEqual(len(t["menu"]), 6)
         self.assertEqual([s["id"] for s in t["quan"]["stoves"]], ["B1", "B2"])
         self.assertEqual([x["id"] for x in t["quan"]["tables"]], ["T1", "T2", "T3", "T4"])
@@ -83,7 +83,7 @@ class DayLoop(unittest.TestCase):
             self.assertEqual((s1["phase"], s1["phase_tick"]), ("quan", 0))
 
     def test_p2_09_quan_in_day_only_plan_dishes(self):
-        sc = {"gather": {"hold": ["ca_loc", "ca_linh", "ca_linh", "ca_linh", "bong_dien_dien"], "random_fish": False}}
+        sc = {"gather": {"hold": items("ca_loc", "ca_linh", "ca_linh", "ca_linh", "bong_dien_dien"), "random_fish": False}}
         inp = frames({"tick": 0, "interact": True})  # đứng ở bến -> cập bến ngay
         with Workdir() as w:
             code, err, rows = run(w, "day", 1100, sc, inp, every=500)
@@ -165,7 +165,7 @@ class FullRun(unittest.TestCase):
 
 class ScenarioDay(unittest.TestCase):
     def test_day_scenario_conflicts_exit_2(self):
-        bad = [{"quan": {"stock": {"ca_loc": 1}}}, {"quan": {"reputation": 4}},
+        bad = [{"quan": {"stock": items("ca_loc")}}, {"quan": {"reputation": 4}},
                {"day": {"money": 100, "earned": 50}}, {"day": {"upgrades": {"hp": 3}}},
                {"day": {"day_plan": [{"day": 1, "dishes": {"pho": 1}}]}}, {"river": {}}]
         with Workdir() as w:

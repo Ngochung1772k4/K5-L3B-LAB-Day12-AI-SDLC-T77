@@ -2,7 +2,7 @@
 
 import unittest
 
-from helpers import Workdir, events, read_jsonl, run_headless, snapshots, write_json
+from helpers import Workdir, events, items, read_jsonl, run_headless, snapshots, write_json
 
 CROC = {"id": "M1", "kind": "ca_sau", "pos": [61, 20], "waypoints": [[60, 20], [64, 20]]}
 
@@ -37,26 +37,29 @@ class Crocodile(unittest.TestCase):
             self.assertEqual(snapshots(rows)[-1]["monsters"][0]["state"], "patrol")
 
     def test_p2_05_hit_loses_half_lifo_invuln_recoil(self):
-        hold = ["ca_loc", "bong_sung", "ca_linh", "ca_linh", "keo_neo"]
+        hold = items("ca_loc", "bong_sung", "ca_linh", "ca_linh", "keo_neo")
         with Workdir() as w:
             rows = run_gather(w, {"player": {"pos": [60, 20]}, "hold": hold, "monsters": [CROC]}, 5)
             hits = events(rows, "monster_hit")
             self.assertEqual(len(hits), 1)  # bất tử 90 tick -> không hit tiếp
             d = hits[0]["data"]
-            self.assertEqual((hits[0]["tick"], d["monster_id"], d["hp"], d["lost"]), (1, "M1", 2, ["keo_neo", "ca_linh"]))
+            self.assertEqual((hits[0]["tick"], d["monster_id"], d["hp"]), (1, "M1", 2))
+            self.assertEqual([(i["id"], i["kind"]) for i in d["lost"]], [("I5", "keo_neo"), ("I4", "ca_linh")])  # v1.2: cá thể LIFO
             s1 = [s for s in snapshots(rows) if s["tick"] == 1][0]
-            self.assertEqual((s1["player"]["invuln_ticks"], s1["hold"]), (90, hold[:3]))
+            self.assertEqual(s1["player"]["invuln_ticks"], 90)
+            self.assertEqual([i["id"] for i in s1["hold"]], ["I1", "I2", "I3"])
             self.assertEqual((s1["monsters"][0]["state"], s1["monsters"][0]["state_ticks_left"]), ("recoil", 60))
 
     def test_p2_06_faint_by_monster(self):
         with Workdir() as w:
-            rows = run_gather(w, {"player": {"pos": [60, 20], "hp": 1}, "hold": ["ca_loc", "bong_sung"],
+            rows = run_gather(w, {"player": {"pos": [60, 20], "hp": 1}, "hold": items("ca_loc", "bong_sung"),
                                   "monsters": [CROC]}, 3)
             names = [e["name"] for e in events(rows)]
             self.assertEqual(names[-3:], ["monster_hit", "faint", "gather_end"])
-            self.assertEqual(events(rows, "monster_hit")[0]["data"]["lost"], ["bong_sung"])  # floor(2/2) LIFO
-            self.assertEqual(events(rows, "faint")[0]["data"], {"cause": "monster", "lost": ["ca_loc"], "hp": 0})
-            self.assertEqual(events(rows, "gather_end")[0]["data"]["inventory"], {"items": {}})
+            self.assertEqual([i["id"] for i in events(rows, "monster_hit")[0]["data"]["lost"]], ["I2"])  # floor(2/2) LIFO
+            f = events(rows, "faint")[0]["data"]
+            self.assertEqual((f["cause"], [i["id"] for i in f["lost"]], f["hp"]), ("monster", ["I1"], 0))
+            self.assertEqual(events(rows, "gather_end")[0]["data"]["inventory"], {"items": []})
 
 
 if __name__ == "__main__":

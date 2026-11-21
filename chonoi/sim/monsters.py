@@ -11,6 +11,7 @@ Gọi từ GatherSim.step() đúng thứ tự PRD-0 mục 4.5:
 import math
 
 from ..ids import id_key
+from ..items import to_list
 
 TICK = 60.0
 
@@ -173,14 +174,14 @@ def step_monsters(sim, events) -> bool:
     n_lost = math.floor(len(sim.hold) * m["_loss_ratio"])
     lost = []
     for _ in range(n_lost):
-        lost.append(sim.hold.pop())  # LIFO: pop từ cuối
+        lost.append(sim.hold.pop())  # LIFO: pop từ cuối (cá thể)
 
     sim.hp = max(0, sim.hp - 1)
     sim.invuln_ticks = m["_invuln_ticks"]
     events.append(("monster_hit", {
         "monster_id": m["id"],
         "hp": sim.hp,
-        "lost": lost,
+        "lost": to_list(lost),
         "pos": list(player_pos),
     }))
 
@@ -190,7 +191,7 @@ def step_monsters(sim, events) -> bool:
     m["state_ticks_left"] = m["_recoil_ticks"]
 
     if sim.hp == 0:
-        remaining = list(reversed(sim.hold))
+        remaining = to_list(reversed(sim.hold))
         sim.hold = []
         events.append(("faint", {"cause": "monster", "lost": remaining, "hp": 0}))
         sim._finish("fainted", events)
