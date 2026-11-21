@@ -17,7 +17,7 @@ import math
 
 from ..ids import id_key, sort_by_id
 from ..inventory import hold_to_items
-from .fish import initial_fish
+from .fish import initial_fish, spawn_one, swim
 from .monsters import make_monsters, step_monsters
 from .ramp import ramp_velocity
 
@@ -51,6 +51,8 @@ class GatherSim:
         self.catch_cd_ticks = p.get("catch_cd_ticks", 0)
         # Cá Sấu
         self.monsters = make_monsters(tuning, scenario, self.day)
+        self.phase_tick = 0
+        self.fish_active = scenario.get("random_fish", True)
         self.hold = list(scenario.get("hold", []))  # thứ tự nhặt, cuối mảng là mới nhất
         self.time_left_ticks = scenario.get("time_left_ticks", int(round(t["duration_s"] * TICK)))
         # nút và đàn cá: scenario THAY THẾ danh sách mặc định; random_fish=false tắt cá mặc định
@@ -104,6 +106,7 @@ class GatherSim:
     def step(self, inp):
         events = []
         # 1. đồng hồ và hàng có sẵn: giảm bộ đếm, nút mọc lại
+        self.phase_tick += 1
         self.time_left_ticks = max(0, self.time_left_ticks - 1)
         self.invuln_ticks = max(0, self.invuln_ticks - 1)
         self.catch_cd_ticks = max(0, self.catch_cd_ticks - 1)
@@ -210,6 +213,15 @@ class GatherSim:
         # 5. hết giờ
         if self.time_left_ticks <= 0:
             self._finish("time", events)
+            return events
+        # 6. còn giờ: cá bơi rồi sinh theo lịch (v1.1, Ticket 1.1 / 4.5); random_fish=false -> cá đứng yên
+        if self.fish_active:
+            swim(self.t, self.fish, self.rng.get("fish_turn"))
+            if self.phase_tick % self.t["fish_spawn_ticks"] == 0 and len(self.fish) < self.t["fish_max"]:
+                f = spawn_one(self.t, self.fish, self.rng.get("fish_spawn"), self.ids)
+                if f is not None:
+                    self.fish.append(f)  # tham gia từ bước sau
+                    events.append(("fish_spawned", {"id": f["id"], "kind": f["kind"], "pos": f["pos"]}))
         return events
 
     # --- tiện ích ---------------------------------------------------------------

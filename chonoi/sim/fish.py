@@ -8,6 +8,7 @@ của loài; hướng ban đầu theo seed. Hết điểm thì bỏ lượt (tr�
 import math
 
 from ..contract import FISH_KINDS
+from ..ids import id_key
 
 
 def spawn_one(t, fish, rng, ids):
@@ -44,3 +45,39 @@ def initial_fish(t, rng, ids):
             break
         fish.append(f)
     return fish
+
+
+def _reflect(v, lo, hi):
+    """Phản xạ phần quãng đường vượt mép; trả (vị trí, có đảo hướng không)."""
+    flipped = False
+    for _ in range(4):  # quãng đường mỗi bước rất nhỏ so với miền; vài lần là đủ
+        if v > hi:
+            v, flipped = hi - (v - hi), not flipped
+        elif v < lo:
+            v, flipped = lo + (lo - v), not flipped
+        else:
+            break
+    return v, flipped
+
+
+def swim(t, fish, rng):
+    """Một bước bơi cho mọi đàn (theo id): đổi hướng ở bước bơi thứ fish_turn_ticks·k trước khi di chuyển,
+    đi fish_speed/60 m, phản xạ mép miền x ∈ fish_x, d ∈ fish_depths[loài] (chạm góc đảo cả hai)."""
+    step = t["fish_speed"] / 60.0
+    xlo, xhi = t["fish_x"]
+    for f in sorted(fish, key=lambda f: id_key(f["id"])):
+        f["age_ticks"] = f.get("age_ticks", 0) + 1
+        if f["age_ticks"] % t["fish_turn_ticks"] == 0:
+            f["heading_deg"] = rng.random() * 360.0
+        h = math.radians(f["heading_deg"])
+        vx, vd = math.cos(h), math.sin(h)
+        dlo, dhi = t["fish_depths"][f["kind"]]
+        x, fx = _reflect(f["pos"][0] + vx * step, xlo, xhi)
+        d, fd = _reflect(f["pos"][1] + vd * step, dlo, dhi)
+        if fx:
+            vx = -vx
+        if fd:
+            vd = -vd
+        if fx or fd:
+            f["heading_deg"] = math.degrees(math.atan2(vd, vx)) % 360.0
+        f["pos"] = [x, d]

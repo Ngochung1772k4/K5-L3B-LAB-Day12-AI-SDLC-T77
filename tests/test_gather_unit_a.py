@@ -199,7 +199,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 5]},
-                "fish": [
+                "random_fish": False, "fish": [
                     {"id": "F10", "kind": "ca_loc", "pos": [22, 5]},
                     {"id": "F2", "kind": "ca_linh", "pos": [18, 5]},
                 ],
@@ -228,7 +228,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 0]},
-                "fish": [{"id": "F1", "kind": "ca_loc", "pos": [20, 1]}],
+                "random_fish": False, "fish": [{"id": "F1", "kind": "ca_loc", "pos": [20, 1]}],
             }})
             inp = write_json(w.path("in.json"), frames({"tick": 0, "catch": True}))
             code, err = run_headless("--mode", "gather", "--seed", "1", "--ticks", "1",
@@ -241,7 +241,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 5]},
-                "fish": [{"id": "F1", "kind": "ca_loc", "pos": [50, 5]}],
+                "random_fish": False, "fish": [{"id": "F1", "kind": "ca_loc", "pos": [50, 5]}],
             }})
             inp = write_json(w.path("in.json"), frames({"tick": 0, "catch": True}))
             code, err = run_headless("--mode", "gather", "--seed", "1", "--ticks", "1",
@@ -255,7 +255,7 @@ class GatherRulesA(unittest.TestCase):
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 5]},
                 "hold": ["bong_sung"] * 11,
-                "fish": [
+                "random_fish": False, "fish": [
                     {"id": "F1", "kind": "ca_linh", "pos": [20.5, 5]},
                     {"id": "F2", "kind": "ca_loc", "pos": [21.5, 5]},
                 ],
