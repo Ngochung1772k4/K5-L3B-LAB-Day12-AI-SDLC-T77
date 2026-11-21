@@ -22,6 +22,8 @@
 |---|---|---|---|---|
 | 1 | Claude Code (Opus 5.5) | Đọc repo, chia việc 4 người, soạn hợp đồng `docs/contracts/README.md` | | Bản đầu đoán `data` sự kiện khi chưa có PRD-0 (sai vài chỗ: `amount` thay vì `count`, thiếu `required/free` ở `hold_full`, bắt cá thiếu chỗ không đặt hồi chiêu). Sửa lại sau khi dán PRD-0. |
 | 1 | Claude Code (Opus 5.5) | Viết kiểm mâu thuẫn scenario quán (`scenario.py`), HUD quán (`index.html`), README, TEAM.md | | Kiểm bằng 32 test + 12 ca scenario tay (đúng mã 0/2). Giả định chưa rõ ghi `docs/clarify.md` #1–5. |
+| 2 | Claude Code (Opus 5.5) | Plan P2, contract v1.1, khung day/Shop/pause, cá bơi/sinh, merge B + D, test day/shop/fish/monsters, verification, retro | | AI viết nhầm test kỳ vọng (faint do quái: quên rằng monster_hit đã làm rơi đồ trước) — test đỏ, đối chiếu Ticket thì code đúng, sửa test. Ghi file bằng heredoc làm vỡ chuỗi `
+` trong test — phát hiện qua lỗi import, sửa bằng Edit. |
 
 
 ## D — `qa` + harness
