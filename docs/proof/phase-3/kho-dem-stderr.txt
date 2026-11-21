@@ -1,0 +1,2 @@
+\u0111\u1ea7u vào sai: file kho items ph\u1ea3i là m\u1ea3ng cá th\u1ec3 {id, kind, fresh} (kho \u0111\u1ebfm không còn h\u1ee3p l\u1ec7 \u1edf v1.2)
+exit=2
