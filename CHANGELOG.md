@@ -17,6 +17,23 @@
 - Giữ chỗ theo id (tươi nhất, hòa theo id); cá thể vừa ươn → nhả toàn bộ phần giữ và thử giữ lại một lần, không đủ → `unfulfillable`.
 - `day`: bàn giao cá thể cùng tick không hao thêm; Ngày kế cấp id mới cho mẫu `gather.hold`. Id `I1, I2…` tăng xuyên pha và Ngày.
 
+### Rà soát luật quán v1.2 (B — PhamMinhDuc)
+
+Các luật sau đã được xác minh chạy đúng trên code C:
+
+| Luật | Kết quả |
+|---|---|
+| Hao tươi kho quán: −0.25/s = −1 u/tick, kẹp 0 | ✅ |
+| `spoiled` phát đúng một lần khi u đi từ ≥ 7200 xuống < 7200, theo id | ✅ |
+| `_rereserve`: nhả toàn bộ phần giữ khi cá thể ươn, thử lại theo order_tick→id bàn | ✅ |
+| Nếu còn cá thể tươi → giữ lại thành công (`reserved` cập nhật) | ✅ |
+| Không đủ cá thể tươi → `unfulfillable`, khách chờ tới hết kiên nhẫn | ✅ |
+| Giá: `floor(giá niêm yết × sum(u) / (n × 100 × 240))` = `floor(price × avg_fresh / 100)` | ✅ |
+| Boa tính trên `base_price` đã chốt theo tươi, không phải giá niêm yết | ✅ |
+| `cook_started.items` = mảng cá thể sắp theo kind rồi id | ✅ |
+
+Đơn `unfulfillable` không nhận `no_dish` — khách tiếp tục chờ tới hết kiên nhẫn rồi rời.
+
 ### Cách cập nhật fixture
 ```jsonc
 // cũ (v1.1)                         // mới (v1.2)

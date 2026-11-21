@@ -25,4 +25,4 @@
 ## Chưa đạt (ghi trung thực)
 - **4 module tạm skip** vì fixture còn v1.1: `test_gather_unit_a`, `test_gather_p2_a` (A), `test_gather_rules`, `test_quan_rules` (D). Luật đã đổi đúng Ticket; chủ file cần đổi fixture sang cá thể rồi xóa dòng skip.
 - Không làm mở rộng (dòng lũ, khách đặt trước) — nhóm 4 người không bắt buộc.
-- **Đóng góp P3 tới giờ tag:** C (lõi v1.2, test, HUD, CHANGELOG, ADR). A, B, D chưa push phần P3.
+- **Đóng góp P3 tới giờ tag:** C (lõi v1.2, test, HUD, CHANGELOG, ADR); B (ducpham13) rà luật quán v1.2 trên code C — bảng xác minh 8 luật trong CHANGELOG (nhánh `b/p3-changelog`). A, D chưa push phần P3.
