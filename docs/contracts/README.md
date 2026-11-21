@@ -100,9 +100,23 @@ Chỉ qua input chuẩn (`chonoi/inputs.py`): `move [x, y]`, `interact` (E), `ca
 - **Snapshot:** `state` thêm `"paused"`. Gather thêm `monsters[]` (`id,kind,pos,waypoints,target_idx,state,state_ticks_left,recoil_dir`), `fish[].age_ticks`, `player.invuln_ticks`. Mode day thêm `day, day_plan, upgrades, active_upgrades`; `phase` ∈ gather/quan/shop; Shop có `stock` dư và `time_left_ticks`. Có snapshot ở tick đổi pha (`phase_tick: 0`).
 - **End mode day:** thêm `days_completed`; xong đủ Ngày → `reason: "days_complete"`.
 
+## 7. Thay đổi v1.2 (Phase 3 — [TICKET-03](../prd/TICKET-03.md), [ADR 0001](../adr/0001-kho-ca-the-do-tuoi.md))
+
+- **File kho = kho cá thể** `{"items":[{"id":"I1","kind":"ca_linh","fresh":100}]}`, sắp theo id; kho rỗng `{"items":[]}`. Kho đếm cũ, kind lạ, id trùng/rỗng, `fresh` ngoài [0,100] → **mã 2**. Id `I1, I2…` cấp theo thứ tự vào giỏ, tăng xuyên pha và Ngày.
+- **Scenario:** `gather.hold`, `quan.stock` là mảng cá thể; `customers[].reserved` là **mảng id** (cá thể chưa ươn trong kho, đúng công thức, không dùng chung).
+- **Snapshot:** `hold`, `stock` (quán, Shop), `customers[].reserved` theo schema mới; `fresh` xuất đủ chính xác (không làm tròn 3 chữ số).
+- **Sự kiện:** mới `spoiled {item_id, kind, location: hold|stock}`; `cook_started.items`, `monster_hit.lost`, `faint.lost` là mảng cá thể; `base_price` = `floor(giá × trung bình fresh / 100)`.
+- **Nội bộ (C giữ):** `chonoi/items.py` — `u = fresh × 240` (gather −2/tick, quán −1/tick, ngưỡng 7200).
+
+## 8. Thay đổi v1.3 (Phase 4 — Ticket-04)
+- Manifest thêm `bench_cmd` (`python3 -m chonoi.bench --seed --duration --out`) → `{avg_fps,p1_low_fps,frames,measured_s,load_ms}` và `soak_cmd` (`python3 -m chonoi.soak --seed --days --out`) → `{days,days_completed,crashes,results[],duration_s}`. Gameplay, kho, JSONL giữ v1.2.
+- Cửa sổ chơi: `--mode day` (sau giờ build); client gửi thêm `pause`, `shop_done`, `buy` qua `POST /input`.
+
 ## Lịch sử thay đổi
 
 | Thời điểm | Thay đổi | Lý do | Ai |
 |---|---|---|---|
 | Phase 1, kickoff | Bản đầu, theo PRD-0 mục D/E/G | | C |
 | Phase 2 | v1.1: 6 kind, day/Shop/pause, sự kiện mới, ctx day | Ticket-02 đổi contract | C |
+| Phase 3 | v1.2: kho cá thể + độ tươi (breaking) | Ticket-03, ADR 0001 | C |
+| Phase 4 | v1.3: bench_cmd, soak_cmd | Ticket-04 | C |

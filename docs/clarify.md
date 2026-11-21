@@ -18,3 +18,6 @@
 | 14 | Phase 3 | Kho cá thể v1.2 khi `faint` thì trường `lost` trong event `faint` có cấu trúc gì? | `lost` là mảng các object cá thể `[{"id":..., "kind":..., "fresh":...}]` theo thứ tự bỏ LIFO (mới nhất bỏ trước). Kho rỗng trong `gather_end` và file là `{"items": []}`. | PO (`hal2332004`) / Contract v1.2 |
 | 15 | Phase 3 | Độ tươi cá thể trong giỏ `hold` bắt đầu giảm từ tick nào? | Hàng mới hái/bắt có `fresh: 100`, bắt đầu hao từ bước sau (`t + 1`). Giỏ giảm 0.5/s (−2 u/tick), kẹp đáy 0. | PO (`hal2332004`) / Contract v1.2 |
 | 16 | Phase 3 | Sự kiện `spoiled` trong giỏ phát ra khi nào và data gồm những gì? | Phát đúng một lần khi độ tươi đi từ $\ge 30$ xuống $< 30$. Data gồm `{"item_id", "kind", "location": "hold"}`. So ngưỡng trước làm tròn. | PO (`hal2332004`) / Contract v1.2 |
+| 17 | Phase 4 | Benchmark "có render" khi chạy headless trên máy chấm (không có cửa sổ/GPU)? | **Giả định:** render phần mềm vào framebuffer 1280×720 mỗi khung (nền, nước, nút, cá, Cá Sấu, người chơi, HUD); ghi rõ giới hạn trong README. | C |
+| 18 | Phase 4 | Soak "script input hoặc bot tất định" dùng bot nào? | **Giả định:** bot không điều khiển (sáng hết giờ, quán không phục vụ, Shop tự đóng) — kiểm độ bền xuyên 10 Ngày, kết quả lặp lại theo seed. | C |
+| 19 | Phase 4 | Ngày 6–10 dùng kế hoạch nào? | Lặp D1–D5: kế hoạch Ngày n = D((n−1) mod 5 + 1) (Ticket-04 mục 2). | C |

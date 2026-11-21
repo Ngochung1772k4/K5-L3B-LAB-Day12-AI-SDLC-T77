@@ -14,7 +14,7 @@
 | AC-P4-07 CHANGELOG theo phase, release notes, LICENSE, CREDITS | — | [CHANGELOG](../../CHANGELOG.md), [release notes](../release-notes-v1.0.0.md), [LICENSE](../../LICENSE), [CREDITS](../../CREDITS.md) | Đạt |
 | AC-P4-08 Regression P1–P3 | Toàn bộ suite, gồm 4 file test P3 mới của D (`test_p3_*_d.py`, 53 test) | test-output | Đạt; 2 module P1 cũ của D (`test_gather_rules`, `test_quan_rules`) còn skip (fixture v1.1) |
 | AC-P4-09 Tag `phase-4` + Release `v1.0.0` cùng commit trên main | `git ls-remote --tags` | — | Tag do C đẩy; **Release tạo trên web GitHub** (máy không có `gh`) |
-| AC-P4-10 Retro rà hành động P2, phản tư đủ người | [retro.md](../retro.md), `docs/members/*.md` | — | Retro đạt; phản tư đầy đủ các thành viên (A, C, D có đủ 4 phase) |
+| AC-P4-10 Retro rà hành động P2, phản tư đủ người | [retro.md](../retro.md), `docs/members/*.md` | — | Retro đạt. Phản tư: A (hal2332004) đủ P1–P4; C (Ngochung1772k4) đủ; D (uscalurn) mới có P1; B (ducpham13) là **bản nháp do C soạn**, chờ Đức sửa và tự commit |
 
 ## Giới hạn
 Vòng ngày + Shop chỉ ở headless (chưa có menu/DayIntro/Summary trong cửa sổ). Benchmark render phần mềm. Không làm mở rộng.

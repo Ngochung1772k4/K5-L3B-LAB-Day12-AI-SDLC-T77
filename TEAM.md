@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | Hồ An Lộc | hal2332004 | `sim/gather` (lát 1 + 2) | PO | B |
 | Phạm Minh Đức | ducpham13 | `sim/quan` (lát 3 + 4) | Scrum | A |
-| Ngoc Hung | Ngochung1772k4 | `client/ui` + `docs/contracts` + `scenario` | Integrator | D |
+| Bùi Ngọc Hùng | Ngochung1772k4 | `client/ui` + `docs/contracts` + `scenario` | Integrator | D |
 | Nguyễn Minh Nhân | uscalurn | `qa` + harness AI | QA lead / Release | C |
 
 **Vai quy trình:** PO (đầu mối hỏi Anh Năm / giảng viên, giữ `docs/clarify.md`) · Integrator (giữ `docs/contracts/`, merge vào `main`, gắn tag) · QA lead (bộ test, ma trận truy vết) · Scrum/Release (standup, mốc bàn giao).

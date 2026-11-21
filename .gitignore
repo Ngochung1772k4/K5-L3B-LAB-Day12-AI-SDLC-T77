@@ -3,3 +3,7 @@ __pycache__/
 *.jsonl
 !tests/fixtures/*.jsonl
 .DS_Store
+# file sinh ra khi chơi/chạy ở gốc repo (bằng chứng thật nằm trong docs/proof/)
+/kho.json
+/bench.json
+/soak.json

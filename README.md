@@ -12,7 +12,7 @@ python3 -m chonoi.live --mode day                                 # chơi trọn
 
 Chơi riêng từng buổi (nối qua file kho): `python3 -m chonoi.live --mode gather --inventory-out kho.json` rồi `python3 -m chonoi.live --mode quan --inventory kho.json`.
 
-Bản đóng gói ở GitHub Release `v1.0.0`: giải nén `chonoi-v1.0.0.zip`, `cd` vào thư mục rồi chạy 2 lệnh `python3 -m chonoi.live ...` như trên.
+Bản đóng gói ở GitHub Releases: **`v1.0.0`** (bản nộp chính thức, cùng commit tag `phase-4`; cửa sổ chơi từng buổi) và **`v1.0.1`** (sau giờ build, thêm `--mode day` trong cửa sổ). Giải nén zip, `cd` vào thư mục rồi chạy lệnh `python3 -m chonoi.live ...` như trên.
 
 | Việc | Lệnh |
 |---|---|
