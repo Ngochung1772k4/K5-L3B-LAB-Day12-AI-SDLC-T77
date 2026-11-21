@@ -26,7 +26,7 @@ class QuanSim:
     mode = "quan"
     phase = "quan"
 
-    def __init__(self, tuning, scenario, streams, ids, inventory=None):
+    def __init__(self, tuning, scenario, streams, ids, inventory=None, ctx=None):
         t = tuning["quan"]
         self.t = t
         self.menu = tuning["menu"]
@@ -41,7 +41,14 @@ class QuanSim:
         self.stock = dict(inventory if inventory is not None else scenario.get("stock", {}))
         self.hand = scenario.get("hand")
         self.time_left_ticks = scenario.get("time_left_ticks", _ticks(t["duration_s"]))
-        self.reputation = scenario.get("reputation", t["reputation_initial"])
+        # ctx: {"day": n, "dishes": [...], "money": m, "earned": e, "reputation": r}
+        # Cấm scenario.reputation khi chạy trong day (C kiểm trong scenario.py)
+        if ctx and "reputation" in ctx:
+            self.reputation = ctx["reputation"]
+        else:
+            self.reputation = scenario.get("reputation", t["reputation_initial"])
+        # Kế hoạch món của Ngày (None = quán độc lập dùng cả menu)
+        self._day_dishes = ctx["dishes"] if ctx and "dishes" in ctx else None
         self.random_customers = scenario.get("random_customers", True)
         self.patience_full = _ticks(t["patience_s"])
         self.eat_full = _ticks(t["eat_s"])
@@ -62,8 +69,9 @@ class QuanSim:
             c.setdefault("order_tick", 0)
             c.setdefault("base_price", self.menu[c["dish_id"]]["price"])
             c.setdefault("tip", 0)
-        self.money = 0
-        self.earned = 0
+        # tiền xuyên Ngày từ ctx; shift_earned luôn bắt đầu từ 0
+        self.money = ctx["money"] if ctx and "money" in ctx else 0
+        self.earned = ctx["earned"] if ctx and "earned" in ctx else 0
         self.shift_earned = 0
         self.done = False
         self.reason = None
@@ -238,7 +246,9 @@ class QuanSim:
         for c in self.customers:
             for k, v in c["reserved"].items():
                 held[k] = held.get(k, 0) + v
-        cookable = [d for d in sorted(self.menu)
+        # trong day: lọc theo kế hoạch món trước, rồi mới lọc theo nguyên liệu
+        candidates = list(self._day_dishes) if self._day_dishes else sorted(self.menu)
+        cookable = [d for d in candidates
                     if all(self.stock.get(k, 0) - held.get(k, 0) >= v for k, v in self.menu[d]["recipe"].items())]
         if not cookable:
             ev.append(("no_dish", {}))
