@@ -26,8 +26,11 @@ class QuanSim:
     mode = "quan"
     phase = "quan"
 
-    def __init__(self, tuning, scenario, streams, ids, inventory=None):
+    def __init__(self, tuning, scenario, streams, ids, inventory=None, ctx=None):
         t = tuning["quan"]
+        ctx = ctx or {}  # day truyền {"day", "dishes", "money", "earned", "reputation"}; mode độc lập: None
+        # trong day chỉ gọi món của kế hoạch; quán chạy riêng dùng cả thực đơn
+        self.dishes = sorted(ctx["dishes"]) if "dishes" in ctx else sorted(tuning["menu"])
         self.t = t
         self.menu = tuning["menu"]
         self.rng = streams
@@ -41,7 +44,7 @@ class QuanSim:
         self.stock = dict(inventory if inventory is not None else scenario.get("stock", {}))
         self.hand = scenario.get("hand")
         self.time_left_ticks = scenario.get("time_left_ticks", _ticks(t["duration_s"]))
-        self.reputation = scenario.get("reputation", t["reputation_initial"])
+        self.reputation = ctx.get("reputation", scenario.get("reputation", t["reputation_initial"]))
         self.random_customers = scenario.get("random_customers", True)
         self.patience_full = _ticks(t["patience_s"])
         self.eat_full = _ticks(t["eat_s"])
@@ -62,8 +65,8 @@ class QuanSim:
             c.setdefault("order_tick", 0)
             c.setdefault("base_price", self.menu[c["dish_id"]]["price"])
             c.setdefault("tip", 0)
-        self.money = 0
-        self.earned = 0
+        self.money = ctx.get("money", 0)
+        self.earned = ctx.get("earned", 0)
         self.shift_earned = 0
         self.done = False
         self.reason = None
@@ -238,7 +241,7 @@ class QuanSim:
         for c in self.customers:
             for k, v in c["reserved"].items():
                 held[k] = held.get(k, 0) + v
-        cookable = [d for d in sorted(self.menu)
+        cookable = [d for d in self.dishes
                     if all(self.stock.get(k, 0) - held.get(k, 0) >= v for k, v in self.menu[d]["recipe"].items())]
         if not cookable:
             ev.append(("no_dish", {}))

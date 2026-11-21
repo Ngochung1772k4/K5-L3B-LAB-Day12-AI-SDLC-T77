@@ -33,7 +33,8 @@ class Customers(unittest.TestCase):
         with Workdir() as w:
             rows = run_quan(w, {"stock": {"ca_loc": 5, "bong_sung": 6}}, 1100)
             arr = events(rows, "customer_arrived")
-            self.assertEqual([e["tick"] for e in arr], [120])  # 1020: bàn T1 còn khách -> bỏ lượt
+            self.assertEqual([e["tick"] for e in arr], [120, 1020])  # v1.1: 4 bàn -> khách 2 vào T2
+            self.assertEqual(arr[1]["data"]["table_id"], "T2")
             d = arr[0]["data"]
             self.assertEqual(set(d), {"order_id", "table_id", "dish_id"})
             self.assertEqual(d["table_id"], "T1")

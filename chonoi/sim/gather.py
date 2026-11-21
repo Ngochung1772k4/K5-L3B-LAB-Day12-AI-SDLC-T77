@@ -17,6 +17,7 @@ import math
 
 from ..ids import id_key, sort_by_id
 from ..inventory import hold_to_items
+from .fish import initial_fish
 from .ramp import ramp_velocity
 
 TICK = 60.0
@@ -27,8 +28,11 @@ class GatherSim:
     mode = "gather"
     phase = "gather"
 
-    def __init__(self, tuning, scenario, streams, ids):
+    def __init__(self, tuning, scenario, streams, ids, ctx=None):
         t = tuning["gather"]
+        ctx = ctx or {}  # day truyền {"day", "hp_max", "oxygen_max_s"}; mode độc lập: None
+        self.day = ctx.get("day", 1)
+        self.hp_max = ctx.get("hp_max", t["hp_max"])
         self.t = t
         self.rng = streams
         self.ids = ids
@@ -38,9 +42,9 @@ class GatherSim:
         self._tgt = None
         self._ramp_left = 0
         self.heading = float(p.get("heading_deg", t["start_heading_deg"]))
-        self.oxygen_max = int(round(t["oxygen_max_s"] * TICK))
+        self.oxygen_max = int(round(ctx.get("oxygen_max_s", t["oxygen_max_s"]) * TICK))
         self.oxygen_ticks = p.get("oxygen_ticks", self.oxygen_max)
-        self.hp = p.get("hp", t["hp_max"])
+        self.hp = p.get("hp", self.hp_max)
         self.zero_oxy_ticks = p.get("zero_oxy_ticks", 0)
         self.invuln_ticks = p.get("invuln_ticks", 0)
         self.catch_cd_ticks = p.get("catch_cd_ticks", 0)
@@ -53,12 +57,12 @@ class GatherSim:
         if "fish" in scenario:
             src_fish = scenario["fish"]
         elif scenario.get("random_fish", True):
-            src_fish = t["fish_initial"]
+            src_fish = initial_fish(t, streams.get("fish_spawn"), ids)  # v1.1: 8 đàn theo seed (sim/fish.py)
         else:
             src_fish = []
         # Đàn cá đứng yên ở phase này. Cá bơi / sinh thêm là việc của phase sau.
         self.fish = [{"id": f["id"], "kind": f["kind"], "pos": [float(c) for c in f["pos"]],
-                      "heading_deg": f.get("heading_deg", 0)} for f in src_fish]
+                      "heading_deg": f.get("heading_deg", 0), "age_ticks": f.get("age_ticks", 0)} for f in src_fish]
         for coll in (self.nodes, self.fish):
             for e in coll:
                 ids.reserve(e["id"])
@@ -76,7 +80,7 @@ class GatherSim:
         return {
             "player": {"pos": self.pos, "vel": self.vel, "heading_deg": self.heading,
                        "oxygen_ticks": self.oxygen_ticks, "oxygen_max_ticks": self.oxygen_max,
-                       "hp": self.hp, "hp_max": self.t["hp_max"], "zero_oxy_ticks": self.zero_oxy_ticks,
+                       "hp": self.hp, "hp_max": self.hp_max, "zero_oxy_ticks": self.zero_oxy_ticks,
                        "invuln_ticks": self.invuln_ticks, "catch_cd_ticks": self.catch_cd_ticks,
                        "at_surface": self._at_surface()},
             "hold": self.hold, "hold_count": len(self.hold),
@@ -84,7 +88,8 @@ class GatherSim:
             "nodes": [{"id": n["id"], "pos": n["pos"], "kind": n["kind"],
                        "ready": n["regrow_ticks"] == 0, "regrow_ticks": n["regrow_ticks"]}
                       for n in sort_by_id(self.nodes)],
-            "fish": [{"id": f["id"], "pos": f["pos"], "kind": f["kind"], "heading_deg": f["heading_deg"]}
+            "fish": [{"id": f["id"], "pos": f["pos"], "kind": f["kind"], "heading_deg": f["heading_deg"],
+                      "age_ticks": f.get("age_ticks", 0)}
                      for f in sort_by_id(self.fish)],
         }
 
