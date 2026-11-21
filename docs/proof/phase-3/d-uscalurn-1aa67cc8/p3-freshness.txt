@@ -1,0 +1,239 @@
+{
+  "revision": "d496a4f313aa4a3757ffacf599499d3f3224d8e5",
+  "branch": "d/phase-3-qa-uscalurn",
+  "contract_version": "1.1",
+  "exit_code_equivalent_to_unittest_cli": 1,
+  "counts_by_method": {
+    "PASS": 0,
+    "FAIL": 12,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "python": "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "bytecode_disabled": true,
+  "adapter": null
+}
+
+--- STDOUT ---
+
+--- STDERR ---
+test_exact_threshold_is_not_spoiled_until_following_tick (test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick) ... 
+  test_exact_threshold_is_not_spoiled_until_following_tick (test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick) (mode='gather') ... FAIL
+  test_exact_threshold_is_not_spoiled_until_following_tick (test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick) (mode='quan') ... FAIL
+test_exactly_thirty_spoils_on_first_step_in_both_phases (test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases) ... 
+  test_exactly_thirty_spoils_on_first_step_in_both_phases (test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases) (mode='gather') ... FAIL
+  test_exactly_thirty_spoils_on_first_step_in_both_phases (test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases) (mode='quan') ... FAIL
+test_freshness_clamps_at_zero_in_both_phases (test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases) ... 
+  test_freshness_clamps_at_zero_in_both_phases (test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases) (mode='gather') ... FAIL
+  test_freshness_clamps_at_zero_in_both_phases (test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases) (mode='quan') ... FAIL
+test_gather_existing_items_decay_half_point_per_sixty_active_steps (test_p3_freshness_d.FreshnessV12.test_gather_existing_items_decay_half_point_per_sixty_active_steps) ... FAIL
+test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order (test_p3_freshness_d.FreshnessV12.test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order) ... FAIL
+test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay (test_p3_freshness_d.FreshnessV12.test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay) ... FAIL
+test_new_harvest_starts_at_one_hundred_then_decays_from_next_step (test_p3_freshness_d.FreshnessV12.test_new_harvest_starts_at_one_hundred_then_decays_from_next_step) ... FAIL
+test_pause_freezes_freshness_and_delays_spoiled_until_resume_step (test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step) ... 
+  test_pause_freezes_freshness_and_delays_spoiled_until_resume_step (test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step) (mode='gather') ... FAIL
+  test_pause_freezes_freshness_and_delays_spoiled_until_resume_step (test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step) (mode='quan') ... FAIL
+test_quan_raw_items_decay_quarter_point_per_sixty_steps (test_p3_freshness_d.FreshnessV12.test_quan_raw_items_decay_quarter_point_per_sixty_steps) ... FAIL
+test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once (test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once) ... 
+  test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once (test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once) (mode='gather') ... FAIL
+  test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once (test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once) (mode='quan') ... FAIL
+test_spoiled_items_still_fill_hold_and_block_harvesting (test_p3_freshness_d.FreshnessV12.test_spoiled_items_still_fill_hold_and_block_harvesting) ... FAIL
+test_spoiled_precedes_choke_and_faint_in_gather_tick (test_p3_freshness_d.FreshnessV12.test_spoiled_precedes_choke_and_faint_in_gather_tick) ... FAIL
+
+======================================================================
+FAIL: test_exact_threshold_is_not_spoiled_until_following_tick (test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick) (mode='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 48, in test_exact_threshold_is_not_spoiled_until_following_tick
+    self.run_game(mode, fixture, ticks=boundary + 2)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_exact_threshold_is_not_spoiled_until_following_tick (test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick) (mode='quan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 48, in test_exact_threshold_is_not_spoiled_until_following_tick
+    self.run_game(mode, fixture, ticks=boundary + 2)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_exactly_thirty_spoils_on_first_step_in_both_phases (test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases) (mode='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 36, in test_exactly_thirty_spoils_on_first_step_in_both_phases
+    self.run_game(mode, fixture, ticks=3)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_exactly_thirty_spoils_on_first_step_in_both_phases (test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases) (mode='quan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 36, in test_exactly_thirty_spoils_on_first_step_in_both_phases
+    self.run_game(mode, fixture, ticks=3)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_freshness_clamps_at_zero_in_both_phases (test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases) (mode='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 27, in test_freshness_clamps_at_zero_in_both_phases
+    self.run_game(mode, fixture, ticks=60)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_freshness_clamps_at_zero_in_both_phases (test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases) (mode='quan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 27, in test_freshness_clamps_at_zero_in_both_phases
+    self.run_game(mode, fixture, ticks=60)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_gather_existing_items_decay_half_point_per_sixty_active_steps (test_p3_freshness_d.FreshnessV12.test_gather_existing_items_decay_half_point_per_sixty_active_steps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 12, in test_gather_existing_items_decay_half_point_per_sixty_active_steps
+    self.run_game("gather", gather(hold=[item(fresh=80)]), ticks=60)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order (test_p3_freshness_d.FreshnessV12.test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 118, in test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order
+    self.run_game("gather", gather(hold=values, player={"pos": [60, 24], "hp": 1},
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay (test_p3_freshness_d.FreshnessV12.test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 101, in test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay
+    self.assertEqual(self.snap(1)["hold"], [item(f"I{i + 1}", "ca_linh") for i in range(amount)])
+AssertionError: Lists differ: ['ca_linh', 'ca_linh', 'ca_linh'] != [{'id': 'I1', 'kind': 'ca_linh', 'fresh': [94 chars]100}]
+
+First differing element 0:
+'ca_linh'
+{'id': 'I1', 'kind': 'ca_linh', 'fresh': 100}
+
+- ['ca_linh', 'ca_linh', 'ca_linh']
++ [{'fresh': 100, 'id': 'I1', 'kind': 'ca_linh'},
++  {'fresh': 100, 'id': 'I2', 'kind': 'ca_linh'},
++  {'fresh': 100, 'id': 'I3', 'kind': 'ca_linh'}]
+
+======================================================================
+FAIL: test_new_harvest_starts_at_one_hundred_then_decays_from_next_step (test_p3_freshness_d.FreshnessV12.test_new_harvest_starts_at_one_hundred_then_decays_from_next_step)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 91, in test_new_harvest_starts_at_one_hundred_then_decays_from_next_step
+    first = self.entities(self.snap(1)["hold"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 163, in entities
+    self.assertIsInstance(value, dict)
+AssertionError: 'bong_sung' is not an instance of <class 'dict'>
+
+======================================================================
+FAIL: test_pause_freezes_freshness_and_delays_spoiled_until_resume_step (test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step) (mode='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 78, in test_pause_freezes_freshness_and_delays_spoiled_until_resume_step
+    self.run_game(mode, fixture, ticks=5, inputs=inputs)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_pause_freezes_freshness_and_delays_spoiled_until_resume_step (test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step) (mode='quan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 78, in test_pause_freezes_freshness_and_delays_spoiled_until_resume_step
+    self.run_game(mode, fixture, ticks=5, inputs=inputs)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_quan_raw_items_decay_quarter_point_per_sixty_steps (test_p3_freshness_d.FreshnessV12.test_quan_raw_items_decay_quarter_point_per_sixty_steps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 18, in test_quan_raw_items_decay_quarter_point_per_sixty_steps
+    self.run_game("quan", quan(stock=[item(fresh=80)]), ticks=60)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once (test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once) (mode='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 57, in test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once
+    self.run_game(mode, fixture, ticks=5)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once (test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once) (mode='quan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 57, in test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once
+    self.run_game(mode, fixture, ticks=5)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_spoiled_items_still_fill_hold_and_block_harvesting (test_p3_freshness_d.FreshnessV12.test_spoiled_items_still_fill_hold_and_block_harvesting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 108, in test_spoiled_items_still_fill_hold_and_block_harvesting
+    self.run_game("gather", gather(hold=values, nodes=[{"id": "N1", "kind": "bong_sung", "pos": [20, 0]}]),
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_spoiled_precedes_choke_and_faint_in_gather_tick (test_p3_freshness_d.FreshnessV12.test_spoiled_precedes_choke_and_faint_in_gather_tick)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_freshness_d.py", line 67, in test_spoiled_precedes_choke_and_faint_in_gather_tick
+    self.run_game("gather", block, ticks=1, inventory_out=True)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.473s
+
+FAILED (failures=17)

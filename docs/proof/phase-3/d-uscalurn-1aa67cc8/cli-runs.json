@@ -1,0 +1,4048 @@
+[
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmgezodan\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmgezodan\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": {}
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"quan\",\"phase\":\"quan\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[8.0,5.0],\"vel\":[0.0,0.0]},\"stock\":{},\"hand\":null,\"stoves\":[{\"id\":\"B1\",\"pos\":[2,8],\"state\":\"idle\",\"dish\":null,\"cook_ticks_left\":0,\"ready_ticks\":0},{\"id\":\"B2\",\"pos\":[5,8],\"state\":\"idle\",\"dish\":null,\"cook_ticks_left\":0,\"ready_ticks\":0}],\"tables\":[{\"id\":\"T1\",\"pos\":[9,2],\"customer_id\":null},{\"id\":\"T2\",\"pos\":[13,2],\"customer_id\":null},{\"id\":\"T3\",\"pos\":[9,6],\"customer_id\":null},{\"id\":\"T4\",\"pos\":[13,6],\"customer_id\":null}],\"customers\":[]}\n{\"type\":\"end\",\"ticks\":0,\"sim_tick\":0,\"mode\":\"quan\",\"state\":\"playing\",\"reason\":\"tick_limit\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": null,
+    "jsonl_artifact": "cli-001.jsonl.txt"
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmgezodan\\2.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmgezodan\\2-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": {
+        "ca_loc": 1
+      }
+    },
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"quan\",\"phase\":\"quan\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[8.0,5.0],\"vel\":[0.0,0.0]},\"stock\":{\"ca_loc\":1},\"hand\":null,\"stoves\":[{\"id\":\"B1\",\"pos\":[2,8],\"state\":\"idle\",\"dish\":null,\"cook_ticks_left\":0,\"ready_ticks\":0},{\"id\":\"B2\",\"pos\":[5,8],\"state\":\"idle\",\"dish\":null,\"cook_ticks_left\":0,\"ready_ticks\":0}],\"tables\":[{\"id\":\"T1\",\"pos\":[9,2],\"customer_id\":null},{\"id\":\"T2\",\"pos\":[13,2],\"customer_id\":null},{\"id\":\"T3\",\"pos\":[9,6],\"customer_id\":null},{\"id\":\"T4\",\"pos\":[13,6],\"customer_id\":null}],\"customers\":[]}\n{\"type\":\"end\",\"ticks\":0,\"sim_tick\":0,\"mode\":\"quan\",\"state\":\"playing\",\"reason\":\"tick_limit\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": null,
+    "jsonl_artifact": "cli-002.jsonl.txt"
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_empty_individual_inventory_is_accepted",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp2g37z0qe\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp2g37z0qe\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": []
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_export_precision_keeps_spoiled_side_of_threshold_after_reload",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 16,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "16",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp850m128l\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp850m128l\\1-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp850m128l\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30.125
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 16
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_gather_export_sorts_ids_but_hold_retains_acquisition_order",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgd7d5ccu\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgd7d5ccu\\1-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgd7d5ccu\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 100
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 1
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_inventory_freshness_is_finite_numeric_and_within_bounds",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpckkd7jwd\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpckkd7jwd\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": [
+        {
+          "id": "I1",
+          "kind": "ca_loc",
+          "fresh": 100
+        }
+      ]
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_inventory_ids_are_nonempty_strings_and_unique",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpsr7n80dv\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpsr7n80dv\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": [
+        {
+          "id": "I1",
+          "kind": "ca_loc",
+          "fresh": 100
+        }
+      ]
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_inventory_root_and_item_field_schema_are_strict",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpcqlgtj1b\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpcqlgtj1b\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": [
+        {
+          "id": "I1",
+          "kind": "ca_loc",
+          "fresh": 100
+        }
+      ]
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_inventory_unknown_kind_is_rejected",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpw5xuy6nd\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpw5xuy6nd\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": [
+        {
+          "id": "I1",
+          "kind": "ca_loc",
+          "fresh": 100
+        }
+      ]
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_quan_inventory_is_not_limited_by_gather_capacity",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp4svvcdrb\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp4svvcdrb\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": [
+        {
+          "id": "I1",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I2",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I3",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I4",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I5",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I6",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I8",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I9",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I10",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I11",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I12",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I13",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I14",
+          "kind": "ca_loc",
+          "fresh": 100
+        },
+        {
+          "id": "I15",
+          "kind": "ca_loc",
+          "fresh": 100
+        }
+      ]
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp44d9vgeq\\1.jsonl",
+      "--inventory",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp44d9vgeq\\1-in-inventory.json"
+    ],
+    "scenario": null,
+    "inputs": null,
+    "inventory_input": {
+      "items": [
+        {
+          "id": "I2",
+          "kind": "ca_loc",
+          "fresh": 0
+        },
+        {
+          "id": "I10",
+          "kind": "ca_keo",
+          "fresh": 29.5
+        },
+        {
+          "id": "raw-id",
+          "kind": "keo_neo",
+          "fresh": 100
+        }
+      ]
+    },
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp5g8fv8_4\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp5g8fv8_4\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpule1e0an\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpule1e0an\\1-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpule1e0an\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 3
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpule1e0an\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpule1e0an\\2-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpule1e0an\\2-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 3
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": "pre-existing inventory bytes\n",
+    "inventory_artifact": "cli-014-inventory.txt"
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 17,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "17",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpe32vapuq\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpe32vapuq\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30.125
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 32,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "32",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpe32vapuq\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpe32vapuq\\2-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30.125
+          }
+        ],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 3,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "3",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp5a4fuf48\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp5a4fuf48\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 3,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "3",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp5a4fuf48\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp5a4fuf48\\2-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          }
+        ],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 60,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "60",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp658rdoz_\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp658rdoz_\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 0.125
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 60,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "60",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp658rdoz_\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp658rdoz_\\2-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 0.125
+          }
+        ],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_gather_existing_items_decay_half_point_per_sixty_active_steps",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 60,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "60",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp41cbl0dw\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp41cbl0dw\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_71h00r4\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_71h00r4\\1-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_71h00r4\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            60,
+            24
+          ],
+          "hp": 1
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 80
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 80
+          },
+          {
+            "id": "I3",
+            "kind": "ca_loc",
+            "fresh": 80
+          },
+          {
+            "id": "I4",
+            "kind": "ca_loc",
+            "fresh": 80
+          },
+          {
+            "id": "I5",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [
+          {
+            "id": "M1",
+            "kind": "ca_sau",
+            "pos": [
+              60,
+              24
+            ],
+            "waypoints": [
+              [
+                60,
+                24
+              ],
+              [
+                64,
+                24
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 2,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "2",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgn8cypd3\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgn8cypd3\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgn8cypd3\\1-inputs.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            5
+          ]
+        },
+        "hold": [],
+        "nodes": [],
+        "fish": [
+          {
+            "id": "F1",
+            "kind": "ca_linh",
+            "pos": [
+              20,
+              5
+            ],
+            "heading_deg": 0
+          }
+        ],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "catch": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[{\"id\":\"F1\",\"pos\":[20.0,5.0],\"kind\":\"ca_linh\",\"heading_deg\":0,\"age_ticks\":0}],\"monsters\":[]}\n{\"type\":\"event\",\"tick\":1,\"phase\":\"gather\",\"name\":\"fish_caught\",\"data\":{\"fish_id\":\"F1\",\"kind\":\"ca_linh\",\"yield\":3}}\n{\"type\":\"snapshot\",\"tick\":1,\"sim_tick\":1,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":1,\"state\":\"playing\",\"time_left_ticks\":10799,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1799,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":30,\"at_surface\":false},\"hold\":[\"ca_linh\",\"ca_linh\",\"ca_linh\"],\"hold_count\":3,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":2,\"sim_tick\":2,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":2,\"state\":\"playing\",\"time_left_ticks\":10798,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1798,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":29,\"at_surface\":false},\"hold\":[\"ca_linh\",\"ca_linh\",\"ca_linh\"],\"hold_count\":3,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"end\",\"ticks\":2,\"sim_tick\":2,\"mode\":\"gather\",\"state\":\"playing\",\"reason\":\"tick_limit\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": null,
+    "jsonl_artifact": "cli-023.jsonl.txt"
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_new_harvest_starts_at_one_hundred_then_decays_from_next_step",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 2,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "2",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp29jk1y7z\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp29jk1y7z\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp29jk1y7z\\1-inputs.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [],
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_sung",
+            "pos": [
+              20,
+              0
+            ]
+          }
+        ],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[{\"id\":\"N1\",\"pos\":[20.0,0.0],\"kind\":\"bong_sung\",\"ready\":true,\"regrow_ticks\":0}],\"fish\":[],\"monsters\":[]}\n{\"type\":\"event\",\"tick\":1,\"phase\":\"gather\",\"name\":\"gather\",\"data\":{\"node_id\":\"N1\",\"kind\":\"bong_sung\",\"amount\":1}}\n{\"type\":\"snapshot\",\"tick\":1,\"sim_tick\":1,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":1,\"state\":\"playing\",\"time_left_ticks\":10799,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[\"bong_sung\"],\"hold_count\":1,\"hold_capacity\":12,\"nodes\":[{\"id\":\"N1\",\"pos\":[20.0,0.0],\"kind\":\"bong_sung\",\"ready\":false,\"regrow_ticks\":1200}],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":2,\"sim_tick\":2,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":2,\"state\":\"playing\",\"time_left_ticks\":10798,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[\"bong_sung\"],\"hold_count\":1,\"hold_capacity\":12,\"nodes\":[{\"id\":\"N1\",\"pos\":[20.0,0.0],\"kind\":\"bong_sung\",\"ready\":false,\"regrow_ticks\":1199}],\"fish\":[],\"monsters\":[]}\n{\"type\":\"end\",\"ticks\":2,\"sim_tick\":2,\"mode\":\"gather\",\"state\":\"playing\",\"reason\":\"tick_limit\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": null,
+    "jsonl_artifact": "cli-024.jsonl.txt"
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 5,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "5",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpt8j4d_x8\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpt8j4d_x8\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpt8j4d_x8\\1-inputs.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "pause": true
+      },
+      {
+        "tick": 1,
+        "pause": false
+      },
+      {
+        "tick": 3,
+        "pause": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 5,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "5",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpt8j4d_x8\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpt8j4d_x8\\2-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpt8j4d_x8\\2-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          }
+        ],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "pause": true
+      },
+      {
+        "tick": 1,
+        "pause": false
+      },
+      {
+        "tick": 3,
+        "pause": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_quan_raw_items_decay_quarter_point_per_sixty_steps",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 60,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "60",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp0hutcpuk\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp0hutcpuk\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 5,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "5",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp0ey72ltn\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp0ey72ltn\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 29
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 5,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "5",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp0ey72ltn\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp0ey72ltn\\2-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 29
+          }
+        ],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_spoiled_items_still_fill_hold_and_block_harvesting",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmppga9h7lp\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmppga9h7lp\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmppga9h7lp\\1-inputs.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I3",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I4",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I5",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I6",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I7",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I8",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I9",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I11",
+            "kind": "ca_loc",
+            "fresh": 29
+          },
+          {
+            "id": "I12",
+            "kind": "ca_loc",
+            "fresh": 29
+          }
+        ],
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_sung",
+            "pos": [
+              20,
+              0
+            ]
+          }
+        ],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_freshness_d.FreshnessV12.test_spoiled_precedes_choke_and_faint_in_gather_tick",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpiefglhc5\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpiefglhc5\\1-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpiefglhc5\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            5
+          ],
+          "oxygen_ticks": 0,
+          "zero_oxy_ticks": 59,
+          "hp": 1
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 1
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 2,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "2",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm16midrg\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm16midrg\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 80
+          },
+          {
+            "id": "I3",
+            "kind": "bong_dien_dien",
+            "fresh": 30
+          }
+        ],
+        "customers": [
+          {
+            "id": "C2",
+            "table_id": "T2",
+            "dish_id": "canh_chua_ca_loc",
+            "reserved": [
+              "I2",
+              "I3"
+            ],
+            "order_tick": 0
+          },
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ],
+            "order_tick": 0
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 2,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "2",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm16midrg\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm16midrg\\2-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 80
+          },
+          {
+            "id": "I3",
+            "kind": "bong_dien_dien",
+            "fresh": 30
+          }
+        ],
+        "customers": [
+          {
+            "id": "C2",
+            "table_id": "T2",
+            "dish_id": "canh_chua_ca_loc",
+            "reserved": [
+              "I2",
+              "I3"
+            ],
+            "order_tick": 0
+          },
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ],
+            "order_tick": 1
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_ua23a3o\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_ua23a3o\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_ua23a3o\\1-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I10",
+            "kind": "bong_sung",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I3",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I2"
+            ]
+          }
+        ],
+        "random_customers": false,
+        "player": {
+          "pos": [
+            2,
+            8
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgaifxp2d\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgaifxp2d\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 70
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 90
+          }
+        ],
+        "customers": [
+          {
+            "id": "C2",
+            "table_id": "T2",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_tick": 0
+          },
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_tick": 0
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgaifxp2d\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgaifxp2d\\2-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 70
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 90
+          }
+        ],
+        "customers": [
+          {
+            "id": "C2",
+            "table_id": "T2",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_tick": 0
+          },
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_tick": 1
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_automatic_reservation_chooses_freshest_kind_then_numeric_id",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpjagjm9o3\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpjagjm9o3\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 90
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 90
+          },
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 50
+          },
+          {
+            "id": "I3",
+            "kind": "bong_sung",
+            "fresh": 100
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui"
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 992,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "992",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpd1iep9ke\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpd1iep9ke\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpd1iep9ke\\1-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ]
+          }
+        ],
+        "random_customers": false,
+        "player": {
+          "pos": [
+            2,
+            8
+          ]
+        },
+        "tables": [
+          {
+            "id": "T1",
+            "pos": [
+              2,
+              6
+            ]
+          }
+        ]
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      },
+      {
+        "tick": 1,
+        "interact": false
+      },
+      {
+        "tick": 360,
+        "interact": true
+      },
+      {
+        "tick": 361,
+        "interact": false,
+        "move": [
+          0,
+          -1
+        ]
+      },
+      {
+        "tick": 391,
+        "move": [
+          0,
+          0
+        ],
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpynczhasg\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpynczhasg\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpynczhasg\\1-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 50
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ]
+          }
+        ],
+        "random_customers": false,
+        "player": {
+          "pos": [
+            2,
+            8
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_failed_replacement_waits_unfulfillable_until_patience_expiry",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 2,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "2",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpu72nkgzm\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpu72nkgzm\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ],
+            "patience_ticks_left": 2
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_invalid_reserved_ids_are_rejected_with_valid_fixture_control",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpazgql1uv\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpazgql1uv\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 100
+          },
+          {
+            "id": "I2",
+            "kind": "bong_sung",
+            "fresh": 100
+          },
+          {
+            "id": "I3",
+            "kind": "ca_loc",
+            "fresh": 29
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ]
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm0hje13n\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm0hje13n\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm0hje13n\\1-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ]
+          }
+        ],
+        "random_customers": false,
+        "player": {
+          "pos": [
+            2,
+            8
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm0hje13n\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm0hje13n\\2-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpm0hje13n\\2-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I10",
+            "kind": "ca_linh",
+            "fresh": 100
+          },
+          {
+            "id": "I2",
+            "kind": "ca_linh",
+            "fresh": 100
+          },
+          {
+            "id": "I3",
+            "kind": "ca_linh",
+            "fresh": 100
+          },
+          {
+            "id": "I4",
+            "kind": "bong_dien_dien",
+            "fresh": 40
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "lau_ca_linh_dien_dien",
+            "reserved": [
+              "I10",
+              "I2",
+              "I3",
+              "I4"
+            ]
+          }
+        ],
+        "random_customers": false,
+        "player": {
+          "pos": [
+            2,
+            8
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_ready_dish_payload_and_frozen_price_do_not_decay",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 60,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "60",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_apy7pty\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp_apy7pty\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_status": "assigned",
+            "reserved": []
+          }
+        ],
+        "random_customers": false,
+        "stoves": [
+          {
+            "id": "B1",
+            "state": "ready",
+            "dish": {
+              "order_id": "C1",
+              "dish_id": "ca_loc_nuong_trui",
+              "base_price": 47
+            },
+            "ready_ticks": 0,
+            "cook_ticks_left": 0
+          }
+        ]
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_reserved_items_decay_and_are_replaced_when_they_spoil",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpdupdgauv\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpdupdgauv\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ]
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_spoilage_releases_entire_recipe_before_reselecting",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmplcpmwyfy\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmplcpmwyfy\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "bong_sung",
+            "fresh": 30
+          },
+          {
+            "id": "I2",
+            "kind": "bong_sung",
+            "fresh": 60
+          },
+          {
+            "id": "I3",
+            "kind": "bong_sung",
+            "fresh": 90
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "goi_bong_sung",
+            "reserved": [
+              "I1",
+              "I2"
+            ]
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_spoiled_raw_items_cannot_create_an_affordable_order",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 120,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "120",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmphhemcik5\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmphhemcik5\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 29
+          }
+        ],
+        "customers": [],
+        "random_customers": true
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\1-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_status": "assigned",
+            "reserved": [],
+            "patience_ticks_left": 1801
+          }
+        ],
+        "random_customers": false,
+        "hand": {
+          "order_id": "C1",
+          "dish_id": "ca_loc_nuong_trui",
+          "base_price": 47
+        },
+        "player": {
+          "pos": [
+            9,
+            2
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\2.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\2-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\2-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_status": "assigned",
+            "reserved": [],
+            "patience_ticks_left": 1800
+          }
+        ],
+        "random_customers": false,
+        "hand": {
+          "order_id": "C1",
+          "dish_id": "ca_loc_nuong_trui",
+          "base_price": 47
+        },
+        "player": {
+          "pos": [
+            9,
+            2
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\3.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\3-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp6mu_sca2\\3-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_status": "assigned",
+            "reserved": [],
+            "patience_ticks_left": 1
+          }
+        ],
+        "random_customers": false,
+        "hand": {
+          "order_id": "C1",
+          "dish_id": "ca_loc_nuong_trui",
+          "base_price": 47
+        },
+        "player": {
+          "pos": [
+            9,
+            2
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_reservation_price_d.ReservationPriceV12.test_two_orders_cannot_reserve_same_physical_item",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp66mnibys\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmp66mnibys\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 100
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I1"
+            ]
+          },
+          {
+            "id": "C2",
+            "table_id": "T2",
+            "dish_id": "ca_loc_nuong_trui",
+            "reserved": [
+              "I2"
+            ]
+          }
+        ],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_consumed_id_is_not_reused_in_next_day_template",
+    "mode": "day",
+    "seed": 17,
+    "ticks": 4,
+    "days": 2,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "day",
+      "--seed",
+      "17",
+      "--ticks",
+      "4",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmaoni_4n\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmaoni_4n\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmaoni_4n\\1-inputs.json",
+      "--days",
+      "2"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I7",
+            "kind": "ca_loc",
+            "fresh": 70
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 1
+      },
+      "quan": {
+        "time_left_ticks": 2,
+        "random_customers": false,
+        "player": {
+          "pos": [
+            2,
+            8
+          ]
+        },
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui"
+          }
+        ]
+      }
+    },
+    "inputs": [
+      {
+        "tick": 1,
+        "interact": true
+      },
+      {
+        "tick": 3,
+        "shop_done": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_day_handoff_is_same_tick_without_second_decay",
+    "mode": "day",
+    "seed": 17,
+    "ticks": 2,
+    "days": 1,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "day",
+      "--seed",
+      "17",
+      "--ticks",
+      "2",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmperhnvf4m\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmperhnvf4m\\1-scenario.json",
+      "--days",
+      "1"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I7",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 1
+      },
+      "quan": {
+        "time_left_ticks": 3,
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_deterministic_bytes_for_identical_individual_fixture_and_inputs",
+    "mode": "gather",
+    "seed": 42,
+    "ticks": 16,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "42",
+      "--ticks",
+      "16",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpxb01wxjl\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpxb01wxjl\\1-scenario.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpxb01wxjl\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I10",
+            "kind": "ca_loc",
+            "fresh": 30.125
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 16
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_faint_handoff_to_day_quan_has_empty_individual_stock",
+    "mode": "day",
+    "seed": 17,
+    "ticks": 1,
+    "days": 1,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "day",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpqm_8ae07\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpqm_8ae07\\1-scenario.json",
+      "--days",
+      "1"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            5
+          ],
+          "oxygen_ticks": 0,
+          "zero_oxy_ticks": 59,
+          "hp": 1
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      },
+      "quan": {
+        "time_left_ticks": 1,
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpctj8gui0\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpctj8gui0\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpctj8gui0\\1-inputs.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpctj8gui0\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            2,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_linh",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_item_ids_increase_across_days_even_after_shop_discards_leftovers",
+    "mode": "day",
+    "seed": 17,
+    "ticks": 5,
+    "days": 2,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "day",
+      "--seed",
+      "17",
+      "--ticks",
+      "5",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmfnnvrnr\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmfnnvrnr\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpmfnnvrnr\\1-inputs.json",
+      "--days",
+      "2"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I7",
+            "kind": "ca_loc",
+            "fresh": 100
+          },
+          {
+            "id": "I2",
+            "kind": "bong_sung",
+            "fresh": 80
+          }
+        ],
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_dien_dien",
+            "pos": [
+              20,
+              0
+            ]
+          }
+        ],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 2
+      },
+      "quan": {
+        "time_left_ticks": 1,
+        "random_customers": false
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      },
+      {
+        "tick": 1,
+        "interact": false
+      },
+      {
+        "tick": 3,
+        "shop_done": true
+      },
+      {
+        "tick": 4,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgtrd_kem\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgtrd_kem\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpgtrd_kem\\1-inputs.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            5
+          ]
+        },
+        "hold": [
+          {
+            "id": "I9",
+            "kind": "ca_loc",
+            "fresh": 100
+          },
+          {
+            "id": "I2",
+            "kind": "ca_loc",
+            "fresh": 100
+          }
+        ],
+        "nodes": [],
+        "fish": [
+          {
+            "id": "F1",
+            "kind": "ca_linh",
+            "pos": [
+              20,
+              5
+            ]
+          }
+        ],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "catch": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.IntegrationV12.test_shop_raw_stock_stops_decay_while_active_or_paused",
+    "mode": "day",
+    "seed": 17,
+    "ticks": 8,
+    "days": 1,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "day",
+      "--seed",
+      "17",
+      "--ticks",
+      "8",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpofcw9kv_\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpofcw9kv_\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpofcw9kv_\\1-inputs.json",
+      "--days",
+      "1"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [
+          {
+            "id": "I1",
+            "kind": "ca_loc",
+            "fresh": 80
+          }
+        ],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 1
+      },
+      "quan": {
+        "time_left_ticks": 1,
+        "random_customers": false
+      }
+    },
+    "inputs": [
+      {
+        "tick": 2,
+        "pause": true
+      },
+      {
+        "tick": 3,
+        "pause": false
+      },
+      {
+        "tick": 6,
+        "pause": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.UnchangedRegression.test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpbhaz_ktg\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpbhaz_ktg\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpbhaz_ktg\\1-inputs.json",
+      "--inventory-out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpbhaz_ktg\\1-out-inventory.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            2,
+            0
+          ]
+        },
+        "hold": [],
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_sung",
+            "pos": [
+              2,
+              0
+            ]
+          }
+        ],
+        "fish": [],
+        "random_fish": false,
+        "monsters": [],
+        "time_left_ticks": 1
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":1,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[2.0,0.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[{\"id\":\"N1\",\"pos\":[2.0,0.0],\"kind\":\"bong_sung\",\"ready\":true,\"regrow_ticks\":0}],\"fish\":[],\"monsters\":[]}\n{\"type\":\"event\",\"tick\":1,\"phase\":\"gather\",\"name\":\"gather_end\",\"data\":{\"reason\":\"docked\",\"inventory\":{\"items\":{}}}}\n{\"type\":\"snapshot\",\"tick\":1,\"sim_tick\":1,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":1,\"state\":\"finished\",\"time_left_ticks\":0,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[2.0,0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[{\"id\":\"N1\",\"pos\":[2.0,0.0],\"kind\":\"bong_sung\",\"ready\":true,\"regrow_ticks\":0}],\"fish\":[],\"monsters\":[]}\n{\"type\":\"end\",\"ticks\":1,\"sim_tick\":1,\"mode\":\"gather\",\"state\":\"finished\",\"reason\":\"docked\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": "{\"items\":{}}\n",
+    "jsonl_artifact": "cli-060.jsonl.txt",
+    "inventory_artifact": "cli-060-inventory.txt"
+  },
+  {
+    "test": "test_p3_integration_d.UnchangedRegression.test_p1_service_on_closing_tick_is_paid_before_quan_end",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 1,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "1",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmppzk3p75l\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmppzk3p75l\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmppzk3p75l\\1-inputs.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [],
+        "customers": [
+          {
+            "id": "C1",
+            "table_id": "T1",
+            "dish_id": "ca_loc_nuong_trui",
+            "order_status": "assigned",
+            "reserved": [],
+            "patience_ticks_left": 1
+          }
+        ],
+        "random_customers": false,
+        "hand": {
+          "order_id": "C1",
+          "dish_id": "ca_loc_nuong_trui",
+          "base_price": 47
+        },
+        "time_left_ticks": 1,
+        "player": {
+          "pos": [
+            9,
+            2
+          ]
+        }
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "interact": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.UnchangedRegression.test_p1_underwater_oxygen_consumes_one_per_gameplay_step",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 60,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "60",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpsa7hzlej\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpsa7hzlej\\1-scenario.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            5
+          ]
+        },
+        "hold": [],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":1,\"sim_tick\":1,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":1,\"state\":\"playing\",\"time_left_ticks\":10799,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1799,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":2,\"sim_tick\":2,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":2,\"state\":\"playing\",\"time_left_ticks\":10798,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1798,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":3,\"sim_tick\":3,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":3,\"state\":\"playing\",\"time_left_ticks\":10797,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1797,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":4,\"sim_tick\":4,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":4,\"state\":\"playing\",\"time_left_ticks\":10796,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1796,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":5,\"sim_tick\":5,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":5,\"state\":\"playing\",\"time_left_ticks\":10795,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1795,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":6,\"sim_tick\":6,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":6,\"state\":\"playing\",\"time_left_ticks\":10794,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1794,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":7,\"sim_tick\":7,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":7,\"state\":\"playing\",\"time_left_ticks\":10793,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1793,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":8,\"sim_tick\":8,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":8,\"state\":\"playing\",\"time_left_ticks\":10792,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1792,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":9,\"sim_tick\":9,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":9,\"state\":\"playing\",\"time_left_ticks\":10791,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1791,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":10,\"sim_tick\":10,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":10,\"state\":\"playing\",\"time_left_ticks\":10790,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1790,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":11,\"sim_tick\":11,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":11,\"state\":\"playing\",\"time_left_ticks\":10789,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1789,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":12,\"sim_tick\":12,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":12,\"state\":\"playing\",\"time_left_ticks\":10788,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1788,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":13,\"sim_tick\":13,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":13,\"state\":\"playing\",\"time_left_ticks\":10787,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1787,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":14,\"sim_tick\":14,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":14,\"state\":\"playing\",\"time_left_ticks\":10786,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1786,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":15,\"sim_tick\":15,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":15,\"state\":\"playing\",\"time_left_ticks\":10785,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1785,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":16,\"sim_tick\":16,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":16,\"state\":\"playing\",\"time_left_ticks\":10784,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1784,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":17,\"sim_tick\":17,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":17,\"state\":\"playing\",\"time_left_ticks\":10783,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1783,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":18,\"sim_tick\":18,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":18,\"state\":\"playing\",\"time_left_ticks\":10782,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1782,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":19,\"sim_tick\":19,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":19,\"state\":\"playing\",\"time_left_ticks\":10781,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1781,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":20,\"sim_tick\":20,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":20,\"state\":\"playing\",\"time_left_ticks\":10780,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1780,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":21,\"sim_tick\":21,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":21,\"state\":\"playing\",\"time_left_ticks\":10779,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1779,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":22,\"sim_tick\":22,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":22,\"state\":\"playing\",\"time_left_ticks\":10778,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1778,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":23,\"sim_tick\":23,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":23,\"state\":\"playing\",\"time_left_ticks\":10777,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1777,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":24,\"sim_tick\":24,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":24,\"state\":\"playing\",\"time_left_ticks\":10776,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1776,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":25,\"sim_tick\":25,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":25,\"state\":\"playing\",\"time_left_ticks\":10775,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1775,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":26,\"sim_tick\":26,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":26,\"state\":\"playing\",\"time_left_ticks\":10774,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1774,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":27,\"sim_tick\":27,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":27,\"state\":\"playing\",\"time_left_ticks\":10773,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1773,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":28,\"sim_tick\":28,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":28,\"state\":\"playing\",\"time_left_ticks\":10772,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1772,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":29,\"sim_tick\":29,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":29,\"state\":\"playing\",\"time_left_ticks\":10771,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1771,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":30,\"sim_tick\":30,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":30,\"state\":\"playing\",\"time_left_ticks\":10770,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1770,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":31,\"sim_tick\":31,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":31,\"state\":\"playing\",\"time_left_ticks\":10769,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1769,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":32,\"sim_tick\":32,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":32,\"state\":\"playing\",\"time_left_ticks\":10768,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1768,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":33,\"sim_tick\":33,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":33,\"state\":\"playing\",\"time_left_ticks\":10767,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1767,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":34,\"sim_tick\":34,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":34,\"state\":\"playing\",\"time_left_ticks\":10766,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1766,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":35,\"sim_tick\":35,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":35,\"state\":\"playing\",\"time_left_ticks\":10765,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1765,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":36,\"sim_tick\":36,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":36,\"state\":\"playing\",\"time_left_ticks\":10764,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1764,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":37,\"sim_tick\":37,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":37,\"state\":\"playing\",\"time_left_ticks\":10763,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1763,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":38,\"sim_tick\":38,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":38,\"state\":\"playing\",\"time_left_ticks\":10762,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1762,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":39,\"sim_tick\":39,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":39,\"state\":\"playing\",\"time_left_ticks\":10761,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1761,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":40,\"sim_tick\":40,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":40,\"state\":\"playing\",\"time_left_ticks\":10760,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1760,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":41,\"sim_tick\":41,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":41,\"state\":\"playing\",\"time_left_ticks\":10759,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1759,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":42,\"sim_tick\":42,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":42,\"state\":\"playing\",\"time_left_ticks\":10758,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1758,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":43,\"sim_tick\":43,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":43,\"state\":\"playing\",\"time_left_ticks\":10757,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1757,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":44,\"sim_tick\":44,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":44,\"state\":\"playing\",\"time_left_ticks\":10756,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1756,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":45,\"sim_tick\":45,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":45,\"state\":\"playing\",\"time_left_ticks\":10755,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1755,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":46,\"sim_tick\":46,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":46,\"state\":\"playing\",\"time_left_ticks\":10754,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1754,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":47,\"sim_tick\":47,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":47,\"state\":\"playing\",\"time_left_ticks\":10753,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1753,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":48,\"sim_tick\":48,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":48,\"state\":\"playing\",\"time_left_ticks\":10752,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1752,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":49,\"sim_tick\":49,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":49,\"state\":\"playing\",\"time_left_ticks\":10751,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1751,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":50,\"sim_tick\":50,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":50,\"state\":\"playing\",\"time_left_ticks\":10750,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1750,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":51,\"sim_tick\":51,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":51,\"state\":\"playing\",\"time_left_ticks\":10749,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1749,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":52,\"sim_tick\":52,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":52,\"state\":\"playing\",\"time_left_ticks\":10748,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1748,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":53,\"sim_tick\":53,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":53,\"state\":\"playing\",\"time_left_ticks\":10747,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1747,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":54,\"sim_tick\":54,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":54,\"state\":\"playing\",\"time_left_ticks\":10746,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1746,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":55,\"sim_tick\":55,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":55,\"state\":\"playing\",\"time_left_ticks\":10745,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1745,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":56,\"sim_tick\":56,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":56,\"state\":\"playing\",\"time_left_ticks\":10744,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1744,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":57,\"sim_tick\":57,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":57,\"state\":\"playing\",\"time_left_ticks\":10743,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1743,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":58,\"sim_tick\":58,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":58,\"state\":\"playing\",\"time_left_ticks\":10742,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1742,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":59,\"sim_tick\":59,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":59,\"state\":\"playing\",\"time_left_ticks\":10741,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1741,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":60,\"sim_tick\":60,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":60,\"state\":\"playing\",\"time_left_ticks\":10740,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,5.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1740,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":false},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"end\",\"ticks\":60,\"sim_tick\":60,\"mode\":\"gather\",\"state\":\"playing\",\"reason\":\"tick_limit\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": null,
+    "jsonl_artifact": "cli-062.jsonl.txt"
+  },
+  {
+    "test": "test_p3_integration_d.UnchangedRegression.test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot",
+    "mode": "quan",
+    "seed": 17,
+    "ticks": 0,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "quan",
+      "--seed",
+      "17",
+      "--ticks",
+      "0",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpbxddcld3\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpbxddcld3\\1-scenario.json"
+    ],
+    "scenario": {
+      "quan": {
+        "stock": [],
+        "customers": [],
+        "random_customers": false
+      }
+    },
+    "inputs": null,
+    "inventory_input": null,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "đầu vào sai: items phải là object\r\n",
+    "jsonl": null,
+    "inventory_output": null
+  },
+  {
+    "test": "test_p3_integration_d.UnchangedRegression.test_p2_pause_stops_clock_and_inputs_until_resume_edge",
+    "mode": "gather",
+    "seed": 17,
+    "ticks": 5,
+    "days": null,
+    "snapshot_every": 1,
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless",
+      "--mode",
+      "gather",
+      "--seed",
+      "17",
+      "--ticks",
+      "5",
+      "--snapshot-every",
+      "1",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpk18qrf6q\\1.jsonl",
+      "--scenario",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpk18qrf6q\\1-scenario.json",
+      "--inputs",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\tmpk18qrf6q\\1-inputs.json"
+    ],
+    "scenario": {
+      "gather": {
+        "player": {
+          "pos": [
+            20,
+            0
+          ]
+        },
+        "hold": [],
+        "nodes": [],
+        "fish": [],
+        "random_fish": false,
+        "monsters": []
+      }
+    },
+    "inputs": [
+      {
+        "tick": 0,
+        "pause": true,
+        "interact": true
+      },
+      {
+        "tick": 1,
+        "pause": false
+      },
+      {
+        "tick": 3,
+        "pause": true
+      }
+    ],
+    "inventory_input": null,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "jsonl": "{\"type\":\"snapshot\",\"tick\":0,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"playing\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"event\",\"tick\":1,\"phase\":\"gather\",\"name\":\"paused\",\"data\":{}}\n{\"type\":\"snapshot\",\"tick\":1,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"paused\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":2,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"paused\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":3,\"sim_tick\":0,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":0,\"state\":\"paused\",\"time_left_ticks\":10800,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0.0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"event\",\"tick\":4,\"phase\":\"gather\",\"name\":\"resumed\",\"data\":{}}\n{\"type\":\"snapshot\",\"tick\":4,\"sim_tick\":1,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":1,\"state\":\"playing\",\"time_left_ticks\":10799,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"snapshot\",\"tick\":5,\"sim_tick\":2,\"mode\":\"gather\",\"phase\":\"gather\",\"phase_tick\":2,\"state\":\"playing\",\"time_left_ticks\":10798,\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300,\"player\":{\"pos\":[20.0,0],\"vel\":[0.0,0.0],\"heading_deg\":0.0,\"oxygen_ticks\":1800,\"oxygen_max_ticks\":1800,\"hp\":3,\"hp_max\":3,\"zero_oxy_ticks\":0,\"invuln_ticks\":0,\"catch_cd_ticks\":0,\"at_surface\":true},\"hold\":[],\"hold_count\":0,\"hold_capacity\":12,\"nodes\":[],\"fish\":[],\"monsters\":[]}\n{\"type\":\"end\",\"ticks\":5,\"sim_tick\":2,\"mode\":\"gather\",\"state\":\"playing\",\"reason\":\"tick_limit\",\"money\":0,\"earned\":0,\"reputation\":3.0,\"score\":300}\n",
+    "inventory_output": null,
+    "jsonl_artifact": "cli-064.jsonl.txt"
+  }
+]

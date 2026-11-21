@@ -6,11 +6,11 @@
 | Hành động P2 | Người nhận | Đã làm? | Vì sao |
 |---|---|---|---|
 | Mỗi lát push nhánh nhỏ trước phút 20, kèm ≥ 1 test | A, B | **Một phần.** P3: B push 11:26, A push 11:31 (gần hạn, sau phút 20); A có test, B chỉ có bảng rà soát (C bổ sung test làm bằng chứng). | Chờ C đẩy lõi v1.2 xong (11:22) mới sửa được fixture → phụ thuộc tuần tự. |
-| D nhận test + verification từ đầu phase | D | **Không.** D chỉ có 1 commit (P1 test + 2 skill, merge lúc tag P2); P3/P4 chưa push. | Không có cập nhật trong kênh nhóm; chưa rõ nguyên nhân. |
+| D nhận test + verification từ đầu phase | D | **Muộn nhưng có giá trị.** D push 53 test P3 + bằng chứng QA lúc 11:43 (sau tag P3, vào P4); 4 test đỏ lộ ra 2 lỗi/điểm mơ hồ thật của C (làm tròn `fresh`, thứ tự giữ lại) → C sửa code. | Làm test độc lập từ Ticket nên mất thời gian; không báo tiến độ giữa chừng. |
 | `git pull --rebase` trước khi bắt đầu/push | Cả nhóm | **Chưa đều.** Nhánh A/B ở P2 tách từ main cũ → conflict; A force-push nhánh đã merge. | Thói quen; chưa có ruleset bảo vệ nhánh. |
 
 ### Số liệu
-4 tag (P1 muộn; P2, P3, P4 đúng hạn). Test: 32 → 53 → 142 → 94 chạy + 2 module skip (sau đổi schema P3) → P4 thêm 3. Commit trên main tới P4 (không tính 9 commit starter): C 22, A 8, B 6, D 1.
+4 tag (P1 muộn; P2, P3, P4 đúng hạn). Test: 32 → 53 → 142 → 94 chạy + 2 module skip (sau đổi schema P3) → P4 thêm 3. Commit trên main tới P4 (không tính 9 commit starter): C ~24, A 8, B 6, D 2.
 
 ### Điều làm tốt
 - Chốt hợp đồng + tên khóa + `ctx` trước khi code, ADR cho đổi schema → main luôn chạy được qua 3 lần đổi contract.

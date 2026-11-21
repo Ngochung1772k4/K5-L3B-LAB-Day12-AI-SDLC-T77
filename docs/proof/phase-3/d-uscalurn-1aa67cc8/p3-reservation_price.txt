@@ -1,0 +1,268 @@
+{
+  "revision": "d496a4f313aa4a3757ffacf599499d3f3224d8e5",
+  "branch": "d/phase-3-qa-uscalurn",
+  "contract_version": "1.1",
+  "exit_code_equivalent_to_unittest_cli": 1,
+  "counts_by_method": {
+    "PASS": 0,
+    "FAIL": 15,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "python": "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "bytecode_disabled": true,
+  "adapter": null
+}
+
+--- STDOUT ---
+
+--- STDERR ---
+test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events (test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events) ... 
+  test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events (test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events) (c1_order_tick=0) ... FAIL
+  test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events (test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events) (c1_order_tick=1) ... FAIL
+test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick (test_p3_reservation_price_d.ReservationPriceV12.test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick) ... FAIL
+test_allocation_priority_is_order_tick_then_table_id_without_overbooking (test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking) ... 
+  test_allocation_priority_is_order_tick_then_table_id_without_overbooking (test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking) (c1_order_tick=0) ... FAIL
+  test_allocation_priority_is_order_tick_then_table_id_without_overbooking (test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking) (c1_order_tick=1) ... FAIL
+test_automatic_reservation_chooses_freshest_kind_then_numeric_id (test_p3_reservation_price_d.ReservationPriceV12.test_automatic_reservation_chooses_freshest_kind_then_numeric_id) ... FAIL
+test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score (test_p3_reservation_price_d.ReservationPriceV12.test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score) ... FAIL
+test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher (test_p3_reservation_price_d.ReservationPriceV12.test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher) ... FAIL
+test_failed_replacement_waits_unfulfillable_until_patience_expiry (test_p3_reservation_price_d.ReservationPriceV12.test_failed_replacement_waits_unfulfillable_until_patience_expiry) ... FAIL
+test_invalid_reserved_ids_are_rejected_with_valid_fixture_control (test_p3_reservation_price_d.ReservationPriceV12.test_invalid_reserved_ids_are_rejected_with_valid_fixture_control) ... FAIL
+test_price_floors_after_tick_decay_and_uses_each_individual_in_mean (test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean) ... 
+  test_price_floors_after_tick_decay_and_uses_each_individual_in_mean (test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean) (dish='ca_loc_nuong_trui') ... FAIL
+  test_price_floors_after_tick_decay_and_uses_each_individual_in_mean (test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean) (dish='lau_ca_linh_dien_dien') ... FAIL
+test_ready_dish_payload_and_frozen_price_do_not_decay (test_p3_reservation_price_d.ReservationPriceV12.test_ready_dish_payload_and_frozen_price_do_not_decay) ... FAIL
+test_reserved_items_decay_and_are_replaced_when_they_spoil (test_p3_reservation_price_d.ReservationPriceV12.test_reserved_items_decay_and_are_replaced_when_they_spoil) ... FAIL
+test_spoilage_releases_entire_recipe_before_reselecting (test_p3_reservation_price_d.ReservationPriceV12.test_spoilage_releases_entire_recipe_before_reselecting) ... FAIL
+test_spoiled_raw_items_cannot_create_an_affordable_order (test_p3_reservation_price_d.ReservationPriceV12.test_spoiled_raw_items_cannot_create_an_affordable_order) ... FAIL
+test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) ... 
+  test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) (remaining_after_decrement=1800) ... FAIL
+  test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) (remaining_after_decrement=1799) ... FAIL
+  test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) (remaining_after_decrement=0) ... FAIL
+test_two_orders_cannot_reserve_same_physical_item (test_p3_reservation_price_d.ReservationPriceV12.test_two_orders_cannot_reserve_same_physical_item) ... FAIL
+
+======================================================================
+FAIL: test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events (test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events) (c1_order_tick=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 110, in test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events
+    self.run_game("quan", quan(stock=stock, customers=clients), ticks=2)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events (test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events) (c1_order_tick=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 110, in test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events
+    self.run_game("quan", quan(stock=stock, customers=clients), ticks=2)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick (test_p3_reservation_price_d.ReservationPriceV12.test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 121, in test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick
+    self.run_game("quan", quan(stock=stock, customers=[customer(reserved=["I2"])],
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_allocation_priority_is_order_tick_then_table_id_without_overbooking (test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking) (c1_order_tick=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 41, in test_allocation_priority_is_order_tick_then_table_id_without_overbooking
+    self.run_game("quan", quan(stock=[item("I10", fresh=70), item("I2", fresh=90)],
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_allocation_priority_is_order_tick_then_table_id_without_overbooking (test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking) (c1_order_tick=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 41, in test_allocation_priority_is_order_tick_then_table_id_without_overbooking
+    self.run_game("quan", quan(stock=[item("I10", fresh=70), item("I2", fresh=90)],
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_automatic_reservation_chooses_freshest_kind_then_numeric_id (test_p3_reservation_price_d.ReservationPriceV12.test_automatic_reservation_chooses_freshest_kind_then_numeric_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 29, in test_automatic_reservation_chooses_freshest_kind_then_numeric_id
+    self.run_game("quan", quan(stock=stock, customers=[customer()]))
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score (test_p3_reservation_price_d.ReservationPriceV12.test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 193, in test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score
+    self.run_game("quan", quan(stock=[item(fresh=80)], customers=[customer(reserved=["I1"])],
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher (test_p3_reservation_price_d.ReservationPriceV12.test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 132, in test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher
+    self.run_game("quan", quan(stock=[item("I1", fresh=50), item("I2", fresh=100)],
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_failed_replacement_waits_unfulfillable_until_patience_expiry (test_p3_reservation_price_d.ReservationPriceV12.test_failed_replacement_waits_unfulfillable_until_patience_expiry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 92, in test_failed_replacement_waits_unfulfillable_until_patience_expiry
+    self.run_game("quan", quan(stock=[item(fresh=30)], customers=[c]), ticks=2)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_invalid_reserved_ids_are_rejected_with_valid_fixture_control (test_p3_reservation_price_d.ReservationPriceV12.test_invalid_reserved_ids_are_rejected_with_valid_fixture_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 50, in test_invalid_reserved_ids_are_rejected_with_valid_fixture_control
+    self.run_game("quan", quan(stock=stock, customers=[customer(reserved=["I1"])]))
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_price_floors_after_tick_decay_and_uses_each_individual_in_mean (test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean) (dish='ca_loc_nuong_trui')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 150, in test_price_floors_after_tick_decay_and_uses_each_individual_in_mean
+    self.run_game("quan", quan(stock=stock, customers=[c], player={"pos": [2, 8]}),
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_price_floors_after_tick_decay_and_uses_each_individual_in_mean (test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean) (dish='lau_ca_linh_dien_dien')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 150, in test_price_floors_after_tick_decay_and_uses_each_individual_in_mean
+    self.run_game("quan", quan(stock=stock, customers=[c], player={"pos": [2, 8]}),
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_ready_dish_payload_and_frozen_price_do_not_decay (test_p3_reservation_price_d.ReservationPriceV12.test_ready_dish_payload_and_frozen_price_do_not_decay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 165, in test_ready_dish_payload_and_frozen_price_do_not_decay
+    self.run_game("quan", quan(stock=[item("I2", fresh=80)], customers=[c], stoves=[stove]), ticks=60)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_reserved_items_decay_and_are_replaced_when_they_spoil (test_p3_reservation_price_d.ReservationPriceV12.test_reserved_items_decay_and_are_replaced_when_they_spoil)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 71, in test_reserved_items_decay_and_are_replaced_when_they_spoil
+    self.run_game("quan", quan(stock=stock, customers=[customer(reserved=["I1"])]), ticks=1)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_spoilage_releases_entire_recipe_before_reselecting (test_p3_reservation_price_d.ReservationPriceV12.test_spoilage_releases_entire_recipe_before_reselecting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 85, in test_spoilage_releases_entire_recipe_before_reselecting
+    self.run_game("quan", quan(stock=stock, customers=[c]), ticks=1)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_spoiled_raw_items_cannot_create_an_affordable_order (test_p3_reservation_price_d.ReservationPriceV12.test_spoiled_raw_items_cannot_create_an_affordable_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 64, in test_spoiled_raw_items_cannot_create_an_affordable_order
+    self.run_game("quan", quan(stock=[item(fresh=29)], random_customers=True), ticks=first)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) (remaining_after_decrement=1800)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 177, in test_tip_uses_discounted_payload_price_at_patience_boundary
+    self.run_game("quan", quan(customers=[c], hand=payload, player={"pos": [9, 2]}), ticks=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) (remaining_after_decrement=1799)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 177, in test_tip_uses_discounted_payload_price_at_patience_boundary
+    self.run_game("quan", quan(customers=[c], hand=payload, player={"pos": [9, 2]}), ticks=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_tip_uses_discounted_payload_price_at_patience_boundary (test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary) (remaining_after_decrement=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 177, in test_tip_uses_discounted_payload_price_at_patience_boundary
+    self.run_game("quan", quan(customers=[c], hand=payload, player={"pos": [9, 2]}), ticks=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_two_orders_cannot_reserve_same_physical_item (test_p3_reservation_price_d.ReservationPriceV12.test_two_orders_cannot_reserve_same_physical_item)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_reservation_price_d.py", line 58, in test_two_orders_cannot_reserve_same_physical_item
+    self.run_game("quan", quan(stock=stock, customers=clients))
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.729s
+
+FAILED (failures=20)

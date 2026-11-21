@@ -1,0 +1,31 @@
+{
+  "branch": "d/phase-3-qa-uscalurn",
+  "changedFiles": 43,
+  "protectedExistingFilesChanged": [],
+  "otherNewFilesObserved": [
+    "kho.json",
+    "chonoi/sim/__pycache__/day.cpython-315.pyc",
+    "chonoi/sim/__pycache__/fish.cpython-315.pyc",
+    "chonoi/sim/__pycache__/gather.cpython-315.pyc",
+    "chonoi/sim/__pycache__/monsters.cpython-315.pyc",
+    "chonoi/sim/__pycache__/quan.cpython-315.pyc",
+    "chonoi/sim/__pycache__/ramp.cpython-315.pyc",
+    "chonoi/sim/__pycache__/__init__.cpython-315.pyc",
+    "chonoi/__pycache__/contract.cpython-315.pyc",
+    "chonoi/__pycache__/errors.cpython-315.pyc",
+    "chonoi/__pycache__/ids.cpython-315.pyc",
+    "chonoi/__pycache__/inputs.cpython-315.pyc",
+    "chonoi/__pycache__/inventory.cpython-315.pyc",
+    "chonoi/__pycache__/jsonl.cpython-315.pyc",
+    "chonoi/__pycache__/live.cpython-315.pyc",
+    "chonoi/__pycache__/rng.cpython-315.pyc",
+    "chonoi/__pycache__/runner.cpython-315.pyc",
+    "chonoi/__pycache__/scenario.cpython-315.pyc",
+    "chonoi/__pycache__/__init__.cpython-315.pyc"
+  ],
+  "usageExistingContentPreserved": true,
+  "linksChecked": 150,
+  "missingLinks": [],
+  "unchangedExistingTests": true,
+  "note": "Only explicitly allowed QA files were authored. Existing protected files/test/spec hashes are unchanged. Other new files were observed concurrently and preserved; Python 3.11 QA commands used -B and PYTHONDONTWRITEBYTECODE=1."
+}

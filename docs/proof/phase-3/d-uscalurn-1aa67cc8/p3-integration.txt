@@ -1,0 +1,161 @@
+{
+  "revision": "d496a4f313aa4a3757ffacf599499d3f3224d8e5",
+  "branch": "d/phase-3-qa-uscalurn",
+  "contract_version": "1.1",
+  "exit_code_equivalent_to_unittest_cli": 1,
+  "counts_by_method": {
+    "PASS": 2,
+    "FAIL": 11,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "python": "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "bytecode_disabled": true,
+  "adapter": null
+}
+
+--- STDOUT ---
+
+--- STDERR ---
+test_consumed_id_is_not_reused_in_next_day_template (test_p3_integration_d.IntegrationV12.test_consumed_id_is_not_reused_in_next_day_template) ... FAIL
+test_day_handoff_is_same_tick_without_second_decay (test_p3_integration_d.IntegrationV12.test_day_handoff_is_same_tick_without_second_decay) ... FAIL
+test_deterministic_bytes_for_identical_individual_fixture_and_inputs (test_p3_integration_d.IntegrationV12.test_deterministic_bytes_for_identical_individual_fixture_and_inputs) ... FAIL
+test_faint_handoff_to_day_quan_has_empty_individual_stock (test_p3_integration_d.IntegrationV12.test_faint_handoff_to_day_quan_has_empty_individual_stock) ... FAIL
+test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness (test_p3_integration_d.IntegrationV12.test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness) ... FAIL
+test_item_ids_increase_across_days_even_after_shop_discards_leftovers (test_p3_integration_d.IntegrationV12.test_item_ids_increase_across_days_even_after_shop_discards_leftovers) ... FAIL
+test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield (test_p3_integration_d.IntegrationV12.test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield) ... FAIL
+test_shop_raw_stock_stops_decay_while_active_or_paused (test_p3_integration_d.IntegrationV12.test_shop_raw_stock_stops_decay_while_active_or_paused) ... FAIL
+test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema (test_p3_integration_d.UnchangedRegression.test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema) ... FAIL
+test_p1_service_on_closing_tick_is_paid_before_quan_end (test_p3_integration_d.UnchangedRegression.test_p1_service_on_closing_tick_is_paid_before_quan_end) ... FAIL
+test_p1_underwater_oxygen_consumes_one_per_gameplay_step (test_p3_integration_d.UnchangedRegression.test_p1_underwater_oxygen_consumes_one_per_gameplay_step) ... ok
+test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot (test_p3_integration_d.UnchangedRegression.test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot) ... FAIL
+test_p2_pause_stops_clock_and_inputs_until_resume_edge (test_p3_integration_d.UnchangedRegression.test_p2_pause_stops_clock_and_inputs_until_resume_edge) ... ok
+
+======================================================================
+FAIL: test_consumed_id_is_not_reused_in_next_day_template (test_p3_integration_d.IntegrationV12.test_consumed_id_is_not_reused_in_next_day_template)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 83, in test_consumed_id_is_not_reused_in_next_day_template
+    self.run_game("day", fixture, ticks=4, days=2,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_day_handoff_is_same_tick_without_second_decay (test_p3_integration_d.IntegrationV12.test_day_handoff_is_same_tick_without_second_decay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 31, in test_day_handoff_is_same_tick_without_second_decay
+    self.run_game("day", fixture, ticks=2, days=1)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_deterministic_bytes_for_identical_individual_fixture_and_inputs (test_p3_integration_d.IntegrationV12.test_deterministic_bytes_for_identical_individual_fixture_and_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 102, in test_deterministic_bytes_for_identical_individual_fixture_and_inputs
+    self.run_game("gather", fixture, ticks=16, seed=42, inventory_out=True)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_faint_handoff_to_day_quan_has_empty_individual_stock (test_p3_integration_d.IntegrationV12.test_faint_handoff_to_day_quan_has_empty_individual_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 92, in test_faint_handoff_to_day_quan_has_empty_individual_stock
+    self.run_game("day", fixture, ticks=1, days=1)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness (test_p3_integration_d.IntegrationV12.test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 19, in test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness
+    self.run_game("gather", fixture, ticks=1, inputs=[{"tick": 0, "interact": True}], inventory_out=True)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_item_ids_increase_across_days_even_after_shop_discards_leftovers (test_p3_integration_d.IntegrationV12.test_item_ids_increase_across_days_even_after_shop_discards_leftovers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 70, in test_item_ids_increase_across_days_even_after_shop_discards_leftovers
+    self.run_game("day", fixture, ticks=5, days=2, inputs=[
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield (test_p3_integration_d.IntegrationV12.test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 58, in test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield
+    self.run_game("gather", gather(hold=[item("I9"), item("I2")],
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_shop_raw_stock_stops_decay_while_active_or_paused (test_p3_integration_d.IntegrationV12.test_shop_raw_stock_stops_decay_while_active_or_paused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 45, in test_shop_raw_stock_stops_decay_while_active_or_paused
+    self.run_game("day", fixture, ticks=8, days=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema (test_p3_integration_d.UnchangedRegression.test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 131, in test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema
+    self.assertEqual(self.one("gather_end", 1)["data"], {"reason": "docked", "inventory": {"items": []}})
+AssertionError: {'reason': 'docked', 'inventory': {'items': {}}} != {'reason': 'docked', 'inventory': {'items': []}}
+- {'inventory': {'items': {}}, 'reason': 'docked'}
+?                         ^^
+
++ {'inventory': {'items': []}, 'reason': 'docked'}
+?                         ^^
+
+
+======================================================================
+FAIL: test_p1_service_on_closing_tick_is_paid_before_quan_end (test_p3_integration_d.UnchangedRegression.test_p1_service_on_closing_tick_is_paid_before_quan_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 141, in test_p1_service_on_closing_tick_is_paid_before_quan_end
+    self.run_game("quan", quan(hand=payload, customers=[c], time_left_ticks=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot (test_p3_integration_d.UnchangedRegression.test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_integration_d.py", line 134, in test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot
+    self.run_game("quan", quan())
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.071s
+
+FAILED (failures=11)
