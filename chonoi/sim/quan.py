@@ -8,6 +8,7 @@ Nhóm viết tiếp (PRD-0 mục F, Quán):
 """
 
 from ..ids import sort_by_id
+from ..scenario import validate_quan_links
 from .ramp import ramp_velocity
 
 TICK = 60.0
@@ -37,8 +38,10 @@ class QuanSim:
                             cook_ticks_left=s.get("cook_ticks_left", 0), ready_ticks=s.get("ready_ticks", 0))
                        for s in self._merge(t["stoves"], scenario.get("stoves", []))]
         self.tables = self._merge(t["tables"], scenario.get("tables", []))
-        # TODO(nhóm): khách dựng sẵn từ scenario (customers[]) và suy ra giữ chỗ (reserved).
-        self.customers = [dict(c, reserved=c.get("reserved", {})) for c in scenario.get("customers", [])]
+        # Kiểm liên kết đơn/bếp/tay + giữ chỗ so với kho thật (mã 2), điền `reserved` theo công thức (C viết).
+        reserved = validate_quan_links(scenario, tuning, self.stock)
+        # TODO(nhóm, B): điền mặc định còn lại cho khách fixture (state, order_tick, patience_ticks_left...).
+        self.customers = [dict(c, reserved=reserved[c["id"]]) for c in scenario.get("customers", [])]
         for e in self.customers:
             ids.reserve(e["id"])
         self.money = 0
