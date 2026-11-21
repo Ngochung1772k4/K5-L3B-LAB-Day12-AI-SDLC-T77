@@ -214,6 +214,10 @@ class LiveServer:
 
 
 def main(argv=None) -> int:
+    try:  # in tiếng Việt an toàn khi stdout không phải UTF-8 (console/redirect trên Windows)
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
     p = argparse.ArgumentParser(prog="chonoi.live", description="Chơi trực tiếp trên trình duyệt (starter).")
     p.add_argument("--mode", required=True, choices=["gather", "quan"])
     p.add_argument("--seed", type=int, default=1)
