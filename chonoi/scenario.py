@@ -41,11 +41,65 @@ def load_scenario(path, mode: str, tuning: dict) -> dict:
             data = json.load(f)
     except (OSError, ValueError) as e:
         raise BadInput(f"không đọc được scenario {path}: {e}")
+    if mode == "day":
+        return _load_day(data, tuning)
     if not isinstance(data, dict) or not set(data) <= {"gather", "quan"}:
         raise BadInput("scenario chỉ được có khối 'gather' hoặc 'quan'")
     if set(data) - {mode}:
         raise BadInput(f"khối sai mode: chạy --mode {mode} chỉ nhận khối '{mode}'")
-    block = data.get(mode, {})
+    return _load_block(data.get(mode, {}), mode, tuning)
+
+
+def _load_day(data, tuning):
+    """Mode day (Ticket-02 mục 4.3): gather/quan là mẫu mỗi Ngày, khối day dựng trạng thái xuyên Ngày."""
+    if not isinstance(data, dict) or not set(data) <= {"gather", "quan", "day"}:
+        raise BadInput("scenario day chỉ nhận khối gather, quan, day")
+    out = {}
+    for mode in ("gather", "quan"):
+        if mode in data:
+            out[mode] = _load_block(data[mode], mode, tuning)
+    q = out.get("quan", {})
+    for key in ("stock", "reputation"):
+        if key in q:
+            raise BadInput(f"cấm quan.{key} khi chạy day (dùng gather.hold / day.reputation)")
+    d = data.get("day", {})
+    if not isinstance(d, dict) or set(d) - DAY_KEYS:
+        raise BadInput(f"khối day chỉ nhận {sorted(DAY_KEYS)}")
+    for key in ("money", "earned"):
+        if key in d:
+            _nonneg_int(f"day.{key}", d[key])
+    if ("money" in d) != ("earned" in d) and d.get("money", 0) > 0:
+        raise BadInput("có tiền đầu kỳ thì khai cả day.money và day.earned")
+    if d.get("money", 0) > d.get("earned", 0):
+        raise BadInput("cần 0 <= day.money <= day.earned")
+    qt = tuning["quan"]
+    if "reputation" in d and not (_num(d["reputation"]) and qt["reputation_min"] <= d["reputation"] <= qt["reputation_max"]):
+        raise BadInput("day.reputation ngoài miền uy tín")
+    ups = d.get("upgrades", {})
+    shop = tuning["shop"]["upgrades"]
+    if not isinstance(ups, dict):
+        raise BadInput("day.upgrades phải là map id -> cấp")
+    for uid, lv in ups.items():
+        if uid not in shop:
+            raise BadInput(f"day.upgrades: nâng cấp lạ {uid}")
+        _nonneg_int(f"day.upgrades.{uid}", lv)
+        if lv > len(shop[uid]):
+            raise BadInput(f"day.upgrades.{uid} vượt cấp tối đa")
+    from .contract import plan_ingredients
+    for p in d.get("day_plan", []):
+        if not isinstance(p, dict) or p.get("day") not in (1, 2, 3, 4, 5) or "dishes" not in p:
+            raise BadInput("day.day_plan: mỗi mục cần day (1..5) và dishes")
+        ing = plan_ingredients(p["dishes"], tuning["menu"])
+        if "ingredients" in p and p["ingredients"] != ing:
+            raise BadInput(f"day.day_plan ngày {p['day']}: ingredients khác tổng công thức")
+    out["day"] = d
+    return out
+
+
+DAY_KEYS = {"money", "earned", "reputation", "upgrades", "day_plan"}
+
+
+def _load_block(block, mode, tuning):
     if not isinstance(block, dict):
         raise BadInput(f"khối {mode} phải là object")
     allowed = GATHER_KEYS if mode == "gather" else QUAN_KEYS
