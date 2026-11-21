@@ -36,7 +36,7 @@ class ContractV11(unittest.TestCase):
     def test_p2_01_contract_and_data(self):
         c = contract()
         t = c["tuning"]
-        self.assertIn(c["contract_version"], ("1.1", "1.2"))  # v1.2 (P3) giữ toàn bộ dữ liệu v1.1
+        self.assertIn(c["contract_version"], ("1.1", "1.2", "1.3"))  # v1.2 (P3), v1.3 (P4) giữ toàn bộ dữ liệu v1.1
         self.assertEqual(len(t["menu"]), 6)
         self.assertEqual([s["id"] for s in t["quan"]["stoves"]], ["B1", "B2"])
         self.assertEqual([x["id"] for x in t["quan"]["tables"]], ["T1", "T2", "T3", "T4"])

@@ -285,9 +285,10 @@ class QuanSim:
     def _rereserve(self, spoiled_ids):
         """Đơn có cá thể vừa ươn: nhả toàn bộ phần giữ, thử giữ lại đúng một lần (theo order_tick rồi id bàn)."""
         hit = [c for c in self.customers if c["order_status"] == "reserved" and spoiled_ids & set(c["reserved"])]
-        for c in hit:
-            c["reserved"] = []
+        # lần lượt từng đơn theo (order_tick, id bàn): nhả phần giữ của đơn đó rồi thử giữ lại ngay một lần
+        # (đơn sau chưa nhả thì đơn trước không lấy được hàng của nó — theo test QA của D, Ticket-03)
         for c in sorted(hit, key=lambda c: (c["order_tick"], id_key(c["table_id"]))):
+            c["reserved"] = []
             got = self._pick(c["dish_id"])
             if got is None:
                 c["order_status"] = "unfulfillable"  # khách chờ tới hạn

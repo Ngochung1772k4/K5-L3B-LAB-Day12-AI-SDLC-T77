@@ -113,7 +113,7 @@ class DaySim:
             if lv:
                 ctx[key] = self.tuning["shop"]["upgrades"][uid][lv - 1][key]
         out.append(("day_start", {}, "gather", self.day))
-        p = self.plan[self.day]
+        p = self.plan[(self.day - 1) % 5 + 1]  # soak: D1–D5 lặp ở Ngày 6–10
         out.append(("day_plan", {"dishes": p["dishes"], "ingredients": p["ingredients"]}, "gather", self.day))
         gsc = copy.deepcopy(self.scenario.get("gather", {}))
         if self.day > 1 and gsc.get("hold"):  # Ngày kế: id mới theo thứ tự mảng, kind/fresh ban đầu
@@ -123,7 +123,7 @@ class DaySim:
         out.append(("phase_start", {}, "gather", self.day))
 
     def _start_quan(self, out, items):
-        ctx = {"day": self.day, "dishes": list(self.plan[self.day]["dishes"]),
+        ctx = {"day": self.day, "dishes": list(self.plan[(self.day - 1) % 5 + 1]["dishes"]),
                "money": self.money, "earned": self.earned, "reputation": self.reputation}
         self.cur = QuanSim(self.tuning, copy.deepcopy(self.scenario.get("quan", {})), self.rng, self.ids,
                            inventory=items, ctx=ctx)
@@ -165,7 +165,7 @@ class DaySim:
         return {"money": live.money, "earned": live.earned, "reputation": live.reputation}
 
     def snapshot(self):
-        p = self.plan[self.day]
+        p = self.plan[(self.day - 1) % 5 + 1]
         s = {"day": self.day, "day_plan": {"dishes": p["dishes"], "ingredients": p["ingredients"]},
              "upgrades": dict(sorted(self.upgrades.items())),
              "active_upgrades": dict(sorted(self.active_upgrades.items()))}

@@ -58,6 +58,7 @@ addEventListener("keydown", (e) => {
   if (MOVE_KEYS[k]) { down.add(MOVE_KEYS[k]); e.preventDefault(); }
   else if (k === "e") down.add("interact");
   else if (k === "p" || k === "escape") down.add("pause");   // v1.1: Esc/P tạm dừng
+  else if (k === "h") { HC = !HC; try { localStorage.setItem("chonoi-hc", HC ? "1" : "0"); } catch (e) {} }
   else if (k === " ") { down.add("catch"); e.preventDefault(); }
   else if (k === "r") { fetch("/restart", { method: "POST" }); lastSent = ""; down.clear(); }
   pushInput();
@@ -326,6 +327,44 @@ function drawQuan(w, h) {
   text("WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại", w - 10, h - 14, { size: 12, align: "right", color: "#9fb3c0" });
 }
 
+// ---------- v1.3: cảnh báo dễ nhận biết + chế độ tương phản cao (phím H hoặc ?contrast=high) ----------
+let HC = /contrast=high/.test(location.search);
+try { if (localStorage.getItem("chonoi-hc") === "1") HC = true; } catch (e) {}
+function alertBox(w, y, icon, msg, col) {
+  const size = HC ? 28 : 22, pad = HC ? 12 : 8;
+  ctx.font = "bold " + size + "px system-ui, sans-serif";
+  const tw = ctx.measureText(icon + "  " + msg).width;
+  ctx.fillStyle = HC ? "#000" : "rgba(0,0,0,.6)"; ctx.fillRect(w / 2 - tw / 2 - pad, y - size - pad / 2, tw + 2 * pad, size + pad * 1.5);
+  if (HC) { ctx.strokeStyle = "#ffff00"; ctx.lineWidth = 4; ctx.strokeRect(w / 2 - tw / 2 - pad, y - size - pad / 2, tw + 2 * pad, size + pad * 1.5); }
+  text(icon + "  " + msg, w / 2, y, { size, align: "center", color: HC ? "#ffff00" : col });
+}
+function alerts(w, h) {
+  const out = [];
+  const p = snap.player, meta = snap.meta || {};
+  if (snap.mode !== "quan" && p) {
+    const sp = (meta.monsters && meta.monsters.species) || {};
+    const near = (snap.monsters || []).some((m) => {
+      const r = (sp[m.kind] && sp[m.kind].detect_radius) || 10;
+      return Math.hypot(m.pos[0] - p.pos[0], m.pos[1] - p.pos[1]) <= r;
+    });
+    if (near) {
+      ctx.strokeStyle = HC ? "#ff00ff" : "#a270ea"; ctx.lineWidth = HC ? 14 : 8; ctx.strokeRect(0, 0, w, h);
+      out.push(["🐊", "THỦY QUÁI GẦN!", "#cba6ff"]);
+    }
+    if (p.oxygen_max_ticks && !p.at_surface && p.oxygen_ticks < p.oxygen_max_ticks * 0.25) {
+      if (HC || Math.floor((snap.tick || 0) / 15) % 2 === 0)
+        out.push(["🫧", p.oxygen_ticks === 0 ? "HẾT HƠI! Nổi lên ngay" : "OXY SẮP HẾT!", "#ff8a80"]);
+    }
+  }
+  if (snap.mode === "quan") {
+    const full = ((meta.patience_s || 60) * 60);
+    const angry = (snap.customers || []).filter((c) => c.state === "waiting" && c.patience_ticks_left < full * 0.25);
+    if (angry.length) out.push(["😠", "KHÁCH SẮP GIẬN! (" + angry.map((c) => c.table_id).join(", ") + ")", "#ffb74d"]);
+  }
+  out.forEach((a, i) => alertBox(w, 140 + i * (HC ? 52 : 40), a[0], a[1], a[2]));
+  if (HC) text("Tương phản cao (H)", w - 10, 20, { size: 14, align: "right", color: "#ffff00" });
+}
+
 function frame() {
   requestAnimationFrame(frame);  // đặt trước để lỗi vẽ không làm dừng vòng lặp
   const [w, h] = fit();
@@ -334,6 +373,7 @@ function frame() {
     if (snap.mode === "quan") drawQuan(w, h); else drawGather(w, h);
     eventLog(w, h);
     banner(w);
+    alerts(w, h);
     overlay(w, h);
   } else {
     text(offline ? "Không kết nối được máy chủ…" : "Đang tải…", w / 2, h / 2, { align: "center", size: 18 });

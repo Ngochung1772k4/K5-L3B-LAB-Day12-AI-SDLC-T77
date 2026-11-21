@@ -1,5 +1,37 @@
 # Retro
 
+## Phase 4 — tổng kết cả buổi (rà hành động đã chốt ở P2 trước)
+
+### Rà hành động P2
+| Hành động P2 | Người nhận | Đã làm? | Vì sao |
+|---|---|---|---|
+| Mỗi lát push nhánh nhỏ trước phút 20, kèm ≥ 1 test | A, B | **Một phần.** P3: B push 11:26, A push 11:31 (gần hạn, sau phút 20); A có test, B chỉ có bảng rà soát (C bổ sung test làm bằng chứng). | Chờ C đẩy lõi v1.2 xong (11:22) mới sửa được fixture → phụ thuộc tuần tự. |
+| D nhận test + verification từ đầu phase | D | **Không.** D chỉ có 1 commit (P1 test + 2 skill, merge lúc tag P2); P3/P4 chưa push. | Không có cập nhật trong kênh nhóm; chưa rõ nguyên nhân. |
+| `git pull --rebase` trước khi bắt đầu/push | Cả nhóm | **Chưa đều.** Nhánh A/B ở P2 tách từ main cũ → conflict; A force-push nhánh đã merge. | Thói quen; chưa có ruleset bảo vệ nhánh. |
+
+### Số liệu
+4 tag (P1 muộn; P2, P3, P4 đúng hạn). Test: 32 → 53 → 142 → 94 chạy + 2 module skip (sau đổi schema P3) → P4 thêm 3. Commit trên main tới P4 (không tính 9 commit starter): C 22, A 8, B 6, D 1.
+
+### Điều làm tốt
+- Chốt hợp đồng + tên khóa + `ctx` trước khi code, ADR cho đổi schema → main luôn chạy được qua 3 lần đổi contract.
+- Test hộp đen theo AC bắt lỗi thật: quán P1 (kho tăng khi khách bỏ đi), recoil Cá Sấu P2.
+- Lưu PRD/Ticket vào repo để mọi agent đọc cùng nguồn.
+
+### Điều cần sửa
+- **Integrator (C) làm thay lát người khác và gắn tag không fetch lại:** P2 C viết cá bơi lúc 10:55 khi A trễ mốc nội bộ, A push 11:00 (trước tag 11:04) nhưng C không kiểm remote → bỏ sót đóng góp của A trong tag `phase-2`.
+- Phụ thuộc tuần tự (C → A/B/D) làm các lát dồn sát hạn.
+
+### Một lỗi AI và cách xác minh
+AI (Claude, C) viết test Cá Sấu kỳ vọng `faint.lost = ["bong_sung"]`, quên rằng `monster_hit` đã làm rơi `bong_sung` trước → test đỏ; đối chiếu Ticket-02 mục 1.2 (rơi floor(n/2) LIFO rồi ngất bỏ phần còn lại) thì code đúng, test sai → sửa test. Tương tự P3: kỳ vọng giá 40 sai, đúng là 39 do hao 1 tick trước khi nấu.
+
+### Hành động tiếp theo
+| Hành động | Người nhận |
+|---|---|
+| Trước khi gắn tag: `git fetch` + liệt kê mọi nhánh cho trưởng nhóm xác nhận; không làm thay lát khi chưa hỏi | C |
+| Đổi fixture 2 module test còn skip sang v1.2, bỏ skip | D |
+| Thêm menu + màn vòng ngày vào cửa sổ chơi | B + A |
+
+
 ## Phase 1 + 2 (ghi lúc gắn tag `phase-2`)
 
 **Số liệu:** P1 tag muộn (sau 1:00); P2 tag đúng hạn. Test: 32 (khung) → 53 (P1) → 74 (P2). Commit theo người tới tag P2: A (hal2332004) 4, B (ducpham13) 5, C (Ngochung1772k4) nhiều nhất, D 0. Lỗi bắt được khi tích hợp: 6 lỗi nặng ở quán P1 (kho tăng khi khách bỏ đi, sai `data`, sai thứ tự bước…), 1 lỗi recoil Cá Sấu P2.

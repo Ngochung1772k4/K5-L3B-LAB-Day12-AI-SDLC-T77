@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v1.0.0 / contract v1.3 — Phase 4 "Phát hành" (Ticket-04)
+- `game.contract.json`: `contract_version` **1.3**, khai `bench_cmd` (`python3 -m chonoi.bench`) và `soak_cmd` (`python3 -m chonoi.soak`). Gameplay, tuning, kho, JSONL giữ v1.2.
+- **Benchmark có render** (`chonoi/bench.py`): cảnh sáng lõi seed 42, Út Sen đứng ở bến, framebuffer 1280×720, làm nóng 3 s + đo `--duration`; xuất `avg_fps, p1_low_fps, frames, measured_s, load_ms`.
+- **Soak headless** (`chonoi/soak.py`): N Ngày trong một tiến trình, kế hoạch D1–D5 lặp từ Ngày 6, bot tất định; xuất `days, days_completed, crashes, results[], duration_s`.
+- **Cảnh báo dễ nhận biết** (chữ + biểu tượng): thủy quái gần, oxy sắp hết / hết hơi, khách sắp giận; **chế độ tương phản cao** (phím H, `?contrast=high`).
+- README: yêu cầu môi trường, 3 lệnh chạy, test, headless, bench, soak. Release notes, LICENSE (MIT), CREDITS.
+
 ## v1.2 — Phase 3 "Mùa Nước Nổi" (Ticket-03) · BREAKING CHANGE
 
 **Kho đếm theo loại → kho cá thể có độ tươi.** Quyết định và tác động: [ADR 0001](docs/adr/0001-kho-ca-the-do-tuoi.md).
