@@ -1,0 +1,4 @@
+# Smoke tích hợp v1.1 (gather --inventory-out -> quan --inventory), seed 42
+kho ghi: {"items":{"bong_sung":2,"ca_keo":2,"ca_loc":1,"keo_neo":1}}
+quan tick 0: "stock":{"bong_sung":2,"ca_keo":2,"ca_loc":1,"keo_neo":1}
+=> khớp

@@ -77,8 +77,32 @@ Chỉ qua input chuẩn (`chonoi/inputs.py`): `move [x, y]`, `interact` (E), `ca
 - Đơn chuyển sang `unfulfillable` khi nào ở Phase 1 (không có cháy món)?
 - `customer_left.reputation`: uy tín **sau** khi trừ? (Tạm chọn: sau.)
 
+
+## 6. Thay đổi v1.1 (Phase 2 — [TICKET-02](../prd/TICKET-02.md) mục 4)
+
+- **Kho:** 6 kind (`ca_keo`, `keo_neo` mới). Schema không đổi. `day` bàn giao kho trong bộ nhớ.
+- **CLI:** `--mode day`, `--days 1..5` (chỉ với day). Nút mới `pause` (cả 3 mode), `shop_done`; `buy` là chuỗi (`oxygen`/`hp`).
+- **Giao diện `day` → pha** (C giữ): `GatherSim(..., ctx={"day","hp_max","oxygen_max_s"})`, `QuanSim(..., ctx={"day","dishes","money","earned","reputation"})`. `streams`/`ids` dùng chung cả lượt.
+- **Vỏ event mode day:** `{"type","tick","phase","day","name","data"}`. Event kết thúc mang pha cũ; `phase_start` mang pha mới, cùng tick.
+
+| name | data | Ai phát |
+|---|---|---|
+| `day_start`, `phase_start` | `{}` | day |
+| `day_plan` | `dishes, ingredients` | day |
+| `fish_spawned` | `id, kind, pos` | gather (sim/fish.py) |
+| `monster_hit` | `monster_id, hp, lost (LIFO), pos` (vị trí người chơi) | gather (sim/monsters.py) |
+| `faint` | `cause: "choke"\|"monster", lost, hp: 0` | gather |
+| `paused`, `resumed` | `{}` | runner (mọi mode) |
+| `bought` | `upgrade, level, price, money` | shop |
+| `buy_failed` | `action, reason` (`funds`/`max_level`/`unknown`) | shop |
+| `shop_end` | `reason` (`done`/`time`) | shop |
+
+- **Snapshot:** `state` thêm `"paused"`. Gather thêm `monsters[]` (`id,kind,pos,waypoints,target_idx,state,state_ticks_left,recoil_dir`), `fish[].age_ticks`, `player.invuln_ticks`. Mode day thêm `day, day_plan, upgrades, active_upgrades`; `phase` ∈ gather/quan/shop; Shop có `stock` dư và `time_left_ticks`. Có snapshot ở tick đổi pha (`phase_tick: 0`).
+- **End mode day:** thêm `days_completed`; xong đủ Ngày → `reason: "days_complete"`.
+
 ## Lịch sử thay đổi
 
 | Thời điểm | Thay đổi | Lý do | Ai |
 |---|---|---|---|
 | Phase 1, kickoff | Bản đầu, theo PRD-0 mục D/E/G | | C |
+| Phase 2 | v1.1: 6 kind, day/Shop/pause, sự kiện mới, ctx day | Ticket-02 đổi contract | C |
