@@ -1,0 +1,16 @@
+{
+  "changedFiles": 38,
+  "forbiddenChanges": [],
+  "testsUnchanged": true,
+  "agentsOutsideSkillsUnchanged": true,
+  "usageExistingContentPreserved": true,
+  "linksChecked": 201,
+  "missingLinks": [],
+  "artifactCopiesVerified": 8,
+  "testSha256": {
+    "tests/test_gather_rules.py": "78b7a536873890c620235a4644df524944801975685cfbf28d7ff90b260229ee",
+    "tests/test_quan_rules.py": "a9930811220854a5530273c4d991091a8437b8a01b2fba3b08b452d5ed61babc"
+  },
+  "initialGitStatus": "?? tests/test_gather_rules.py\n?? tests/test_quan_rules.py\n",
+  "note": "Checks compare against the start of this deliverables task. JSONL .txt copies are byte-identical retained evidence. No production/test file or pre-existing content outside the allowed documentation sections changed."
+}

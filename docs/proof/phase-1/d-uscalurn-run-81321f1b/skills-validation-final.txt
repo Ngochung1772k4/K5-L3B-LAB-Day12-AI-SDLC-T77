@@ -1,0 +1,37 @@
+{
+  "validation": [
+    {
+      "skill": "run-tests-proof",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Siuuu\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+        ".agents\\skills\\run-tests-proof"
+      ],
+      "exit_code": 0,
+      "stdout": "Skill is valid!\r\n",
+      "stderr": "",
+      "embedded_python_syntax": "PASS",
+      "skill_sha256": "e71d967be321273bbc833e3fc8d7ee8db800716236daf17e6ae0d0e576dcb1a9"
+    },
+    {
+      "skill": "check-determinism",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Siuuu\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+        ".agents\\skills\\check-determinism"
+      ],
+      "exit_code": 0,
+      "stdout": "Skill is valid!\r\n",
+      "stderr": "",
+      "embedded_python_syntax": "PASS",
+      "skill_sha256": "3334d048d6731ebb8f362af9d79e420d5250659fb6345eb5be965919224692aa"
+    }
+  ],
+  "behavioral_validation": "Both examples were executed during this task before the retention-suffix correction. The correction was checked by copying eight real JSONL artifacts, comparing their bytes and checking Git ignore status; gameplay/test logic was not changed."
+}

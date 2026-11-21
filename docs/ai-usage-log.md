@@ -26,3 +26,17 @@
 
 | Phase | Công cụ / model | Việc | Token / chi phí ước tính | Ghi chú (AI sai ở đâu?) |
 |---|---|---|---|---|
+
+
+### Phase 1 — D / uscalurn — QA & AI Harness
+
+| Phase | Công cụ / model | Việc của D | Token / chi phí / thời gian AI | Kiểm tra lại / bằng chứng |
+|---|---|---|---|---|
+| 1 | Codex; không xác nhận model cụ thể | Đọc PRD-0/Test Contract v1.0; sinh và hoàn thiện 67 methods (28 Gather, 39 Quán) trong nhiệm vụ trước | Không đo được | [Gather](../tests/test_gather_rules.py), [Quán](../tests/test_quan_rules.py); giữ hai file chỉ đọc trong nhiệm vụ proof |
+| 1 | Codex | Kiểm fixture và tương thích validator do C viết; 6 regression scenario từ nhiệm vụ test trước | Không đo được | [Log mới](proof/phase-1/d-uscalurn-run-81321f1b/quan-tests.txt): 6 regression PASS; D không triển khai validator |
+| 1 | Codex | Chạy lại unittest, phân tích FAIL; phân biệt method với subtest và lỗi luật với ERROR | Không đo được | [Full suite](proof/phase-1/d-uscalurn-run-81321f1b/full-suite.txt): 99 methods, 48 PASS/51 FAIL/0 ERROR/0 SKIP; [triage](proof/phase-1/d-uscalurn-run-81321f1b/qa-triage.md) |
+| 1 | Codex + skill-creator | Tạo hai skill, đăng ký phần Skills/hooks của AGENTS.md | Không đo được | [run-tests-proof](../.agents/skills/run-tests-proof/SKILL.md), [check-determinism](../.agents/skills/check-determinism/SKILL.md); qua quick_validate và chạy chính ví dụ thực |
+| 1 | Codex | Smoke hai tiến trình, so byte JSONL/inventory qua 3 cặp fixture | Không đo được | [Integration PASS](proof/phase-1/d-uscalurn-run-81321f1b/integration.md), [determinism PASS](proof/phase-1/d-uscalurn-determinism-df2e0816/determinism.md); lặp lại không thay thế đúng luật |
+| 1 | Codex | Viết verification, proof và reflection; giữ nội dung A/B/C | Không đo được | [Verification](verification/phase-1.md), [reflection](members/uscalurn.md). Revision nền 6a7f66a35e5816996fe51010ea5b20ac9098fe5c; working tree/test chưa commit |
+
+Chạy lại từ gốc repo: tắt bytecode, dùng lệnh unittest và khối proof trong hai skill. Trên Windows, full-suite proof thay riêng alias python3 bị hỏng bằng Python hiện tại trong bộ nhớ; không đổi manifest/helper. [summary.json](proof/phase-1/d-uscalurn-run-81321f1b/summary.json) lưu executable, exit code, hash source/test, trạng thái từng method. Guard của hai test determinism D còn FAIL do chưa có sự kiện gameplay; phép so byte trực tiếp PASS trong fixture đã chạy. Không dùng log cũ làm proof mới; chưa commit/push.

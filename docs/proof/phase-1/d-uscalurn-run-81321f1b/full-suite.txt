@@ -1,0 +1,960 @@
+{
+  "revision": "6a7f66a35e5816996fe51010ea5b20ac9098fe5c",
+  "argv": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-c",
+    "\nimport contextlib, json, sys, unittest\nfrom unittest.mock import patch\nsys.path.insert(0, 'tests')\nimport helpers\npattern, command = sys.argv[1], json.loads(sys.argv[2])\nsuite = unittest.defaultTestLoader.discover('tests', pattern=pattern)\ndef ids(node):\n    return [i for child in node for i in ids(child)] if isinstance(node, unittest.TestSuite) else [node.id()]\nall_ids = set(ids(suite))\ncontext = patch.object(helpers, 'headless_cmd', return_value=command) if command != helpers.headless_cmd() else contextlib.nullcontext()\nwith context:\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\ndef parent(test):\n    return getattr(test, 'test_case', test).id()\nfailed = {parent(test) for test, _ in result.failures}\nerrored = {parent(test) for test, _ in result.errors}\nskipped = {parent(test) for test, _ in result.skipped}\nmethods = {i: 'ERROR' if i in errored else 'FAIL' if i in failed else 'SKIP' if i in skipped else 'PASS' for i in sorted(all_ids)}\ncounts = {status: list(methods.values()).count(status) for status in ('PASS', 'FAIL', 'ERROR', 'SKIP')}\nprint(json.dumps({'tests_run': result.testsRun, 'counts': counts, 'methods': methods,\n                  'failure_entries_including_subtests': len(result.failures), 'error_entries': len(result.errors)}))\nsys.exit(0 if result.wasSuccessful() else 1)\n",
+    "test*.py",
+    "[\"C:\\\\Users\\\\Siuuu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"-B\", \"-m\", \"chonoi.headless\"]"
+  ],
+  "exit_code": 1,
+  "headless_effective": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "chonoi.headless"
+  ]
+}
+
+--- STDOUT (raw) ---
+{"tests_run": 99, "counts": {"PASS": 48, "FAIL": 51, "ERROR": 0, "SKIP": 0}, "methods": {"test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact": "FAIL", "test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline": "FAIL", "test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown": "FAIL", "test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id": "FAIL", "test_gather_rules.GatherRules.test_catch_without_a_school_does_not_set_cooldown": "PASS", "test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary": "FAIL", "test_gather_rules.GatherRules.test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory": "PASS", "test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end": "FAIL", "test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes": "FAIL", "test_gather_rules.GatherRules.test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order": "PASS", "test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event": "FAIL", "test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node": "FAIL", "test_gather_rules.GatherRules.test_gather_radius_uses_depth_as_well_as_horizontal_distance": "PASS", "test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius": "FAIL", "test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id": "FAIL", "test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires": "FAIL", "test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge": "FAIL", "test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school": "FAIL", "test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick": "FAIL", "test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold": "FAIL", "test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps": "FAIL", "test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition": "FAIL", "test_gather_rules.GatherRules.test_stationary_player_emits_no_boundary_crossing_events": "PASS", "test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum": "FAIL", "test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter": "FAIL", "test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius": "FAIL", "test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory": "FAIL", "test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals": "FAIL", "test_live.LiveServerTest.test_state_input_and_clean_stop": "PASS", "test_python_starter_units.Units.test_bad_frames_raise": "PASS", "test_python_starter_units.Units.test_catch_is_a_v10_button_and_attack_is_not": "PASS", "test_python_starter_units.Units.test_id_allocator_continues_after_max": "PASS", "test_python_starter_units.Units.test_id_sorting": "PASS", "test_python_starter_units.Units.test_input_edges_and_inherit": "PASS", "test_python_starter_units.Units.test_live_inputs_keep_fast_tap_edge": "PASS", "test_python_starter_units.Units.test_session_steps_gather_and_dock": "PASS", "test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding": "FAIL", "test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline": "FAIL", "test_quan_rules.QuanRules.test_closing_suppresses_customer_attempt_even_when_schedule_is_due": "PASS", "test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty": "FAIL", "test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift": "FAIL", "test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock": "FAIL", "test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund": "FAIL", "test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience": "FAIL", "test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge": "FAIL", "test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside": "FAIL", "test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration": "FAIL", "test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero": "FAIL", "test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient": "FAIL", "test_quan_rules.QuanRules.test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove": "PASS", "test_quan_rules.QuanRules.test_omitted_reservation_is_inferred_from_recipe_at_tick_zero": "PASS", "test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving": "FAIL", "test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts": "FAIL", "test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick": "FAIL", "test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation": "FAIL", "test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged": "FAIL", "test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove": "FAIL", "test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction": "FAIL", "test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer": "FAIL", "test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals": "FAIL", "test_quan_rules.QuanRules.test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_contradictory_stove_state_and_timer": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_eating_without_payment_fields_or_positive_timer": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_payload_for_unknown_order_or_wrong_dish": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_reservation_beyond_physical_stock_before_output": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_reservation_different_from_order_recipe": "PASS", "test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation": "FAIL", "test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes": "FAIL", "test_quan_rules.QuanRules.test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table": "PASS", "test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end": "FAIL", "test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure": "FAIL", "test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity": "FAIL", "test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact": "FAIL", "test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price": "FAIL", "test_quan_rules.QuanRules.test_unfulfillable_waiting_order_cannot_start_cooking": "PASS", "test_smoke_p1.Contract.test_con_01_ticks_zero_and_end_line": "PASS", "test_smoke_p1.Contract.test_con_02_deterministic_bytes": "PASS", "test_smoke_p1.Contract.test_con_03_bad_input_exit_2": "PASS", "test_smoke_p1.Contract.test_con_03_old_and_future_modes_rejected": "PASS", "test_smoke_p1.Contract.test_gather_snapshot_has_gather_fields": "PASS", "test_smoke_p1.Contract.test_scenario_out_of_domain_exit_2": "PASS", "test_smoke_p1.Integration.test_inv_01_gather_writes_inventory_quan_reads_it": "PASS", "test_smoke_p1.Integration.test_inv_01_not_written_when_tick_limit_first": "PASS", "test_smoke_p1.Integration.test_inv_bad_schema_exit_2": "PASS", "test_smoke_p1.Integration.test_inventory_and_scenario_stock_conflict": "PASS", "test_smoke_p1.Integration.test_inventory_flags_mode_mismatch_exit_2": "PASS", "test_smoke_p1.Movement.test_move_01_swim_speed_after_ramp": "PASS", "test_smoke_p1.Movement.test_move_02_heading_positive_is_down": "PASS", "test_smoke_p1.Movement.test_move_03_edge_clamp": "PASS", "test_smoke_p1.Movement.test_move_mep_vel_ve_0": "PASS", "test_smoke_p1.Movement.test_move_ramp_doi_huong_trong_tran": "PASS", "test_smoke_p1.Movement.test_time_ends_gather_and_keeps_hold": "PASS", "test_smoke_p1.ScenarioModes.test_khoi_sai_mode_exit_2": "PASS", "test_smoke_p1.ScenarioModes.test_quan_fixture_khong_hop_le_exit_2": "PASS", "test_smoke_p1.ScenarioModes.test_quan_player_vel_hop_le": "PASS", "test_team_check.TeamCheck.test_good": "PASS", "test_team_check.TeamCheck.test_template_is_rejected": "PASS", "test_team_check.TeamCheck.test_too_few_members": "PASS", "test_team_check.TeamCheck.test_wrong_size_duplicate_and_outsider": "PASS"}, "failure_entries_including_subtests": 68, "error_entries": 0}
+
+--- STDERR (raw) ---
+test_catch_accepts_whole_yield_when_free_space_is_exact (test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact) ... FAIL
+test_catch_cooldown_can_be_reused_at_exact_deadline (test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline) ... FAIL
+test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) ... 
+  test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=2.0, cooldown=0) ... FAIL
+  test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=0, cooldown=1) ... FAIL
+test_catch_selects_nearest_school_then_numeric_id (test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id) ... FAIL
+test_catch_without_a_school_does_not_set_cooldown (test_gather_rules.GatherRules.test_catch_without_a_school_does_not_set_cooldown) ... ok
+test_dive_and_surface_only_when_movement_crosses_boundary (test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary) ... FAIL
+test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory (test_gather_rules.GatherRules.test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory) ... ok
+test_faint_discards_hold_lifo_and_precedes_actions_and_time_end (test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end) ... FAIL
+test_fixture_actions_produce_identical_jsonl_and_inventory_bytes (test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes) ... FAIL
+test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order (test_gather_rules.GatherRules.test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order) ... ok
+test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event (test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event) ... FAIL
+test_full_hold_emits_hold_full_without_changing_ready_node (test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node) ... FAIL
+test_gather_radius_uses_depth_as_well_as_horizontal_distance (test_gather_rules.GatherRules.test_gather_radius_uses_depth_as_well_as_horizontal_distance) ... ok
+test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) ... 
+  test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) (depth=0, distance=2.0, regrow=0) ... FAIL
+test_gather_selects_nearest_ready_node_then_numeric_id (test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id) ... FAIL
+test_held_catch_does_not_repeat_after_cooldown_expires (test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires) ... FAIL
+test_held_interact_does_not_pick_second_node_until_new_rising_edge (test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge) ... FAIL
+test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school (test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school) ... FAIL
+test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick (test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick) ... FAIL
+test_nonfatal_choke_preserves_every_item_in_hold (test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold) ... FAIL
+test_oxygen_decreases_one_per_underwater_step_including_sixty_steps (test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps) ... FAIL
+test_oxygen_empty_occurs_only_on_positive_to_zero_transition (test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition) ... FAIL
+test_stationary_player_emits_no_boundary_crossing_events (test_gather_rules.GatherRules.test_stationary_player_emits_no_boundary_crossing_events) ... ok
+test_surface_refill_uses_tuning_and_clamps_at_maximum (test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum) ... FAIL
+test_surfacing_on_choke_deadline_refills_and_resets_counter (test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter) ... FAIL
+test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) ... 
+  test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) (distance=3.001) ... FAIL
+test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) ... 
+  test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='gather') ... FAIL
+  test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='catch') ... FAIL
+test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals (test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals) ... FAIL
+test_state_input_and_clean_stop (test_live.LiveServerTest.test_state_input_and_clean_stop) ... ok
+test_bad_frames_raise (test_python_starter_units.Units.test_bad_frames_raise) ... ok
+test_catch_is_a_v10_button_and_attack_is_not (test_python_starter_units.Units.test_catch_is_a_v10_button_and_attack_is_not) ... ok
+test_id_allocator_continues_after_max (test_python_starter_units.Units.test_id_allocator_continues_after_max) ... ok
+test_id_sorting (test_python_starter_units.Units.test_id_sorting) ... ok
+test_input_edges_and_inherit (test_python_starter_units.Units.test_input_edges_and_inherit) ... ok
+test_live_inputs_keep_fast_tap_edge (test_python_starter_units.Units.test_live_inputs_keep_fast_tap_edge) ... ok
+test_session_steps_gather_and_dock (test_python_starter_units.Units.test_session_steps_gather_and_dock) ... ok
+test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) ... 
+  test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='cooking') ... FAIL
+  test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='ready') ... FAIL
+  test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='hand') ... FAIL
+test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) ... 
+  test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=1) ... FAIL
+  test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=2) ... FAIL
+test_closing_suppresses_customer_attempt_even_when_schedule_is_due (test_quan_rules.QuanRules.test_closing_suppresses_customer_attempt_even_when_schedule_is_due) ... ok
+test_closing_waiter_releases_raw_reservation_without_patience_penalty (test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty) ... FAIL
+test_customer_attempts_follow_exact_interval_even_in_shortened_shift (test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift) ... FAIL
+test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) ... 
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=42) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=42) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=42) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=42) ... FAIL
+test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) ... 
+  test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='cooking') ... FAIL
+  test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='ready') ... FAIL
+  test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='hand') ... FAIL
+test_first_customer_arrives_at_configured_tick_with_full_patience (test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience) ... FAIL
+test_held_interact_does_not_pick_ready_dish_without_a_new_edge (test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge) ... FAIL
+test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) ... 
+  test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) (distance=1.5) ... FAIL
+test_matching_order_is_served_then_paid_only_after_full_eating_duration (test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration) ... FAIL
+test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero (test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero) ... FAIL
+test_no_dish_when_each_recipe_lacks_at_least_one_ingredient (test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient) ... FAIL
+test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove (test_quan_rules.QuanRules.test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove) ... ok
+test_omitted_reservation_is_inferred_from_recipe_at_tick_zero (test_quan_rules.QuanRules.test_omitted_reservation_is_inferred_from_recipe_at_tick_zero) ... ok
+test_one_interact_picks_at_stove_before_colocated_table_without_serving (test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving) ... FAIL
+test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts (test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts) ... FAIL
+test_patience_decreases_once_on_each_waiting_tick (test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick) ... FAIL
+test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) ... 
+  test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=3.0) ... FAIL
+  test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=0) ... FAIL
+test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) ... 
+  test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=0) ... FAIL
+  test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=12) ... FAIL
+test_pickup_requires_ready_and_empty_hand_then_resets_stove (test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove) ... FAIL
+test_ready_transition_allows_pickup_in_same_tick_before_interaction (test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction) ... FAIL
+test_released_raw_reservation_is_available_for_next_customer (test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer) ... FAIL
+test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals (test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals) ... FAIL
+test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload (test_quan_rules.QuanRules.test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload) ... ok
+test_scenario_rejects_contradictory_stove_state_and_timer (test_quan_rules.QuanRules.test_scenario_rejects_contradictory_stove_state_and_timer) ... ok
+test_scenario_rejects_eating_without_payment_fields_or_positive_timer (test_quan_rules.QuanRules.test_scenario_rejects_eating_without_payment_fields_or_positive_timer) ... ok
+test_scenario_rejects_payload_for_unknown_order_or_wrong_dish (test_quan_rules.QuanRules.test_scenario_rejects_payload_for_unknown_order_or_wrong_dish) ... ok
+test_scenario_rejects_reservation_beyond_physical_stock_before_output (test_quan_rules.QuanRules.test_scenario_rejects_reservation_beyond_physical_stock_before_output) ... ok
+test_scenario_rejects_reservation_different_from_order_recipe (test_quan_rules.QuanRules.test_scenario_rejects_reservation_different_from_order_recipe) ... ok
+test_score_uses_earned_plus_multiplier_times_floor_reputation (test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation) ... FAIL
+test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes (test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes) ... FAIL
+test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table (test_quan_rules.QuanRules.test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table) ... ok
+test_service_on_closing_tick_is_paid_immediately_before_quan_end (test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end) ... FAIL
+test_service_on_zero_patience_deadline_succeeds_before_departure (test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure) ... FAIL
+test_snapshot_preserves_fixture_player_position_and_velocity (test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity) ... FAIL
+test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact (test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact) ... FAIL
+test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) ... 
+  test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1800) ... FAIL
+  test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1799) ... FAIL
+test_unfulfillable_waiting_order_cannot_start_cooking (test_quan_rules.QuanRules.test_unfulfillable_waiting_order_cannot_start_cooking) ... ok
+test_con_01_ticks_zero_and_end_line (test_smoke_p1.Contract.test_con_01_ticks_zero_and_end_line) ... ok
+test_con_02_deterministic_bytes (test_smoke_p1.Contract.test_con_02_deterministic_bytes) ... ok
+test_con_03_bad_input_exit_2 (test_smoke_p1.Contract.test_con_03_bad_input_exit_2) ... ok
+test_con_03_old_and_future_modes_rejected (test_smoke_p1.Contract.test_con_03_old_and_future_modes_rejected) ... ok
+test_gather_snapshot_has_gather_fields (test_smoke_p1.Contract.test_gather_snapshot_has_gather_fields) ... ok
+test_scenario_out_of_domain_exit_2 (test_smoke_p1.Contract.test_scenario_out_of_domain_exit_2) ... ok
+test_inv_01_gather_writes_inventory_quan_reads_it (test_smoke_p1.Integration.test_inv_01_gather_writes_inventory_quan_reads_it)
+Ví dụ smoke test trong PRD-0 mục G: cập bến ở tick 0, quán đọc kho đúng nội dung. ... ok
+test_inv_01_not_written_when_tick_limit_first (test_smoke_p1.Integration.test_inv_01_not_written_when_tick_limit_first) ... ok
+test_inv_bad_schema_exit_2 (test_smoke_p1.Integration.test_inv_bad_schema_exit_2) ... ok
+test_inventory_and_scenario_stock_conflict (test_smoke_p1.Integration.test_inventory_and_scenario_stock_conflict) ... ok
+test_inventory_flags_mode_mismatch_exit_2 (test_smoke_p1.Integration.test_inventory_flags_mode_mismatch_exit_2) ... ok
+test_move_01_swim_speed_after_ramp (test_smoke_p1.Movement.test_move_01_swim_speed_after_ramp)
+Bỏ 6 tick tăng tốc rồi đo 60 tick: quãng ≈ swim_speed × 1 s (±0.1). Ngang, xuống, chéo (không nhanh hơn). ... ok
+test_move_02_heading_positive_is_down (test_smoke_p1.Movement.test_move_02_heading_positive_is_down) ... ok
+test_move_03_edge_clamp (test_smoke_p1.Movement.test_move_03_edge_clamp)
+Chặn từng mép của vùng nước, kể cả d không âm (không bay lên khỏi mặt nước) và đáy d = 30. ... ok
+test_move_mep_vel_ve_0 (test_smoke_p1.Movement.test_move_mep_vel_ve_0) ... ok
+test_move_ramp_doi_huong_trong_tran (test_smoke_p1.Movement.test_move_ramp_doi_huong_trong_tran)
+Đảo từ +speed sang -speed: vận tốc chạm mục tiêu sau tối đa ramp_max_ticks tick kể từ lúc đổi input. ... ok
+test_time_ends_gather_and_keeps_hold (test_smoke_p1.Movement.test_time_ends_gather_and_keeps_hold) ... ok
+test_khoi_sai_mode_exit_2 (test_smoke_p1.ScenarioModes.test_khoi_sai_mode_exit_2) ... ok
+test_quan_fixture_khong_hop_le_exit_2 (test_smoke_p1.ScenarioModes.test_quan_fixture_khong_hop_le_exit_2) ... ok
+test_quan_player_vel_hop_le (test_smoke_p1.ScenarioModes.test_quan_player_vel_hop_le) ... ok
+test_good (test_team_check.TeamCheck.test_good) ... ok
+test_template_is_rejected (test_team_check.TeamCheck.test_template_is_rejected) ... ok
+test_too_few_members (test_team_check.TeamCheck.test_too_few_members) ... ok
+test_wrong_size_duplicate_and_outsider (test_team_check.TeamCheck.test_wrong_size_duplicate_and_outsider) ... ok
+
+======================================================================
+FAIL: test_catch_accepts_whole_yield_when_free_space_is_exact (test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 357, in test_catch_accepts_whole_yield_when_free_space_is_exact
+    self.one_event(rows, "fish_caught", 1, {"fish_id": "F1", "kind": "ca_linh", "yield": amount})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_catch_cooldown_can_be_reused_at_exact_deadline (test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 378, in test_catch_cooldown_can_be_reused_at_exact_deadline
+    self.assertEqual([(e["tick"], e["data"]["fish_id"]) for e in events(rows, "fish_caught")],
+AssertionError: Lists differ: [] != [(1, 'F1'), (31, 'F2')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(1, 'F1')
+
+- []
++ [(1, 'F1'), (31, 'F2')]
+
+======================================================================
+FAIL: test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=2.0, cooldown=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 325, in test_catch_requires_underwater_inclusive_radius_and_expired_cooldown
+    self.one_event(rows, "fish_caught", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=0, cooldown=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 325, in test_catch_requires_underwater_inclusive_radius_and_expired_cooldown
+    self.one_event(rows, "fish_caught", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_catch_selects_nearest_school_then_numeric_id (test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 367, in test_catch_selects_nearest_school_then_numeric_id
+    self.one_event(rows, "fish_caught", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_dive_and_surface_only_when_movement_crosses_boundary (test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 221, in test_dive_and_surface_only_when_movement_crosses_boundary
+    self.assertEqual([(e["name"], e["tick"], e["data"]) for e in events(rows)], expected)
+AssertionError: Lists differ: [] != [('dive', 1, {'pos': [50.0, 0.567]}), ('surface', 13, {'pos': [50.0, 0.5]})]
+
+Second list contains 2 additional elements.
+First extra element 0:
+('dive', 1, {'pos': [50.0, 0.567]})
+
+- []
++ [('dive', 1, {'pos': [50.0, 0.567]}), ('surface', 13, {'pos': [50.0, 0.5]})]
+
+======================================================================
+FAIL: test_faint_discards_hold_lifo_and_precedes_actions_and_time_end (test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 196, in test_faint_discards_hold_lifo_and_precedes_actions_and_time_end
+    self.assertEqual([(e["name"], e["tick"]) for e in events(rows)],
+AssertionError: Lists differ: [('gather_end', 1)] != [('choke', 1), ('faint', 1), ('gather_end', 1)]
+
+First differing element 0:
+('gather_end', 1)
+('choke', 1)
+
+Second list contains 2 additional elements.
+First extra element 1:
+('faint', 1)
+
+- [('gather_end', 1)]
++ [('choke', 1), ('faint', 1), ('gather_end', 1)]
+
+======================================================================
+FAIL: test_fixture_actions_produce_identical_jsonl_and_inventory_bytes (test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 461, in test_fixture_actions_produce_identical_jsonl_and_inventory_bytes
+    self.assertEqual([e["tick"] for e in events(rows, "gather")], [1, 3])
+AssertionError: Lists differ: [] != [1, 3]
+
+Second list contains 2 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 3]
+
+======================================================================
+FAIL: test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event (test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 157, in test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event
+    self.assertEqual(self.s[1]["player"]["zero_oxy_ticks"], interval - 1)
+AssertionError: 58 != 59
+
+======================================================================
+FAIL: test_full_hold_emits_hold_full_without_changing_ready_node (test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 271, in test_full_hold_emits_hold_full_without_changing_ready_node
+    self.one_event(rows, "hold_full", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : hold_full: []
+
+======================================================================
+FAIL: test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) (depth=0, distance=2.0, regrow=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 239, in test_gather_requires_surface_ready_node_and_inclusive_radius
+    self.one_event(rows, "gather", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : gather: []
+
+======================================================================
+FAIL: test_gather_selects_nearest_ready_node_then_numeric_id (test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 252, in test_gather_selects_nearest_ready_node_then_numeric_id
+    self.one_event(rows, "gather", 1, {"node_id": "N2", "kind": "bong_sung",
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : gather: []
+
+======================================================================
+FAIL: test_held_catch_does_not_repeat_after_cooldown_expires (test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 391, in test_held_catch_does_not_repeat_after_cooldown_expires
+    self.assertEqual([(e["tick"], e["data"]["fish_id"]) for e in events(rows, "fish_caught")],
+AssertionError: Lists differ: [] != [(1, 'F1'), (34, 'F2')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(1, 'F1')
+
+- []
++ [(1, 'F1'), (34, 'F2')]
+
+======================================================================
+FAIL: test_held_interact_does_not_pick_second_node_until_new_rising_edge (test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 307, in test_held_interact_does_not_pick_second_node_until_new_rising_edge
+    self.assertEqual([(e["tick"], e["data"]["node_id"]) for e in events(rows, "gather")],
+AssertionError: Lists differ: [] != [(1, 'N1'), (5, 'N2')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(1, 'N1')
+
+- []
++ [(1, 'N1'), (5, 'N2')]
+
+======================================================================
+FAIL: test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school (test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 344, in test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school
+    self.one_event(rows, "hold_full", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : hold_full: []
+
+======================================================================
+FAIL: test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick (test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 284, in test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick
+    self.assertEqual([e["tick"] for e in events(rows, "gather")], [1, delay + 1])
+AssertionError: Lists differ: [] != [1, 1201]
+
+Second list contains 2 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 1201]
+
+======================================================================
+FAIL: test_nonfatal_choke_preserves_every_item_in_hold (test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 168, in test_nonfatal_choke_preserves_every_item_in_hold
+    self.one_event(rows, "choke", 1, {"hp": self.g["hp_max"] - 1})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : choke: []
+
+======================================================================
+FAIL: test_oxygen_decreases_one_per_underwater_step_including_sixty_steps (test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 116, in test_oxygen_decreases_one_per_underwater_step_including_sixty_steps
+    self.assertEqual(snap["player"]["oxygen_ticks"], self.oxygen_max - tick)
+AssertionError: 1800 != 1799
+
+======================================================================
+FAIL: test_oxygen_empty_occurs_only_on_positive_to_zero_transition (test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 135, in test_oxygen_empty_occurs_only_on_positive_to_zero_transition
+    self.one_event(rows, "oxygen_empty", 2, {"oxygen_ticks": 0})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : oxygen_empty: []
+
+======================================================================
+FAIL: test_surface_refill_uses_tuning_and_clamps_at_maximum (test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 127, in test_surface_refill_uses_tuning_and_clamps_at_maximum
+    self.assertEqual(snap["player"]["oxygen_ticks"],
+AssertionError: 1787 != 1793
+
+======================================================================
+FAIL: test_surfacing_on_choke_deadline_refills_and_resets_counter (test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 181, in test_surfacing_on_choke_deadline_refills_and_resets_counter
+    self.assertEqual(player["oxygen_ticks"], self.g["oxygen_refill_per_tick"])
+AssertionError: 0 != 6
+
+======================================================================
+FAIL: test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) (distance=3.001)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 427, in test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius
+    self.assertEqual([e["name"] for e in events(rows)],
+AssertionError: Lists differ: ['gather_end'] != ['fish_caught', 'gather_end']
+
+First differing element 0:
+'gather_end'
+'fish_caught'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'gather_end'
+
+- ['gather_end']
++ ['fish_caught', 'gather_end']
+
+======================================================================
+FAIL: test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 448, in test_valid_gather_or_catch_on_last_tick_is_included_in_inventory
+    self.assertEqual([e["name"] for e in events(rows)], [event_name, "gather_end"])
+AssertionError: Lists differ: ['gather_end'] != ['gather', 'gather_end']
+
+First differing element 0:
+'gather_end'
+'gather'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'gather_end'
+
+- ['gather_end']
++ ['gather', 'gather_end']
+
+======================================================================
+FAIL: test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='catch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 448, in test_valid_gather_or_catch_on_last_tick_is_included_in_inventory
+    self.assertEqual([e["name"] for e in events(rows)], [event_name, "gather_end"])
+AssertionError: Lists differ: ['gather_end'] != ['fish_caught', 'gather_end']
+
+First differing element 0:
+'gather_end'
+'fish_caught'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'gather_end'
+
+- ['gather_end']
++ ['fish_caught', 'gather_end']
+
+======================================================================
+FAIL: test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals (test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 144, in test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals
+    self.one_event(rows, "oxygen_empty", 1, {"oxygen_ticks": 0})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : oxygen_empty: []
+
+======================================================================
+FAIL: test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='cooking')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 608, in test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 608, in test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='hand')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 608, in test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 624, in test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline
+    self.assertEqual([e["name"] for e in events(rows)], ["paid", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['paid', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'paid'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['paid', 'quan_end']
+?  ++++++++
+
+
+======================================================================
+FAIL: test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 624, in test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline
+    self.assertEqual([e["name"] for e in events(rows)], ["paid", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['paid', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'paid'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['paid', 'quan_end']
+?  ++++++++
+
+
+======================================================================
+FAIL: test_closing_waiter_releases_raw_reservation_without_patience_penalty (test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 594, in test_closing_waiter_releases_raw_reservation_without_patience_penalty
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_customer_attempts_follow_exact_interval_even_in_shortened_shift (test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 208, in test_customer_attempts_follow_exact_interval_even_in_shortened_shift
+    self.assertEqual([(e["tick"], e["data"]) for e in events(rows, "no_dish")],
+AssertionError: Lists differ: [] != [(120, {}), (1020, {}), (1920, {})]
+
+Second list contains 3 additional elements.
+First extra element 0:
+(120, {})
+
+- []
++ [(120, {}), (1020, {}), (1920, {})]
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='cooking')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 402, in test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund
+    self.assertEqual(len(events(rows, "customer_left")), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 402, in test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund
+    self.assertEqual(len(events(rows, "customer_left")), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='hand')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 402, in test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund
+    self.assertEqual(len(events(rows, "customer_left")), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_first_customer_arrives_at_configured_tick_with_full_patience (test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 192, in test_first_customer_arrives_at_configured_tick_with_full_patience
+    self.one_event(rows, "customer_arrived", first,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : customer_arrived: []
+
+======================================================================
+FAIL: test_held_interact_does_not_pick_ready_dish_without_a_new_edge (test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 453, in test_held_interact_does_not_pick_ready_dish_without_a_new_edge
+    self.assertEqual([e["tick"] for e in events(rows, "cook_started")], [1])
+AssertionError: Lists differ: [] != [1]
+
+Second list contains 1 additional elements.
+First extra element 0:
+1
+
+- []
++ [1]
+?  +
+
+
+======================================================================
+FAIL: test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) (distance=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 519, in test_interaction_radius_is_inclusive_and_rejects_just_outside
+    self.assertEqual(len(events(rows, "dish_picked")), int(allowed))
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_matching_order_is_served_then_paid_only_after_full_eating_duration (test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 528, in test_matching_order_is_served_then_paid_only_after_full_eating_duration
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+======================================================================
+FAIL: test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero (test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 282, in test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero
+    self.assertIn(key, actual, f"Contract D fixture default missing: {key}")
+AssertionError: 'state' not found in {'id': 'C1', 'table_id': 'T1', 'dish_id': 'ca_loc_nuong_trui', 'reserved': {'ca_loc': 1}} : Contract D fixture default missing: state
+
+======================================================================
+FAIL: test_no_dish_when_each_recipe_lacks_at_least_one_ingredient (test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 218, in test_no_dish_when_each_recipe_lacks_at_least_one_ingredient
+    self.one_event(rows, "no_dish", first, {})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : no_dish: []
+
+======================================================================
+FAIL: test_one_interact_picks_at_stove_before_colocated_table_without_serving (test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 497, in test_one_interact_picks_at_stove_before_colocated_table_without_serving
+    self.one_event(rows, "dish_picked", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : dish_picked: []
+
+======================================================================
+FAIL: test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts (test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 255, in test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts
+    self.assertEqual(self.customer_at(first)["reserved"], recipe)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 171, in customer_at
+    self.assertEqual(len(customers), 1, f"expected one seated customer at tick {tick}: {customers}")
+AssertionError: 0 != 1 : expected one seated customer at tick 120: []
+
+======================================================================
+FAIL: test_patience_decreases_once_on_each_waiting_tick (test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 360, in test_patience_decreases_once_on_each_waiting_tick
+    self.assertEqual(snap["customers"][0]["patience_ticks_left"], 5 - tick)
+AssertionError: 5 != 4
+
+======================================================================
+FAIL: test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=3.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 371, in test_patience_expiry_releases_reservation_and_applies_clamped_reputation
+    self.assertEqual(len(left), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 371, in test_patience_expiry_releases_reservation_and_applies_clamped_reputation
+    self.assertEqual(len(left), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 581, in test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged
+    self.one_event(rows, "paid", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : paid: []
+
+======================================================================
+FAIL: test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 581, in test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged
+    self.one_event(rows, "paid", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : paid: []
+
+======================================================================
+FAIL: test_pickup_requires_ready_and_empty_hand_then_resets_stove (test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 466, in test_pickup_requires_ready_and_empty_hand_then_resets_stove
+    self.assertEqual(self.stove(1)["cook_ticks_left"], 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_ready_transition_allows_pickup_in_same_tick_before_interaction (test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 480, in test_ready_transition_allows_pickup_in_same_tick_before_interaction
+    self.assertEqual([(e["name"], e["tick"]) for e in events(rows)],
+AssertionError: Lists differ: [] != [('dish_ready', 1), ('dish_picked', 1)]
+
+Second list contains 2 additional elements.
+First extra element 0:
+('dish_ready', 1)
+
+- []
++ [('dish_ready', 1), ('dish_picked', 1)]
+
+======================================================================
+FAIL: test_released_raw_reservation_is_available_for_next_customer (test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 388, in test_released_raw_reservation_is_available_for_next_customer
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "customer_arrived"])
+AssertionError: Lists differ: [] != ['customer_left', 'customer_arrived']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'customer_left'
+
+- []
++ ['customer_left', 'customer_arrived']
+
+======================================================================
+FAIL: test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals (test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 345, in test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals
+    self.assertEqual([e["tick"] for e in events(rows, "customer_arrived")], [first])
+AssertionError: Lists differ: [] != [120]
+
+Second list contains 1 additional elements.
+First extra element 0:
+120
+
+- []
++ [120]
+
+======================================================================
+FAIL: test_score_uses_earned_plus_multiplier_times_floor_reputation (test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 671, in test_score_uses_earned_plus_multiplier_times_floor_reputation
+    self.assertEqual(self.s[tick]["earned"], expected_earned)
+AssertionError: 0 != 72
+
+======================================================================
+FAIL: test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes (test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 687, in test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes
+    self.assertEqual([e["tick"] for e in events(rows, "customer_arrived")], [first])
+AssertionError: Lists differ: [] != [120]
+
+Second list contains 1 additional elements.
+First extra element 0:
+120
+
+- []
++ [120]
+
+======================================================================
+FAIL: test_service_on_closing_tick_is_paid_immediately_before_quan_end (test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 641, in test_service_on_closing_tick_is_paid_immediately_before_quan_end
+    self.assertEqual([(e["name"], e["tick"]) for e in events(rows)],
+AssertionError: Lists differ: [('quan_end', 1)] != [('served', 1), ('paid', 1), ('quan_end', 1)]
+
+First differing element 0:
+('quan_end', 1)
+('served', 1)
+
+Second list contains 2 additional elements.
+First extra element 1:
+('paid', 1)
+
+- [('quan_end', 1)]
++ [('served', 1), ('paid', 1), ('quan_end', 1)]
+
+======================================================================
+FAIL: test_service_on_zero_patience_deadline_succeeds_before_departure (test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 568, in test_service_on_zero_patience_deadline_succeeds_before_departure
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+======================================================================
+FAIL: test_snapshot_preserves_fixture_player_position_and_velocity (test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 289, in test_snapshot_preserves_fixture_player_position_and_velocity
+    self.assertIn("vel", self.s[0]["player"], "Contract D/E requires player.vel in Quan snapshots")
+AssertionError: 'vel' not found in {'pos': [8, 5]} : Contract D/E requires player.vel in Quan snapshots
+
+======================================================================
+FAIL: test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact (test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 428, in test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact
+    self.one_event(rows, "cook_started", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : cook_started: []
+
+======================================================================
+FAIL: test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1800)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 559, in test_tip_threshold_uses_patience_after_decrement_and_floor_price
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+======================================================================
+FAIL: test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1799)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 559, in test_tip_threshold_uses_patience_after_decrement_and_floor_price
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+----------------------------------------------------------------------
+Ran 99 tests in 30.707s
+
+FAILED (failures=68)
