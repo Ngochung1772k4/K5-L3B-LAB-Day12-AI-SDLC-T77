@@ -45,3 +45,16 @@
 | 1 | Codex | Viết verification, proof và reflection; giữ nội dung A/B/C | Không đo được | [Verification](verification/phase-1.md), [reflection](members/uscalurn.md). Revision nền 6a7f66a35e5816996fe51010ea5b20ac9098fe5c; working tree/test chưa commit |
 
 Chạy lại từ gốc repo: tắt bytecode, dùng lệnh unittest và khối proof trong hai skill. Trên Windows, full-suite proof thay riêng alias python3 bị hỏng bằng Python hiện tại trong bộ nhớ; không đổi manifest/helper. [summary.json](proof/phase-1/d-uscalurn-run-81321f1b/summary.json) lưu executable, exit code, hash source/test, trạng thái từng method. Guard của hai test determinism D còn FAIL do chưa có sự kiện gameplay; phép so byte trực tiếp PASS trong fixture đã chạy. Không dùng log cũ làm proof mới; chưa commit/push.
+
+
+### Phase 3 — D / uscalurn — QA Contract v1.2
+
+| Công cụ | Phần việc của D | Kiểm chứng / kết quả | Token / chi phí / thời gian AI |
+|---|---|---|---|
+| Codex | Đọc toàn bộ TICKET-03 đính kèm và bản repo; người dùng xác nhận docs/prd/TICKET-03.md là nguồn chính thức | Tạo nhánh cá nhân d/phase-3-qa-uscalurn, không làm trực tiếp main | Không đo được |
+| Codex | Viết 53 test method mới trong 4 file test_p3_*_d.py: schema cá thể, freshness/spoiled, reserved IDs/giá, file/day/ID xuyên ngày | [Báo cáo QA](verification/phase-3-d-qa.md); không sửa implementation hoặc test A/B/C | Không đo được |
+| Codex | Chạy black-box bằng sys.executable, bytecode tắt, Workdir tạm; giữ fixture/argv/exit code và output thật | [Proof](proof/phase-3/d-uscalurn-1aa67cc8/summary.json): 2 PASS/51 FAIL/0 ERROR/0 SKIP; 26 regression P1/P2 PASS; 64 CLI calls | Không đo được |
+| Codex | Phân biệt migration blocker với lỗi fixture; giữ đối chứng dương trước ca schema âm | Engine vẫn 1.1, kho cá thể bị từ chối; kho đếm nhận exit 0. Smoke file/day và determinism BLOCKED, không nhận PASS giả | Không đo được |
+| Codex | Lập traceability QA đề xuất và liệt kê FAIL để chuyển C/A/B | [Failures](proof/phase-3/d-uscalurn-1aa67cc8/failures.md); revision nền d496a4f313aa4a3757ffacf599499d3f3224d8e5, hash working tree ghi trong summary | Không đo được |
+
+Không tạo test extension reservations/current vì nhóm chưa bật; không nhầm extension reservations với core customers.reserved. Spec/manifest/source và nội dung A/B/C giữ nguyên. File kho.json xuất hiện đồng thời ngoài phạm vi đã được bảo toàn; không coi là đóng góp của D. Chưa commit/push/merge/tag.

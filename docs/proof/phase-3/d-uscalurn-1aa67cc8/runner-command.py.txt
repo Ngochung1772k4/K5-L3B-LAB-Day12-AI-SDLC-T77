@@ -1,0 +1,110 @@
+
+import contextlib, hashlib, io, json, os, platform, shlex, subprocess, sys, unittest, uuid
+from pathlib import Path
+from unittest.mock import patch
+root=Path.cwd()
+branch=subprocess.check_output(['git','branch','--show-current']).decode().strip()
+assert branch=='d/phase-3-qa-uscalurn', branch
+revision=subprocess.check_output(['git','rev-parse','HEAD']).decode().strip()
+contract=json.loads(Path('game.contract.json').read_text(encoding='utf-8'))
+proof=Path('docs/proof/phase-3')/('d-uscalurn-'+uuid.uuid4().hex[:8])
+proof.mkdir(parents=True,exist_ok=False)
+print('PROOF_DIR='+proof.as_posix(),flush=True)
+def save(name,data):
+    with (proof/name).open('xb') as f:
+        f.write(data if isinstance(data,bytes) else data.encode('utf-8'))
+def hashes():
+    paths=[Path('game.contract.json'),Path('docs/prd/TICKET-03.md'),Path('docs/prd/TICKET-02.md'),
+           *sorted(Path('chonoi').rglob('*.py')),*sorted(Path('tests').glob('*.py'))]
+    return {p.as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+before=hashes()
+sys.path.insert(0,str(root/'tests'))
+import helpers
+import test_p3_inventory_d as support
+summaries={}
+def flatten(suite):
+    return [i for sub in suite for i in flatten(sub)] if isinstance(suite,unittest.TestSuite) else [suite.id()]
+def execute(label,suite,adapter=None):
+    ids=set(flatten(suite))
+    stdout,stderr=io.StringIO(),io.StringIO()
+    with contextlib.redirect_stdout(stdout),contextlib.redirect_stderr(stderr):
+        result=unittest.TextTestRunner(stream=stderr,verbosity=2).run(suite)
+    parent=lambda test:getattr(test,'test_case',test).id()
+    failures={parent(t) for t,_ in result.failures}
+    errors={parent(t) for t,_ in result.errors}
+    skips={parent(t) for t,_ in result.skipped}
+    methods={i:'ERROR' if i in errors else 'FAIL' if i in failures else 'SKIP' if i in skips else 'PASS' for i in sorted(ids)}
+    counts={s:list(methods.values()).count(s) for s in ('PASS','FAIL','ERROR','SKIP')}
+    data={'tests_run':result.testsRun,'counts':counts,'methods':methods,'exit_code':0 if result.wasSuccessful() else 1,
+          'failure_entries_including_subtests':len(result.failures),'errors':len(result.errors),'adapter':adapter,
+          'failures':[{'test':parent(t),'case':t.id(),'traceback':trace} for t,trace in result.failures],
+          'execution_errors':[{'test':parent(t),'traceback':trace} for t,trace in result.errors]}
+    header=json.dumps({'revision':revision,'branch':branch,'contract_version':contract['contract_version'],
+                       'exit_code_equivalent_to_unittest_cli':data['exit_code'],'counts_by_method':counts,
+                       'python':sys.executable,'bytecode_disabled':sys.dont_write_bytecode,'adapter':adapter},indent=2)
+    save(label+'.txt',header+'\n\n--- STDOUT ---\n'+stdout.getvalue()+'\n--- STDERR ---\n'+stderr.getvalue())
+    summaries[label]=data
+    print(label+': '+json.dumps(counts),flush=True)
+for name in ('inventory','freshness','reservation_price','integration'):
+    filename='test_p3_'+name+'_d.py'
+    execute('p3-'+name,unittest.defaultTestLoader.discover('tests',pattern=filename))
+regression_ids=[
+ 'test_python_starter_units.Units.test_id_sorting',
+ 'test_python_starter_units.Units.test_id_allocator_continues_after_max',
+ 'test_python_starter_units.Units.test_input_edges_and_inherit',
+ 'test_python_starter_units.Units.test_bad_frames_raise',
+ 'test_python_starter_units.Units.test_live_inputs_keep_fast_tap_edge',
+ 'test_smoke_p1.Movement.test_move_ramp_doi_huong_trong_tran',
+ 'test_smoke_p1.Movement.test_move_mep_vel_ve_0',
+ 'test_smoke_p1.Movement.test_move_01_swim_speed_after_ramp',
+ 'test_smoke_p1.Movement.test_move_02_heading_positive_is_down',
+ 'test_smoke_p1.Movement.test_move_03_edge_clamp',
+]
+for filename in ('test_fish_c.py','test_monsters_c.py','test_day_shop_c.py'):
+    import ast
+    tree=ast.parse(Path('tests',filename).read_text(encoding='utf-8'))
+    module=filename[:-3]
+    selected={
+      'test_fish_c':None,
+      'test_monsters_c':{'test_p2_04_default_layout_day1_only_m1','test_p2_04_chase_when_player_deep_and_close','test_p2_04_no_chase_when_player_shallow'},
+      'test_day_shop_c':{'test_p2_02_initial_fish_8_distinct_spawn_points','test_p2_08_day_start_order_and_plan',
+                        'test_p2_08_phase_changes_same_tick_and_snapshot','test_p2_10_11_buy_funds_unknown_done_and_upgrade_next_day',
+                        'test_p2_10_max_level_and_oxygen_upgrade','test_p2_10_shop_auto_close_600',
+                        'test_p2_12_pause_freezes_sim','test_p2_13_five_days_complete_and_fast'},
+    }[module]
+    for cls in tree.body:
+        if isinstance(cls,ast.ClassDef):
+            for method in cls.body:
+                if isinstance(method,ast.FunctionDef) and method.name.startswith('test_') and (selected is None or method.name in selected):
+                    regression_ids.append(module+'.'+cls.name+'.'+method.name)
+effective=[sys.executable,'-B','-m','chonoi.headless']
+assert shlex.split(contract['headless_cmd'])==['python3','-m','chonoi.headless']
+with patch.object(helpers,'headless_cmd',return_value=effective):
+    execute('regression-p1-p2',unittest.defaultTestLoader.loadTestsFromNames(regression_ids),
+            adapter={'headless_configured':contract['headless_cmd'],'headless_effective':effective,'scope':'in-memory helper override; source files unchanged'})
+runs=support.RUN_EVIDENCE
+for index,record in enumerate(runs,1):
+    if record['jsonl'] is not None:
+        name=f'cli-{index:03d}.jsonl.txt'
+        save(name,record['jsonl'])
+        record['jsonl_artifact']=name
+    if record['inventory_output'] is not None:
+        name=f'cli-{index:03d}-inventory.txt'
+        save(name,record['inventory_output'])
+        record['inventory_artifact']=name
+p3methods={i:s for label,result in summaries.items() if label!='regression-p1-p2' for i,s in result['methods'].items()}
+p3counts={s:list(p3methods.values()).count(s) for s in ('PASS','FAIL','ERROR','SKIP')}
+after=hashes()
+metadata={'branch':branch,'revision':revision,'contract_version_actual':contract['contract_version'],
+          'contract_version_required':'1.2','python':sys.version,'python_executable':sys.executable,'platform':platform.platform(),
+          'canonical_spec':'docs/prd/TICKET-03.md','canonical_spec_authorization':'User confirmed this path instead of absent docs/specs/TICKET-03-Phase3-v1.2.md.',
+          'extensions':contract.get('extensions',[]),'source_before_sha256':before,'source_after_sha256':after,
+          'source_unchanged':before==after,'p3_counts':p3counts,'p3_methods':p3methods,'suites':summaries,
+          'legacy_regression_ids':regression_ids,'cli_runs':len(runs),
+          'acceptance':'BLOCKED: manifest remains v1.1' if contract['contract_version']!='1.2' else 'FAIL' if any(s!='PASS' for s in p3methods.values()) else 'PASS'}
+save('summary.json',json.dumps(metadata,ensure_ascii=False,indent=2)+'\n')
+save('cli-runs.json',json.dumps(runs,ensure_ascii=False,indent=2)+'\n')
+assert before==after,'Source changed while verifying; results require review'
+print('P3_TOTAL='+json.dumps(p3counts),flush=True)
+print('ACCEPTANCE='+metadata['acceptance'],flush=True)
+sys.exit(1 if any(s!='PASS' for s in p3methods.values()) or summaries['regression-p1-p2']['exit_code'] else 0)

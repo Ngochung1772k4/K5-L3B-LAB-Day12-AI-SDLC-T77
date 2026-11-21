@@ -1,0 +1,62 @@
+{
+  "revision": "d496a4f313aa4a3757ffacf599499d3f3224d8e5",
+  "branch": "d/phase-3-qa-uscalurn",
+  "contract_version": "1.1",
+  "exit_code_equivalent_to_unittest_cli": 0,
+  "counts_by_method": {
+    "PASS": 26,
+    "FAIL": 0,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "python": "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "bytecode_disabled": true,
+  "adapter": {
+    "headless_configured": "python3 -m chonoi.headless",
+    "headless_effective": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.headless"
+    ],
+    "scope": "in-memory helper override; source files unchanged"
+  }
+}
+
+--- STDOUT ---
+
+--- STDERR ---
+test_id_sorting (test_python_starter_units.Units.test_id_sorting) ... ok
+test_id_allocator_continues_after_max (test_python_starter_units.Units.test_id_allocator_continues_after_max) ... ok
+test_input_edges_and_inherit (test_python_starter_units.Units.test_input_edges_and_inherit) ... ok
+test_bad_frames_raise (test_python_starter_units.Units.test_bad_frames_raise) ... ok
+test_live_inputs_keep_fast_tap_edge (test_python_starter_units.Units.test_live_inputs_keep_fast_tap_edge) ... ok
+test_move_ramp_doi_huong_trong_tran (test_smoke_p1.Movement.test_move_ramp_doi_huong_trong_tran)
+Đảo từ +speed sang -speed: vận tốc chạm mục tiêu sau tối đa ramp_max_ticks tick kể từ lúc đổi input. ... ok
+test_move_mep_vel_ve_0 (test_smoke_p1.Movement.test_move_mep_vel_ve_0) ... ok
+test_move_01_swim_speed_after_ramp (test_smoke_p1.Movement.test_move_01_swim_speed_after_ramp)
+Bỏ 6 tick tăng tốc rồi đo 60 tick: quãng ≈ swim_speed × 1 s (±0.1). Ngang, xuống, chéo (không nhanh hơn). ... ok
+test_move_02_heading_positive_is_down (test_smoke_p1.Movement.test_move_02_heading_positive_is_down) ... ok
+test_move_03_edge_clamp (test_smoke_p1.Movement.test_move_03_edge_clamp)
+Chặn từng mép của vùng nước, kể cả d không âm (không bay lên khỏi mặt nước) và đáy d = 30. ... ok
+test_p2_02_swim_speed_and_age (test_fish_c.FishSwim.test_p2_02_swim_speed_and_age) ... ok
+test_p2_02_reflect_at_edge (test_fish_c.FishSwim.test_p2_02_reflect_at_edge) ... ok
+test_p2_02_turn_at_swim_step_120 (test_fish_c.FishSwim.test_p2_02_turn_at_swim_step_120) ... ok
+test_random_fish_false_keeps_fixture_still (test_fish_c.FishSwim.test_random_fish_false_keeps_fixture_still) ... ok
+test_p2_03_spawn_every_360_up_to_cap (test_fish_c.FishSpawn.test_p2_03_spawn_every_360_up_to_cap) ... ok
+test_p2_04_default_layout_day1_only_m1 (test_monsters_c.Crocodile.test_p2_04_default_layout_day1_only_m1) ... ok
+test_p2_04_chase_when_player_deep_and_close (test_monsters_c.Crocodile.test_p2_04_chase_when_player_deep_and_close) ... ok
+test_p2_04_no_chase_when_player_shallow (test_monsters_c.Crocodile.test_p2_04_no_chase_when_player_shallow) ... ok
+test_p2_02_initial_fish_8_distinct_spawn_points (test_day_shop_c.ContractV11.test_p2_02_initial_fish_8_distinct_spawn_points) ... ok
+test_p2_08_day_start_order_and_plan (test_day_shop_c.DayLoop.test_p2_08_day_start_order_and_plan) ... ok
+test_p2_08_phase_changes_same_tick_and_snapshot (test_day_shop_c.DayLoop.test_p2_08_phase_changes_same_tick_and_snapshot) ... ok
+test_p2_10_11_buy_funds_unknown_done_and_upgrade_next_day (test_day_shop_c.Shop.test_p2_10_11_buy_funds_unknown_done_and_upgrade_next_day) ... ok
+test_p2_10_max_level_and_oxygen_upgrade (test_day_shop_c.Shop.test_p2_10_max_level_and_oxygen_upgrade) ... ok
+test_p2_10_shop_auto_close_600 (test_day_shop_c.Shop.test_p2_10_shop_auto_close_600) ... ok
+test_p2_12_pause_freezes_sim (test_day_shop_c.Pause.test_p2_12_pause_freezes_sim) ... ok
+test_p2_13_five_days_complete_and_fast (test_day_shop_c.FullRun.test_p2_13_five_days_complete_and_fast) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 5.466s
+
+OK

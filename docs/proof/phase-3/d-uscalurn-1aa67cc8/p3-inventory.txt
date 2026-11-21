@@ -1,0 +1,214 @@
+{
+  "revision": "d496a4f313aa4a3757ffacf599499d3f3224d8e5",
+  "branch": "d/phase-3-qa-uscalurn",
+  "contract_version": "1.1",
+  "exit_code_equivalent_to_unittest_cli": 1,
+  "counts_by_method": {
+    "PASS": 0,
+    "FAIL": 13,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "python": "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "bytecode_disabled": true,
+  "adapter": null
+}
+
+--- STDOUT ---
+
+--- STDERR ---
+test_count_inventory_v11_is_rejected_including_empty_count_map (test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map) ... 
+  test_count_inventory_v11_is_rejected_including_empty_count_map (test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map) (inventory={'items': {}}) ... FAIL
+  test_count_inventory_v11_is_rejected_including_empty_count_map (test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map) (inventory={'items': {'ca_loc': 1}}) ... FAIL
+test_empty_individual_inventory_is_accepted (test_p3_inventory_d.InventoryV12.test_empty_individual_inventory_is_accepted) ... FAIL
+test_export_precision_keeps_spoiled_side_of_threshold_after_reload (test_p3_inventory_d.InventoryV12.test_export_precision_keeps_spoiled_side_of_threshold_after_reload) ... FAIL
+test_gather_export_sorts_ids_but_hold_retains_acquisition_order (test_p3_inventory_d.InventoryV12.test_gather_export_sorts_ids_but_hold_retains_acquisition_order) ... FAIL
+test_inventory_freshness_is_finite_numeric_and_within_bounds (test_p3_inventory_d.InventoryV12.test_inventory_freshness_is_finite_numeric_and_within_bounds) ... FAIL
+test_inventory_ids_are_nonempty_strings_and_unique (test_p3_inventory_d.InventoryV12.test_inventory_ids_are_nonempty_strings_and_unique) ... FAIL
+test_inventory_root_and_item_field_schema_are_strict (test_p3_inventory_d.InventoryV12.test_inventory_root_and_item_field_schema_are_strict) ... FAIL
+test_inventory_unknown_kind_is_rejected (test_p3_inventory_d.InventoryV12.test_inventory_unknown_kind_is_rejected) ... FAIL
+test_manifest_declares_v12_and_required_freshness_values (test_p3_inventory_d.InventoryV12.test_manifest_declares_v12_and_required_freshness_values) ... FAIL
+test_quan_inventory_is_not_limited_by_gather_capacity (test_p3_inventory_d.InventoryV12.test_quan_inventory_is_not_limited_by_gather_capacity) ... FAIL
+test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero (test_p3_inventory_d.InventoryV12.test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero) ... FAIL
+test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock (test_p3_inventory_d.InventoryV12.test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock) ... FAIL
+test_tick_limit_does_not_create_or_replace_inventory (test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory) ... 
+  test_tick_limit_does_not_create_or_replace_inventory (test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory) (preexisting=False) ... FAIL
+  test_tick_limit_does_not_create_or_replace_inventory (test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory) (preexisting=True) ... FAIL
+
+======================================================================
+FAIL: test_count_inventory_v11_is_rejected_including_empty_count_map (test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map) (inventory={'items': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 214, in test_count_inventory_v11_is_rejected_including_empty_count_map
+    self.rejected("quan", inventory=old)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 138, in rejected
+    self.assertEqual(code, 2, "Expected a Contract v1.2 schema rejection: " + stderr)
+AssertionError: 0 != 2 : Expected a Contract v1.2 schema rejection: 
+
+======================================================================
+FAIL: test_count_inventory_v11_is_rejected_including_empty_count_map (test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map) (inventory={'items': {'ca_loc': 1}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 214, in test_count_inventory_v11_is_rejected_including_empty_count_map
+    self.rejected("quan", inventory=old)
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 138, in rejected
+    self.assertEqual(code, 2, "Expected a Contract v1.2 schema rejection: " + stderr)
+AssertionError: 0 != 2 : Expected a Contract v1.2 schema rejection: 
+
+======================================================================
+FAIL: test_empty_individual_inventory_is_accepted (test_p3_inventory_d.InventoryV12.test_empty_individual_inventory_is_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 203, in test_empty_individual_inventory_is_accepted
+    self.run_game("quan", inventory={"items": []})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_export_precision_keeps_spoiled_side_of_threshold_after_reload (test_p3_inventory_d.InventoryV12.test_export_precision_keeps_spoiled_side_of_threshold_after_reload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 269, in test_export_precision_keeps_spoiled_side_of_threshold_after_reload
+    self.run_game("gather", gather(hold=[item(fresh=30.125)], time_left_ticks=16),
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_gather_export_sorts_ids_but_hold_retains_acquisition_order (test_p3_inventory_d.InventoryV12.test_gather_export_sorts_ids_but_hold_retains_acquisition_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 248, in test_gather_export_sorts_ids_but_hold_retains_acquisition_order
+    self.run_game("gather", gather(hold=[item("I10"), item("I2")], time_left_ticks=1),
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_inventory_freshness_is_finite_numeric_and_within_bounds (test_p3_inventory_d.InventoryV12.test_inventory_freshness_is_finite_numeric_and_within_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 232, in test_inventory_freshness_is_finite_numeric_and_within_bounds
+    self.inventory_control()
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 146, in inventory_control
+    self.run_game("quan", inventory={"items": [item()]})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_inventory_ids_are_nonempty_strings_and_unique (test_p3_inventory_d.InventoryV12.test_inventory_ids_are_nonempty_strings_and_unique)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 226, in test_inventory_ids_are_nonempty_strings_and_unique
+    self.inventory_control()
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 146, in inventory_control
+    self.run_game("quan", inventory={"items": [item()]})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_inventory_root_and_item_field_schema_are_strict (test_p3_inventory_d.InventoryV12.test_inventory_root_and_item_field_schema_are_strict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 217, in test_inventory_root_and_item_field_schema_are_strict
+    self.inventory_control()
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 146, in inventory_control
+    self.run_game("quan", inventory={"items": [item()]})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_inventory_unknown_kind_is_rejected (test_p3_inventory_d.InventoryV12.test_inventory_unknown_kind_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 238, in test_inventory_unknown_kind_is_rejected
+    self.inventory_control()
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 146, in inventory_control
+    self.run_game("quan", inventory={"items": [item()]})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_manifest_declares_v12_and_required_freshness_values (test_p3_inventory_d.InventoryV12.test_manifest_declares_v12_and_required_freshness_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 185, in test_manifest_declares_v12_and_required_freshness_values
+    self.assertEqual(self.contract["contract_version"], "1.2", "BLOCKED: v1.2 migration pending")
+AssertionError: '1.1' != '1.2'
+- 1.1
+?   ^
++ 1.2
+?   ^
+ : BLOCKED: v1.2 migration pending
+
+======================================================================
+FAIL: test_quan_inventory_is_not_limited_by_gather_capacity (test_p3_inventory_d.InventoryV12.test_quan_inventory_is_not_limited_by_gather_capacity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 208, in test_quan_inventory_is_not_limited_by_gather_capacity
+    self.run_game("quan", inventory={"items": values})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero (test_p3_inventory_d.InventoryV12.test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 198, in test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero
+    self.run_game("quan", inventory={"items": values})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: items phải là object
+
+
+======================================================================
+FAIL: test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock (test_p3_inventory_d.InventoryV12.test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 242, in test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock
+    self.run_game("gather", gather(hold=[item()]))
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_tick_limit_does_not_create_or_replace_inventory (test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory) (preexisting=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 259, in test_tick_limit_does_not_create_or_replace_inventory
+    self.run_game("gather", gather(hold=[item()], time_left_ticks=3), ticks=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+======================================================================
+FAIL: test_tick_limit_does_not_create_or_replace_inventory (test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory) (preexisting=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 259, in test_tick_limit_does_not_create_or_replace_inventory
+    self.run_game("gather", gather(hold=[item()], time_left_ticks=3), ticks=1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_p3_inventory_d.py", line 120, in run_game
+    self.assertEqual(code, 0, blocked + "A fixture valid under TICKET-03 was rejected: " + stderr)
+AssertionError: 2 != 0 : BLOCKED: implementation contract 1.1 has not migrated to required v1.2. A fixture valid under TICKET-03 was rejected: đầu vào sai: hold phải là mảng id nguyên liệu hợp lệ
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.305s
+
+FAILED (failures=15)
