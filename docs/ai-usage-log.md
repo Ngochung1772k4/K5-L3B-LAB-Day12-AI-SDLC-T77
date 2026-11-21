@@ -6,6 +6,7 @@
 
 | Phase | Công cụ / model | Việc | Token / chi phí ước tính | Ghi chú (AI sai ở đâu?) |
 |---|---|---|---|---|
+| 1 | Antigravity AI | Cài đặt luật buổi sáng trong `chonoi/sim/gather.py`, viết bộ test `tests/test_gather_unit_a.py`, ghi `docs/clarify.md` theo Contract E & F | Chưa đo tự động | Cần đối chiếu kỹ edge-case ngạt tại tick chạm `oxy = 0` (`t+59`) và thứ tự ưu tiên ở tick cuối (`fainted` > `docked` > hái/bắt + `time`); đã kiểm chứng bằng headless test. |
 
 
 ## B — `sim/quan` + Scrum
