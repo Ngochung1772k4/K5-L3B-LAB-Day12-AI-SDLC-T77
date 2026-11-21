@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Unreleased (sau tag `phase-4` / `v1.0.0`)
+- Cửa sổ chơi có **`--mode day [--days N]`**: chơi liền sáng → tối → Shop qua các Ngày trong trình duyệt (trước chỉ có ở headless). Màn Shop: **1** Bình oxy, **2** Áo phao, **Enter** đóng Shop; HUD sáng hiện "Má Tư cần: đã lấy/cần", HUD tối hiện món hôm nay. Gỡ giới hạn "vòng ngày chỉ ở headless" trong release notes v1.0.0.
+
 ## v1.0.0 / contract v1.3 — Phase 4 "Phát hành" (Ticket-04)
 - `game.contract.json`: `contract_version` **1.3**, khai `bench_cmd` (`python3 -m chonoi.bench`) và `soak_cmd` (`python3 -m chonoi.soak`). Gameplay, tuning, kho, JSONL giữ v1.2.
 - **Benchmark có render** (`chonoi/bench.py`): cảnh sáng lõi seed 42, Út Sen đứng ở bến, framebuffer 1280×720, làm nóng 3 s + đo `--duration`; xuất `avg_fps, p1_low_fps, frames, measured_s, load_ms`.

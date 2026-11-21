@@ -7,9 +7,10 @@
 
 ```bash
 git clone https://github.com/Ngochung1772k4/K5-L3B-LAB-Day12-AI-SDLC-T77.git && cd K5-L3B-LAB-Day12-AI-SDLC-T77
-python3 -m chonoi.live --mode gather --inventory-out kho.json     # buổi sáng: mở địa chỉ in ra trong trình duyệt
-python3 -m chonoi.live --mode quan --inventory kho.json           # buổi tối: quán dùng đúng kho mang về
+python3 -m chonoi.live --mode day                                 # chơi trọn vòng: sáng → tối → Shop, 5 Ngày (mở địa chỉ in ra)
 ```
+
+Chơi riêng từng buổi (nối qua file kho): `python3 -m chonoi.live --mode gather --inventory-out kho.json` rồi `python3 -m chonoi.live --mode quan --inventory kho.json`.
 
 Bản đóng gói ở GitHub Release `v1.0.0`: giải nén `chonoi-v1.0.0.zip`, `cd` vào thư mục rồi chạy 2 lệnh `python3 -m chonoi.live ...` như trên.
 
@@ -33,6 +34,7 @@ Bản đóng gói ở GitHub Release `v1.0.0`: giải nén `chonoi-v1.0.0.zip`, 
 | Space | Bắt đàn cá khi đang lặn | — |
 | Esc / P | Tạm dừng / tiếp tục | Tạm dừng / tiếp tục |
 | H | Bật/tắt **tương phản cao** | Bật/tắt tương phản cao |
+| 1 / 2 / Enter | — | (Shop, mode day) mua Bình oxy / Áo phao · đóng Shop sang Ngày kế |
 | R | Chơi lại | Chơi lại |
 
 **Cảnh báo dễ nhận biết** (chữ + biểu tượng, rõ hơn ở chế độ tương phản cao): 🐊 *THỦY QUÁI GẦN!* + viền tím · 🫧 *OXY SẮP HẾT! / HẾT HƠI!* (oxy < 25%) · 😠 *KHÁCH SẮP GIẬN!* (kiên nhẫn < 25%, kèm số bàn). Độ tươi: thanh dưới mỗi ô giỏ, nhãn "ươn" khi < 30.

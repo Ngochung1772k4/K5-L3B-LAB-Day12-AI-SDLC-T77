@@ -21,6 +21,8 @@
 const cv = document.getElementById("c");
 const ctx = cv.getContext("2d");
 let snap = null, offline = false;
+// v1.3: mode day = sáng → tối → Shop liền nhau; pha hiện tại nằm ở snap.phase
+const phaseOf = () => (!snap ? "gather" : snap.mode === "day" ? snap.phase : snap.mode);
 
 // ---------- vào: phím ----------
 const down = new Set();
@@ -28,11 +30,12 @@ const MOVE_KEYS = { w: "u", arrowup: "u", s: "d", arrowdown: "d", a: "l", arrowl
 let queue = [], inflight = false, lastSent = "";
 
 function currentInput() {
-  const mode = snap ? snap.mode : "gather";
+  const mode = phaseOf();
   const dx = (down.has("r") ? 1 : 0) - (down.has("l") ? 1 : 0);
   let dy = (down.has("d") ? 1 : 0) - (down.has("u") ? 1 : 0);   // gather: xuống = d dương
   if (mode === "quan") dy = -dy;                                // quan: lên (bắc) = z dương
-  return { move: [dx, dy], interact: down.has("interact"), catch: down.has("catch"), pause: down.has("pause") };
+  return { move: [dx, dy], interact: down.has("interact"), catch: down.has("catch"), pause: down.has("pause"),
+           shop_done: down.has("shop_done") };
 }
 function pushInput() {
   const s = JSON.stringify(currentInput());
@@ -58,6 +61,10 @@ addEventListener("keydown", (e) => {
   if (MOVE_KEYS[k]) { down.add(MOVE_KEYS[k]); e.preventDefault(); }
   else if (k === "e") down.add("interact");
   else if (k === "p" || k === "escape") down.add("pause");   // v1.1: Esc/P tạm dừng
+  else if (k === "enter") down.add("shop_done");
+  else if ((k === "1" || k === "2") && phaseOf() === "shop") {  // mua một lần (chuỗi buy chỉ ở frame gửi)
+    queue.push(JSON.stringify({ buy: k === "1" ? "oxygen" : "hp" })); flush();
+  }
   else if (k === "h") { HC = !HC; try { localStorage.setItem("chonoi-hc", HC ? "1" : "0"); } catch (e) {} }
   else if (k === " ") { down.add("catch"); e.preventDefault(); }
   else if (k === "r") { fetch("/restart", { method: "POST" }); lastSent = ""; down.clear(); }
@@ -67,6 +74,7 @@ addEventListener("keyup", (e) => {
   const k = keyName(e);
   if (MOVE_KEYS[k]) down.delete(MOVE_KEYS[k]);
   else if (k === "e") down.delete("interact");
+  else if (k === "enter") down.delete("shop_done");
   else if (k === "p" || k === "escape") down.delete("pause");
   else if (k === " ") down.delete("catch");
   pushInput();
@@ -164,7 +172,9 @@ function overlay(w, h) {
   }
   if (snap.finished) {
     ctx.fillStyle = "rgba(0,0,0,.55)"; ctx.fillRect(w / 2 - 190, h / 2 - 50, 380, 100);
-    text("Buổi " + (snap.mode === "gather" ? "sáng" : "tối") + " kết thúc: " + (snap.reason || ""), w / 2, h / 2 - 12, { align: "center", size: 20 });
+    const endMsg = snap.mode === "day" ? `Hoàn thành ${snap.day} Ngày · điểm ${snap.score}` :
+      "Buổi " + (snap.mode === "gather" ? "sáng" : "tối") + " kết thúc: " + (snap.reason || "");
+    text(endMsg, w / 2, h / 2 - 12, { align: "center", size: 20 });
     text("Nhấn R để chơi lại", w / 2, h / 2 + 20, { align: "center", color: "#cfd8dc" });
   }
 }
@@ -341,7 +351,7 @@ function alertBox(w, y, icon, msg, col) {
 function alerts(w, h) {
   const out = [];
   const p = snap.player, meta = snap.meta || {};
-  if (snap.mode !== "quan" && p) {
+  if (phaseOf() === "gather" && p) {
     const sp = (meta.monsters && meta.monsters.species) || {};
     const near = (snap.monsters || []).some((m) => {
       const r = (sp[m.kind] && sp[m.kind].detect_radius) || 10;
@@ -356,7 +366,7 @@ function alerts(w, h) {
         out.push(["🫧", p.oxygen_ticks === 0 ? "HẾT HƠI! Nổi lên ngay" : "OXY SẮP HẾT!", "#ff8a80"]);
     }
   }
-  if (snap.mode === "quan") {
+  if (phaseOf() === "quan") {
     const full = ((meta.patience_s || 60) * 60);
     const angry = (snap.customers || []).filter((c) => c.state === "waiting" && c.patience_ticks_left < full * 0.25);
     if (angry.length) out.push(["😠", "KHÁCH SẮP GIẬN! (" + angry.map((c) => c.table_id).join(", ") + ")", "#ffb74d"]);
@@ -365,12 +375,50 @@ function alerts(w, h) {
   if (HC) text("Tương phản cao (H)", w - 10, 20, { size: 14, align: "right", color: "#ffff00" });
 }
 
+// ---------- mode day: màn Shop + HUD kế hoạch Má Tư ----------
+const UP_NAME = { oxygen: "Bình oxy", hp: "Áo phao" };
+function drawShop(w, h) {
+  ctx.fillStyle = "#2a1f14"; ctx.fillRect(0, 0, w, h);
+  text("🛒 SHOP cuối Ngày " + snap.day, w / 2, 90, { size: 30, align: "center", color: "#ffe3a3" });
+  text(`Tiền: ${snap.money}k  ·  tổng thu ${snap.earned}k  ·  uy tín ${(snap.reputation ?? 0).toFixed(1)}  ·  điểm ${snap.score}`,
+       w / 2, 130, { size: 18, align: "center" });
+  const ups = snap.shop_upgrades || {};
+  ["oxygen", "hp"].forEach((id, i) => {
+    const lv = (snap.upgrades || {})[id] || 0, act = (snap.active_upgrades || {})[id] || 0;
+    const next = (ups[id] || [])[lv];
+    const y = 200 + i * 70;
+    ctx.fillStyle = "rgba(255,255,255,.08)"; ctx.fillRect(w / 2 - 330, y - 34, 660, 56);
+    const desc = next ? `cấp ${next.level}: ${next.price}k → ${id === "oxygen" ? next.oxygen_max_s + " s oxy" : next.hp_max + " Máu"}`
+                      : "đã tối đa";
+    text(`[${i + 1}]  ${UP_NAME[id]} — đang có cấp ${lv} (hiệu lực ${act})  ·  ${desc}`, w / 2 - 315, y, { size: 18,
+         color: next && snap.money >= next.price ? "#e8eef2" : "#9fb3c0" });
+  });
+  text("Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop", w / 2, 360, { size: 15, align: "center", color: "#cfd8dc" });
+  text(`[Enter] đóng Shop → Ngày kế   ·   tự đóng sau ${Math.ceil((snap.time_left_ticks || 0) / 60)} s`, w / 2, 400,
+       { size: 20, align: "center", color: "#ffe3a3" });
+}
+function dayHud(w, h) {
+  const plan = snap.day_plan || {}, need = plan.ingredients || {};
+  let line = `Ngày ${snap.day}/${snap.days_total || 5}`;
+  if (phaseOf() === "gather") {
+    const got = {};
+    (snap.hold || []).forEach((it) => { if (!isSpoiled(it)) got[kindOf(it)] = (got[kindOf(it)] || 0) + 1; });
+    line += "  ·  Má Tư cần: " + Object.keys(need).map((k) => `${KIND_NAME[k] || k} ${got[k] || 0}/${need[k]}`).join(", ");
+  } else if (phaseOf() === "quan") {
+    line += "  ·  Món hôm nay: " + Object.keys(plan.dishes || {}).map((d) => dishName(d)).join(", ");
+  }
+  ctx.fillStyle = HC ? "#000" : "rgba(0,0,0,.55)"; ctx.fillRect(0, h - 44, w, 22);
+  text(line, 12, h - 28, { size: 14, color: HC ? "#ffff00" : "#ffe3a3" });
+}
+
 function frame() {
   requestAnimationFrame(frame);  // đặt trước để lỗi vẽ không làm dừng vòng lặp
   const [w, h] = fit();
   ctx.fillStyle = "#10161c"; ctx.fillRect(0, 0, w, h);
   if (snap) {
-    if (snap.mode === "quan") drawQuan(w, h); else drawGather(w, h);
+    const ph = phaseOf();
+    if (ph === "quan") drawQuan(w, h); else if (ph === "shop") drawShop(w, h); else drawGather(w, h);
+    if (snap.mode === "day") dayHud(w, h);
     eventLog(w, h);
     banner(w);
     alerts(w, h);
