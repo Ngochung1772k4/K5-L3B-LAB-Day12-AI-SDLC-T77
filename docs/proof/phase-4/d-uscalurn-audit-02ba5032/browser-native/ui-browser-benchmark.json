@@ -1,0 +1,2727 @@
+{
+  "HC": false,
+  "mode": "gather",
+  "phase": "gather",
+  "state": "playing",
+  "canvas": [
+    1280,
+    720
+  ],
+  "drawn": [
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "5 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "10 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "15 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "20 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "25 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "30 m",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "Bến (E)",
+      "color": "#5a3a22",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "N1",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N2",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N3",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N4",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N5",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "N6",
+      "color": "#223344",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F1",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F2",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F3",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F4",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F5",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F6",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F7",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F8",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F9",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F10",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F11",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "F12",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 2:27",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Oxy 30s",
+      "color": "#e8eef2",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "♥♥♥",
+      "color": "#ff6b81",
+      "font": "22px system-ui, sans-serif"
+    },
+    {
+      "text": "x 2.0  d 0.0",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Giỏ 0/12  ",
+      "color": "#cfd8dc",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên bơi · E hái / cập bến · Space bắt cá · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "t360 fish_spawned {\"id\":\"F9\",\"kind\":\"ca_keo\",\"pos\":[90,27]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t720 fish_spawned {\"id\":\"F10\",\"kind\":\"ca_keo\",\"pos\":[45,24]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1080 fish_spawned {\"id\":\"F11\",\"kind\":\"ca_linh\",\"pos\":[90,5]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t1440 fish_spawned {\"id\":\"F12\",\"kind\":\"ca_linh\",\"pos\":[30,10]}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    }
+  ]
+}

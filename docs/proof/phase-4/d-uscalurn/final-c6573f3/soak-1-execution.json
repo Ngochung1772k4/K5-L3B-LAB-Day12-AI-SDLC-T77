@@ -1,0 +1,87 @@
+{
+  "argv": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "chonoi.soak",
+    "--seed",
+    "7",
+    "--days",
+    "10",
+    "--out",
+    "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\soak-1.json"
+  ],
+  "exit_code": 0,
+  "wall_s": 6.033576699999685,
+  "stdout": "{\"days\": 10, \"days_completed\": 10, \"crashes\": 0, \"duration_s\": 5.943}\r\n",
+  "stderr": "",
+  "artifact_sha256": "c416ba630663df10b162454ce42b25dc38f31371135436d0d63a60d75e15c1de",
+  "result": {
+    "days": 10,
+    "days_completed": 10,
+    "crashes": 0,
+    "results": [
+      {
+        "day": 1,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 2,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 3,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 4,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 5,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 6,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 7,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 8,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 9,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      },
+      {
+        "day": 10,
+        "earned": 0,
+        "reputation": 3.0,
+        "score": 300
+      }
+    ],
+    "duration_s": 5.943
+  }
+}

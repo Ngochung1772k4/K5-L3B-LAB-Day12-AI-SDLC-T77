@@ -1,0 +1,5 @@
+{
+  "url": "https://api.github.com/repos/Ngochung1772k4/K5-L3B-LAB-Day12-AI-SDLC-T77/releases/tags/v1.0.0",
+  "status": "UNVERIFIED",
+  "error": "URLError(PermissionError(13, 'An attempt was made to access a socket in a way forbidden by its access permissions', None, 10013, None))"
+}

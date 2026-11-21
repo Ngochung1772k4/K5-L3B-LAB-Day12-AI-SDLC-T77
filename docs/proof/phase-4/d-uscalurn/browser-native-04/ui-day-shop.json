@@ -1,0 +1,3585 @@
+{
+  "HC": true,
+  "mode": "day",
+  "phase": "shop",
+  "state": "playing",
+  "canvas": [
+    1280,
+    720
+  ],
+  "snapshot": {
+    "type": "snapshot",
+    "tick": 179,
+    "sim_tick": 163,
+    "mode": "day",
+    "phase": "shop",
+    "phase_tick": 11,
+    "state": "playing",
+    "time_left_ticks": 589,
+    "money": 1000,
+    "earned": 1000,
+    "reputation": 3,
+    "score": 1300,
+    "day": 1,
+    "day_plan": {
+      "dishes": {
+        "ca_loc_nuong_trui": 3,
+        "goi_bong_sung": 3
+      },
+      "ingredients": {
+        "ca_loc": 3,
+        "bong_sung": 6
+      }
+    },
+    "upgrades": {},
+    "active_upgrades": {},
+    "stock": [
+      {
+        "id": "I7",
+        "kind": "ca_loc",
+        "fresh": 79.23333333333333
+      }
+    ],
+    "meta": {
+      "max_ticks": 600,
+      "upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      }
+    },
+    "days_total": 5,
+    "shop_upgrades": {
+      "oxygen": [
+        {
+          "level": 1,
+          "price": 200,
+          "oxygen_max_s": 45
+        },
+        {
+          "level": 2,
+          "price": 400,
+          "oxygen_max_s": 60
+        }
+      ],
+      "hp": [
+        {
+          "level": 1,
+          "price": 250,
+          "hp_max": 4
+        },
+        {
+          "level": 2,
+          "price": 500,
+          "hp_max": 5
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "event",
+        "tick": 0,
+        "phase": "gather",
+        "day": 1,
+        "name": "day_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 0,
+        "phase": "gather",
+        "day": 1,
+        "name": "day_plan",
+        "data": {
+          "dishes": {
+            "ca_loc_nuong_trui": 3,
+            "goi_bong_sung": 3
+          },
+          "ingredients": {
+            "ca_loc": 3,
+            "bong_sung": 6
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 0,
+        "phase": "gather",
+        "day": 1,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 27,
+        "phase": "gather",
+        "day": 1,
+        "name": "paused",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 43,
+        "phase": "gather",
+        "day": 1,
+        "name": "resumed",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 48,
+        "phase": "gather",
+        "day": 1,
+        "name": "gather_end",
+        "data": {
+          "reason": "docked",
+          "inventory": {
+            "items": [
+              {
+                "id": "I7",
+                "kind": "ca_loc",
+                "fresh": 79.73333333333333
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 48,
+        "phase": "quan",
+        "day": 1,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 168,
+        "phase": "quan",
+        "day": 1,
+        "name": "quan_end",
+        "data": {
+          "reason": "time",
+          "money": 1000,
+          "earned": 1000,
+          "shift_earned": 0,
+          "reputation": 3
+        }
+      },
+      {
+        "type": "event",
+        "tick": 168,
+        "phase": "shop",
+        "day": 1,
+        "name": "phase_start",
+        "data": {}
+      }
+    ],
+    "finished": false,
+    "reason": null,
+    "error": null
+  },
+  "drawn": [
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:01",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 1000k · uy tín 3.0 · điểm 1300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: cá lóc×1  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "I7 cá lóc 79",
+      "color": "#e8eef2",
+      "font": "9px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5  ·  Món hôm nay: Cá lóc nướng trui, Gỏi bông súng",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 day_plan {\"dishes\":{\"ca_loc_nuong_trui\":3,\"goi_bong_sung\":3},\"ingr…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t0 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "🛒 SHOP cuối Ngày 1",
+      "color": "#ffe3a3",
+      "font": "30px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền: 1000k  ·  tổng thu 1000k  ·  uy tín 3.0  ·  điểm 1300",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[1]  Bình oxy — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 200k → 45 s oxy",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "[2]  Áo phao — đang có cấp 0 (hiệu lực 0)  ·  cấp 1: 250k → 4 Máu",
+      "color": "#e8eef2",
+      "font": "18px system-ui, sans-serif"
+    },
+    {
+      "text": "Cấp vừa mua có hiệu lực từ Ngày sau · kho dư bị bỏ khi đóng Shop",
+      "color": "#cfd8dc",
+      "font": "15px system-ui, sans-serif"
+    },
+    {
+      "text": "[Enter] đóng Shop → Ngày kế   ·   tự đóng sau 10 s",
+      "color": "#ffe3a3",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Ngày 1/5",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "t27 paused {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t43 resumed {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 gather_end {\"reason\":\"docked\",\"inventory\":{\"items\":[{\"id\":\"I7\",\"kind…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t48 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 quan_end {\"reason\":\"time\",\"money\":1000,\"earned\":1000,\"shift_earned…",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "t168 phase_start {}",
+      "color": "rgba(232, 238, 242, 0.75)",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    }
+  ]
+}

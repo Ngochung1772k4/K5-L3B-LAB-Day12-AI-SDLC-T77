@@ -7,40 +7,24 @@ while the gameplay TODOs are being implemented.
 """
 
 import json
-import os
 from collections import Counter
 from pathlib import Path
-import sys
 import unittest
-from unittest.mock import patch
+from legacy_rules_view import individual_fixture, quantity_rows, saved_counts
 
 from helpers import (
 
-    ROOT, Workdir, events, frames, headless_cmd, read_jsonl, run_headless, snapshots, write_json,
+    ROOT, Workdir, events, frames, read_jsonl, run_headless, snapshots, write_json,
 )
 
 
-# TẠM SKIP (Phase 3, C/Integrator): fixture còn schema v1.1 (hold chuỗi, stock map, kho đếm).
-# v1.2 đổi sang kho cá thể {id, kind, fresh} — xem docs/adr/0001-kho-ca-the-do-tuoi.md, CHANGELOG.md.
-# Chủ file D (uscalurn): đổi fixture bằng helpers.items(...)/stock_of(...)/counts(...) rồi XÓA 2 dòng dưới.
-raise unittest.SkipTest("fixture v1.1 chờ D (uscalurn) chuyển sang kho cá thể v1.2 (ADR 0001)")
+# P4 QA: retain all P1 rule assertions through an explicit item-kind/count
+# view. Raw v1.2 files and all non-schema fields remain unmodified.
 
 
 def run_cli(*args):
-    """Keep the manifest command; replace only an unusable Windows python3 alias.
-
-    The patch lasts for this subprocess call; helpers.py and PATH stay intact.
-    Nonzero CLI exits and unrelated executable errors are never retried.
-    """
-    try:
-        return run_headless(*args)
-    except OSError as error:
-        command = headless_cmd()
-        missing_alias = error.errno in (2, 13) or getattr(error, "winerror", None) in (2, 5, 1920)
-        if os.name != "nt" or command[0] not in ("python3", "python3.exe") or not missing_alias:
-            raise
-        with patch("helpers.headless_cmd", return_value=[sys.executable, "-B", *command[1:]]):
-            return run_headless(*args)
+    """Use the shared portable manifest adapter; preserve every application exit."""
+    return run_headless(*args)
 
 
 class GatherRules(unittest.TestCase):
@@ -68,6 +52,7 @@ class GatherRules(unittest.TestCase):
             "nodes": [], "fish": [], "random_fish": False,
         }
         fixture.update(block)
+        fixture = individual_fixture(fixture)
         scenario = write_json(self.work.path(prefix + "-scenario.json"), {"gather": fixture})
         inputs = write_json(self.work.path(prefix + "-inputs.json"), frames(*input_frames))
         self.output = Path(self.work.path(prefix + ".jsonl"))
@@ -82,7 +67,7 @@ class GatherRules(unittest.TestCase):
                 f"Headless startup/fixture ERROR (exit {code}; 2 means Contract D "
                 f"rejection, not a gameplay assertion): {stderr}"
             )
-        rows = read_jsonl(self.output)
+        rows = quantity_rows(read_jsonl(self.output))
         self.assertEqual(rows[-1]["type"], "end")
         self.assertEqual(sum(row["type"] == "end" for row in rows), 1)
         self.s = {s["tick"]: s for s in snapshots(rows)}
@@ -210,7 +195,7 @@ class GatherRules(unittest.TestCase):
         self.assertEqual(self.s[1]["player"]["hp"], 0)
         self.assertEqual((rows[-1]["ticks"], rows[-1]["reason"], rows[-1]["state"]),
                          (1, "fainted", "finished"))
-        self.assertEqual(json.loads(self.inventory.read_text(encoding="utf-8")), {"items": {}})
+        self.assertEqual(saved_counts(self.inventory), {"items": {}})
 
     def test_dive_and_surface_only_when_movement_crosses_boundary(self):
         rows = self.run_case({"player": {"pos": [self.x, self.g["surface_depth"]],
@@ -418,7 +403,7 @@ class GatherRules(unittest.TestCase):
         self.one_event(rows, "gather_end", 1, {"reason": "docked", "inventory": expected})
         self.assertEqual(self.s[1]["nodes"], self.s[0]["nodes"])
         self.assertEqual(self.s[1]["hold"], hold)
-        self.assertEqual(json.loads(self.inventory.read_text(encoding="utf-8")), expected)
+        self.assertEqual(saved_counts(self.inventory), expected)
         self.assertEqual((rows[-1]["ticks"], rows[-1]["reason"]), (1, "docked"))
 
     def test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius(self):
@@ -436,7 +421,7 @@ class GatherRules(unittest.TestCase):
                 self.one_event(rows, "gather_end", 1,
                                {"reason": "docked" if docked else "time", "inventory": expected})
                 self.assertEqual(len(self.s[1]["fish"]), int(docked))
-                self.assertEqual(json.loads(self.inventory.read_text(encoding="utf-8")), expected)
+                self.assertEqual(saved_counts(self.inventory), expected)
 
     def test_valid_gather_or_catch_on_last_tick_is_included_in_inventory(self):
         for action in ("gather", "catch"):
@@ -454,7 +439,7 @@ class GatherRules(unittest.TestCase):
                 expected = {"items": {kind: amount}}
                 self.assertEqual([e["name"] for e in events(rows)], [event_name, "gather_end"])
                 self.one_event(rows, "gather_end", 1, {"reason": "time", "inventory": expected})
-                self.assertEqual(json.loads(self.inventory.read_text(encoding="utf-8")), expected)
+                self.assertEqual(saved_counts(self.inventory), expected)
                 self.assertEqual(rows[-1]["reason"], "time")
                 self.assertEqual(self.s[1]["hold"], [kind] * amount)
 

@@ -11,39 +11,24 @@ Run with PYTHONDONTWRITEBYTECODE=1; only Workdir contains runtime outputs.
 
 import json
 import math
-import os
+from fractions import Fraction
 from pathlib import Path
-import sys
 import unittest
-from unittest.mock import patch
+from legacy_rules_view import individual_fixture, quantity_rows
 
 from helpers import (
 
-    ROOT, Workdir, events, frames, headless_cmd, read_jsonl, run_headless, snapshots, write_json,
+    ROOT, Workdir, events, frames, read_jsonl, run_headless, snapshots, write_json,
 )
 
 
-# TẠM SKIP (Phase 3, C/Integrator): fixture còn schema v1.1 (hold chuỗi, stock map, kho đếm).
-# v1.2 đổi sang kho cá thể {id, kind, fresh} — xem docs/adr/0001-kho-ca-the-do-tuoi.md, CHANGELOG.md.
-# Chủ file D (uscalurn): đổi fixture bằng helpers.items(...)/stock_of(...)/counts(...) rồi XÓA 2 dòng dưới.
-raise unittest.SkipTest("fixture v1.1 chờ D (uscalurn) chuyển sang kho cá thể v1.2 (ADR 0001)")
+# P4 QA: migrate fixture/quantity assertions at the schema boundary; exact
+# item identity/freshness stays covered by the unprojected P3 suites.
 
 
 def run_cli(*args):
-    """Use helpers.run_headless, with a local fallback for broken Windows python3.
-
-    Only the executable changes, for this call. CLI failures remain observable;
-    no file, environment variable or starter helper is changed by the fallback.
-    """
-    try:
-        return run_headless(*args)
-    except OSError as error:
-        command = headless_cmd()
-        missing_alias = error.errno in (2, 13) or getattr(error, "winerror", None) in (2, 5, 1920)
-        if os.name != "nt" or command[0] not in ("python3", "python3.exe") or not missing_alias:
-            raise
-        with patch("helpers.headless_cmd", return_value=[sys.executable, "-B", *command[1:]]):
-            return run_headless(*args)
+    """Use the shared portable manifest adapter; preserve every application exit."""
+    return run_headless(*args)
 
 
 class QuanRules(unittest.TestCase):
@@ -55,6 +40,7 @@ class QuanRules(unittest.TestCase):
         cls.menu = tuning["menu"]
         cls.hz = tuning["tick_hz"]
         cls.multiplier = tuning["score"]["reputation_multiplier"]
+        cls.tuning_freshness = tuning["freshness"]
         cls.patience = round(cls.q["patience_s"] * cls.hz)
         cls.eat_ticks = round(cls.q["eat_s"] * cls.hz)
         cls.stove_id = cls.q["stoves"][0]["id"]
@@ -74,6 +60,7 @@ class QuanRules(unittest.TestCase):
         prefix = str(self.serial)
         fixture = {"stock": {}, "customers": [], "random_customers": False}
         fixture.update(block)
+        fixture = individual_fixture(fixture)
         scenario = write_json(self.work.path(prefix + "-scenario.json"), {"quan": fixture})
         inputs = write_json(self.work.path(prefix + "-inputs.json"), frames(*input_frames))
         self.output = Path(self.work.path(prefix + ".jsonl"))
@@ -87,7 +74,7 @@ class QuanRules(unittest.TestCase):
                 f"Headless startup/fixture ERROR (exit {code}; 2 means Contract D "
                 f"rejection, not a gameplay assertion): {stderr}"
             )
-        rows = read_jsonl(self.output)
+        rows = quantity_rows(read_jsonl(self.output))
         self.assertEqual(rows[-1]["type"], "end")
         self.assertEqual(sum(row["type"] == "end" for row in rows), 1)
         self.s = {s["tick"]: s for s in snapshots(rows)}
@@ -125,6 +112,7 @@ class QuanRules(unittest.TestCase):
         prefix = f"rejected-{self.serial}"
         fixture = {"stock": {}, "customers": [], "random_customers": False}
         fixture.update(block)
+        fixture = individual_fixture(fixture)
         scenario = write_json(self.work.path(prefix + "-scenario.json"), {"quan": fixture})
         inputs = write_json(self.work.path(prefix + "-inputs.json"), frames())
         output = self.work.path(prefix + ".jsonl")
@@ -142,6 +130,11 @@ class QuanRules(unittest.TestCase):
     def payload(self, dish_id=None):
         dish_id = dish_id or self.dish_id
         return {"order_id": "C1", "dish_id": dish_id, "base_price": self.menu[dish_id]["price"]}
+
+    def newly_cooked_payload(self):
+        """TICKET-03 replaces list price: initial fresh 100 decays before cook tick 1."""
+        decay = Fraction(str(self.tuning_freshness["quan_decay_per_s"])) / self.hz
+        return dict(self.payload(), base_price=math.floor(self.menu[self.dish_id]["price"] * (100 - decay) / 100))
 
     def assigned_case(self, location="hand", patience=None, **overrides):
         customer = self.customer(order_status="assigned", reserved={})
@@ -434,12 +427,12 @@ class QuanRules(unittest.TestCase):
                              {"tick": 0, "interact": True}, {"tick": 1, "interact": False})
         items = [kind for kind in sorted(recipe) for _ in range(recipe[kind])]
         self.one_event(rows, "cook_started", 1,
-                       {"stove_id": self.stove_id, **self.payload(), "items": items})
+                       {"stove_id": self.stove_id, **self.newly_cooked_payload(), "items": items})
         self.assertEqual(self.stove(0)["state"], "idle")
         for tick in range(1, cook + 1):
             self.assertEqual(self.stove(tick)["state"], "cooking")
             self.assertEqual(self.stove(tick)["cook_ticks_left"], cook - tick + 1)
-            self.assertEqual(self.stove(tick)["dish"], self.payload())
+            self.assertEqual(self.stove(tick)["dish"], self.newly_cooked_payload())
         self.one_event(rows, "dish_ready", cook + 1,
                        {"stove_id": self.stove_id, "order_id": "C1", "dish_id": self.dish_id})
         self.assertEqual(self.stove(cook + 1)["state"], "ready")
@@ -462,7 +455,7 @@ class QuanRules(unittest.TestCase):
         self.assertEqual([e["tick"] for e in events(rows, "dish_picked")], [cook + 4])
         self.assertIsNone(self.s[cook + 3]["hand"])
         self.assertEqual(self.stove(cook + 3)["state"], "ready")
-        self.assertEqual(self.s[cook + 4]["hand"], self.payload())
+        self.assertEqual(self.s[cook + 4]["hand"], self.newly_cooked_payload())
         self.assertEqual(self.stove(cook + 4)["state"], "idle")
 
     def test_pickup_requires_ready_and_empty_hand_then_resets_stove(self):

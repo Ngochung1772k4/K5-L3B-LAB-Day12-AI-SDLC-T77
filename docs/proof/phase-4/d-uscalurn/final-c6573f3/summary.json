@@ -1,0 +1,842 @@
+{
+  "revision": "c6573f3510a7d530d0565b4ceaeaf4e3b9270778",
+  "contract_version": "1.3",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "platform": "Windows-10-10.0.22631-SP0",
+  "git_status": " M tests/helpers.py\n M tests/test_gather_rules.py\n M tests/test_p4_c.py\n M tests/test_quan_rules.py\n?? docs/proof/phase-4/d-uscalurn-audit-02ba5032/\n?? docs/proof/phase-4/d-uscalurn/\n?? tests/legacy_rules_view.py\n?? tests/test_phase4_audit_d.py\n?? tests/test_qa_harness_d.py\n?? tools/qa_phase4.py\n?? tools/qa_phase4_browser.mjs\n?? tools/qa_phase4_proof.py\n",
+  "source_sha256": {
+    "chonoi/__init__.py": "140d0709bc27ad9cdaf9d187c77a5e08ff4b42e1cf0deba9f053f05bb2ea1ef4",
+    "chonoi/bench.py": "a492688eaecb7498a4fb169ba5c18b3f735000d278024fa861b0ef3672b843b7",
+    "chonoi/contract.py": "b9cfc76a5a543a79029696332b27b0fca7e9e8e2e59af5bf654f68eee2720e47",
+    "chonoi/errors.py": "4b5bada83f8a005b1ca14278685837986c80f714680d6141745b07b8ce393c03",
+    "chonoi/headless.py": "d012b8638f5f2c648aa53091a15e5dca4fa15c5577c11e42257104b85a7fb32f",
+    "chonoi/ids.py": "c75d32438c591fc4e58d074676bb4f7fbbfe55226856df07e96c960602ba6910",
+    "chonoi/inputs.py": "70464d59e7929d36f5a7f86ca67f7ab01b1b0f03cba292202cad1995e72aa2bc",
+    "chonoi/inventory.py": "1d94325fd1faa30f996a6d9159d27f9c36b7432dd7ad1dbf7645985a8fbbf0ad",
+    "chonoi/items.py": "cce83ec9ebf3b14954a2c5070000d914b317d978de2f1dc9b03ee00c96932ee6",
+    "chonoi/jsonl.py": "7c44155c21ae8d37a35cfe2b9bd97d03dcbf7fb25541028d7e94c3ffb1da03ae",
+    "chonoi/live.py": "f8126e6f6402c59f40354a44b5cf3be98a5f9b208263956f76c5d7d80880cf4c",
+    "chonoi/rng.py": "721847d7cc3ecc56e5fe12726dca117d099518e339b1cdae2eea870382b649c2",
+    "chonoi/runner.py": "470b7af34135311492acc167798c09a459400d6fd25c28b915f3387a1994a1b2",
+    "chonoi/scenario.py": "0f305c34360ab3d13f63829b0c51360ffef44d7bf6d46afec1d4d071692bd67d",
+    "chonoi/sim/__init__.py": "622b09dea7e9697b7bc4d50e6df7fcfbd85ce3f63320fb8c12ad0f1e525e780a",
+    "chonoi/sim/day.py": "c52aed2225ffa516d504eefcadaf8b4745f664103e829bbc0986184edfe50b23",
+    "chonoi/sim/fish.py": "6c10ed1f8c43ed015dadb863849db0778572c95e1cc365c57286bccfb2305939",
+    "chonoi/sim/gather.py": "e93031aeac910a24079e0d8af460b8d90a795dbe690af72771938b79fe50bf8e",
+    "chonoi/sim/monsters.py": "aecbebf4b0f67e8ff17894d061c322cfcd04cc152d1ce80c4d67ac03bd2150d9",
+    "chonoi/sim/quan.py": "3a2a1ed34f270513515fcf1a763dd1b79368889a5f63755a391116e33a21313a",
+    "chonoi/sim/ramp.py": "39cd06875f49ffa79df2d648cce17816dd8737f8b1e97542ac25c477f7c0259c",
+    "chonoi/soak.py": "f06416cf6dd18ed9acda40e9aec66b80e6f270c438e8a74141eeb13c159fedb5",
+    "chonoi/web/index.html": "841cb598a72fd027e9e0cf868294e5abd74887d5ff3a83f0d98c5f809ebca6db",
+    "game.contract.json": "50be09228a548fa335022889c905803ee29e12a9896009b599f696f8e926430a",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/helpers.py": "2ea2a7e40ac26a2ef75ee4e5964f57e440f039c5979a4e662fffce10caadf60a",
+    "tests/legacy_rules_view.py": "34fd4aacbecef9f899f890dcc5cb3a29cbed9d8301eb7eba3e6686f45d8a3bb4",
+    "tests/test_day_shop_c.py": "cb981c468f64953bf049720be7c0835f119867a4ea7b55b0d1e43f2d85a8f305",
+    "tests/test_fish_c.py": "d9487404559b4bd5d03a006e3ca165ad41486126a3efa6e0b9c4eced342c94c8",
+    "tests/test_freshness_c.py": "cc9a2e69217eb5e4a4c4ed1535fb50cbfeb3abae528cea329040f53f4caec491",
+    "tests/test_gather_p2_a.py": "955bfc37265edab3017e7935043f17ab2b7fef0ab21e2ffd3d3957103760c70a",
+    "tests/test_gather_rules.py": "d0a637be678d2d3f23e579e5da7f2cb77bea98ebbba60bf0fbd920306b0eca4f",
+    "tests/test_gather_unit_a.py": "062a1dd5cb69f9e431425d45dcdb01b6cbbf451ea7fdf9cc6aa3b90ce4c76b35",
+    "tests/test_live.py": "4b075305c674db970433d6f1c5c6a3d087c915f9c8e07e6c43ec13d64ebf75fc",
+    "tests/test_monsters_c.py": "14e74807d48d5c482756f8757acfc71fc7004d90f3117af86c0c6bdd5f38e590",
+    "tests/test_p3_freshness_d.py": "9d07c387e26b8cb6417f5c948ba742d71710e6f35bfb06b789a3046bd7d87fe6",
+    "tests/test_p3_integration_d.py": "928464f7a4a9cfda636b8bcce83bada33f9881f4121a2e831fe40b98264a2988",
+    "tests/test_p3_inventory_d.py": "61fe89326585cdea2cdf6d3f2f3fe0dae47f161ae500dcc82137e415e6a3ee45",
+    "tests/test_p3_reservation_price_d.py": "8a98ee51642391641965d89c4155f2864377ada028bfd058873cbaaf4daae881",
+    "tests/test_p4_c.py": "c5ca0d846b0d7715a66c0d2aefae8130e99e9103ed873db83ed5e45cbd2b3614",
+    "tests/test_phase4_audit_d.py": "ec3d5ec8c7c7a3e3a91f80fab14fc1bc9d139da82922f572337285de2aeab12e",
+    "tests/test_python_starter_units.py": "1285adb0b83b99cf6fc8abc3a0f74ce627aebb75cc7db5c2b2d350767c3c1438",
+    "tests/test_qa_harness_d.py": "af69358bcf58477e363bbe24a8fa33bfb10b0407ad579ddb94b98db49413e4c0",
+    "tests/test_quan_rules.py": "9bc2e965af4f9b3e6402493fc8bde6ef47b01e97d8dd81522c1593ebf7aab85f",
+    "tests/test_quan_rules_c.py": "ad84563d8ddaea621eb7d73b145a8f942f5ec61292d87378cb3fbc3fff243159",
+    "tests/test_smoke_p1.py": "6e466f9e75e1a648592654ed3e13b059e93717fa7e5e796f685ab32b4508ee2a",
+    "tests/test_team_check.py": "1d526804926b04ddf742a64c7636acab0791ffc9d9e896cb090ddf9d3964d58b",
+    "tools/check_team.py": "9175ad15d5a9228c1c820eeadaf08cba5ac05f3995b21cb6b1ab925f32d469db",
+    "tools/qa_phase4.py": "dd2eda5319bc85815e9747092430be572d4ceefecc6a7c4382403b0bc2422ac8",
+    "tools/qa_phase4_browser.mjs": "6e7ac78a3fc4f3b1250d4aad88d3e3814db59c7b8f68514deafcf66033c22368",
+    "tools/qa_phase4_proof.py": "8073a094d94380c4ff53abb903c190d74535c2d2db42705ca829360584fb4c44"
+  },
+  "commands": {
+    "headless_cmd": {
+      "configured": "python3 -m chonoi.headless",
+      "effective": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.headless"
+      ]
+    },
+    "bench_cmd": {
+      "configured": "python3 -m chonoi.bench",
+      "effective": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.bench"
+      ]
+    },
+    "soak_cmd": {
+      "configured": "python3 -m chonoi.soak",
+      "effective": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.soak"
+      ]
+    }
+  },
+  "configured_python_probe": {
+    "argv": [
+      "python3",
+      "--version"
+    ],
+    "exit_code": null,
+    "wall_s": 0.19830290000027162,
+    "environment_error": "OSError(22, 'The file cannot be accessed by the system', None, 1920, None)"
+  },
+  "regression": {
+    "tests_run": 233,
+    "methods": {
+      "test_day_shop_c.ContractV11.test_p2_01_contract_and_data": "PASS",
+      "test_day_shop_c.ContractV11.test_p2_02_initial_fish_8_distinct_spawn_points": "PASS",
+      "test_day_shop_c.DayLoop.test_p2_08_day_start_order_and_plan": "PASS",
+      "test_day_shop_c.DayLoop.test_p2_08_phase_changes_same_tick_and_snapshot": "PASS",
+      "test_day_shop_c.DayLoop.test_p2_09_quan_in_day_only_plan_dishes": "PASS",
+      "test_day_shop_c.FullRun.test_p2_13_five_days_complete_and_fast": "PASS",
+      "test_day_shop_c.Pause.test_p2_12_pause_freezes_sim": "PASS",
+      "test_day_shop_c.ScenarioDay.test_day_scenario_conflicts_exit_2": "PASS",
+      "test_day_shop_c.Shop.test_p2_10_11_buy_funds_unknown_done_and_upgrade_next_day": "PASS",
+      "test_day_shop_c.Shop.test_p2_10_max_level_and_oxygen_upgrade": "PASS",
+      "test_day_shop_c.Shop.test_p2_10_shop_auto_close_600": "PASS",
+      "test_fish_c.FishSpawn.test_p2_03_spawn_every_360_up_to_cap": "PASS",
+      "test_fish_c.FishSwim.test_p2_02_reflect_at_edge": "PASS",
+      "test_fish_c.FishSwim.test_p2_02_swim_speed_and_age": "PASS",
+      "test_fish_c.FishSwim.test_p2_02_turn_at_swim_step_120": "PASS",
+      "test_fish_c.FishSwim.test_random_fish_false_keeps_fixture_still": "PASS",
+      "test_freshness_c.Freshness.test_p3_01_threshold_spoiled_tick1_ticket_example": "PASS",
+      "test_freshness_c.Freshness.test_p3_02_handoff_file_exact_and_count_schema_rejected": "PASS",
+      "test_freshness_c.Freshness.test_p3_03_new_item_fresh_100_decays_from_next_step": "PASS",
+      "test_freshness_c.Freshness.test_p3_04_spoiled_reservation_rereserves_freshest": "PASS",
+      "test_freshness_c.Freshness.test_p3_05_spoiled_without_replacement_unfulfillable": "PASS",
+      "test_freshness_c.Freshness.test_p3_06_price_by_freshness": "PASS",
+      "test_freshness_c.Freshness.test_p3_06b_tip_uses_fresh_adjusted_price": "PASS",
+      "test_freshness_c.Freshness.test_p3_07_scenario_conflicts_exit_2": "PASS",
+      "test_freshness_c.Freshness.test_p3_day_handoff_keeps_ids_same_tick": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_ca_keo_catch_yield_2": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_ctx_day_hp_and_oxygen_upgrade": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_fish_bounce_bounds": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_fish_random_false_no_swim_no_spawn": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_fish_spawn_at_360_ticks": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_fish_turn_every_120_ticks_and_swim": "PASS",
+      "test_gather_p2_a.GatherPhase2Tests.test_gather_sim_direct_fish_initial_8_and_distinct_positions": "PASS",
+      "test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact": "PASS",
+      "test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline": "PASS",
+      "test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown": "PASS",
+      "test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id": "PASS",
+      "test_gather_rules.GatherRules.test_catch_without_a_school_does_not_set_cooldown": "PASS",
+      "test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary": "PASS",
+      "test_gather_rules.GatherRules.test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory": "PASS",
+      "test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end": "PASS",
+      "test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes": "PASS",
+      "test_gather_rules.GatherRules.test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order": "PASS",
+      "test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event": "PASS",
+      "test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node": "PASS",
+      "test_gather_rules.GatherRules.test_gather_radius_uses_depth_as_well_as_horizontal_distance": "PASS",
+      "test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius": "PASS",
+      "test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id": "PASS",
+      "test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires": "PASS",
+      "test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge": "PASS",
+      "test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school": "PASS",
+      "test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick": "PASS",
+      "test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold": "PASS",
+      "test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps": "PASS",
+      "test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition": "PASS",
+      "test_gather_rules.GatherRules.test_stationary_player_emits_no_boundary_crossing_events": "PASS",
+      "test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum": "PASS",
+      "test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter": "PASS",
+      "test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius": "PASS",
+      "test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory": "PASS",
+      "test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_catch_yield_cooldown_tiebreak_and_hold_full": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_choke_from_zero_oxy_59_and_surface_cancels_choke": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_dive_and_surface_events": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_faint_drops_hold_lifo_and_writes_empty_inventory": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_gather_determinism_with_interact_and_catch": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_gather_hold_freshness_decay_and_spoiled_event": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_harvest_regrow_and_tiebreak": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_last_tick_priority_dock_harvest_catch_and_faint": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_oxygen_drain_and_refill": "PASS",
+      "test_gather_unit_a.GatherRulesA.test_oxygen_empty_and_first_choke_at_t_plus_59": "PASS",
+      "test_live.LiveServerTest.test_state_input_and_clean_stop": "PASS",
+      "test_monsters_c.Crocodile.test_p2_04_chase_when_player_deep_and_close": "PASS",
+      "test_monsters_c.Crocodile.test_p2_04_default_layout_day1_only_m1": "PASS",
+      "test_monsters_c.Crocodile.test_p2_04_no_chase_when_player_shallow": "PASS",
+      "test_monsters_c.Crocodile.test_p2_05_hit_loses_half_lifo_invuln_recoil": "PASS",
+      "test_monsters_c.Crocodile.test_p2_06_faint_by_monster": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_exact_threshold_is_not_spoiled_until_following_tick": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_exactly_thirty_spoils_on_first_step_in_both_phases": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_freshness_clamps_at_zero_in_both_phases": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_gather_existing_items_decay_half_point_per_sixty_active_steps": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_monster_hit_and_faint_lost_payloads_are_items_in_lifo_order": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_new_fish_yield_gets_distinct_ids_and_no_same_tick_decay": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_new_harvest_starts_at_one_hundred_then_decays_from_next_step": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_pause_freezes_freshness_and_delays_spoiled_until_resume_step": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_quan_raw_items_decay_quarter_point_per_sixty_steps": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_simultaneous_spoiled_events_use_numeric_id_order_and_emit_once": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_spoiled_items_still_fill_hold_and_block_harvesting": "PASS",
+      "test_p3_freshness_d.FreshnessV12.test_spoiled_precedes_choke_and_faint_in_gather_tick": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_consumed_id_is_not_reused_in_next_day_template": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_day_handoff_is_same_tick_without_second_decay": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_deterministic_bytes_for_identical_individual_fixture_and_inputs": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_faint_handoff_to_day_quan_has_empty_individual_stock": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_file_handoff_preserves_ids_kind_and_exact_post_gather_freshness": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_item_ids_increase_across_days_even_after_shop_discards_leftovers": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_new_ids_follow_loaded_max_and_remain_distinct_for_each_yield": "PASS",
+      "test_p3_integration_d.IntegrationV12.test_shop_raw_stock_stops_decay_while_active_or_paused": "PASS",
+      "test_p3_integration_d.UnchangedRegression.test_p1_dock_priority_over_harvest_keeps_individual_handoff_schema": "PASS",
+      "test_p3_integration_d.UnchangedRegression.test_p1_service_on_closing_tick_is_paid_before_quan_end": "PASS",
+      "test_p3_integration_d.UnchangedRegression.test_p1_underwater_oxygen_consumes_one_per_gameplay_step": "PASS",
+      "test_p3_integration_d.UnchangedRegression.test_p2_four_tables_and_two_stoves_remain_in_quan_snapshot": "PASS",
+      "test_p3_integration_d.UnchangedRegression.test_p2_pause_stops_clock_and_inputs_until_resume_edge": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_count_inventory_v11_is_rejected_including_empty_count_map": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_empty_individual_inventory_is_accepted": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_export_precision_keeps_spoiled_side_of_threshold_after_reload": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_gather_export_sorts_ids_but_hold_retains_acquisition_order": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_inventory_freshness_is_finite_numeric_and_within_bounds": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_inventory_ids_are_nonempty_strings_and_unique": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_inventory_root_and_item_field_schema_are_strict": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_inventory_unknown_kind_is_rejected": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_manifest_declares_v12_and_required_freshness_values": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_quan_inventory_is_not_limited_by_gather_capacity": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_reader_preserves_ids_freshness_and_already_spoiled_items_at_tick_zero": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_scenario_rejects_duplicate_physical_ids_in_hold_or_stock": "PASS",
+      "test_p3_inventory_d.InventoryV12.test_tick_limit_does_not_create_or_replace_inventory": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_affected_orders_retry_once_in_priority_order_after_all_spoiled_events": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_all_spoiled_events_precede_replacement_and_cooking_on_same_tick": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_allocation_priority_is_order_tick_then_table_id_without_overbooking": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_automatic_reservation_chooses_freshest_kind_then_numeric_id": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_complete_cook_pick_serve_pay_chain_keeps_discounted_price_and_score": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_cooking_consumes_reserved_ids_even_if_another_item_is_fresher": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_failed_replacement_waits_unfulfillable_until_patience_expiry": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_invalid_reserved_ids_are_rejected_with_valid_fixture_control": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_price_floors_after_tick_decay_and_uses_each_individual_in_mean": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_ready_dish_payload_and_frozen_price_do_not_decay": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_reserved_items_decay_and_are_replaced_when_they_spoil": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_spoilage_releases_entire_recipe_before_reselecting": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_spoiled_raw_items_cannot_create_an_affordable_order": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_tip_uses_discounted_payload_price_at_patience_boundary": "PASS",
+      "test_p3_reservation_price_d.ReservationPriceV12.test_two_orders_cannot_reserve_same_physical_item": "PASS",
+      "test_p4_c.P4.test_nonpositive_duration_and_days_rejected_without_artifact": "PASS",
+      "test_p4_c.P4.test_p4_01_contract_v13_declares_commands": "PASS",
+      "test_p4_c.P4.test_p4_02_soak_days_complete_no_crash_deterministic": "PASS",
+      "test_p4_c.P4.test_p4_03_bench_writes_five_fields": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_benchmark_formula_uses_real_slowest_one_percent_after_warmup": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_benchmark_paints_a_real_full_size_frame_and_dynamic_scene": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_live_cli_accepts_day_mode_for_inherited_full_day_demo": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_live_day_snapshot_has_phase_metadata": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_live_day_transfers_exact_items_then_shop_without_extra_decay": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_live_held_shop_done_is_not_a_new_edge_in_next_shop": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_live_pause_discards_actions_and_restart_clears_input_events_upgrades": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_live_shop_purchase_then_close_applies_upgrade_only_next_day": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_one_ten_day_session_preserves_real_income_upgrades_ids_and_order": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_stateful_ten_day_gameplay_trace_is_deterministic": "PASS",
+      "test_phase4_audit_d.Phase4Audit.test_ten_day_default_plan_repeats_and_every_phase_has_valid_invariants": "PASS",
+      "test_python_starter_units.Units.test_bad_frames_raise": "PASS",
+      "test_python_starter_units.Units.test_catch_is_a_v10_button_and_attack_is_not": "PASS",
+      "test_python_starter_units.Units.test_id_allocator_continues_after_max": "PASS",
+      "test_python_starter_units.Units.test_id_sorting": "PASS",
+      "test_python_starter_units.Units.test_input_edges_and_inherit": "PASS",
+      "test_python_starter_units.Units.test_live_inputs_keep_fast_tap_edge": "PASS",
+      "test_python_starter_units.Units.test_session_steps_gather_and_dock": "PASS",
+      "test_qa_harness_d.QAHarness.test_application_exit_codes_are_never_retried_or_relabelled": "PASS",
+      "test_qa_harness_d.QAHarness.test_legacy_fixture_reservations_use_distinct_real_individuals": "PASS",
+      "test_qa_harness_d.QAHarness.test_legacy_output_view_preserves_non_schema_values_and_raw_output": "PASS",
+      "test_qa_harness_d.QAHarness.test_legacy_view_rejects_duplicate_ids_dangling_and_shared_reservations": "PASS",
+      "test_qa_harness_d.QAHarness.test_non_python_manifest_command_remains_unchanged": "PASS",
+      "test_qa_harness_d.QAHarness.test_python_manifest_uses_active_interpreter_preserving_arguments": "PASS",
+      "test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding": "PASS",
+      "test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline": "PASS",
+      "test_quan_rules.QuanRules.test_closing_suppresses_customer_attempt_even_when_schedule_is_due": "PASS",
+      "test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty": "PASS",
+      "test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift": "PASS",
+      "test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock": "PASS",
+      "test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund": "PASS",
+      "test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience": "PASS",
+      "test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge": "PASS",
+      "test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside": "PASS",
+      "test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration": "PASS",
+      "test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero": "PASS",
+      "test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient": "PASS",
+      "test_quan_rules.QuanRules.test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove": "PASS",
+      "test_quan_rules.QuanRules.test_omitted_reservation_is_inferred_from_recipe_at_tick_zero": "PASS",
+      "test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving": "PASS",
+      "test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts": "PASS",
+      "test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick": "PASS",
+      "test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation": "PASS",
+      "test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged": "PASS",
+      "test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove": "PASS",
+      "test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction": "PASS",
+      "test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer": "PASS",
+      "test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals": "PASS",
+      "test_quan_rules.QuanRules.test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload": "PASS",
+      "test_quan_rules.QuanRules.test_scenario_rejects_contradictory_stove_state_and_timer": "PASS",
+      "test_quan_rules.QuanRules.test_scenario_rejects_eating_without_payment_fields_or_positive_timer": "PASS",
+      "test_quan_rules.QuanRules.test_scenario_rejects_payload_for_unknown_order_or_wrong_dish": "PASS",
+      "test_quan_rules.QuanRules.test_scenario_rejects_reservation_beyond_physical_stock_before_output": "PASS",
+      "test_quan_rules.QuanRules.test_scenario_rejects_reservation_different_from_order_recipe": "PASS",
+      "test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation": "PASS",
+      "test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes": "PASS",
+      "test_quan_rules.QuanRules.test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table": "PASS",
+      "test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end": "PASS",
+      "test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure": "PASS",
+      "test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity": "PASS",
+      "test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact": "PASS",
+      "test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price": "PASS",
+      "test_quan_rules.QuanRules.test_unfulfillable_waiting_order_cannot_start_cooking": "PASS",
+      "test_quan_rules_c.Closing.test_ac18_eating_customer_pays_closing_then_quan_end": "PASS",
+      "test_quan_rules_c.Closing.test_ac18_waiting_customer_leaves_closing_without_penalty": "PASS",
+      "test_quan_rules_c.Closing.test_schedule_uses_phase_tick_even_when_shift_shortened": "PASS",
+      "test_quan_rules_c.Customers.test_ac13_first_customer_at_120_reserves_recipe": "PASS",
+      "test_quan_rules_c.Customers.test_ac14_no_dish_when_stock_empty": "PASS",
+      "test_quan_rules_c.Customers.test_ac15_patience_out_left_reputation_and_stock_kept": "PASS",
+      "test_quan_rules_c.Determinism.test_same_seed_same_bytes": "PASS",
+      "test_quan_rules_c.Kitchen.test_ac16_ac17_serve_tip_pay": "PASS",
+      "test_quan_rules_c.Kitchen.test_ac16_cook_ready_pick": "PASS",
+      "test_quan_rules_c.Kitchen.test_ac17_low_patience_no_tip": "PASS",
+      "test_quan_rules_c.Kitchen.test_leaving_customer_discards_dish_in_hand": "PASS",
+      "test_quan_rules_c.Kitchen.test_serve_on_tick_patience_hits_zero_is_valid": "PASS",
+      "test_smoke_p1.Contract.test_con_01_ticks_zero_and_end_line": "PASS",
+      "test_smoke_p1.Contract.test_con_02_deterministic_bytes": "PASS",
+      "test_smoke_p1.Contract.test_con_03_bad_input_exit_2": "PASS",
+      "test_smoke_p1.Contract.test_con_03_old_and_future_modes_rejected": "PASS",
+      "test_smoke_p1.Contract.test_gather_snapshot_has_gather_fields": "PASS",
+      "test_smoke_p1.Contract.test_scenario_out_of_domain_exit_2": "PASS",
+      "test_smoke_p1.Integration.test_inv_01_gather_writes_inventory_quan_reads_it": "PASS",
+      "test_smoke_p1.Integration.test_inv_01_not_written_when_tick_limit_first": "PASS",
+      "test_smoke_p1.Integration.test_inv_bad_schema_exit_2": "PASS",
+      "test_smoke_p1.Integration.test_inventory_and_scenario_stock_conflict": "PASS",
+      "test_smoke_p1.Integration.test_inventory_flags_mode_mismatch_exit_2": "PASS",
+      "test_smoke_p1.Movement.test_move_01_swim_speed_after_ramp": "PASS",
+      "test_smoke_p1.Movement.test_move_02_heading_positive_is_down": "PASS",
+      "test_smoke_p1.Movement.test_move_03_edge_clamp": "PASS",
+      "test_smoke_p1.Movement.test_move_mep_vel_ve_0": "PASS",
+      "test_smoke_p1.Movement.test_move_ramp_doi_huong_trong_tran": "PASS",
+      "test_smoke_p1.Movement.test_time_ends_gather_and_keeps_hold": "PASS",
+      "test_smoke_p1.ScenarioModes.test_khoi_sai_mode_exit_2": "PASS",
+      "test_smoke_p1.ScenarioModes.test_quan_fixture_khong_hop_le_exit_2": "PASS",
+      "test_smoke_p1.ScenarioModes.test_quan_player_vel_hop_le": "PASS",
+      "test_team_check.TeamCheck.test_good": "PASS",
+      "test_team_check.TeamCheck.test_team_md_of_fork_is_valid": "PASS",
+      "test_team_check.TeamCheck.test_template_is_rejected": "PASS",
+      "test_team_check.TeamCheck.test_too_few_members": "PASS",
+      "test_team_check.TeamCheck.test_wrong_size_duplicate_and_outsider": "PASS"
+    },
+    "counts": {
+      "PASS": 233,
+      "FAIL": 0,
+      "ERROR": 0,
+      "SKIP": 0
+    },
+    "failures": [],
+    "errors": [],
+    "skipped": [],
+    "exit_code": 0
+  },
+  "bench": {
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.bench",
+      "--seed",
+      "42",
+      "--duration",
+      "30",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\bench.json"
+    ],
+    "exit_code": 0,
+    "wall_s": 33.08105869999963,
+    "stdout": "{\"avg_fps\": 306.88, \"p1_low_fps\": 146.09, \"frames\": 9207, \"measured_s\": 30.002, \"load_ms\": 28}\r\n",
+    "stderr": "",
+    "artifact_sha256": "75550885340aa476eb12ad9116b0e2ba4b653cd4cb358bfee4f50c9d6bf73bfc",
+    "result": {
+      "avg_fps": 306.88,
+      "p1_low_fps": 146.09,
+      "frames": 9207,
+      "measured_s": 30.002,
+      "load_ms": 28
+    }
+  },
+  "soak-1": {
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.soak",
+      "--seed",
+      "7",
+      "--days",
+      "10",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\soak-1.json"
+    ],
+    "exit_code": 0,
+    "wall_s": 6.033576699999685,
+    "stdout": "{\"days\": 10, \"days_completed\": 10, \"crashes\": 0, \"duration_s\": 5.943}\r\n",
+    "stderr": "",
+    "artifact_sha256": "c416ba630663df10b162454ce42b25dc38f31371135436d0d63a60d75e15c1de",
+    "result": {
+      "days": 10,
+      "days_completed": 10,
+      "crashes": 0,
+      "results": [
+        {
+          "day": 1,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 2,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 3,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 4,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 5,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 6,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 7,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 8,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 9,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 10,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        }
+      ],
+      "duration_s": 5.943
+    }
+  },
+  "soak-2": {
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.soak",
+      "--seed",
+      "7",
+      "--days",
+      "10",
+      "--out",
+      "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\soak-2.json"
+    ],
+    "exit_code": 0,
+    "wall_s": 6.94923480000034,
+    "stdout": "{\"days\": 10, \"days_completed\": 10, \"crashes\": 0, \"duration_s\": 6.816}\r\n",
+    "stderr": "",
+    "artifact_sha256": "a6510a510cbd514dba40de03eddfabe81b0fdeb01d9585d1ab5f3de61c426123",
+    "result": {
+      "days": 10,
+      "days_completed": 10,
+      "crashes": 0,
+      "results": [
+        {
+          "day": 1,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 2,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 3,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 4,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 5,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 6,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 7,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 8,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 9,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 10,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        }
+      ],
+      "duration_s": 6.816
+    }
+  },
+  "determinism": [
+    {
+      "mode": "gather",
+      "status": "PASS",
+      "valid_outputs": true,
+      "runs": [
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "gather",
+            "--seed",
+            "42",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-1\\scenario.json",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-1\\out.jsonl",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-1\\inputs.json",
+            "--inventory-out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-1\\inventory.json"
+          ],
+          "exit_code": 0,
+          "wall_s": 0.11653879999903438,
+          "stdout": "",
+          "stderr": "",
+          "hashes": {
+            "jsonl": "a74ace3c17f36a91d66967d81984d88a990cc963dd2028908ee3de673db9fe0d",
+            "inventory": "c599f43dcaeef337bb700b8b3dbc7a7173e12d71d3ef2ae86939811dbbd2b4b7"
+          },
+          "scenario_sha256": "4e3ccb34191de1f1d3112ec603640355fbc495e77c0be69626c0675d51181f41",
+          "inputs_sha256": "fdea2eab58dd5268f2b250c40d1dba3335dde0d7fc22c8996cb7d3104558d287"
+        },
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "gather",
+            "--seed",
+            "42",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-2\\scenario.json",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-2\\out.jsonl",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-2\\inputs.json",
+            "--inventory-out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-2\\inventory.json"
+          ],
+          "exit_code": 0,
+          "wall_s": 0.11436049999974784,
+          "stdout": "",
+          "stderr": "",
+          "hashes": {
+            "jsonl": "a74ace3c17f36a91d66967d81984d88a990cc963dd2028908ee3de673db9fe0d",
+            "inventory": "c599f43dcaeef337bb700b8b3dbc7a7173e12d71d3ef2ae86939811dbbd2b4b7"
+          },
+          "scenario_sha256": "4e3ccb34191de1f1d3112ec603640355fbc495e77c0be69626c0675d51181f41",
+          "inputs_sha256": "fdea2eab58dd5268f2b250c40d1dba3335dde0d7fc22c8996cb7d3104558d287"
+        }
+      ],
+      "scenario": {
+        "gather": {
+          "hold": [
+            {
+              "id": "I1",
+              "kind": "ca_loc",
+              "fresh": 100
+            },
+            {
+              "id": "I2",
+              "kind": "bong_sung",
+              "fresh": 100
+            },
+            {
+              "id": "I3",
+              "kind": "bong_sung",
+              "fresh": 100
+            }
+          ],
+          "time_left_ticks": 4,
+          "random_fish": false,
+          "monsters": []
+        }
+      },
+      "inputs": {
+        "frames": [
+          {
+            "tick": 0,
+            "interact": true
+          }
+        ]
+      }
+    },
+    {
+      "mode": "quan",
+      "status": "PASS",
+      "valid_outputs": true,
+      "runs": [
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "quan",
+            "--seed",
+            "42",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\quan-1\\scenario.json",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\quan-1\\out.jsonl",
+            "--inventory",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-1\\inventory.json"
+          ],
+          "exit_code": 0,
+          "wall_s": 0.12177430000156164,
+          "stdout": "",
+          "stderr": "",
+          "hashes": {
+            "jsonl": "000cbc2b1f15a5c612a483ac5ee0462bafa2bb18101768681e4cd0a54dc05cfe"
+          },
+          "scenario_sha256": "77fbf7e9d5f68e360b80e9905f73365f05800bce7126930fdd81bea70f742215",
+          "inputs_sha256": "fdea2eab58dd5268f2b250c40d1dba3335dde0d7fc22c8996cb7d3104558d287"
+        },
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "quan",
+            "--seed",
+            "42",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\quan-2\\scenario.json",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\quan-2\\out.jsonl",
+            "--inventory",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\gather-1\\inventory.json"
+          ],
+          "exit_code": 0,
+          "wall_s": 0.10135020000052464,
+          "stdout": "",
+          "stderr": "",
+          "hashes": {
+            "jsonl": "000cbc2b1f15a5c612a483ac5ee0462bafa2bb18101768681e4cd0a54dc05cfe"
+          },
+          "scenario_sha256": "77fbf7e9d5f68e360b80e9905f73365f05800bce7126930fdd81bea70f742215",
+          "inputs_sha256": "fdea2eab58dd5268f2b250c40d1dba3335dde0d7fc22c8996cb7d3104558d287"
+        }
+      ],
+      "scenario": {
+        "quan": {
+          "time_left_ticks": 2,
+          "random_customers": false
+        }
+      },
+      "inputs": null
+    },
+    {
+      "mode": "day",
+      "status": "PASS",
+      "valid_outputs": true,
+      "runs": [
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "day",
+            "--seed",
+            "42",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\day-1\\scenario.json",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\day-1\\out.jsonl",
+            "--days",
+            "1"
+          ],
+          "exit_code": 0,
+          "wall_s": 0.10185939999973925,
+          "stdout": "",
+          "stderr": "",
+          "hashes": {
+            "jsonl": "f483d1e5da2cd806680e37a2d7d7988e66a2a012e9acae75e9a6c717f5f12baa"
+          },
+          "scenario_sha256": "73b040bd9522d14ec95d6ae0438bfad71c5e55742aa2007f4160ed8d4bb26e08",
+          "inputs_sha256": "fdea2eab58dd5268f2b250c40d1dba3335dde0d7fc22c8996cb7d3104558d287"
+        },
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "day",
+            "--seed",
+            "42",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\day-2\\scenario.json",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-proof-hot_sb8p\\day-2\\out.jsonl",
+            "--days",
+            "1"
+          ],
+          "exit_code": 0,
+          "wall_s": 0.1258545000000595,
+          "stdout": "",
+          "stderr": "",
+          "hashes": {
+            "jsonl": "f483d1e5da2cd806680e37a2d7d7988e66a2a012e9acae75e9a6c717f5f12baa"
+          },
+          "scenario_sha256": "73b040bd9522d14ec95d6ae0438bfad71c5e55742aa2007f4160ed8d4bb26e08",
+          "inputs_sha256": "fdea2eab58dd5268f2b250c40d1dba3335dde0d7fc22c8996cb7d3104558d287"
+        }
+      ],
+      "scenario": {
+        "gather": {
+          "hold": [
+            {
+              "id": "I1",
+              "kind": "ca_loc",
+              "fresh": 100
+            },
+            {
+              "id": "I2",
+              "kind": "bong_sung",
+              "fresh": 100
+            },
+            {
+              "id": "I3",
+              "kind": "bong_sung",
+              "fresh": 100
+            }
+          ],
+          "time_left_ticks": 4,
+          "random_fish": false,
+          "monsters": []
+        },
+        "quan": {
+          "time_left_ticks": 2,
+          "random_customers": false
+        }
+      },
+      "inputs": null
+    }
+  ],
+  "benchmark_valid": true,
+  "benchmark_thresholds_report_only": {
+    "avg_ge_60": true,
+    "p1_low_ge_30": true,
+    "load_le_10000_ms": true,
+    "measurement": "Software framebuffer 1280x720; no window/GPU/frontend effects"
+  },
+  "soak_valid": true,
+  "soak_gameplay_equal": true,
+  "source_unchanged": true,
+  "revision_unchanged": true,
+  "status": "PASS"
+}

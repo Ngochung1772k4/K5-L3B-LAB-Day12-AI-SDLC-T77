@@ -3,8 +3,10 @@
 import json
 import math
 import os
+import re
 import shlex
 import subprocess
+import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +22,24 @@ def frames(*fr):
     return {"frames": list(fr)}
 
 
-def headless_cmd():
-    """Lệnh headless khai trong game.contract.json — test chạy qua đây nên dùng được với MỌI ngôn ngữ."""
+def manifest_cmd(key="headless_cmd"):
+    """Read the real command; use this interpreter for Python entry points.
+
+    This avoids unusable WindowsApps python3 aliases without editing the
+    contract, PATH, simulation, arguments or subprocess results. Other
+    languages/executables retain their manifest command unchanged.
+    """
     with open(os.path.join(ROOT, "game.contract.json"), encoding="utf-8") as f:
-        return shlex.split(json.load(f)["headless_cmd"])
+        command = shlex.split(json.load(f)[key])
+    executable = os.path.basename(command[0])
+    if re.fullmatch(r"python(?:\d+(?:\.\d+)*)?(?:\.exe)?", executable, flags=re.IGNORECASE):
+        return [sys.executable, "-B", *command[1:]]
+    return command
+
+
+def headless_cmd():
+    """Manifest headless entry point, with portable Python interpreter selection."""
+    return manifest_cmd()
 
 
 def run_headless(*args, cwd=ROOT):
