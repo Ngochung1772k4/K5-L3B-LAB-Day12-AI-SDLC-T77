@@ -4,7 +4,7 @@
 
 | Thành viên | GitHub handle | Module chính | Vai quy trình | Người dự phòng cho |
 |---|---|---|---|---|
-| (A — điền tên) | (điền handle) | `sim/gather` (lát 1 + 2) | PO | B |
+| Hồ An Lộc | hal2332004 | `sim/gather` (lát 1 + 2) | PO | B |
 | (B — điền tên) | (điền handle) | `sim/quan` (lát 3 + 4) | Scrum | A |
 | Ngoc Hung | Ngochung1772k4 | `client/ui` + `docs/contracts` + `scenario` | Integrator | D |
 | (D — điền tên) | (điền handle) | `qa` + harness AI | QA lead / Release | C |
