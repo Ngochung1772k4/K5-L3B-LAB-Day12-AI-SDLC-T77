@@ -18,6 +18,7 @@ import math
 from ..ids import id_key, sort_by_id
 from ..inventory import hold_to_items
 from .fish import initial_fish
+from .monsters import make_monsters, step_monsters
 from .ramp import ramp_velocity
 
 TICK = 60.0
@@ -48,6 +49,8 @@ class GatherSim:
         self.zero_oxy_ticks = p.get("zero_oxy_ticks", 0)
         self.invuln_ticks = p.get("invuln_ticks", 0)
         self.catch_cd_ticks = p.get("catch_cd_ticks", 0)
+        # Cá Sấu
+        self.monsters = make_monsters(tuning, scenario, self.day)
         self.hold = list(scenario.get("hold", []))  # thứ tự nhặt, cuối mảng là mới nhất
         self.time_left_ticks = scenario.get("time_left_ticks", int(round(t["duration_s"] * TICK)))
         # nút và đàn cá: scenario THAY THẾ danh sách mặc định; random_fish=false tắt cá mặc định
@@ -91,6 +94,10 @@ class GatherSim:
             "fish": [{"id": f["id"], "pos": f["pos"], "kind": f["kind"], "heading_deg": f["heading_deg"],
                       "age_ticks": f.get("age_ticks", 0)}
                      for f in sort_by_id(self.fish)],
+            "monsters": [{"id": m["id"], "kind": m["kind"], "pos": m["pos"], "waypoints": m["waypoints"],
+                          "target_idx": m["target_idx"], "state": m["state"],
+                          "state_ticks_left": m["state_ticks_left"], "recoil_dir": m["recoil_dir"]}
+                         for m in self.monsters],
         }
 
     # --- một bước ---------------------------------------------------------------
@@ -134,6 +141,11 @@ class GatherSim:
                         events.append(("faint", {"cause": "choke", "lost": lost, "hp": 0}))
                         self._finish("fainted", events)
                         return events
+
+        # 2b. Cá Sấu: di chuyển, xét hit (sau oxy/ngạt, trước interact)
+        if self.monsters:
+            if step_monsters(self, events):
+                return events  # vừa ngất do quái
 
         # 3. interact: bến trước, rồi hái
         if inp.pressed("interact"):
