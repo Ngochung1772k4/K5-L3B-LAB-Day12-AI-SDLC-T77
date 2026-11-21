@@ -1,0 +1,69 @@
+{
+  "note": "Original run summaries retain original .jsonl paths. Added .jsonl.txt files preserve those exact bytes and are not ignored by Git.",
+  "artifacts": [
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-run-81321f1b/integration-gather.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-run-81321f1b/integration-gather.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "6bc3a907bb1c941be656463f91009d0644398b32057bef98ba04103b2eaed8f9",
+      "bytes": 2615
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-run-81321f1b/integration-quan.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-run-81321f1b/integration-quan.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "e4d852552c5414a2aa58686488a8790b96728f50c251863ade23520a01fc71d3",
+      "bytes": 557
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-docked-1-jsonl.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-docked-1-jsonl.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "6bc3a907bb1c941be656463f91009d0644398b32057bef98ba04103b2eaed8f9",
+      "bytes": 2615
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-docked-2-jsonl.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-docked-2-jsonl.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "6bc3a907bb1c941be656463f91009d0644398b32057bef98ba04103b2eaed8f9",
+      "bytes": 2615
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-time-1-jsonl.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-time-1-jsonl.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "d4f2577542ae614b9f9be83f8df15cd4315f17aba8fd087d07faf861b36955a5",
+      "bytes": 5257
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-time-2-jsonl.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/gather-time-2-jsonl.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "d4f2577542ae614b9f9be83f8df15cd4315f17aba8fd087d07faf861b36955a5",
+      "bytes": 5257
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/quan-1-jsonl.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/quan-1-jsonl.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "d97f05d03517ee2db4e13991c04bbcb441b6a3845383ca9ae6912d692381abee",
+      "bytes": 56135
+    },
+    {
+      "original": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/quan-2-jsonl.jsonl",
+      "retained": "docs/proof/phase-1/d-uscalurn-determinism-df2e0816/quan-2-jsonl.jsonl.txt",
+      "original_ignored": true,
+      "raw_bytes_equal": true,
+      "sha256": "d97f05d03517ee2db4e13991c04bbcb441b6a3845383ca9ae6912d692381abee",
+      "bytes": 56135
+    }
+  ]
+}

@@ -23,6 +23,11 @@
 | AC-P1-20 Scenario quán mâu thuẫn → mã 2 | 12 ca chạy tay khi viết `scenario.py` (commit 788a2cb) + `test_quan_fixture_khong_hop_le_exit_2` | commit 788a2cb | Đạt một phần (chưa có test tự động cho từng ca) |
 | HUD / chơi được 2 buổi | Chạy `python3 -m chonoi.live --mode gather|quan` | — | Chưa có ảnh chụp bằng chứng |
 
+## Bằng chứng QA của D (uscalurn)
+- D viết thêm `tests/test_gather_rules.py` (28) và `tests/test_quan_rules.py` (39) theo AC-P1-01..20, cùng 2 skill `.agents/skills/run-tests-proof`, `check-determinism`.
+- Lần chạy đầu của D: [d-uscalurn-run-81321f1b](../proof/phase-1/d-uscalurn-run-81321f1b/summary.json) trên revision `6a7f66a` — **trước khi** luật gather/quán được merge, nên 51 method FAIL là đúng lúc đó (lịch sử, không phải kết quả commit tag).
+- Sau khi merge vào `main` (luật P1 + v1.1): các test của D chạy lại xanh, trừ 1 test giả định chỉ có bàn T1 — đã sửa theo v1.1 (4 bàn), xem commit merge.
+
 ## Đánh giá ngắn
 - **Trễ hạn:** luật gather (A) và quán (B) push sau mốc 1:00, nên tag `phase-1` gắn muộn (trong Phase 2) trên commit đã tích hợp. Tại mốc 1:00, `main` mới chỉ có khung + hợp đồng + kiểm scenario.
 - **Lỗi phát hiện khi tích hợp nhánh quán (B):** khách bỏ đi làm *tăng* kho (cộng lại phần giữ vào kho vật lý), `data` sự kiện sai hợp đồng (`customer_id` thay `order_id`…), sai thứ tự bước (khách rời/sinh trước interact), thiếu đóng ca, `no_dish` tạo khách, boa dùng `round` và cộng uy tín lúc phục vụ. C sửa trong một commit (`Co-authored-by` B) và thêm 12 test quán.

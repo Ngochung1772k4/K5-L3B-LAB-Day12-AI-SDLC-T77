@@ -1,0 +1,424 @@
+{
+  "revision": "6a7f66a35e5816996fe51010ea5b20ac9098fe5c",
+  "contract_version": "1.0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.22631-SP0",
+  "headless_configured": [
+    "python3",
+    "-m",
+    "chonoi.headless"
+  ],
+  "headless_effective": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "chonoi.headless"
+  ],
+  "windows_alias_error": "OSError(22, 'The file cannot be accessed by the system', None, 1920, None)",
+  "source_sha256": {
+    "game.contract.json": "6cb5cb498926f5256733966777403b310cc6f0c90f15254507d5d98850525233",
+    "chonoi/__init__.py": "140d0709bc27ad9cdaf9d187c77a5e08ff4b42e1cf0deba9f053f05bb2ea1ef4",
+    "chonoi/contract.py": "6db8d5af8b322bed7549a58a01787fdcc5242499ea1676652f7a266c37322ab4",
+    "chonoi/errors.py": "4b5bada83f8a005b1ca14278685837986c80f714680d6141745b07b8ce393c03",
+    "chonoi/headless.py": "2ce1182f7e2afbc378134c01261640b1cf5717af4abb77503daac6b177d648dd",
+    "chonoi/ids.py": "c75d32438c591fc4e58d074676bb4f7fbbfe55226856df07e96c960602ba6910",
+    "chonoi/inputs.py": "d868eb6fe34c45f5afabce7bd3cd071059f4a024ee055212071dd2073334cb5c",
+    "chonoi/inventory.py": "0b13f82aacd452d291f80c286c675e9fce46850e87addd5cbd18bd6fe996e389",
+    "chonoi/jsonl.py": "e26384891f55a74daa875654b19a4b3b29216952e732e37c34e8b13b830dcd6e",
+    "chonoi/live.py": "e93f7832a632b4f18342e1e2c9ef78e3bf24a4d1a619d51e2005da80753894f9",
+    "chonoi/rng.py": "721847d7cc3ecc56e5fe12726dca117d099518e339b1cdae2eea870382b649c2",
+    "chonoi/runner.py": "13dd2b32dda08a8ad675a38357041ae82bc88b23db3d15e3a4ce7bdc44792448",
+    "chonoi/scenario.py": "c47f4f5912ded96611c76dff7d8e211f043eeb9fb9320cb9b03d2ff965527ccd",
+    "chonoi/sim/__init__.py": "622b09dea7e9697b7bc4d50e6df7fcfbd85ce3f63320fb8c12ad0f1e525e780a",
+    "chonoi/sim/gather.py": "66c9541b86b223b975edea875da8ca3c4c1eb44c6efa7b74b3744067a241634d",
+    "chonoi/sim/quan.py": "405da5d27b85c51b12470d142cce6afb9b0f2c8ad79e809ebed82d3b69e1c242",
+    "chonoi/sim/ramp.py": "39cd06875f49ffa79df2d648cce17816dd8737f8b1e97542ac25c477f7c0259c",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/helpers.py": "103111b91967a2698c448d3f1767f8d6d3bc65d26205332edb5994d7cb770462",
+    "tests/test_gather_rules.py": "78b7a536873890c620235a4644df524944801975685cfbf28d7ff90b260229ee",
+    "tests/test_live.py": "4b075305c674db970433d6f1c5c6a3d087c915f9c8e07e6c43ec13d64ebf75fc",
+    "tests/test_python_starter_units.py": "7dc076f27c6673bde3ee19bd8018df105f29d6badd863be3565ce1b77410353e",
+    "tests/test_quan_rules.py": "a9930811220854a5530273c4d991091a8437b8a01b2fba3b08b452d5ed61babc",
+    "tests/test_smoke_p1.py": "db0a0c68dfc23fa871fda2d3967a3c39247dbca5c63ad3e8c31126d8272c37ab",
+    "tests/test_team_check.py": "4e37f9c63759f873c1b797b4587a3174c37adec6f065935a4848703e6d787d51"
+  },
+  "source_unchanged": true,
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "gather-docked",
+      "mode": "gather",
+      "seed": 42,
+      "ticks": 1,
+      "snapshot_every": 1,
+      "scenario": {
+        "gather": {
+          "hold": [
+            "ca_loc",
+            "bong_sung",
+            "bong_sung"
+          ]
+        }
+      },
+      "inputs": {
+        "frames": [
+          {
+            "tick": 0,
+            "interact": true
+          }
+        ]
+      },
+      "runs": [
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "gather",
+            "--seed",
+            "42",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-2xdcmoma\\scenario.json",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-2xdcmoma\\inputs.json",
+            "--ticks",
+            "1",
+            "--snapshot-every",
+            "1",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-2xdcmoma\\out.jsonl",
+            "--inventory-out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-2xdcmoma\\inventory.json"
+          ],
+          "exit_code": 0,
+          "scenario_sha256": "6b89d20d708d3436973a44e534a3951942eb259204bc92db43e303f82c584668",
+          "inputs_sha256": "0579e62a45a70c9f4ea277c4d01ef711cbab06cee8509814e231eabe38864d99",
+          "stdout": "",
+          "stderr": "",
+          "jsonl": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-2xdcmoma\\out.jsonl",
+            "artifact": "gather-docked-1-jsonl.jsonl",
+            "bytes": 2615,
+            "sha256": "6bc3a907bb1c941be656463f91009d0644398b32057bef98ba04103b2eaed8f9"
+          },
+          "inventory": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-2xdcmoma\\inventory.json",
+            "artifact": "gather-docked-1-inventory.json",
+            "bytes": 37,
+            "sha256": "b6bb9d2da81ecee69d01fd0860cef1b54edfcb140409c250b4ec3ba1e4410b65"
+          }
+        },
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "gather",
+            "--seed",
+            "42",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-4r025vfj\\scenario.json",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-4r025vfj\\inputs.json",
+            "--ticks",
+            "1",
+            "--snapshot-every",
+            "1",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-4r025vfj\\out.jsonl",
+            "--inventory-out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-4r025vfj\\inventory.json"
+          ],
+          "exit_code": 0,
+          "scenario_sha256": "6b89d20d708d3436973a44e534a3951942eb259204bc92db43e303f82c584668",
+          "inputs_sha256": "0579e62a45a70c9f4ea277c4d01ef711cbab06cee8509814e231eabe38864d99",
+          "stdout": "",
+          "stderr": "",
+          "jsonl": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-4r025vfj\\out.jsonl",
+            "artifact": "gather-docked-2-jsonl.jsonl",
+            "bytes": 2615,
+            "sha256": "6bc3a907bb1c941be656463f91009d0644398b32057bef98ba04103b2eaed8f9"
+          },
+          "inventory": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-4r025vfj\\inventory.json",
+            "artifact": "gather-docked-2-inventory.json",
+            "bytes": 37,
+            "sha256": "b6bb9d2da81ecee69d01fd0860cef1b54edfcb140409c250b4ec3ba1e4410b65"
+          }
+        }
+      ],
+      "same_input_bytes": true,
+      "valid_complete_outputs": true,
+      "byte_equal": {
+        "jsonl": true,
+        "inventory": true
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "gather-time",
+      "mode": "gather",
+      "seed": 42,
+      "ticks": 8,
+      "snapshot_every": 1,
+      "scenario": {
+        "gather": {
+          "player": {
+            "pos": [
+              20,
+              0
+            ]
+          },
+          "hold": [
+            "ca_loc",
+            "bong_sung"
+          ],
+          "nodes": [
+            {
+              "id": "N1",
+              "kind": "bong_dien_dien",
+              "pos": [
+                20,
+                0
+              ],
+              "regrow_ticks": 2
+            }
+          ],
+          "fish": [],
+          "random_fish": false,
+          "time_left_ticks": 8
+        }
+      },
+      "inputs": {
+        "frames": [
+          {
+            "tick": 0,
+            "move": [
+              1,
+              0
+            ],
+            "interact": true
+          },
+          {
+            "tick": 1,
+            "interact": false
+          },
+          {
+            "tick": 2,
+            "interact": true
+          },
+          {
+            "tick": 3,
+            "move": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "runs": [
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "gather",
+            "--seed",
+            "42",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-3zcdz9_c\\scenario.json",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-3zcdz9_c\\inputs.json",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-3zcdz9_c\\out.jsonl",
+            "--inventory-out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-3zcdz9_c\\inventory.json"
+          ],
+          "exit_code": 0,
+          "scenario_sha256": "d30c82cc2b32f77cde5fb3faeafc08d794645f3b50c8bb58f315055dcbbaa471",
+          "inputs_sha256": "1c35c615d879a1a530a522399ab8dd58ecc745468db7f701cbc6925af2cd6707",
+          "stdout": "",
+          "stderr": "",
+          "jsonl": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-3zcdz9_c\\out.jsonl",
+            "artifact": "gather-time-1-jsonl.jsonl",
+            "bytes": 5257,
+            "sha256": "d4f2577542ae614b9f9be83f8df15cd4315f17aba8fd087d07faf861b36955a5"
+          },
+          "inventory": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-3zcdz9_c\\inventory.json",
+            "artifact": "gather-time-1-inventory.json",
+            "bytes": 37,
+            "sha256": "f26bc7f19d3da8662e85e2e94e80a67059dba1428a2c388e35f60f92ee9d14e7"
+          }
+        },
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "gather",
+            "--seed",
+            "42",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-v4426o3h\\scenario.json",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-v4426o3h\\inputs.json",
+            "--ticks",
+            "8",
+            "--snapshot-every",
+            "1",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-v4426o3h\\out.jsonl",
+            "--inventory-out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-v4426o3h\\inventory.json"
+          ],
+          "exit_code": 0,
+          "scenario_sha256": "d30c82cc2b32f77cde5fb3faeafc08d794645f3b50c8bb58f315055dcbbaa471",
+          "inputs_sha256": "1c35c615d879a1a530a522399ab8dd58ecc745468db7f701cbc6925af2cd6707",
+          "stdout": "",
+          "stderr": "",
+          "jsonl": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-v4426o3h\\out.jsonl",
+            "artifact": "gather-time-2-jsonl.jsonl",
+            "bytes": 5257,
+            "sha256": "d4f2577542ae614b9f9be83f8df15cd4315f17aba8fd087d07faf861b36955a5"
+          },
+          "inventory": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-v4426o3h\\inventory.json",
+            "artifact": "gather-time-2-inventory.json",
+            "bytes": 37,
+            "sha256": "f26bc7f19d3da8662e85e2e94e80a67059dba1428a2c388e35f60f92ee9d14e7"
+          }
+        }
+      ],
+      "same_input_bytes": true,
+      "valid_complete_outputs": true,
+      "byte_equal": {
+        "jsonl": true,
+        "inventory": true
+      },
+      "status": "PASS"
+    },
+    {
+      "case": "quan",
+      "mode": "quan",
+      "seed": 42,
+      "ticks": 123,
+      "snapshot_every": 1,
+      "scenario": {
+        "quan": {
+          "stock": {
+            "ca_loc": 1,
+            "bong_sung": 2,
+            "ca_linh": 3,
+            "bong_dien_dien": 1
+          },
+          "random_customers": true,
+          "time_left_ticks": 123,
+          "player": {
+            "pos": [
+              2,
+              8
+            ]
+          }
+        }
+      },
+      "inputs": {
+        "frames": [
+          {
+            "tick": 120,
+            "interact": true
+          }
+        ]
+      },
+      "runs": [
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "quan",
+            "--seed",
+            "42",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-wanvyhg8\\scenario.json",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-wanvyhg8\\inputs.json",
+            "--ticks",
+            "123",
+            "--snapshot-every",
+            "1",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-wanvyhg8\\out.jsonl"
+          ],
+          "exit_code": 0,
+          "scenario_sha256": "b4a61f51ecee136627b5eacf859bbe76db7683de748bea6921943113181549ce",
+          "inputs_sha256": "6ad9951f3f54bf98fa3c1a1d692486ec2dd28060e7b6808e623ec8c129ef3e5f",
+          "stdout": "",
+          "stderr": "",
+          "jsonl": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-a-wanvyhg8\\out.jsonl",
+            "artifact": "quan-1-jsonl.jsonl",
+            "bytes": 56135,
+            "sha256": "d97f05d03517ee2db4e13991c04bbcb441b6a3845383ca9ae6912d692381abee"
+          }
+        },
+        {
+          "argv": [
+            "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+            "-B",
+            "-m",
+            "chonoi.headless",
+            "--mode",
+            "quan",
+            "--seed",
+            "42",
+            "--scenario",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-kmcp0tog\\scenario.json",
+            "--inputs",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-kmcp0tog\\inputs.json",
+            "--ticks",
+            "123",
+            "--snapshot-every",
+            "1",
+            "--out",
+            "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-kmcp0tog\\out.jsonl"
+          ],
+          "exit_code": 0,
+          "scenario_sha256": "b4a61f51ecee136627b5eacf859bbe76db7683de748bea6921943113181549ce",
+          "inputs_sha256": "6ad9951f3f54bf98fa3c1a1d692486ec2dd28060e7b6808e623ec8c129ef3e5f",
+          "stdout": "",
+          "stderr": "",
+          "jsonl": {
+            "source_path": "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-det-b-kmcp0tog\\out.jsonl",
+            "artifact": "quan-2-jsonl.jsonl",
+            "bytes": 56135,
+            "sha256": "d97f05d03517ee2db4e13991c04bbcb441b6a3845383ca9ae6912d692381abee"
+          }
+        }
+      ],
+      "same_input_bytes": true,
+      "valid_complete_outputs": true,
+      "byte_equal": {
+        "jsonl": true
+      },
+      "status": "PASS"
+    }
+  ]
+}

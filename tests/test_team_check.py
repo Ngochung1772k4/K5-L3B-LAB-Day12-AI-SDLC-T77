@@ -23,10 +23,17 @@ class TeamCheck(unittest.TestCase):
         self.assertEqual([x["handle"] for x in m], ["an-nguyen", "binh-tran", "chi-le", "dung-pham"])
         self.assertEqual(check_team.validate(m, 4, actor="an-nguyen", event="pull_request"), [])
 
-    def test_template_is_rejected(self):
-        with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "TEAM.md"), encoding="utf-8") as f:
+    def test_team_md_of_fork_is_valid(self):
+        # Fork của nhóm đã điền TEAM.md (starter gốc kiểm bản mẫu bị từ chối) -> giờ phải hợp lệ, khớp team_size
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with open(os.path.join(root, "TEAM.md"), encoding="utf-8") as f:
             m = check_team.parse_team(f.read())
-        self.assertTrue(check_team.validate(m, 4))
+        self.assertEqual(check_team.validate(m, 4), [])
+
+    def test_template_is_rejected(self):
+        tpl = "\n".join(["| Thành viên | GitHub handle | Module chính |", "|---|---|---|",
+                         "| | | `sim/gather` |", "| | | `sim/quan` |", "| | | `client/ui` |", "| | | `qa` |"])
+        self.assertTrue(check_team.validate(check_team.parse_team(tpl), 4))
 
     def test_wrong_size_duplicate_and_outsider(self):
         m = check_team.parse_team(GOOD)

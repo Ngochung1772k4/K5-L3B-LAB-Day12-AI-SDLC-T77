@@ -26,4 +26,7 @@
 - Sáng tạo thêm được khuyến khích nhưng phải tắt ở headless (xem README, mục "Tự do sáng tạo").
 
 ## Skills / hooks của nhóm
-- (Ghi tên và khi nào dùng; tối thiểu 2 skill/hook/command nhóm tự viết, đặt ở `.agents/skills/` hoặc tương đương.)
+- D / QA: [`run-tests-proof`](.agents/skills/run-tests-proof/SKILL.md) — dùng sau thay đổi gameplay hoặc khi cần proof Phase 1; chạy Gather, Quán, toàn bộ unittest và smoke hai tiến trình, lưu log/exit code/revision thật vào thư mục proof mới.
+- D / QA: [`check-determinism`](.agents/skills/check-determinism/SKILL.md) — dùng khi đổi RNG, seed, timer hoặc thứ tự event; chạy hai lần cùng dữ liệu trong hai thư mục tạm, so JSONL và inventory từng byte.
+- Khi FAIL, báo owner A/B/C cùng fixture/input, seed, tick, expected/actual và proof. Không tự sửa contract hoặc assertion để làm xanh; không sửa file ngoài phạm vi đang được giao.
+- Tắt bytecode khi chạy QA; không ghi đè proof cũ. Đây là hướng dẫn thao tác cho agent, chưa cài hook tự chạy. Cách gọi: yêu cầu dùng `$run-tests-proof` hoặc `$check-determinism`, hoặc đọc trực tiếp `SKILL.md` tương ứng.

@@ -1,0 +1,582 @@
+{
+  "revision": "6a7f66a35e5816996fe51010ea5b20ac9098fe5c",
+  "argv": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-c",
+    "\nimport contextlib, json, sys, unittest\nfrom unittest.mock import patch\nsys.path.insert(0, 'tests')\nimport helpers\npattern, command = sys.argv[1], json.loads(sys.argv[2])\nsuite = unittest.defaultTestLoader.discover('tests', pattern=pattern)\ndef ids(node):\n    return [i for child in node for i in ids(child)] if isinstance(node, unittest.TestSuite) else [node.id()]\nall_ids = set(ids(suite))\ncontext = patch.object(helpers, 'headless_cmd', return_value=command) if command != helpers.headless_cmd() else contextlib.nullcontext()\nwith context:\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\ndef parent(test):\n    return getattr(test, 'test_case', test).id()\nfailed = {parent(test) for test, _ in result.failures}\nerrored = {parent(test) for test, _ in result.errors}\nskipped = {parent(test) for test, _ in result.skipped}\nmethods = {i: 'ERROR' if i in errored else 'FAIL' if i in failed else 'SKIP' if i in skipped else 'PASS' for i in sorted(all_ids)}\ncounts = {status: list(methods.values()).count(status) for status in ('PASS', 'FAIL', 'ERROR', 'SKIP')}\nprint(json.dumps({'tests_run': result.testsRun, 'counts': counts, 'methods': methods,\n                  'failure_entries_including_subtests': len(result.failures), 'error_entries': len(result.errors)}))\nsys.exit(0 if result.wasSuccessful() else 1)\n",
+    "test_quan_rules.py",
+    "[\"C:\\\\Users\\\\Siuuu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"-B\", \"-m\", \"chonoi.headless\"]"
+  ],
+  "exit_code": 1,
+  "headless_effective": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "chonoi.headless"
+  ]
+}
+
+--- STDOUT (raw) ---
+{"tests_run": 39, "counts": {"PASS": 11, "FAIL": 28, "ERROR": 0, "SKIP": 0}, "methods": {"test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding": "FAIL", "test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline": "FAIL", "test_quan_rules.QuanRules.test_closing_suppresses_customer_attempt_even_when_schedule_is_due": "PASS", "test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty": "FAIL", "test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift": "FAIL", "test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock": "FAIL", "test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund": "FAIL", "test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience": "FAIL", "test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge": "FAIL", "test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside": "FAIL", "test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration": "FAIL", "test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero": "FAIL", "test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient": "FAIL", "test_quan_rules.QuanRules.test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove": "PASS", "test_quan_rules.QuanRules.test_omitted_reservation_is_inferred_from_recipe_at_tick_zero": "PASS", "test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving": "FAIL", "test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts": "FAIL", "test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick": "FAIL", "test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation": "FAIL", "test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged": "FAIL", "test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove": "FAIL", "test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction": "FAIL", "test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer": "FAIL", "test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals": "FAIL", "test_quan_rules.QuanRules.test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_contradictory_stove_state_and_timer": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_eating_without_payment_fields_or_positive_timer": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_payload_for_unknown_order_or_wrong_dish": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_reservation_beyond_physical_stock_before_output": "PASS", "test_quan_rules.QuanRules.test_scenario_rejects_reservation_different_from_order_recipe": "PASS", "test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation": "FAIL", "test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes": "FAIL", "test_quan_rules.QuanRules.test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table": "PASS", "test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end": "FAIL", "test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure": "FAIL", "test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity": "FAIL", "test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact": "FAIL", "test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price": "FAIL", "test_quan_rules.QuanRules.test_unfulfillable_waiting_order_cannot_start_cooking": "PASS"}, "failure_entries_including_subtests": 43, "error_entries": 0}
+
+--- STDERR (raw) ---
+test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) ... 
+  test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='cooking') ... FAIL
+  test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='ready') ... FAIL
+  test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='hand') ... FAIL
+test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) ... 
+  test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=1) ... FAIL
+  test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=2) ... FAIL
+test_closing_suppresses_customer_attempt_even_when_schedule_is_due (test_quan_rules.QuanRules.test_closing_suppresses_customer_attempt_even_when_schedule_is_due) ... ok
+test_closing_waiter_releases_raw_reservation_without_patience_penalty (test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty) ... FAIL
+test_customer_attempts_follow_exact_interval_even_in_shortened_shift (test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift) ... FAIL
+test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) ... 
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=42) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=42) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=42) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=7) ... FAIL
+  test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=42) ... FAIL
+test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) ... 
+  test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='cooking') ... FAIL
+  test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='ready') ... FAIL
+  test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='hand') ... FAIL
+test_first_customer_arrives_at_configured_tick_with_full_patience (test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience) ... FAIL
+test_held_interact_does_not_pick_ready_dish_without_a_new_edge (test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge) ... FAIL
+test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) ... 
+  test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) (distance=1.5) ... FAIL
+test_matching_order_is_served_then_paid_only_after_full_eating_duration (test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration) ... FAIL
+test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero (test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero) ... FAIL
+test_no_dish_when_each_recipe_lacks_at_least_one_ingredient (test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient) ... FAIL
+test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove (test_quan_rules.QuanRules.test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove) ... ok
+test_omitted_reservation_is_inferred_from_recipe_at_tick_zero (test_quan_rules.QuanRules.test_omitted_reservation_is_inferred_from_recipe_at_tick_zero) ... ok
+test_one_interact_picks_at_stove_before_colocated_table_without_serving (test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving) ... FAIL
+test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts (test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts) ... FAIL
+test_patience_decreases_once_on_each_waiting_tick (test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick) ... FAIL
+test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) ... 
+  test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=3.0) ... FAIL
+  test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=0) ... FAIL
+test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) ... 
+  test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=0) ... FAIL
+  test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=12) ... FAIL
+test_pickup_requires_ready_and_empty_hand_then_resets_stove (test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove) ... FAIL
+test_ready_transition_allows_pickup_in_same_tick_before_interaction (test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction) ... FAIL
+test_released_raw_reservation_is_available_for_next_customer (test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer) ... FAIL
+test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals (test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals) ... FAIL
+test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload (test_quan_rules.QuanRules.test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload) ... ok
+test_scenario_rejects_contradictory_stove_state_and_timer (test_quan_rules.QuanRules.test_scenario_rejects_contradictory_stove_state_and_timer) ... ok
+test_scenario_rejects_eating_without_payment_fields_or_positive_timer (test_quan_rules.QuanRules.test_scenario_rejects_eating_without_payment_fields_or_positive_timer) ... ok
+test_scenario_rejects_payload_for_unknown_order_or_wrong_dish (test_quan_rules.QuanRules.test_scenario_rejects_payload_for_unknown_order_or_wrong_dish) ... ok
+test_scenario_rejects_reservation_beyond_physical_stock_before_output (test_quan_rules.QuanRules.test_scenario_rejects_reservation_beyond_physical_stock_before_output) ... ok
+test_scenario_rejects_reservation_different_from_order_recipe (test_quan_rules.QuanRules.test_scenario_rejects_reservation_different_from_order_recipe) ... ok
+test_score_uses_earned_plus_multiplier_times_floor_reputation (test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation) ... FAIL
+test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes (test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes) ... FAIL
+test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table (test_quan_rules.QuanRules.test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table) ... ok
+test_service_on_closing_tick_is_paid_immediately_before_quan_end (test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end) ... FAIL
+test_service_on_zero_patience_deadline_succeeds_before_departure (test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure) ... FAIL
+test_snapshot_preserves_fixture_player_position_and_velocity (test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity) ... FAIL
+test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact (test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact) ... FAIL
+test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) ... 
+  test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1800) ... FAIL
+  test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1799) ... FAIL
+test_unfulfillable_waiting_order_cannot_start_cooking (test_quan_rules.QuanRules.test_unfulfillable_waiting_order_cannot_start_cooking) ... ok
+
+======================================================================
+FAIL: test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='cooking')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 608, in test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 608, in test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) (location='hand')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 608, in test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 624, in test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline
+    self.assertEqual([e["name"] for e in events(rows)], ["paid", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['paid', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'paid'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['paid', 'quan_end']
+?  ++++++++
+
+
+======================================================================
+FAIL: test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) (remaining=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 624, in test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline
+    self.assertEqual([e["name"] for e in events(rows)], ["paid", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['paid', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'paid'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['paid', 'quan_end']
+?  ++++++++
+
+
+======================================================================
+FAIL: test_closing_waiter_releases_raw_reservation_without_patience_penalty (test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 594, in test_closing_waiter_releases_raw_reservation_without_patience_penalty
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "quan_end"])
+AssertionError: Lists differ: ['quan_end'] != ['customer_left', 'quan_end']
+
+First differing element 0:
+'quan_end'
+'customer_left'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'quan_end'
+
+- ['quan_end']
++ ['customer_left', 'quan_end']
+
+======================================================================
+FAIL: test_customer_attempts_follow_exact_interval_even_in_shortened_shift (test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 208, in test_customer_attempts_follow_exact_interval_even_in_shortened_shift
+    self.assertEqual([(e["tick"], e["data"]) for e in events(rows, "no_dish")],
+AssertionError: Lists differ: [] != [(120, {}), (1020, {}), (1920, {})]
+
+Second list contains 3 additional elements.
+First extra element 0:
+(120, {})
+
+- []
++ [(120, {}), (1020, {}), (1920, {})]
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'bong_sung': 2}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_linh': 3, 'bong_dien_dien': 1}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) (stock={'ca_loc': 1, 'bong_sung': 2}, seed=42)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 241, in test_customer_selects_only_recipes_affordable_from_available_stock
+    self.assertEqual(len(arrived), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='cooking')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 402, in test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund
+    self.assertEqual(len(events(rows, "customer_left")), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 402, in test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund
+    self.assertEqual(len(events(rows, "customer_left")), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) (location='hand')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 402, in test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund
+    self.assertEqual(len(events(rows, "customer_left")), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_first_customer_arrives_at_configured_tick_with_full_patience (test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 192, in test_first_customer_arrives_at_configured_tick_with_full_patience
+    self.one_event(rows, "customer_arrived", first,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : customer_arrived: []
+
+======================================================================
+FAIL: test_held_interact_does_not_pick_ready_dish_without_a_new_edge (test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 453, in test_held_interact_does_not_pick_ready_dish_without_a_new_edge
+    self.assertEqual([e["tick"] for e in events(rows, "cook_started")], [1])
+AssertionError: Lists differ: [] != [1]
+
+Second list contains 1 additional elements.
+First extra element 0:
+1
+
+- []
++ [1]
+?  +
+
+
+======================================================================
+FAIL: test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) (distance=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 519, in test_interaction_radius_is_inclusive_and_rejects_just_outside
+    self.assertEqual(len(events(rows, "dish_picked")), int(allowed))
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_matching_order_is_served_then_paid_only_after_full_eating_duration (test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 528, in test_matching_order_is_served_then_paid_only_after_full_eating_duration
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+======================================================================
+FAIL: test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero (test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 282, in test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero
+    self.assertIn(key, actual, f"Contract D fixture default missing: {key}")
+AssertionError: 'state' not found in {'id': 'C1', 'table_id': 'T1', 'dish_id': 'ca_loc_nuong_trui', 'reserved': {'ca_loc': 1}} : Contract D fixture default missing: state
+
+======================================================================
+FAIL: test_no_dish_when_each_recipe_lacks_at_least_one_ingredient (test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 218, in test_no_dish_when_each_recipe_lacks_at_least_one_ingredient
+    self.one_event(rows, "no_dish", first, {})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : no_dish: []
+
+======================================================================
+FAIL: test_one_interact_picks_at_stove_before_colocated_table_without_serving (test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 497, in test_one_interact_picks_at_stove_before_colocated_table_without_serving
+    self.one_event(rows, "dish_picked", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : dish_picked: []
+
+======================================================================
+FAIL: test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts (test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 255, in test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts
+    self.assertEqual(self.customer_at(first)["reserved"], recipe)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 171, in customer_at
+    self.assertEqual(len(customers), 1, f"expected one seated customer at tick {tick}: {customers}")
+AssertionError: 0 != 1 : expected one seated customer at tick 120: []
+
+======================================================================
+FAIL: test_patience_decreases_once_on_each_waiting_tick (test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 360, in test_patience_decreases_once_on_each_waiting_tick
+    self.assertEqual(snap["customers"][0]["patience_ticks_left"], 5 - tick)
+AssertionError: 5 != 4
+
+======================================================================
+FAIL: test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=3.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 371, in test_patience_expiry_releases_reservation_and_applies_clamped_reputation
+    self.assertEqual(len(left), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) (initial=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 371, in test_patience_expiry_releases_reservation_and_applies_clamped_reputation
+    self.assertEqual(len(left), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 581, in test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged
+    self.one_event(rows, "paid", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : paid: []
+
+======================================================================
+FAIL: test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) (tip=12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 581, in test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged
+    self.one_event(rows, "paid", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : paid: []
+
+======================================================================
+FAIL: test_pickup_requires_ready_and_empty_hand_then_resets_stove (test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 466, in test_pickup_requires_ready_and_empty_hand_then_resets_stove
+    self.assertEqual(self.stove(1)["cook_ticks_left"], 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_ready_transition_allows_pickup_in_same_tick_before_interaction (test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 480, in test_ready_transition_allows_pickup_in_same_tick_before_interaction
+    self.assertEqual([(e["name"], e["tick"]) for e in events(rows)],
+AssertionError: Lists differ: [] != [('dish_ready', 1), ('dish_picked', 1)]
+
+Second list contains 2 additional elements.
+First extra element 0:
+('dish_ready', 1)
+
+- []
++ [('dish_ready', 1), ('dish_picked', 1)]
+
+======================================================================
+FAIL: test_released_raw_reservation_is_available_for_next_customer (test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 388, in test_released_raw_reservation_is_available_for_next_customer
+    self.assertEqual([e["name"] for e in events(rows)], ["customer_left", "customer_arrived"])
+AssertionError: Lists differ: [] != ['customer_left', 'customer_arrived']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'customer_left'
+
+- []
++ ['customer_left', 'customer_arrived']
+
+======================================================================
+FAIL: test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals (test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 345, in test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals
+    self.assertEqual([e["tick"] for e in events(rows, "customer_arrived")], [first])
+AssertionError: Lists differ: [] != [120]
+
+Second list contains 1 additional elements.
+First extra element 0:
+120
+
+- []
++ [120]
+
+======================================================================
+FAIL: test_score_uses_earned_plus_multiplier_times_floor_reputation (test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 671, in test_score_uses_earned_plus_multiplier_times_floor_reputation
+    self.assertEqual(self.s[tick]["earned"], expected_earned)
+AssertionError: 0 != 72
+
+======================================================================
+FAIL: test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes (test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 687, in test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes
+    self.assertEqual([e["tick"] for e in events(rows, "customer_arrived")], [first])
+AssertionError: Lists differ: [] != [120]
+
+Second list contains 1 additional elements.
+First extra element 0:
+120
+
+- []
++ [120]
+
+======================================================================
+FAIL: test_service_on_closing_tick_is_paid_immediately_before_quan_end (test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 641, in test_service_on_closing_tick_is_paid_immediately_before_quan_end
+    self.assertEqual([(e["name"], e["tick"]) for e in events(rows)],
+AssertionError: Lists differ: [('quan_end', 1)] != [('served', 1), ('paid', 1), ('quan_end', 1)]
+
+First differing element 0:
+('quan_end', 1)
+('served', 1)
+
+Second list contains 2 additional elements.
+First extra element 1:
+('paid', 1)
+
+- [('quan_end', 1)]
++ [('served', 1), ('paid', 1), ('quan_end', 1)]
+
+======================================================================
+FAIL: test_service_on_zero_patience_deadline_succeeds_before_departure (test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 568, in test_service_on_zero_patience_deadline_succeeds_before_departure
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+======================================================================
+FAIL: test_snapshot_preserves_fixture_player_position_and_velocity (test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 289, in test_snapshot_preserves_fixture_player_position_and_velocity
+    self.assertIn("vel", self.s[0]["player"], "Contract D/E requires player.vel in Quan snapshots")
+AssertionError: 'vel' not found in {'pos': [8, 5]} : Contract D/E requires player.vel in Quan snapshots
+
+======================================================================
+FAIL: test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact (test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 428, in test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact
+    self.one_event(rows, "cook_started", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : cook_started: []
+
+======================================================================
+FAIL: test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1800)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 559, in test_tip_threshold_uses_patience_after_decrement_and_floor_price
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+======================================================================
+FAIL: test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) (remaining_at_service=1799)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 559, in test_tip_threshold_uses_patience_after_decrement_and_floor_price
+    self.one_event(rows, "served", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 176, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : served: []
+
+----------------------------------------------------------------------
+Ran 39 tests in 14.251s
+
+FAILED (failures=43)

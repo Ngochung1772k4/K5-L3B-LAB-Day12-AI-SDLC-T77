@@ -1,0 +1,10 @@
+{
+  "tool_command": "python -B -X utf8 <skill-creator>/scripts/quick_validate.py .agents/skills/run-tests-proof; python -B -X utf8 <skill-creator>/scripts/quick_validate.py .agents/skills/check-determinism",
+  "exit_code": 0,
+  "combined_output": "Skill is valid!\r\nSkill is valid!\r\n",
+  "behavioral_execution": {
+    "run_tests_proof": "PROOF_DIR=docs/proof/phase-1/d-uscalurn-run-81321f1b\r\ngather-tests: {\"PASS\": 5, \"FAIL\": 23, \"ERROR\": 0, \"SKIP\": 0}\r\nfull-suite: {\"PASS\": 48, \"FAIL\": 51, \"ERROR\": 0, \"SKIP\": 0}\r\nINTEGRATION=PASS\r\n",
+    "check_determinism": "PROOF_DIR=docs/proof/phase-1/d-uscalurn-determinism-df2e0816\r\ngather-docked: PASS {\"jsonl\": true, \"inventory\": true}\r\ngather-time: PASS {\"jsonl\": true, \"inventory\": true}\r\nquan: PASS {\"jsonl\": true}\r\nDETERMINISM=PASS\r\n"
+  },
+  "note": "Validator output and skill example execution were captured during this task. Unittest failures make the run-tests-proof example exit 1; this is not a skill validation error."
+}\n

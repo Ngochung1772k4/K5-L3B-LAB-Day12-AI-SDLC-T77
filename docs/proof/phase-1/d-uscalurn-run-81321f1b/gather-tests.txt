@@ -1,0 +1,370 @@
+{
+  "revision": "6a7f66a35e5816996fe51010ea5b20ac9098fe5c",
+  "argv": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-c",
+    "\nimport contextlib, json, sys, unittest\nfrom unittest.mock import patch\nsys.path.insert(0, 'tests')\nimport helpers\npattern, command = sys.argv[1], json.loads(sys.argv[2])\nsuite = unittest.defaultTestLoader.discover('tests', pattern=pattern)\ndef ids(node):\n    return [i for child in node for i in ids(child)] if isinstance(node, unittest.TestSuite) else [node.id()]\nall_ids = set(ids(suite))\ncontext = patch.object(helpers, 'headless_cmd', return_value=command) if command != helpers.headless_cmd() else contextlib.nullcontext()\nwith context:\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\ndef parent(test):\n    return getattr(test, 'test_case', test).id()\nfailed = {parent(test) for test, _ in result.failures}\nerrored = {parent(test) for test, _ in result.errors}\nskipped = {parent(test) for test, _ in result.skipped}\nmethods = {i: 'ERROR' if i in errored else 'FAIL' if i in failed else 'SKIP' if i in skipped else 'PASS' for i in sorted(all_ids)}\ncounts = {status: list(methods.values()).count(status) for status in ('PASS', 'FAIL', 'ERROR', 'SKIP')}\nprint(json.dumps({'tests_run': result.testsRun, 'counts': counts, 'methods': methods,\n                  'failure_entries_including_subtests': len(result.failures), 'error_entries': len(result.errors)}))\nsys.exit(0 if result.wasSuccessful() else 1)\n",
+    "test_gather_rules.py",
+    "[\"C:\\\\Users\\\\Siuuu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\", \"-B\", \"-m\", \"chonoi.headless\"]"
+  ],
+  "exit_code": 1,
+  "headless_effective": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "chonoi.headless"
+  ]
+}
+
+--- STDOUT (raw) ---
+{"tests_run": 28, "counts": {"PASS": 5, "FAIL": 23, "ERROR": 0, "SKIP": 0}, "methods": {"test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact": "FAIL", "test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline": "FAIL", "test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown": "FAIL", "test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id": "FAIL", "test_gather_rules.GatherRules.test_catch_without_a_school_does_not_set_cooldown": "PASS", "test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary": "FAIL", "test_gather_rules.GatherRules.test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory": "PASS", "test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end": "FAIL", "test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes": "FAIL", "test_gather_rules.GatherRules.test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order": "PASS", "test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event": "FAIL", "test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node": "FAIL", "test_gather_rules.GatherRules.test_gather_radius_uses_depth_as_well_as_horizontal_distance": "PASS", "test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius": "FAIL", "test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id": "FAIL", "test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires": "FAIL", "test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge": "FAIL", "test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school": "FAIL", "test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick": "FAIL", "test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold": "FAIL", "test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps": "FAIL", "test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition": "FAIL", "test_gather_rules.GatherRules.test_stationary_player_emits_no_boundary_crossing_events": "PASS", "test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum": "FAIL", "test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter": "FAIL", "test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius": "FAIL", "test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory": "FAIL", "test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals": "FAIL"}, "failure_entries_including_subtests": 25, "error_entries": 0}
+
+--- STDERR (raw) ---
+test_catch_accepts_whole_yield_when_free_space_is_exact (test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact) ... FAIL
+test_catch_cooldown_can_be_reused_at_exact_deadline (test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline) ... FAIL
+test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) ... 
+  test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=2.0, cooldown=0) ... FAIL
+  test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=0, cooldown=1) ... FAIL
+test_catch_selects_nearest_school_then_numeric_id (test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id) ... FAIL
+test_catch_without_a_school_does_not_set_cooldown (test_gather_rules.GatherRules.test_catch_without_a_school_does_not_set_cooldown) ... ok
+test_dive_and_surface_only_when_movement_crosses_boundary (test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary) ... FAIL
+test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory (test_gather_rules.GatherRules.test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory) ... ok
+test_faint_discards_hold_lifo_and_precedes_actions_and_time_end (test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end) ... FAIL
+test_fixture_actions_produce_identical_jsonl_and_inventory_bytes (test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes) ... FAIL
+test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order (test_gather_rules.GatherRules.test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order) ... ok
+test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event (test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event) ... FAIL
+test_full_hold_emits_hold_full_without_changing_ready_node (test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node) ... FAIL
+test_gather_radius_uses_depth_as_well_as_horizontal_distance (test_gather_rules.GatherRules.test_gather_radius_uses_depth_as_well_as_horizontal_distance) ... ok
+test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) ... 
+  test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) (depth=0, distance=2.0, regrow=0) ... FAIL
+test_gather_selects_nearest_ready_node_then_numeric_id (test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id) ... FAIL
+test_held_catch_does_not_repeat_after_cooldown_expires (test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires) ... FAIL
+test_held_interact_does_not_pick_second_node_until_new_rising_edge (test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge) ... FAIL
+test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school (test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school) ... FAIL
+test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick (test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick) ... FAIL
+test_nonfatal_choke_preserves_every_item_in_hold (test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold) ... FAIL
+test_oxygen_decreases_one_per_underwater_step_including_sixty_steps (test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps) ... FAIL
+test_oxygen_empty_occurs_only_on_positive_to_zero_transition (test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition) ... FAIL
+test_stationary_player_emits_no_boundary_crossing_events (test_gather_rules.GatherRules.test_stationary_player_emits_no_boundary_crossing_events) ... ok
+test_surface_refill_uses_tuning_and_clamps_at_maximum (test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum) ... FAIL
+test_surfacing_on_choke_deadline_refills_and_resets_counter (test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter) ... FAIL
+test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) ... 
+  test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) (distance=3.001) ... FAIL
+test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) ... 
+  test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='gather') ... FAIL
+  test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='catch') ... FAIL
+test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals (test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals) ... FAIL
+
+======================================================================
+FAIL: test_catch_accepts_whole_yield_when_free_space_is_exact (test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 357, in test_catch_accepts_whole_yield_when_free_space_is_exact
+    self.one_event(rows, "fish_caught", 1, {"fish_id": "F1", "kind": "ca_linh", "yield": amount})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_catch_cooldown_can_be_reused_at_exact_deadline (test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 378, in test_catch_cooldown_can_be_reused_at_exact_deadline
+    self.assertEqual([(e["tick"], e["data"]["fish_id"]) for e in events(rows, "fish_caught")],
+AssertionError: Lists differ: [] != [(1, 'F1'), (31, 'F2')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(1, 'F1')
+
+- []
++ [(1, 'F1'), (31, 'F2')]
+
+======================================================================
+FAIL: test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=2.0, cooldown=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 325, in test_catch_requires_underwater_inclusive_radius_and_expired_cooldown
+    self.one_event(rows, "fish_caught", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) (depth=1.5, distance=0, cooldown=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 325, in test_catch_requires_underwater_inclusive_radius_and_expired_cooldown
+    self.one_event(rows, "fish_caught", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_catch_selects_nearest_school_then_numeric_id (test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 367, in test_catch_selects_nearest_school_then_numeric_id
+    self.one_event(rows, "fish_caught", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : fish_caught: []
+
+======================================================================
+FAIL: test_dive_and_surface_only_when_movement_crosses_boundary (test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 221, in test_dive_and_surface_only_when_movement_crosses_boundary
+    self.assertEqual([(e["name"], e["tick"], e["data"]) for e in events(rows)], expected)
+AssertionError: Lists differ: [] != [('dive', 1, {'pos': [50.0, 0.567]}), ('surface', 13, {'pos': [50.0, 0.5]})]
+
+Second list contains 2 additional elements.
+First extra element 0:
+('dive', 1, {'pos': [50.0, 0.567]})
+
+- []
++ [('dive', 1, {'pos': [50.0, 0.567]}), ('surface', 13, {'pos': [50.0, 0.5]})]
+
+======================================================================
+FAIL: test_faint_discards_hold_lifo_and_precedes_actions_and_time_end (test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 196, in test_faint_discards_hold_lifo_and_precedes_actions_and_time_end
+    self.assertEqual([(e["name"], e["tick"]) for e in events(rows)],
+AssertionError: Lists differ: [('gather_end', 1)] != [('choke', 1), ('faint', 1), ('gather_end', 1)]
+
+First differing element 0:
+('gather_end', 1)
+('choke', 1)
+
+Second list contains 2 additional elements.
+First extra element 1:
+('faint', 1)
+
+- [('gather_end', 1)]
++ [('choke', 1), ('faint', 1), ('gather_end', 1)]
+
+======================================================================
+FAIL: test_fixture_actions_produce_identical_jsonl_and_inventory_bytes (test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 461, in test_fixture_actions_produce_identical_jsonl_and_inventory_bytes
+    self.assertEqual([e["tick"] for e in events(rows, "gather")], [1, 3])
+AssertionError: Lists differ: [] != [1, 3]
+
+Second list contains 2 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 3]
+
+======================================================================
+FAIL: test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event (test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 157, in test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event
+    self.assertEqual(self.s[1]["player"]["zero_oxy_ticks"], interval - 1)
+AssertionError: 58 != 59
+
+======================================================================
+FAIL: test_full_hold_emits_hold_full_without_changing_ready_node (test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 271, in test_full_hold_emits_hold_full_without_changing_ready_node
+    self.one_event(rows, "hold_full", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : hold_full: []
+
+======================================================================
+FAIL: test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) (depth=0, distance=2.0, regrow=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 239, in test_gather_requires_surface_ready_node_and_inclusive_radius
+    self.one_event(rows, "gather", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : gather: []
+
+======================================================================
+FAIL: test_gather_selects_nearest_ready_node_then_numeric_id (test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 252, in test_gather_selects_nearest_ready_node_then_numeric_id
+    self.one_event(rows, "gather", 1, {"node_id": "N2", "kind": "bong_sung",
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : gather: []
+
+======================================================================
+FAIL: test_held_catch_does_not_repeat_after_cooldown_expires (test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 391, in test_held_catch_does_not_repeat_after_cooldown_expires
+    self.assertEqual([(e["tick"], e["data"]["fish_id"]) for e in events(rows, "fish_caught")],
+AssertionError: Lists differ: [] != [(1, 'F1'), (34, 'F2')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(1, 'F1')
+
+- []
++ [(1, 'F1'), (34, 'F2')]
+
+======================================================================
+FAIL: test_held_interact_does_not_pick_second_node_until_new_rising_edge (test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 307, in test_held_interact_does_not_pick_second_node_until_new_rising_edge
+    self.assertEqual([(e["tick"], e["data"]["node_id"]) for e in events(rows, "gather")],
+AssertionError: Lists differ: [] != [(1, 'N1'), (5, 'N2')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(1, 'N1')
+
+- []
++ [(1, 'N1'), (5, 'N2')]
+
+======================================================================
+FAIL: test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school (test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 344, in test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school
+    self.one_event(rows, "hold_full", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : hold_full: []
+
+======================================================================
+FAIL: test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick (test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 284, in test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick
+    self.assertEqual([e["tick"] for e in events(rows, "gather")], [1, delay + 1])
+AssertionError: Lists differ: [] != [1, 1201]
+
+Second list contains 2 additional elements.
+First extra element 0:
+1
+
+- []
++ [1, 1201]
+
+======================================================================
+FAIL: test_nonfatal_choke_preserves_every_item_in_hold (test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 168, in test_nonfatal_choke_preserves_every_item_in_hold
+    self.one_event(rows, "choke", 1, {"hp": self.g["hp_max"] - 1})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : choke: []
+
+======================================================================
+FAIL: test_oxygen_decreases_one_per_underwater_step_including_sixty_steps (test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 116, in test_oxygen_decreases_one_per_underwater_step_including_sixty_steps
+    self.assertEqual(snap["player"]["oxygen_ticks"], self.oxygen_max - tick)
+AssertionError: 1800 != 1799
+
+======================================================================
+FAIL: test_oxygen_empty_occurs_only_on_positive_to_zero_transition (test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 135, in test_oxygen_empty_occurs_only_on_positive_to_zero_transition
+    self.one_event(rows, "oxygen_empty", 2, {"oxygen_ticks": 0})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : oxygen_empty: []
+
+======================================================================
+FAIL: test_surface_refill_uses_tuning_and_clamps_at_maximum (test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 127, in test_surface_refill_uses_tuning_and_clamps_at_maximum
+    self.assertEqual(snap["player"]["oxygen_ticks"],
+AssertionError: 1787 != 1793
+
+======================================================================
+FAIL: test_surfacing_on_choke_deadline_refills_and_resets_counter (test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 181, in test_surfacing_on_choke_deadline_refills_and_resets_counter
+    self.assertEqual(player["oxygen_ticks"], self.g["oxygen_refill_per_tick"])
+AssertionError: 0 != 6
+
+======================================================================
+FAIL: test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) (distance=3.001)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 427, in test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius
+    self.assertEqual([e["name"] for e in events(rows)],
+AssertionError: Lists differ: ['gather_end'] != ['fish_caught', 'gather_end']
+
+First differing element 0:
+'gather_end'
+'fish_caught'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'gather_end'
+
+- ['gather_end']
++ ['fish_caught', 'gather_end']
+
+======================================================================
+FAIL: test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='gather')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 448, in test_valid_gather_or_catch_on_last_tick_is_included_in_inventory
+    self.assertEqual([e["name"] for e in events(rows)], [event_name, "gather_end"])
+AssertionError: Lists differ: ['gather_end'] != ['gather', 'gather_end']
+
+First differing element 0:
+'gather_end'
+'gather'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'gather_end'
+
+- ['gather_end']
++ ['gather', 'gather_end']
+
+======================================================================
+FAIL: test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) (action='catch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 448, in test_valid_gather_or_catch_on_last_tick_is_included_in_inventory
+    self.assertEqual([e["name"] for e in events(rows)], [event_name, "gather_end"])
+AssertionError: Lists differ: ['gather_end'] != ['fish_caught', 'gather_end']
+
+First differing element 0:
+'gather_end'
+'fish_caught'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'gather_end'
+
+- ['gather_end']
++ ['fish_caught', 'gather_end']
+
+======================================================================
+FAIL: test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals (test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 144, in test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals
+    self.one_event(rows, "oxygen_empty", 1, {"oxygen_ticks": 0})
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_gather_rules.py", line 108, in one_event
+    self.assertEqual(len(found), 1, f"{name}: {found}")
+AssertionError: 0 != 1 : oxygen_empty: []
+
+----------------------------------------------------------------------
+Ran 28 tests in 7.286s
+
+FAILED (failures=25)
