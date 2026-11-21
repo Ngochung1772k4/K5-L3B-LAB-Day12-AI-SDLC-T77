@@ -1,0 +1,74 @@
+{
+  "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "snapshots": [
+    {
+      "label": "gather-warnings",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-MQ2lGD\\gather-warnings.json"
+      ],
+      "scenario": {
+        "gather": {
+          "player": {
+            "pos": [
+              60,
+              24
+            ],
+            "oxygen_ticks": 400,
+            "invuln_ticks": 90
+          },
+          "hold": [],
+          "nodes": [],
+          "fish": [],
+          "random_fish": false,
+          "time_left_ticks": 600,
+          "monsters": [
+            {
+              "id": "M1",
+              "kind": "ca_sau",
+              "pos": [
+                64,
+                24
+              ],
+              "waypoints": [
+                [
+                  64,
+                  24
+                ],
+                [
+                  65,
+                  24
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "url": "http://127.0.0.1:56896/"
+    }
+  ],
+  "checks": [],
+  "errors": [
+    "TypeError: fetch failed"
+  ],
+  "browserVersion": {
+    "Browser": "Chrome/157.0.8103.80",
+    "File-Path-Style": "windows",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "V8-Version": "15.7.112.43",
+    "WebKit-Version": "537.36 (@5cb0fce6746acfc926045c45b23d811d479c49b9)",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:56894/devtools/browser/91332b3e-0f49-4912-94f6-96d437079f88"
+  },
+  "status": "BLOCKED"
+}

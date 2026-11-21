@@ -1,0 +1,4960 @@
+{
+  "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "snapshots": [
+    {
+      "label": "gather-warnings",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\gather-warnings.json"
+      ],
+      "scenario": {
+        "gather": {
+          "player": {
+            "pos": [
+              60,
+              24
+            ],
+            "oxygen_ticks": 400,
+            "invuln_ticks": 90
+          },
+          "hold": [],
+          "nodes": [],
+          "fish": [],
+          "random_fish": false,
+          "time_left_ticks": 600,
+          "monsters": [
+            {
+              "id": "M1",
+              "kind": "ca_sau",
+              "pos": [
+                64,
+                24
+              ],
+              "waypoints": [
+                [
+                  64,
+                  24
+                ],
+                [
+                  65,
+                  24
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "url": "http://127.0.0.1:14511/"
+    },
+    {
+      "label": "quan-warning",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "quan",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\quan-warning.json"
+      ],
+      "scenario": {
+        "quan": {
+          "stock": [],
+          "random_customers": false,
+          "time_left_ticks": 600,
+          "customers": [
+            {
+              "id": "C1",
+              "table_id": "T1",
+              "dish_id": "ca_loc_nuong_trui",
+              "order_status": "unfulfillable",
+              "reserved": [],
+              "patience_ticks_left": 800
+            }
+          ]
+        }
+      },
+      "url": "http://127.0.0.1:11500/"
+    },
+    {
+      "label": "no-customer",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "quan",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\no-customer.json"
+      ],
+      "scenario": {
+        "quan": {
+          "stock": [],
+          "customers": [],
+          "random_customers": false
+        }
+      },
+      "url": "http://127.0.0.1:43919/"
+    },
+    {
+      "label": "safe-gather",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\safe-gather.json"
+      ],
+      "scenario": {
+        "gather": {
+          "fish": [],
+          "nodes": [],
+          "monsters": [],
+          "random_fish": false
+        }
+      },
+      "url": "http://127.0.0.1:51148/"
+    },
+    {
+      "label": "live-day",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "day",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\live-day.json"
+      ],
+      "scenario": {
+        "day": {
+          "money": 1000,
+          "earned": 1000
+        },
+        "gather": {
+          "hold": [
+            {
+              "id": "I7",
+              "kind": "ca_loc",
+              "fresh": 80
+            }
+          ],
+          "time_left_ticks": 600,
+          "nodes": [],
+          "fish": [],
+          "monsters": [],
+          "random_fish": false
+        },
+        "quan": {
+          "time_left_ticks": 120,
+          "random_customers": false
+        }
+      },
+      "url": "http://127.0.0.1:27000/"
+    },
+    {
+      "label": "live-finished",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "day",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\live-finished.json"
+      ],
+      "scenario": {
+        "gather": {
+          "time_left_ticks": 1,
+          "monsters": [],
+          "random_fish": false
+        },
+        "quan": {
+          "time_left_ticks": 1,
+          "random_customers": false
+        }
+      },
+      "url": "http://127.0.0.1:62028/"
+    },
+    {
+      "label": "browser-benchmark",
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\browser-benchmark.json"
+      ],
+      "scenario": {
+        "gather": {}
+      },
+      "url": "http://127.0.0.1:62031/"
+    }
+  ],
+  "checks": [
+    {
+      "description": "Gather high contrast enabled through query parameter",
+      "status": "PASS"
+    },
+    {
+      "description": "Actual canvas displays nearby-monster text",
+      "status": "PASS"
+    },
+    {
+      "description": "Actual canvas displays low-oxygen text",
+      "status": "PASS"
+    },
+    {
+      "description": "Monster and oxygen warnings include icons as well as words",
+      "status": "PASS"
+    },
+    {
+      "description": "High contrast changes warning text to yellow 28px",
+      "status": "PASS"
+    },
+    {
+      "description": "H toggles high contrast off",
+      "status": "PASS"
+    },
+    {
+      "description": "H toggles on and persists preference",
+      "status": "PASS"
+    },
+    {
+      "description": "Actual canvas displays impatient-customer warning",
+      "status": "PASS"
+    },
+    {
+      "description": "Customer warning uses high contrast",
+      "status": "PASS"
+    },
+    {
+      "description": "Customer warning has an icon",
+      "status": "PASS"
+    },
+    {
+      "description": "High contrast remains enabled after reload",
+      "status": "PASS"
+    },
+    {
+      "description": "No customer warning for an empty restaurant",
+      "status": "PASS"
+    },
+    {
+      "description": "No danger warnings at the safe surface",
+      "status": "PASS"
+    },
+    {
+      "description": "Day starts in Gather",
+      "status": "PASS"
+    },
+    {
+      "description": "P pauses timer, simulation and freshness through real HTTP input",
+      "status": "PASS"
+    },
+    {
+      "description": "Holding W across Gather → Quán continues north (+z)",
+      "status": "FAIL"
+    },
+    {
+      "description": "Day Quán keeps Gather physical item identity",
+      "status": "PASS"
+    },
+    {
+      "description": "Real day handoff inventory is present; Quán freshness continues decaying",
+      "status": "PASS"
+    },
+    {
+      "description": "Browser renders the Shop screen",
+      "status": "PASS"
+    },
+    {
+      "description": "Shop key buys once, keeps earned and defers active level",
+      "status": "PASS"
+    },
+    {
+      "description": "Enter starts next day with active upgrade and a new item ID",
+      "status": "PASS"
+    },
+    {
+      "description": "Live default five-day run reaches days_complete after final Shop",
+      "status": "PASS"
+    },
+    {
+      "description": "Benchmark observed completed animation callbacks",
+      "status": "PASS"
+    },
+    {
+      "description": "Browser timing is finite, positive and measured for 30 seconds",
+      "status": "PASS"
+    },
+    {
+      "description": "No uncaught JavaScript exceptions",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "pageErrors": [],
+  "measurement": "Headless Chrome, software rendering (--disable-gpu); not a desktop GPU measurement",
+  "revision": "c6573f3510a7d530d0565b4ceaeaf4e3b9270778",
+  "sourceHashes": {
+    "chonoi/web/index.html": "841cb598a72fd027e9e0cf868294e5abd74887d5ff3a83f0d98c5f809ebca6db",
+    "chonoi/live.py": "f8126e6f6402c59f40354a44b5cf3be98a5f9b208263956f76c5d7d80880cf4c",
+    "tools/qa_phase4_browser.mjs": "6e7ac78a3fc4f3b1250d4aad88d3e3814db59c7b8f68514deafcf66033c22368"
+  },
+  "browserVersion": {
+    "Browser": "Chrome/157.0.8103.80",
+    "File-Path-Style": "windows",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "V8-Version": "15.7.112.43",
+    "WebKit-Version": "537.36 (@5cb0fce6746acfc926045c45b23d811d479c49b9)",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:20145/devtools/browser/48353bbc-b227-45ee-9b60-1018c26b889e"
+  },
+  "heldMovementAtTransition": {
+    "actual": [
+      8,
+      4.566666666666668
+    ],
+    "expected": "Quán z > 5 while W remains held",
+    "snapshot": {
+      "type": "snapshot",
+      "tick": 57,
+      "sim_tick": 41,
+      "mode": "day",
+      "phase": "quan",
+      "phase_tick": 9,
+      "state": "playing",
+      "time_left_ticks": 111,
+      "money": 1000,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 1,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 3,
+          "goi_bong_sung": 3
+        },
+        "ingredients": {
+          "ca_loc": 3,
+          "bong_sung": 6
+        }
+      },
+      "upgrades": {},
+      "active_upgrades": {},
+      "player": {
+        "pos": [
+          8,
+          4.566666666666668
+        ],
+        "vel": [
+          0,
+          -4
+        ]
+      },
+      "stock": [
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 79.69583333333334
+        }
+      ],
+      "hand": null,
+      "stoves": [
+        {
+          "id": "B1",
+          "pos": [
+            2,
+            8
+          ],
+          "state": "idle",
+          "dish": null,
+          "cook_ticks_left": 0,
+          "ready_ticks": 0
+        },
+        {
+          "id": "B2",
+          "pos": [
+            5,
+            8
+          ],
+          "state": "idle",
+          "dish": null,
+          "cook_ticks_left": 0,
+          "ready_ticks": 0
+        }
+      ],
+      "tables": [
+        {
+          "id": "T1",
+          "pos": [
+            9,
+            2
+          ],
+          "customer_id": null
+        },
+        {
+          "id": "T2",
+          "pos": [
+            13,
+            2
+          ],
+          "customer_id": null
+        },
+        {
+          "id": "T3",
+          "pos": [
+            9,
+            6
+          ],
+          "customer_id": null
+        },
+        {
+          "id": "T4",
+          "pos": [
+            13,
+            6
+          ],
+          "customer_id": null
+        }
+      ],
+      "customers": [],
+      "meta": {
+        "duration_s": 180,
+        "bounds": {
+          "x": [
+            0,
+            16
+          ],
+          "z": [
+            0,
+            10
+          ]
+        },
+        "start_pos": [
+          8,
+          5
+        ],
+        "walk_speed": 4,
+        "ramp_max_ticks": 6,
+        "interact_radius": 1.5,
+        "stoves": [
+          {
+            "id": "B1",
+            "pos": [
+              2,
+              8
+            ]
+          },
+          {
+            "id": "B2",
+            "pos": [
+              5,
+              8
+            ]
+          }
+        ],
+        "tables": [
+          {
+            "id": "T1",
+            "pos": [
+              9,
+              2
+            ]
+          },
+          {
+            "id": "T2",
+            "pos": [
+              13,
+              2
+            ]
+          },
+          {
+            "id": "T3",
+            "pos": [
+              9,
+              6
+            ]
+          },
+          {
+            "id": "T4",
+            "pos": [
+              13,
+              6
+            ]
+          }
+        ],
+        "first_customer_tick": 120,
+        "customer_interval_s": 15,
+        "patience_s": 60,
+        "eat_s": 10,
+        "burn_s": null,
+        "carry_limit": 1,
+        "tip_rate": 0.2,
+        "tip_min_patience_ratio": 0.5,
+        "tip_reputation": 0.2,
+        "left_reputation_delta": -0.5,
+        "reputation_initial": 3,
+        "reputation_min": 0,
+        "reputation_max": 5
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 27,
+          "phase": "gather",
+          "day": 1,
+          "name": "paused",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 43,
+          "phase": "gather",
+          "day": 1,
+          "name": "resumed",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "gather",
+          "day": 1,
+          "name": "gather_end",
+          "data": {
+            "reason": "docked",
+            "inventory": {
+              "items": [
+                {
+                  "id": "I7",
+                  "kind": "ca_loc",
+                  "fresh": 79.73333333333333
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "quan",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    }
+  },
+  "liveDay": {
+    "gather": {
+      "type": "snapshot",
+      "tick": 19,
+      "sim_tick": 19,
+      "mode": "day",
+      "phase": "gather",
+      "phase_tick": 19,
+      "state": "playing",
+      "time_left_ticks": 581,
+      "money": 1000,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 1,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 3,
+          "goi_bong_sung": 3
+        },
+        "ingredients": {
+          "ca_loc": 3,
+          "bong_sung": 6
+        }
+      },
+      "upgrades": {},
+      "active_upgrades": {},
+      "player": {
+        "pos": [
+          2,
+          0
+        ],
+        "vel": [
+          0,
+          0
+        ],
+        "heading_deg": 0,
+        "oxygen_ticks": 1800,
+        "oxygen_max_ticks": 1800,
+        "hp": 3,
+        "hp_max": 3,
+        "zero_oxy_ticks": 0,
+        "invuln_ticks": 0,
+        "catch_cd_ticks": 0,
+        "at_surface": true
+      },
+      "hold": [
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 79.84166666666667
+        }
+      ],
+      "hold_count": 1,
+      "hold_capacity": 12,
+      "nodes": [],
+      "fish": [],
+      "monsters": [],
+      "meta": {
+        "duration_s": 180,
+        "bounds": {
+          "x": [
+            0,
+            100
+          ],
+          "d": [
+            0,
+            30
+          ]
+        },
+        "dock_pos": [
+          2,
+          0
+        ],
+        "dock_radius": 3,
+        "start_pos": [
+          2,
+          0
+        ],
+        "start_heading_deg": 0,
+        "swim_speed": 4,
+        "ramp_max_ticks": 6,
+        "surface_depth": 0.5,
+        "oxygen_max_s": 30,
+        "oxygen_refill_per_tick": 6,
+        "choke_interval_ticks": 60,
+        "hp_max": 3,
+        "hold_capacity": 12,
+        "interact_radius": 2,
+        "node_yield": 1,
+        "regrow_s": 20,
+        "catch_radius": 2,
+        "catch_cooldown_s": 0.5,
+        "fish_yield": {
+          "ca_linh": 3,
+          "ca_loc": 1,
+          "ca_keo": 2
+        },
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_dien_dien",
+            "pos": [
+              12,
+              0
+            ]
+          },
+          {
+            "id": "N2",
+            "kind": "bong_dien_dien",
+            "pos": [
+              28,
+              0
+            ]
+          },
+          {
+            "id": "N3",
+            "kind": "bong_sung",
+            "pos": [
+              44,
+              0
+            ]
+          },
+          {
+            "id": "N4",
+            "kind": "bong_sung",
+            "pos": [
+              60,
+              0
+            ]
+          },
+          {
+            "id": "N5",
+            "kind": "keo_neo",
+            "pos": [
+              76,
+              0
+            ]
+          },
+          {
+            "id": "N6",
+            "kind": "keo_neo",
+            "pos": [
+              90,
+              0
+            ]
+          }
+        ],
+        "fish_initial": 8,
+        "fish_speed": 1.5,
+        "fish_turn_ticks": 120,
+        "fish_max": 12,
+        "fish_spawn_ticks": 360,
+        "fish_spawn_clearance": 1,
+        "fish_x": [
+          4,
+          96
+        ],
+        "fish_depths": {
+          "ca_linh": [
+            3,
+            12
+          ],
+          "ca_loc": [
+            8,
+            20
+          ],
+          "ca_keo": [
+            22,
+            28
+          ]
+        },
+        "fish_spawn_x": [
+          15,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "fish_spawn_depths": {
+          "ca_linh": [
+            5,
+            10
+          ],
+          "ca_loc": [
+            10,
+            16
+          ],
+          "ca_keo": [
+            24,
+            27
+          ]
+        },
+        "fish_weights": {
+          "ca_linh": 0.4,
+          "ca_loc": 0.3,
+          "ca_keo": 0.3
+        },
+        "monsters": {
+          "species": {
+            "ca_sau": {
+              "patrol_speed": 1,
+              "chase_speed": 3,
+              "detect_radius": 10,
+              "exit_radius": 16,
+              "depths": [
+                10,
+                30
+              ],
+              "hit_radius": 1.5,
+              "recoil_ticks": 60,
+              "recoil_dist": 2
+            }
+          },
+          "spawns": [
+            {
+              "id": "M1",
+              "kind": "ca_sau",
+              "pos": [
+                60,
+                24
+              ],
+              "waypoints": [
+                [
+                  60,
+                  24
+                ],
+                [
+                  64,
+                  24
+                ]
+              ],
+              "from_day": 1
+            },
+            {
+              "id": "M2",
+              "kind": "ca_sau",
+              "pos": [
+                85,
+                18
+              ],
+              "waypoints": [
+                [
+                  85,
+                  18
+                ],
+                [
+                  89,
+                  18
+                ]
+              ],
+              "from_day": 3
+            }
+          ],
+          "invuln_ticks": 90,
+          "loss_ratio": 0.5
+        }
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    },
+    "quan": {
+      "type": "snapshot",
+      "tick": 57,
+      "sim_tick": 41,
+      "mode": "day",
+      "phase": "quan",
+      "phase_tick": 9,
+      "state": "playing",
+      "time_left_ticks": 111,
+      "money": 1000,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 1,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 3,
+          "goi_bong_sung": 3
+        },
+        "ingredients": {
+          "ca_loc": 3,
+          "bong_sung": 6
+        }
+      },
+      "upgrades": {},
+      "active_upgrades": {},
+      "player": {
+        "pos": [
+          8,
+          4.566666666666668
+        ],
+        "vel": [
+          0,
+          -4
+        ]
+      },
+      "stock": [
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 79.69583333333334
+        }
+      ],
+      "hand": null,
+      "stoves": [
+        {
+          "id": "B1",
+          "pos": [
+            2,
+            8
+          ],
+          "state": "idle",
+          "dish": null,
+          "cook_ticks_left": 0,
+          "ready_ticks": 0
+        },
+        {
+          "id": "B2",
+          "pos": [
+            5,
+            8
+          ],
+          "state": "idle",
+          "dish": null,
+          "cook_ticks_left": 0,
+          "ready_ticks": 0
+        }
+      ],
+      "tables": [
+        {
+          "id": "T1",
+          "pos": [
+            9,
+            2
+          ],
+          "customer_id": null
+        },
+        {
+          "id": "T2",
+          "pos": [
+            13,
+            2
+          ],
+          "customer_id": null
+        },
+        {
+          "id": "T3",
+          "pos": [
+            9,
+            6
+          ],
+          "customer_id": null
+        },
+        {
+          "id": "T4",
+          "pos": [
+            13,
+            6
+          ],
+          "customer_id": null
+        }
+      ],
+      "customers": [],
+      "meta": {
+        "duration_s": 180,
+        "bounds": {
+          "x": [
+            0,
+            16
+          ],
+          "z": [
+            0,
+            10
+          ]
+        },
+        "start_pos": [
+          8,
+          5
+        ],
+        "walk_speed": 4,
+        "ramp_max_ticks": 6,
+        "interact_radius": 1.5,
+        "stoves": [
+          {
+            "id": "B1",
+            "pos": [
+              2,
+              8
+            ]
+          },
+          {
+            "id": "B2",
+            "pos": [
+              5,
+              8
+            ]
+          }
+        ],
+        "tables": [
+          {
+            "id": "T1",
+            "pos": [
+              9,
+              2
+            ]
+          },
+          {
+            "id": "T2",
+            "pos": [
+              13,
+              2
+            ]
+          },
+          {
+            "id": "T3",
+            "pos": [
+              9,
+              6
+            ]
+          },
+          {
+            "id": "T4",
+            "pos": [
+              13,
+              6
+            ]
+          }
+        ],
+        "first_customer_tick": 120,
+        "customer_interval_s": 15,
+        "patience_s": 60,
+        "eat_s": 10,
+        "burn_s": null,
+        "carry_limit": 1,
+        "tip_rate": 0.2,
+        "tip_min_patience_ratio": 0.5,
+        "tip_reputation": 0.2,
+        "left_reputation_delta": -0.5,
+        "reputation_initial": 3,
+        "reputation_min": 0,
+        "reputation_max": 5
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 27,
+          "phase": "gather",
+          "day": 1,
+          "name": "paused",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 43,
+          "phase": "gather",
+          "day": 1,
+          "name": "resumed",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "gather",
+          "day": 1,
+          "name": "gather_end",
+          "data": {
+            "reason": "docked",
+            "inventory": {
+              "items": [
+                {
+                  "id": "I7",
+                  "kind": "ca_loc",
+                  "fresh": 79.73333333333333
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "quan",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    },
+    "shop": {
+      "type": "snapshot",
+      "tick": 179,
+      "sim_tick": 163,
+      "mode": "day",
+      "phase": "shop",
+      "phase_tick": 11,
+      "state": "playing",
+      "time_left_ticks": 589,
+      "money": 1000,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 1,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 3,
+          "goi_bong_sung": 3
+        },
+        "ingredients": {
+          "ca_loc": 3,
+          "bong_sung": 6
+        }
+      },
+      "upgrades": {},
+      "active_upgrades": {},
+      "stock": [
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 79.23333333333333
+        }
+      ],
+      "meta": {
+        "max_ticks": 600,
+        "upgrades": {
+          "oxygen": [
+            {
+              "level": 1,
+              "price": 200,
+              "oxygen_max_s": 45
+            },
+            {
+              "level": 2,
+              "price": 400,
+              "oxygen_max_s": 60
+            }
+          ],
+          "hp": [
+            {
+              "level": 1,
+              "price": 250,
+              "hp_max": 4
+            },
+            {
+              "level": 2,
+              "price": 500,
+              "hp_max": 5
+            }
+          ]
+        }
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 27,
+          "phase": "gather",
+          "day": 1,
+          "name": "paused",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 43,
+          "phase": "gather",
+          "day": 1,
+          "name": "resumed",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "gather",
+          "day": 1,
+          "name": "gather_end",
+          "data": {
+            "reason": "docked",
+            "inventory": {
+              "items": [
+                {
+                  "id": "I7",
+                  "kind": "ca_loc",
+                  "fresh": 79.73333333333333
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "quan",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 168,
+          "phase": "quan",
+          "day": 1,
+          "name": "quan_end",
+          "data": {
+            "reason": "time",
+            "money": 1000,
+            "earned": 1000,
+            "shift_earned": 0,
+            "reputation": 3
+          }
+        },
+        {
+          "type": "event",
+          "tick": 168,
+          "phase": "shop",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    },
+    "bought": {
+      "type": "snapshot",
+      "tick": 189,
+      "sim_tick": 173,
+      "mode": "day",
+      "phase": "shop",
+      "phase_tick": 21,
+      "state": "playing",
+      "time_left_ticks": 579,
+      "money": 800,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 1,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 3,
+          "goi_bong_sung": 3
+        },
+        "ingredients": {
+          "ca_loc": 3,
+          "bong_sung": 6
+        }
+      },
+      "upgrades": {
+        "oxygen": 1
+      },
+      "active_upgrades": {},
+      "stock": [
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 79.23333333333333
+        }
+      ],
+      "meta": {
+        "max_ticks": 600,
+        "upgrades": {
+          "oxygen": [
+            {
+              "level": 1,
+              "price": 200,
+              "oxygen_max_s": 45
+            },
+            {
+              "level": 2,
+              "price": 400,
+              "oxygen_max_s": 60
+            }
+          ],
+          "hp": [
+            {
+              "level": 1,
+              "price": 250,
+              "hp_max": 4
+            },
+            {
+              "level": 2,
+              "price": 500,
+              "hp_max": 5
+            }
+          ]
+        }
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 27,
+          "phase": "gather",
+          "day": 1,
+          "name": "paused",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 43,
+          "phase": "gather",
+          "day": 1,
+          "name": "resumed",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "gather",
+          "day": 1,
+          "name": "gather_end",
+          "data": {
+            "reason": "docked",
+            "inventory": {
+              "items": [
+                {
+                  "id": "I7",
+                  "kind": "ca_loc",
+                  "fresh": 79.73333333333333
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "quan",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 168,
+          "phase": "quan",
+          "day": 1,
+          "name": "quan_end",
+          "data": {
+            "reason": "time",
+            "money": 1000,
+            "earned": 1000,
+            "shift_earned": 0,
+            "reputation": 3
+          }
+        },
+        {
+          "type": "event",
+          "tick": 168,
+          "phase": "shop",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 186,
+          "phase": "shop",
+          "day": 1,
+          "name": "bought",
+          "data": {
+            "upgrade": "oxygen",
+            "level": 1,
+            "price": 200,
+            "money": 800
+          }
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    },
+    "next": {
+      "type": "snapshot",
+      "tick": 193,
+      "sim_tick": 177,
+      "mode": "day",
+      "phase": "gather",
+      "phase_tick": 3,
+      "state": "playing",
+      "time_left_ticks": 597,
+      "money": 800,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 2,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 2,
+          "lau_ca_linh_dien_dien": 2
+        },
+        "ingredients": {
+          "ca_loc": 2,
+          "ca_linh": 6,
+          "bong_dien_dien": 2
+        }
+      },
+      "upgrades": {
+        "oxygen": 1
+      },
+      "active_upgrades": {
+        "oxygen": 1
+      },
+      "player": {
+        "pos": [
+          2,
+          0
+        ],
+        "vel": [
+          0,
+          0
+        ],
+        "heading_deg": 0,
+        "oxygen_ticks": 2700,
+        "oxygen_max_ticks": 2700,
+        "hp": 3,
+        "hp_max": 3,
+        "zero_oxy_ticks": 0,
+        "invuln_ticks": 0,
+        "catch_cd_ticks": 0,
+        "at_surface": true
+      },
+      "hold": [
+        {
+          "id": "I8",
+          "kind": "ca_loc",
+          "fresh": 79.975
+        }
+      ],
+      "hold_count": 1,
+      "hold_capacity": 12,
+      "nodes": [],
+      "fish": [],
+      "monsters": [],
+      "meta": {
+        "duration_s": 180,
+        "bounds": {
+          "x": [
+            0,
+            100
+          ],
+          "d": [
+            0,
+            30
+          ]
+        },
+        "dock_pos": [
+          2,
+          0
+        ],
+        "dock_radius": 3,
+        "start_pos": [
+          2,
+          0
+        ],
+        "start_heading_deg": 0,
+        "swim_speed": 4,
+        "ramp_max_ticks": 6,
+        "surface_depth": 0.5,
+        "oxygen_max_s": 30,
+        "oxygen_refill_per_tick": 6,
+        "choke_interval_ticks": 60,
+        "hp_max": 3,
+        "hold_capacity": 12,
+        "interact_radius": 2,
+        "node_yield": 1,
+        "regrow_s": 20,
+        "catch_radius": 2,
+        "catch_cooldown_s": 0.5,
+        "fish_yield": {
+          "ca_linh": 3,
+          "ca_loc": 1,
+          "ca_keo": 2
+        },
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_dien_dien",
+            "pos": [
+              12,
+              0
+            ]
+          },
+          {
+            "id": "N2",
+            "kind": "bong_dien_dien",
+            "pos": [
+              28,
+              0
+            ]
+          },
+          {
+            "id": "N3",
+            "kind": "bong_sung",
+            "pos": [
+              44,
+              0
+            ]
+          },
+          {
+            "id": "N4",
+            "kind": "bong_sung",
+            "pos": [
+              60,
+              0
+            ]
+          },
+          {
+            "id": "N5",
+            "kind": "keo_neo",
+            "pos": [
+              76,
+              0
+            ]
+          },
+          {
+            "id": "N6",
+            "kind": "keo_neo",
+            "pos": [
+              90,
+              0
+            ]
+          }
+        ],
+        "fish_initial": 8,
+        "fish_speed": 1.5,
+        "fish_turn_ticks": 120,
+        "fish_max": 12,
+        "fish_spawn_ticks": 360,
+        "fish_spawn_clearance": 1,
+        "fish_x": [
+          4,
+          96
+        ],
+        "fish_depths": {
+          "ca_linh": [
+            3,
+            12
+          ],
+          "ca_loc": [
+            8,
+            20
+          ],
+          "ca_keo": [
+            22,
+            28
+          ]
+        },
+        "fish_spawn_x": [
+          15,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "fish_spawn_depths": {
+          "ca_linh": [
+            5,
+            10
+          ],
+          "ca_loc": [
+            10,
+            16
+          ],
+          "ca_keo": [
+            24,
+            27
+          ]
+        },
+        "fish_weights": {
+          "ca_linh": 0.4,
+          "ca_loc": 0.3,
+          "ca_keo": 0.3
+        },
+        "monsters": {
+          "species": {
+            "ca_sau": {
+              "patrol_speed": 1,
+              "chase_speed": 3,
+              "detect_radius": 10,
+              "exit_radius": 16,
+              "depths": [
+                10,
+                30
+              ],
+              "hit_radius": 1.5,
+              "recoil_ticks": 60,
+              "recoil_dist": 2
+            }
+          },
+          "spawns": [
+            {
+              "id": "M1",
+              "kind": "ca_sau",
+              "pos": [
+                60,
+                24
+              ],
+              "waypoints": [
+                [
+                  60,
+                  24
+                ],
+                [
+                  64,
+                  24
+                ]
+              ],
+              "from_day": 1
+            },
+            {
+              "id": "M2",
+              "kind": "ca_sau",
+              "pos": [
+                85,
+                18
+              ],
+              "waypoints": [
+                [
+                  85,
+                  18
+                ],
+                [
+                  89,
+                  18
+                ]
+              ],
+              "from_day": 3
+            }
+          ],
+          "invuln_ticks": 90,
+          "loss_ratio": 0.5
+        }
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 27,
+          "phase": "gather",
+          "day": 1,
+          "name": "paused",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 43,
+          "phase": "gather",
+          "day": 1,
+          "name": "resumed",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "gather",
+          "day": 1,
+          "name": "gather_end",
+          "data": {
+            "reason": "docked",
+            "inventory": {
+              "items": [
+                {
+                  "id": "I7",
+                  "kind": "ca_loc",
+                  "fresh": 79.73333333333333
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 48,
+          "phase": "quan",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 168,
+          "phase": "quan",
+          "day": 1,
+          "name": "quan_end",
+          "data": {
+            "reason": "time",
+            "money": 1000,
+            "earned": 1000,
+            "shift_earned": 0,
+            "reputation": 3
+          }
+        },
+        {
+          "type": "event",
+          "tick": 168,
+          "phase": "shop",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 186,
+          "phase": "shop",
+          "day": 1,
+          "name": "bought",
+          "data": {
+            "upgrade": "oxygen",
+            "level": 1,
+            "price": 200,
+            "money": 800
+          }
+        },
+        {
+          "type": "event",
+          "tick": 190,
+          "phase": "shop",
+          "day": 1,
+          "name": "shop_end",
+          "data": {
+            "reason": "done"
+          }
+        },
+        {
+          "type": "event",
+          "tick": 190,
+          "phase": "gather",
+          "day": 2,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 190,
+          "phase": "gather",
+          "day": 2,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 2,
+              "lau_ca_linh_dien_dien": 2
+            },
+            "ingredients": {
+              "ca_loc": 2,
+              "ca_linh": 6,
+              "bong_dien_dien": 2
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 190,
+          "phase": "gather",
+          "day": 2,
+          "name": "phase_start",
+          "data": {}
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    },
+    "restarted": {
+      "type": "snapshot",
+      "tick": 0,
+      "sim_tick": 0,
+      "mode": "day",
+      "phase": "gather",
+      "phase_tick": 0,
+      "state": "playing",
+      "time_left_ticks": 600,
+      "money": 1000,
+      "earned": 1000,
+      "reputation": 3,
+      "score": 1300,
+      "day": 1,
+      "day_plan": {
+        "dishes": {
+          "ca_loc_nuong_trui": 3,
+          "goi_bong_sung": 3
+        },
+        "ingredients": {
+          "ca_loc": 3,
+          "bong_sung": 6
+        }
+      },
+      "upgrades": {},
+      "active_upgrades": {},
+      "player": {
+        "pos": [
+          2,
+          0
+        ],
+        "vel": [
+          0,
+          0
+        ],
+        "heading_deg": 0,
+        "oxygen_ticks": 1800,
+        "oxygen_max_ticks": 1800,
+        "hp": 3,
+        "hp_max": 3,
+        "zero_oxy_ticks": 0,
+        "invuln_ticks": 0,
+        "catch_cd_ticks": 0,
+        "at_surface": true
+      },
+      "hold": [
+        {
+          "id": "I7",
+          "kind": "ca_loc",
+          "fresh": 80
+        }
+      ],
+      "hold_count": 1,
+      "hold_capacity": 12,
+      "nodes": [],
+      "fish": [],
+      "monsters": [],
+      "meta": {
+        "duration_s": 180,
+        "bounds": {
+          "x": [
+            0,
+            100
+          ],
+          "d": [
+            0,
+            30
+          ]
+        },
+        "dock_pos": [
+          2,
+          0
+        ],
+        "dock_radius": 3,
+        "start_pos": [
+          2,
+          0
+        ],
+        "start_heading_deg": 0,
+        "swim_speed": 4,
+        "ramp_max_ticks": 6,
+        "surface_depth": 0.5,
+        "oxygen_max_s": 30,
+        "oxygen_refill_per_tick": 6,
+        "choke_interval_ticks": 60,
+        "hp_max": 3,
+        "hold_capacity": 12,
+        "interact_radius": 2,
+        "node_yield": 1,
+        "regrow_s": 20,
+        "catch_radius": 2,
+        "catch_cooldown_s": 0.5,
+        "fish_yield": {
+          "ca_linh": 3,
+          "ca_loc": 1,
+          "ca_keo": 2
+        },
+        "nodes": [
+          {
+            "id": "N1",
+            "kind": "bong_dien_dien",
+            "pos": [
+              12,
+              0
+            ]
+          },
+          {
+            "id": "N2",
+            "kind": "bong_dien_dien",
+            "pos": [
+              28,
+              0
+            ]
+          },
+          {
+            "id": "N3",
+            "kind": "bong_sung",
+            "pos": [
+              44,
+              0
+            ]
+          },
+          {
+            "id": "N4",
+            "kind": "bong_sung",
+            "pos": [
+              60,
+              0
+            ]
+          },
+          {
+            "id": "N5",
+            "kind": "keo_neo",
+            "pos": [
+              76,
+              0
+            ]
+          },
+          {
+            "id": "N6",
+            "kind": "keo_neo",
+            "pos": [
+              90,
+              0
+            ]
+          }
+        ],
+        "fish_initial": 8,
+        "fish_speed": 1.5,
+        "fish_turn_ticks": 120,
+        "fish_max": 12,
+        "fish_spawn_ticks": 360,
+        "fish_spawn_clearance": 1,
+        "fish_x": [
+          4,
+          96
+        ],
+        "fish_depths": {
+          "ca_linh": [
+            3,
+            12
+          ],
+          "ca_loc": [
+            8,
+            20
+          ],
+          "ca_keo": [
+            22,
+            28
+          ]
+        },
+        "fish_spawn_x": [
+          15,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "fish_spawn_depths": {
+          "ca_linh": [
+            5,
+            10
+          ],
+          "ca_loc": [
+            10,
+            16
+          ],
+          "ca_keo": [
+            24,
+            27
+          ]
+        },
+        "fish_weights": {
+          "ca_linh": 0.4,
+          "ca_loc": 0.3,
+          "ca_keo": 0.3
+        },
+        "monsters": {
+          "species": {
+            "ca_sau": {
+              "patrol_speed": 1,
+              "chase_speed": 3,
+              "detect_radius": 10,
+              "exit_radius": 16,
+              "depths": [
+                10,
+                30
+              ],
+              "hit_radius": 1.5,
+              "recoil_ticks": 60,
+              "recoil_dist": 2
+            }
+          },
+          "spawns": [
+            {
+              "id": "M1",
+              "kind": "ca_sau",
+              "pos": [
+                60,
+                24
+              ],
+              "waypoints": [
+                [
+                  60,
+                  24
+                ],
+                [
+                  64,
+                  24
+                ]
+              ],
+              "from_day": 1
+            },
+            {
+              "id": "M2",
+              "kind": "ca_sau",
+              "pos": [
+                85,
+                18
+              ],
+              "waypoints": [
+                [
+                  85,
+                  18
+                ],
+                [
+                  89,
+                  18
+                ]
+              ],
+              "from_day": 3
+            }
+          ],
+          "invuln_ticks": 90,
+          "loss_ratio": 0.5
+        }
+      },
+      "days_total": 5,
+      "shop_upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_start",
+          "data": {}
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "day_plan",
+          "data": {
+            "dishes": {
+              "ca_loc_nuong_trui": 3,
+              "goi_bong_sung": 3
+            },
+            "ingredients": {
+              "ca_loc": 3,
+              "bong_sung": 6
+            }
+          }
+        },
+        {
+          "type": "event",
+          "tick": 0,
+          "phase": "gather",
+          "day": 1,
+          "name": "phase_start",
+          "data": {}
+        }
+      ],
+      "finished": false,
+      "reason": null,
+      "error": null
+    }
+  },
+  "liveFinished": {
+    "type": "snapshot",
+    "tick": 31,
+    "sim_tick": 31,
+    "mode": "day",
+    "phase": "shop",
+    "phase_tick": 5,
+    "state": "finished",
+    "time_left_ticks": 595,
+    "money": 0,
+    "earned": 0,
+    "reputation": 3,
+    "score": 300,
+    "day": 5,
+    "day_plan": {
+      "dishes": {
+        "lau_mam": 1,
+        "lau_ca_linh_dien_dien": 1,
+        "ca_loc_nuong_trui": 1
+      },
+      "ingredients": {
+        "ca_linh": 5,
+        "ca_keo": 1,
+        "keo_neo": 1,
+        "bong_dien_dien": 2,
+        "ca_loc": 1
+      }
+    },
+    "upgrades": {},
+    "active_upgrades": {},
+    "stock": [],
+    "meta": {
+      "max_ticks": 600,
+      "upgrades": {
+        "oxygen": [
+          {
+            "level": 1,
+            "price": 200,
+            "oxygen_max_s": 45
+          },
+          {
+            "level": 2,
+            "price": 400,
+            "oxygen_max_s": 60
+          }
+        ],
+        "hp": [
+          {
+            "level": 1,
+            "price": 250,
+            "hp_max": 4
+          },
+          {
+            "level": 2,
+            "price": 500,
+            "hp_max": 5
+          }
+        ]
+      }
+    },
+    "days_total": 5,
+    "shop_upgrades": {
+      "oxygen": [
+        {
+          "level": 1,
+          "price": 200,
+          "oxygen_max_s": 45
+        },
+        {
+          "level": 2,
+          "price": 400,
+          "oxygen_max_s": 60
+        }
+      ],
+      "hp": [
+        {
+          "level": 1,
+          "price": 250,
+          "hp_max": 4
+        },
+        {
+          "level": 2,
+          "price": 500,
+          "hp_max": 5
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "event",
+        "tick": 0,
+        "phase": "gather",
+        "day": 1,
+        "name": "day_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 0,
+        "phase": "gather",
+        "day": 1,
+        "name": "day_plan",
+        "data": {
+          "dishes": {
+            "ca_loc_nuong_trui": 3,
+            "goi_bong_sung": 3
+          },
+          "ingredients": {
+            "ca_loc": 3,
+            "bong_sung": 6
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 0,
+        "phase": "gather",
+        "day": 1,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 1,
+        "phase": "gather",
+        "day": 1,
+        "name": "gather_end",
+        "data": {
+          "reason": "time",
+          "inventory": {
+            "items": []
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 1,
+        "phase": "quan",
+        "day": 1,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 2,
+        "phase": "quan",
+        "day": 1,
+        "name": "quan_end",
+        "data": {
+          "reason": "time",
+          "money": 0,
+          "earned": 0,
+          "shift_earned": 0,
+          "reputation": 3
+        }
+      },
+      {
+        "type": "event",
+        "tick": 2,
+        "phase": "shop",
+        "day": 1,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 5,
+        "phase": "shop",
+        "day": 1,
+        "name": "shop_end",
+        "data": {
+          "reason": "done"
+        }
+      },
+      {
+        "type": "event",
+        "tick": 5,
+        "phase": "gather",
+        "day": 2,
+        "name": "day_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 5,
+        "phase": "gather",
+        "day": 2,
+        "name": "day_plan",
+        "data": {
+          "dishes": {
+            "ca_loc_nuong_trui": 2,
+            "lau_ca_linh_dien_dien": 2
+          },
+          "ingredients": {
+            "ca_loc": 2,
+            "ca_linh": 6,
+            "bong_dien_dien": 2
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 5,
+        "phase": "gather",
+        "day": 2,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 6,
+        "phase": "gather",
+        "day": 2,
+        "name": "gather_end",
+        "data": {
+          "reason": "time",
+          "inventory": {
+            "items": []
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 6,
+        "phase": "quan",
+        "day": 2,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 7,
+        "phase": "quan",
+        "day": 2,
+        "name": "quan_end",
+        "data": {
+          "reason": "time",
+          "money": 0,
+          "earned": 0,
+          "shift_earned": 0,
+          "reputation": 3
+        }
+      },
+      {
+        "type": "event",
+        "tick": 7,
+        "phase": "shop",
+        "day": 2,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 11,
+        "phase": "shop",
+        "day": 2,
+        "name": "shop_end",
+        "data": {
+          "reason": "done"
+        }
+      },
+      {
+        "type": "event",
+        "tick": 11,
+        "phase": "gather",
+        "day": 3,
+        "name": "day_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 11,
+        "phase": "gather",
+        "day": 3,
+        "name": "day_plan",
+        "data": {
+          "dishes": {
+            "goi_bong_sung": 2,
+            "canh_chua_ca_loc": 2,
+            "ca_keo_nuong": 2
+          },
+          "ingredients": {
+            "bong_sung": 4,
+            "ca_loc": 2,
+            "bong_dien_dien": 2,
+            "ca_keo": 4
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 11,
+        "phase": "gather",
+        "day": 3,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 12,
+        "phase": "gather",
+        "day": 3,
+        "name": "gather_end",
+        "data": {
+          "reason": "time",
+          "inventory": {
+            "items": []
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 12,
+        "phase": "quan",
+        "day": 3,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 13,
+        "phase": "quan",
+        "day": 3,
+        "name": "quan_end",
+        "data": {
+          "reason": "time",
+          "money": 0,
+          "earned": 0,
+          "shift_earned": 0,
+          "reputation": 3
+        }
+      },
+      {
+        "type": "event",
+        "tick": 13,
+        "phase": "shop",
+        "day": 3,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 18,
+        "phase": "shop",
+        "day": 3,
+        "name": "shop_end",
+        "data": {
+          "reason": "done"
+        }
+      },
+      {
+        "type": "event",
+        "tick": 18,
+        "phase": "gather",
+        "day": 4,
+        "name": "day_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 18,
+        "phase": "gather",
+        "day": 4,
+        "name": "day_plan",
+        "data": {
+          "dishes": {
+            "lau_mam": 1,
+            "ca_loc_nuong_trui": 2,
+            "goi_bong_sung": 1
+          },
+          "ingredients": {
+            "ca_linh": 2,
+            "ca_keo": 1,
+            "keo_neo": 1,
+            "bong_dien_dien": 1,
+            "ca_loc": 2,
+            "bong_sung": 2
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 18,
+        "phase": "gather",
+        "day": 4,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 19,
+        "phase": "gather",
+        "day": 4,
+        "name": "gather_end",
+        "data": {
+          "reason": "time",
+          "inventory": {
+            "items": []
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 19,
+        "phase": "quan",
+        "day": 4,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 20,
+        "phase": "quan",
+        "day": 4,
+        "name": "quan_end",
+        "data": {
+          "reason": "time",
+          "money": 0,
+          "earned": 0,
+          "shift_earned": 0,
+          "reputation": 3
+        }
+      },
+      {
+        "type": "event",
+        "tick": 20,
+        "phase": "shop",
+        "day": 4,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 24,
+        "phase": "shop",
+        "day": 4,
+        "name": "shop_end",
+        "data": {
+          "reason": "done"
+        }
+      },
+      {
+        "type": "event",
+        "tick": 24,
+        "phase": "gather",
+        "day": 5,
+        "name": "day_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 24,
+        "phase": "gather",
+        "day": 5,
+        "name": "day_plan",
+        "data": {
+          "dishes": {
+            "lau_mam": 1,
+            "lau_ca_linh_dien_dien": 1,
+            "ca_loc_nuong_trui": 1
+          },
+          "ingredients": {
+            "ca_linh": 5,
+            "ca_keo": 1,
+            "keo_neo": 1,
+            "bong_dien_dien": 2,
+            "ca_loc": 1
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 24,
+        "phase": "gather",
+        "day": 5,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 25,
+        "phase": "gather",
+        "day": 5,
+        "name": "gather_end",
+        "data": {
+          "reason": "time",
+          "inventory": {
+            "items": []
+          }
+        }
+      },
+      {
+        "type": "event",
+        "tick": 25,
+        "phase": "quan",
+        "day": 5,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 26,
+        "phase": "quan",
+        "day": 5,
+        "name": "quan_end",
+        "data": {
+          "reason": "time",
+          "money": 0,
+          "earned": 0,
+          "shift_earned": 0,
+          "reputation": 3
+        }
+      },
+      {
+        "type": "event",
+        "tick": 26,
+        "phase": "shop",
+        "day": 5,
+        "name": "phase_start",
+        "data": {}
+      },
+      {
+        "type": "event",
+        "tick": 31,
+        "phase": "shop",
+        "day": 5,
+        "name": "shop_end",
+        "data": {
+          "reason": "done"
+        }
+      }
+    ],
+    "finished": true,
+    "reason": "days_complete",
+    "error": null
+  },
+  "browserBenchmark": {
+    "seed": 42,
+    "warmup_s": 3,
+    "requested_s": 30,
+    "frames": 1800,
+    "measured_s": 30.002300000000744,
+    "avg_fps": 59.99540035263814,
+    "p1_low_fps": 59.52380952380135,
+    "first_contentful_paint_ms": 76,
+    "canvas": [
+      1280,
+      720
+    ],
+    "position": [
+      2,
+      0
+    ],
+    "frame_timestamps_ms": [
+      3113.3,
+      3129.9,
+      3146.6,
+      3163.3,
+      3179.9,
+      3196.6,
+      3213.2,
+      3229.9,
+      3246.6,
+      3263.2,
+      3279.9,
+      3296.6,
+      3313.2,
+      3329.9,
+      3346.6,
+      3363.3,
+      3379.9,
+      3396.5,
+      3413.2,
+      3429.9,
+      3446.6,
+      3463.3,
+      3479.9,
+      3496.5,
+      3513.2,
+      3529.9,
+      3546.5,
+      3563.2,
+      3579.9,
+      3596.6,
+      3613.2,
+      3629.9,
+      3646.5,
+      3663.2,
+      3679.9,
+      3696.5,
+      3713.2,
+      3729.9,
+      3746.5,
+      3763.2,
+      3779.9,
+      3796.6,
+      3813.2,
+      3829.8,
+      3846.5,
+      3863.2,
+      3879.8,
+      3896.5,
+      3913.2,
+      3929.8,
+      3946.6,
+      3963.2,
+      3979.9,
+      3996.5,
+      4013.2,
+      4029.8,
+      4046.5,
+      4063.2,
+      4079.8,
+      4096.5,
+      4113.2,
+      4129.8,
+      4146.5,
+      4163.2,
+      4179.8,
+      4196.5,
+      4213.2,
+      4229.8,
+      4246.5,
+      4263.2,
+      4279.9,
+      4296.6,
+      4313.2,
+      4329.9,
+      4346.5,
+      4363.1,
+      4379.8,
+      4396.5,
+      4413.2,
+      4429.8,
+      4446.5,
+      4463.2,
+      4479.8,
+      4496.5,
+      4513.2,
+      4529.9,
+      4546.5,
+      4563.2,
+      4579.8,
+      4596.5,
+      4613.2,
+      4629.9,
+      4646.5,
+      4663.1,
+      4679.8,
+      4696.5,
+      4713.1,
+      4729.8,
+      4746.5,
+      4763.2,
+      4779.9,
+      4796.5,
+      4813.1,
+      4829.8,
+      4846.5,
+      4863.2,
+      4879.8,
+      4896.5,
+      4913.2,
+      4929.8,
+      4946.5,
+      4963.2,
+      4979.8,
+      4996.5,
+      5013.1,
+      5029.8,
+      5046.5,
+      5063.1,
+      5079.9,
+      5096.5,
+      5113.1,
+      5129.8,
+      5146.5,
+      5163.1,
+      5179.8,
+      5196.5,
+      5213.1,
+      5229.8,
+      5246.5,
+      5263.1,
+      5279.8,
+      5296.5,
+      5313.2,
+      5329.8,
+      5346.5,
+      5363.2,
+      5379.8,
+      5396.5,
+      5413.1,
+      5429.8,
+      5446.4,
+      5463.1,
+      5479.8,
+      5496.5,
+      5513.1,
+      5529.8,
+      5546.5,
+      5563.1,
+      5579.8,
+      5596.4,
+      5613.1,
+      5629.8,
+      5646.4,
+      5663.1,
+      5679.8,
+      5696.5,
+      5713.1,
+      5729.8,
+      5746.5,
+      5763.1,
+      5779.8,
+      5796.5,
+      5813.1,
+      5829.8,
+      5846.5,
+      5863.1,
+      5879.8,
+      5896.5,
+      5913.1,
+      5929.8,
+      5946.4,
+      5963.1,
+      5979.8,
+      5996.4,
+      6013.1,
+      6029.8,
+      6046.5,
+      6063.1,
+      6079.8,
+      6096.4,
+      6113.1,
+      6129.8,
+      6146.4,
+      6163.1,
+      6179.7,
+      6196.4,
+      6213.1,
+      6229.8,
+      6246.5,
+      6263.1,
+      6279.8,
+      6296.5,
+      6313.1,
+      6329.8,
+      6346.4,
+      6363.1,
+      6379.8,
+      6396.5,
+      6413.1,
+      6429.8,
+      6446.4,
+      6463.1,
+      6479.8,
+      6496.4,
+      6513.1,
+      6529.7,
+      6546.4,
+      6563.1,
+      6579.8,
+      6596.5,
+      6613.1,
+      6629.8,
+      6646.4,
+      6663,
+      6679.7,
+      6696.4,
+      6713.1,
+      6729.8,
+      6746.5,
+      6763.1,
+      6779.8,
+      6796.4,
+      6813.1,
+      6829.7,
+      6846.4,
+      6863.1,
+      6879.7,
+      6896.5,
+      6913.1,
+      6929.7,
+      6946.4,
+      6963.1,
+      6979.8,
+      6996.4,
+      7013.1,
+      7029.7,
+      7046.4,
+      7063.1,
+      7079.7,
+      7096.4,
+      7113.1,
+      7129.8,
+      7146.4,
+      7163,
+      7179.7,
+      7196.4,
+      7213.1,
+      7229.7,
+      7246.4,
+      7263,
+      7279.8,
+      7296.4,
+      7313.1,
+      7329.7,
+      7346.4,
+      7363.1,
+      7379.7,
+      7396.3,
+      7413.1,
+      7429.7,
+      7446.4,
+      7463.1,
+      7479.8,
+      7496.4,
+      7513.1,
+      7529.7,
+      7546.4,
+      7563.1,
+      7579.7,
+      7596.4,
+      7613.1,
+      7629.7,
+      7646.4,
+      7663.1,
+      7679.7,
+      7696.4,
+      7713,
+      7729.8,
+      7746.4,
+      7763,
+      7779.7,
+      7796.4,
+      7813,
+      7829.8,
+      7846.4,
+      7863,
+      7879.8,
+      7896.3,
+      7913,
+      7929.7,
+      7946.4,
+      7963.1,
+      7979.7,
+      7996.4,
+      8013,
+      8029.7,
+      8046.4,
+      8063,
+      8079.7,
+      8096.4,
+      8113,
+      8129.7,
+      8146.4,
+      8163,
+      8179.7,
+      8196.4,
+      8213.1,
+      8229.7,
+      8246.4,
+      8263,
+      8279.7,
+      8296.4,
+      8313,
+      8329.7,
+      8346.3,
+      8363,
+      8379.6,
+      8396.3,
+      8413,
+      8429.6,
+      8446.3,
+      8463,
+      8479.7,
+      8496.3,
+      8513,
+      8529.7,
+      8546.3,
+      8563,
+      8579.6,
+      8596.3,
+      8613,
+      8629.7,
+      8646.3,
+      8663.1,
+      8679.6,
+      8696.3,
+      8713,
+      8729.7,
+      8746.4,
+      8763,
+      8779.6,
+      8796.4,
+      8813,
+      8829.6,
+      8846.3,
+      8863,
+      8879.7,
+      8896.3,
+      8913,
+      8929.6,
+      8946.3,
+      8963,
+      8979.7,
+      8996.3,
+      9013,
+      9029.7,
+      9046.4,
+      9063,
+      9079.7,
+      9096.3,
+      9113,
+      9129.7,
+      9146.4,
+      9163,
+      9179.6,
+      9196.3,
+      9212.9,
+      9229.6,
+      9246.3,
+      9263,
+      9279.7,
+      9296.3,
+      9313,
+      9329.7,
+      9346.3,
+      9363,
+      9379.7,
+      9396.3,
+      9413,
+      9429.7,
+      9446.3,
+      9463,
+      9479.6,
+      9496.3,
+      9513,
+      9529.6,
+      9546.3,
+      9562.9,
+      9579.6,
+      9596.3,
+      9613,
+      9629.6,
+      9646.3,
+      9663,
+      9679.7,
+      9696.3,
+      9712.9,
+      9729.7,
+      9746.3,
+      9762.9,
+      9779.7,
+      9796.3,
+      9813,
+      9829.7,
+      9846.3,
+      9863,
+      9879.6,
+      9896.3,
+      9913,
+      9929.6,
+      9946.3,
+      9962.9,
+      9979.6,
+      9996.3,
+      10012.9,
+      10029.6,
+      10046.3,
+      10062.9,
+      10079.6,
+      10096.3,
+      10113,
+      10129.6,
+      10146.3,
+      10162.9,
+      10179.7,
+      10196.3,
+      10213,
+      10229.6,
+      10246.3,
+      10263,
+      10279.6,
+      10296.3,
+      10313,
+      10329.6,
+      10346.3,
+      10362.9,
+      10379.6,
+      10396.3,
+      10412.9,
+      10429.6,
+      10446.3,
+      10462.9,
+      10479.6,
+      10496.2,
+      10513,
+      10529.6,
+      10546.2,
+      10563,
+      10579.6,
+      10596.3,
+      10612.9,
+      10629.6,
+      10646.2,
+      10662.9,
+      10679.6,
+      10696.2,
+      10713,
+      10729.6,
+      10746.3,
+      10762.9,
+      10779.6,
+      10796.3,
+      10813,
+      10829.6,
+      10846.2,
+      10863,
+      10879.6,
+      10896.3,
+      10912.9,
+      10929.6,
+      10946.3,
+      10962.9,
+      10979.5,
+      10996.3,
+      11012.9,
+      11029.6,
+      11046.2,
+      11062.9,
+      11079.5,
+      11096.2,
+      11112.9,
+      11129.6,
+      11146.2,
+      11162.9,
+      11179.6,
+      11196.2,
+      11212.9,
+      11229.5,
+      11246.3,
+      11262.9,
+      11279.6,
+      11296.3,
+      11312.9,
+      11329.5,
+      11346.2,
+      11362.9,
+      11379.5,
+      11396.2,
+      11412.9,
+      11429.6,
+      11446.2,
+      11462.9,
+      11479.5,
+      11496.2,
+      11512.9,
+      11529.6,
+      11546.2,
+      11562.9,
+      11579.5,
+      11596.2,
+      11612.9,
+      11629.6,
+      11646.2,
+      11662.9,
+      11679.5,
+      11696.2,
+      11712.9,
+      11729.5,
+      11746.2,
+      11762.9,
+      11779.5,
+      11796.2,
+      11812.9,
+      11829.5,
+      11846.2,
+      11862.9,
+      11879.6,
+      11896.2,
+      11912.8,
+      11929.6,
+      11946.2,
+      11962.9,
+      11979.6,
+      11996.2,
+      12012.9,
+      12029.6,
+      12046.2,
+      12062.9,
+      12079.5,
+      12096.2,
+      12112.9,
+      12129.6,
+      12146.2,
+      12162.8,
+      12179.5,
+      12196.2,
+      12212.8,
+      12229.6,
+      12246.2,
+      12262.9,
+      12279.6,
+      12296.2,
+      12312.9,
+      12329.6,
+      12346.2,
+      12362.9,
+      12379.5,
+      12396.1,
+      12412.8,
+      12429.5,
+      12446.2,
+      12462.9,
+      12479.5,
+      12496.2,
+      12512.9,
+      12529.6,
+      12546.1,
+      12562.8,
+      12579.5,
+      12596.2,
+      12612.9,
+      12629.5,
+      12646.2,
+      12662.8,
+      12679.5,
+      12696.2,
+      12712.9,
+      12729.5,
+      12746.2,
+      12762.9,
+      12779.5,
+      12796.2,
+      12812.8,
+      12829.5,
+      12846.2,
+      12862.8,
+      12879.5,
+      12896.2,
+      12912.8,
+      12929.5,
+      12946.2,
+      12962.8,
+      12979.5,
+      12996.2,
+      13012.8,
+      13029.5,
+      13046.2,
+      13062.8,
+      13079.5,
+      13096.1,
+      13112.8,
+      13129.5,
+      13146.1,
+      13162.9,
+      13179.5,
+      13196.2,
+      13212.8,
+      13229.5,
+      13246.1,
+      13262.8,
+      13279.5,
+      13296.1,
+      13312.9,
+      13329.4,
+      13346.2,
+      13362.8,
+      13379.5,
+      13396.2,
+      13412.8,
+      13429.4,
+      13446.1,
+      13462.8,
+      13479.4,
+      13496.1,
+      13512.8,
+      13529.5,
+      13546.1,
+      13562.9,
+      13579.4,
+      13596.1,
+      13612.8,
+      13629.5,
+      13646.2,
+      13662.8,
+      13679.5,
+      13696.2,
+      13712.8,
+      13729.5,
+      13746.1,
+      13762.8,
+      13779.5,
+      13796.2,
+      13812.8,
+      13829.5,
+      13846.1,
+      13862.8,
+      13879.4,
+      13896.1,
+      13912.8,
+      13929.5,
+      13946.1,
+      13962.8,
+      13979.5,
+      13996.2,
+      14012.8,
+      14029.4,
+      14046.1,
+      14062.8,
+      14079.5,
+      14096.1,
+      14112.7,
+      14129.4,
+      14146.1,
+      14162.8,
+      14179.4,
+      14196.1,
+      14212.8,
+      14229.4,
+      14246.1,
+      14262.8,
+      14279.4,
+      14296.1,
+      14312.8,
+      14329.5,
+      14346.1,
+      14362.8,
+      14379.4,
+      14396.1,
+      14412.8,
+      14429.5,
+      14446.1,
+      14462.7,
+      14479.4,
+      14496.1,
+      14512.8,
+      14529.4,
+      14546.1,
+      14562.8,
+      14579.4,
+      14596.1,
+      14612.7,
+      14629.4,
+      14646.1,
+      14662.7,
+      14679.5,
+      14696.1,
+      14712.7,
+      14729.4,
+      14746.1,
+      14762.7,
+      14779.4,
+      14796.1,
+      14812.8,
+      14829.4,
+      14846.1,
+      14862.8,
+      14879.4,
+      14896.1,
+      14912.7,
+      14929.4,
+      14946.1,
+      14962.7,
+      14979.4,
+      14996.1,
+      15012.7,
+      15029.4,
+      15046.1,
+      15062.8,
+      15079.4,
+      15096,
+      15112.8,
+      15129.4,
+      15146.1,
+      15162.8,
+      15179.4,
+      15196.1,
+      15212.8,
+      15229.5,
+      15246.1,
+      15262.7,
+      15279.4,
+      15296,
+      15312.8,
+      15329.4,
+      15346.1,
+      15362.7,
+      15379.4,
+      15396.1,
+      15412.7,
+      15429.4,
+      15446.1,
+      15462.8,
+      15479.4,
+      15496.1,
+      15512.7,
+      15529.4,
+      15546,
+      15562.7,
+      15579.4,
+      15596.1,
+      15612.7,
+      15629.4,
+      15646,
+      15662.8,
+      15679.4,
+      15696,
+      15712.7,
+      15729.4,
+      15746.1,
+      15762.7,
+      15779.4,
+      15796,
+      15812.8,
+      15829.4,
+      15846.1,
+      15862.8,
+      15879.4,
+      15896.1,
+      15912.7,
+      15929.4,
+      15946.1,
+      15962.7,
+      15979.4,
+      15996,
+      16012.8,
+      16029.4,
+      16046.1,
+      16062.7,
+      16079.4,
+      16096.1,
+      16112.7,
+      16129.3,
+      16146.1,
+      16162.7,
+      16179.4,
+      16196,
+      16212.7,
+      16229.4,
+      16246.1,
+      16262.7,
+      16279.4,
+      16296,
+      16312.7,
+      16329.4,
+      16346.1,
+      16362.7,
+      16379.3,
+      16396.1,
+      16412.7,
+      16429.4,
+      16446.1,
+      16462.7,
+      16479.3,
+      16496.1,
+      16512.7,
+      16529.4,
+      16546,
+      16562.7,
+      16579.4,
+      16596,
+      16612.7,
+      16629.4,
+      16646.1,
+      16662.7,
+      16679.3,
+      16696,
+      16712.7,
+      16729.4,
+      16746,
+      16762.7,
+      16779.4,
+      16796,
+      16812.7,
+      16829.3,
+      16846,
+      16862.7,
+      16879.4,
+      16896,
+      16912.7,
+      16929.3,
+      16946,
+      16962.7,
+      16979.3,
+      16996.1,
+      17012.6,
+      17029.4,
+      17046,
+      17062.7,
+      17079.4,
+      17096,
+      17112.7,
+      17129.3,
+      17146,
+      17162.7,
+      17179.3,
+      17196,
+      17212.6,
+      17229.4,
+      17246,
+      17262.6,
+      17279.3,
+      17296,
+      17312.7,
+      17329.3,
+      17346,
+      17362.6,
+      17379.3,
+      17396,
+      17412.7,
+      17429.3,
+      17446,
+      17462.6,
+      17479.3,
+      17496,
+      17512.7,
+      17529.3,
+      17546,
+      17562.6,
+      17579.3,
+      17596,
+      17612.6,
+      17629.3,
+      17646,
+      17662.6,
+      17679.3,
+      17696,
+      17712.7,
+      17729.3,
+      17746,
+      17762.7,
+      17779.3,
+      17795.9,
+      17812.7,
+      17829.3,
+      17846,
+      17862.7,
+      17879.3,
+      17896,
+      17912.6,
+      17929.3,
+      17946,
+      17962.6,
+      17979.3,
+      17996,
+      18012.7,
+      18029.3,
+      18046,
+      18062.7,
+      18079.3,
+      18095.9,
+      18112.7,
+      18129.3,
+      18146,
+      18162.6,
+      18179.3,
+      18196,
+      18212.7,
+      18229.2,
+      18245.9,
+      18262.6,
+      18279.3,
+      18296,
+      18312.6,
+      18329.3,
+      18345.9,
+      18362.6,
+      18379.3,
+      18396,
+      18412.6,
+      18429.3,
+      18445.9,
+      18462.6,
+      18479.3,
+      18495.9,
+      18512.6,
+      18529.3,
+      18546,
+      18562.6,
+      18579.3,
+      18595.9,
+      18612.7,
+      18629.3,
+      18645.9,
+      18662.6,
+      18679.2,
+      18696,
+      18712.6,
+      18729.3,
+      18746,
+      18762.6,
+      18779.3,
+      18796,
+      18812.6,
+      18829.3,
+      18845.9,
+      18862.6,
+      18879.3,
+      18895.9,
+      18912.6,
+      18929.3,
+      18945.9,
+      18962.6,
+      18979.3,
+      18996,
+      19012.6,
+      19029.3,
+      19045.9,
+      19062.6,
+      19079.2,
+      19095.9,
+      19112.6,
+      19129.3,
+      19145.9,
+      19162.6,
+      19179.2,
+      19195.9,
+      19212.6,
+      19229.3,
+      19245.9,
+      19262.6,
+      19279.3,
+      19295.9,
+      19312.6,
+      19329.3,
+      19346,
+      19362.6,
+      19379.3,
+      19395.9,
+      19412.6,
+      19429.3,
+      19446,
+      19462.5,
+      19479.2,
+      19496,
+      19512.5,
+      19529.3,
+      19545.9,
+      19562.6,
+      19579.2,
+      19595.9,
+      19612.6,
+      19629.2,
+      19645.9,
+      19662.5,
+      19679.2,
+      19695.9,
+      19712.5,
+      19729.2,
+      19745.9,
+      19762.6,
+      19779.2,
+      19795.9,
+      19812.5,
+      19829.2,
+      19845.9,
+      19862.5,
+      19879.2,
+      19895.9,
+      19912.5,
+      19929.3,
+      19945.9,
+      19962.6,
+      19979.2,
+      19995.9,
+      20012.5,
+      20029.3,
+      20045.9,
+      20062.5,
+      20079.3,
+      20095.9,
+      20112.5,
+      20129.2,
+      20145.9,
+      20162.6,
+      20179.2,
+      20195.8,
+      20212.5,
+      20229.2,
+      20245.8,
+      20262.6,
+      20279.2,
+      20295.9,
+      20312.6,
+      20329.3,
+      20345.9,
+      20362.6,
+      20379.2,
+      20395.9,
+      20412.5,
+      20429.2,
+      20445.9,
+      20462.5,
+      20479.2,
+      20495.8,
+      20512.5,
+      20529.2,
+      20545.9,
+      20562.5,
+      20579.2,
+      20595.9,
+      20612.5,
+      20629.2,
+      20645.9,
+      20662.5,
+      20679.2,
+      20695.9,
+      20712.5,
+      20729.2,
+      20745.8,
+      20762.6,
+      20779.2,
+      20795.8,
+      20812.5,
+      20829.2,
+      20845.9,
+      20862.5,
+      20879.2,
+      20895.8,
+      20912.6,
+      20929.2,
+      20945.8,
+      20962.5,
+      20979.2,
+      20995.9,
+      21012.6,
+      21029.2,
+      21045.8,
+      21062.5,
+      21079.1,
+      21095.9,
+      21112.5,
+      21129.1,
+      21145.8,
+      21162.5,
+      21179.2,
+      21195.8,
+      21212.5,
+      21229.2,
+      21245.9,
+      21262.5,
+      21279.2,
+      21295.9,
+      21312.5,
+      21329.1,
+      21345.8,
+      21362.5,
+      21379.2,
+      21395.8,
+      21412.5,
+      21429.1,
+      21445.9,
+      21462.5,
+      21479.1,
+      21495.9,
+      21512.5,
+      21529.2,
+      21545.8,
+      21562.4,
+      21579.1,
+      21595.8,
+      21612.5,
+      21629.1,
+      21645.8,
+      21662.5,
+      21679.1,
+      21695.8,
+      21712.5,
+      21729.1,
+      21745.8,
+      21762.5,
+      21779.1,
+      21795.8,
+      21812.5,
+      21829.2,
+      21845.8,
+      21862.5,
+      21879.1,
+      21895.8,
+      21912.4,
+      21929.1,
+      21945.8,
+      21962.4,
+      21979.2,
+      21995.8,
+      22012.4,
+      22029.2,
+      22045.8,
+      22062.4,
+      22079.2,
+      22095.8,
+      22112.4,
+      22129.1,
+      22145.8,
+      22162.5,
+      22179.1,
+      22195.8,
+      22212.4,
+      22229.2,
+      22245.8,
+      22262.5,
+      22279.1,
+      22295.8,
+      22312.4,
+      22329.2,
+      22345.8,
+      22362.4,
+      22379.1,
+      22395.8,
+      22412.4,
+      22429.1,
+      22445.8,
+      22462.5,
+      22479.1,
+      22495.8,
+      22512.5,
+      22529.1,
+      22545.8,
+      22562.4,
+      22579.1,
+      22595.8,
+      22612.5,
+      22629.1,
+      22645.8,
+      22662.5,
+      22679.2,
+      22695.8,
+      22712.5,
+      22729.1,
+      22745.7,
+      22762.4,
+      22779.1,
+      22795.8,
+      22812.4,
+      22829.1,
+      22845.7,
+      22862.4,
+      22879.1,
+      22895.8,
+      22912.4,
+      22929.1,
+      22945.8,
+      22962.4,
+      22979.1,
+      22995.8,
+      23012.4,
+      23029.1,
+      23045.8,
+      23062.5,
+      23079.1,
+      23095.7,
+      23112.4,
+      23129.1,
+      23145.8,
+      23162.4,
+      23179,
+      23195.8,
+      23212.4,
+      23229.1,
+      23245.8,
+      23262.5,
+      23279.1,
+      23295.8,
+      23312.5,
+      23329.1,
+      23345.8,
+      23362.4,
+      23379.1,
+      23395.8,
+      23412.4,
+      23429,
+      23445.7,
+      23462.4,
+      23479.1,
+      23495.7,
+      23512.4,
+      23529.1,
+      23545.7,
+      23562.4,
+      23579.1,
+      23595.7,
+      23612.4,
+      23629.1,
+      23645.7,
+      23662.4,
+      23679.1,
+      23695.8,
+      23712.4,
+      23729.1,
+      23745.7,
+      23762.4,
+      23779,
+      23795.7,
+      23812.4,
+      23829,
+      23845.8,
+      23862.4,
+      23879.1,
+      23895.8,
+      23912.4,
+      23929.1,
+      23945.7,
+      23962.4,
+      23979.1,
+      23995.7,
+      24012.4,
+      24029.1,
+      24045.7,
+      24062.4,
+      24079,
+      24095.8,
+      24112.4,
+      24129.1,
+      24145.7,
+      24162.4,
+      24179.1,
+      24195.7,
+      24212.4,
+      24229.1,
+      24245.7,
+      24262.4,
+      24279,
+      24295.7,
+      24312.4,
+      24329,
+      24345.7,
+      24362.4,
+      24379,
+      24395.7,
+      24412.4,
+      24429,
+      24445.7,
+      24462.4,
+      24479,
+      24495.7,
+      24512.4,
+      24529,
+      24545.7,
+      24562.4,
+      24579,
+      24595.7,
+      24612.3,
+      24629,
+      24645.7,
+      24662.4,
+      24679.1,
+      24695.7,
+      24712.4,
+      24729,
+      24745.7,
+      24762.3,
+      24779.1,
+      24795.7,
+      24812.4,
+      24829.1,
+      24845.7,
+      24862.4,
+      24879.1,
+      24895.6,
+      24912.4,
+      24929,
+      24945.7,
+      24962.3,
+      24979,
+      24995.7,
+      25012.3,
+      25029,
+      25045.7,
+      25062.4,
+      25079,
+      25095.6,
+      25112.3,
+      25129,
+      25145.7,
+      25162.3,
+      25179,
+      25195.7,
+      25212.4,
+      25229,
+      25245.7,
+      25262.3,
+      25279,
+      25295.7,
+      25312.3,
+      25329,
+      25345.7,
+      25362.4,
+      25379,
+      25395.7,
+      25412.3,
+      25429,
+      25445.7,
+      25462.3,
+      25479,
+      25495.6,
+      25512.3,
+      25529,
+      25545.7,
+      25562.3,
+      25579,
+      25595.6,
+      25612.3,
+      25629,
+      25645.7,
+      25662.4,
+      25679,
+      25695.7,
+      25712.3,
+      25729,
+      25745.6,
+      25762.4,
+      25779,
+      25795.6,
+      25812.3,
+      25829,
+      25845.7,
+      25862.3,
+      25879,
+      25895.6,
+      25912.3,
+      25928.9,
+      25945.6,
+      25962.4,
+      25978.9,
+      25995.7,
+      26012.3,
+      26029,
+      26045.6,
+      26062.3,
+      26079,
+      26095.6,
+      26112.3,
+      26129,
+      26145.6,
+      26162.3,
+      26179,
+      26195.6,
+      26212.3,
+      26229,
+      26245.7,
+      26262.3,
+      26279,
+      26295.7,
+      26312.3,
+      26329,
+      26345.7,
+      26362.3,
+      26378.9,
+      26395.6,
+      26412.3,
+      26429,
+      26445.7,
+      26462.3,
+      26479,
+      26495.6,
+      26512.3,
+      26529,
+      26545.6,
+      26562.3,
+      26579,
+      26595.7,
+      26612.3,
+      26628.9,
+      26645.6,
+      26662.3,
+      26678.9,
+      26695.6,
+      26712.3,
+      26729,
+      26745.6,
+      26762.3,
+      26778.9,
+      26795.6,
+      26812.3,
+      26828.9,
+      26845.6,
+      26862.3,
+      26878.9,
+      26895.6,
+      26912.3,
+      26929,
+      26945.6,
+      26962.3,
+      26979,
+      26995.6,
+      27012.2,
+      27028.9,
+      27045.6,
+      27062.3,
+      27078.9,
+      27095.6,
+      27112.3,
+      27129,
+      27145.7,
+      27162.3,
+      27178.9,
+      27195.6,
+      27212.3,
+      27228.9,
+      27245.6,
+      27262.2,
+      27279,
+      27295.6,
+      27312.2,
+      27328.9,
+      27345.6,
+      27362.2,
+      27379,
+      27395.5,
+      27412.3,
+      27428.9,
+      27445.6,
+      27462.3,
+      27478.9,
+      27495.6,
+      27512.3,
+      27529,
+      27545.6,
+      27562.3,
+      27578.9,
+      27595.6,
+      27612.3,
+      27629,
+      27645.5,
+      27662.2,
+      27678.9,
+      27695.6,
+      27712.3,
+      27728.9,
+      27745.5,
+      27762.2,
+      27778.9,
+      27795.6,
+      27812.2,
+      27828.9,
+      27845.5,
+      27862.2,
+      27878.9,
+      27895.6,
+      27912.2,
+      27928.9,
+      27945.6,
+      27962.2,
+      27978.9,
+      27995.5,
+      28012.3,
+      28028.9,
+      28045.5,
+      28062.2,
+      28078.9,
+      28095.5,
+      28112.2,
+      28128.9,
+      28145.5,
+      28162.2,
+      28178.9,
+      28195.6,
+      28212.3,
+      28228.9,
+      28245.6,
+      28262.2,
+      28278.9,
+      28295.5,
+      28312.2,
+      28328.9,
+      28345.5,
+      28362.3,
+      28378.9,
+      28395.6,
+      28412.3,
+      28428.9,
+      28445.5,
+      28462.2,
+      28478.9,
+      28495.5,
+      28512.2,
+      28528.9,
+      28545.5,
+      28562.2,
+      28578.9,
+      28595.5,
+      28612.2,
+      28628.8,
+      28645.6,
+      28662.2,
+      28678.8,
+      28695.5,
+      28712.2,
+      28728.9,
+      28745.6,
+      28762.2,
+      28778.9,
+      28795.5,
+      28812.2,
+      28828.9,
+      28845.5,
+      28862.2,
+      28878.8,
+      28895.5,
+      28912.2,
+      28928.8,
+      28945.5,
+      28962.2,
+      28978.8,
+      28995.5,
+      29012.2,
+      29028.9,
+      29045.5,
+      29062.2,
+      29078.8,
+      29095.5,
+      29112.2,
+      29128.9,
+      29145.6,
+      29162.2,
+      29178.8,
+      29195.5,
+      29212.2,
+      29228.8,
+      29245.5,
+      29262.2,
+      29278.9,
+      29295.5,
+      29312.2,
+      29328.8,
+      29345.5,
+      29362.2,
+      29378.9,
+      29395.5,
+      29412.2,
+      29428.9,
+      29445.6,
+      29462.1,
+      29478.8,
+      29495.5,
+      29512.2,
+      29528.8,
+      29545.5,
+      29562.2,
+      29578.9,
+      29595.5,
+      29612.2,
+      29628.8,
+      29645.5,
+      29662.2,
+      29678.8,
+      29695.5,
+      29712.1,
+      29728.9,
+      29745.5,
+      29762.2,
+      29778.8,
+      29795.5,
+      29812.2,
+      29828.8,
+      29845.5,
+      29862.2,
+      29878.9,
+      29895.5,
+      29912.1,
+      29928.8,
+      29945.5,
+      29962.2,
+      29978.8,
+      29995.5,
+      30012.1,
+      30028.9,
+      30045.5,
+      30062.1,
+      30078.9,
+      30095.4,
+      30112.1,
+      30128.9,
+      30145.5,
+      30162.2,
+      30178.8,
+      30195.5,
+      30212.1,
+      30228.8,
+      30245.5,
+      30262.1,
+      30278.8,
+      30295.4,
+      30312.2,
+      30328.8,
+      30345.4,
+      30362.1,
+      30378.8,
+      30395.4,
+      30412.1,
+      30428.8,
+      30445.5,
+      30462.1,
+      30478.8,
+      30495.4,
+      30512.2,
+      30528.8,
+      30545.5,
+      30562.1,
+      30578.8,
+      30595.5,
+      30612.2,
+      30628.8,
+      30645.4,
+      30662.2,
+      30678.8,
+      30695.5,
+      30712.1,
+      30728.8,
+      30745.4,
+      30762.1,
+      30778.8,
+      30795.5,
+      30812.1,
+      30828.8,
+      30845.5,
+      30862.2,
+      30878.8,
+      30895.4,
+      30912.2,
+      30928.8,
+      30945.4,
+      30962.2,
+      30978.7,
+      30995.5,
+      31012.1,
+      31028.8,
+      31045.5,
+      31062.1,
+      31078.8,
+      31095.5,
+      31112.1,
+      31128.7,
+      31145.5,
+      31162.1,
+      31178.8,
+      31195.5,
+      31212.1,
+      31228.8,
+      31245.4,
+      31262.1,
+      31278.8,
+      31295.5,
+      31312.1,
+      31328.7,
+      31345.4,
+      31362.1,
+      31378.8,
+      31395.4,
+      31412.1,
+      31428.8,
+      31445.4,
+      31462.1,
+      31478.7,
+      31495.4,
+      31512.1,
+      31528.8,
+      31545.5,
+      31562.1,
+      31578.8,
+      31595.5,
+      31612.1,
+      31628.7,
+      31645.4,
+      31662.1,
+      31678.7,
+      31695.4,
+      31712.1,
+      31728.8,
+      31745.4,
+      31762.1,
+      31778.8,
+      31795.4,
+      31812.1,
+      31828.7,
+      31845.4,
+      31862.1,
+      31878.7,
+      31895.4,
+      31912.1,
+      31928.7,
+      31945.4,
+      31962.1,
+      31978.7,
+      31995.4,
+      32012.1,
+      32028.7,
+      32045.4,
+      32062.1,
+      32078.7,
+      32095.4,
+      32112,
+      32128.7,
+      32145.4,
+      32162.1,
+      32178.7,
+      32195.4,
+      32212.1,
+      32228.8,
+      32245.4,
+      32262.1,
+      32278.8,
+      32295.4,
+      32312.1,
+      32328.7,
+      32345.4,
+      32362.1,
+      32378.7,
+      32395.4,
+      32412,
+      32428.7,
+      32445.4,
+      32462,
+      32478.7,
+      32495.4,
+      32512.1,
+      32528.7,
+      32545.4,
+      32562.1,
+      32578.7,
+      32595.4,
+      32612,
+      32628.7,
+      32645.4,
+      32662.1,
+      32678.7,
+      32695.4,
+      32712.1,
+      32728.7,
+      32745.4,
+      32762,
+      32778.7,
+      32795.4,
+      32812,
+      32828.7,
+      32845.4,
+      32862.1,
+      32878.7,
+      32895.4,
+      32912.1,
+      32928.7,
+      32945.4,
+      32962,
+      32978.7,
+      32995.4,
+      33012,
+      33028.7,
+      33045.3,
+      33062.1,
+      33078.7,
+      33095.3
+    ],
+    "note": "Independent real browser RAF measurement; not the production bench_cmd software-framebuffer metric."
+  },
+  "status": "FAIL",
+  "processes": [
+    {
+      "argv": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--headless=new",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--disable-background-networking",
+        "--disable-extensions",
+        "--disable-gpu",
+        "--remote-debugging-port=0",
+        "--user-data-dir=C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\chrome",
+        "--window-size=1280,720",
+        "about:blank"
+      ],
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "\r\nDevTools listening on ws://127.0.0.1:20145/devtools/browser/48353bbc-b227-45ee-9b60-1018c26b889e\r\nCreated TensorFlow Lite XNNPACK delegate for CPU.\r\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\gather-warnings.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:14511/  (chế độ gather, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "quan",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\quan-warning.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:11500/  (chế độ quan, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "quan",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\no-customer.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:43919/  (chế độ quan, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\safe-gather.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:51148/  (chế độ gather, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "day",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\live-day.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:27000/  (chế độ day, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "day",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\live-finished.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:62028/  (chế độ day, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "chonoi.live",
+        "--mode",
+        "gather",
+        "--seed",
+        "42",
+        "--port",
+        "0",
+        "--scenario",
+        "C:\\Users\\Siuuu\\AppData\\Local\\Temp\\t77-p4-browser-6Kubd4\\browser-benchmark.json"
+      ],
+      "exit_code": null,
+      "stdout": "Mở trình duyệt tại http://127.0.0.1:62031/  (chế độ gather, seed 42). Ctrl+C để dừng.\r\n",
+      "stderr": ""
+    }
+  ]
+}

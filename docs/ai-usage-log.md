@@ -52,6 +52,14 @@
 Chạy lại từ gốc repo: tắt bytecode, dùng lệnh unittest và khối proof trong hai skill. Trên Windows, full-suite proof thay riêng alias python3 bị hỏng bằng Python hiện tại trong bộ nhớ; không đổi manifest/helper. [summary.json](proof/phase-1/d-uscalurn-run-81321f1b/summary.json) lưu executable, exit code, hash source/test, trạng thái từng method. Guard của hai test determinism D còn FAIL do chưa có sự kiện gameplay; phép so byte trực tiếp PASS trong fixture đã chạy. Không dùng log cũ làm proof mới; chưa commit/push.
 
 
+### Phase 2 — D / uscalurn — QA Integration
+
+| Công cụ | Phần việc của D | Kiểm chứng / kết quả | Token / chi phí / thời gian AI |
+|---|---|---|---|
+| Codex | Hoàn thiện và bàn giao bộ QA 67 test cùng 2 AI Skills được xây dựng từ Phase 1; tích hợp vào repo nhóm trong Phase 2 | Commit `d0a2374`, được merge vào `main` tại `b613a69` | Không đo được |
+| Codex | Phối hợp kiểm tra regression và tính tương thích của bộ QA với implementation đã tích hợp | Bộ test và proof Phase 1 trở thành cơ sở kiểm tra cho các giai đoạn tiếp theo | Không đo được |
+
+
 ### Phase 3 — D / uscalurn — QA Contract v1.2
 
 | Công cụ | Phần việc của D | Kiểm chứng / kết quả | Token / chi phí / thời gian AI |
@@ -63,3 +71,19 @@ Chạy lại từ gốc repo: tắt bytecode, dùng lệnh unittest và khối p
 | Codex | Lập traceability QA đề xuất và liệt kê FAIL để chuyển C/A/B | [Failures](proof/phase-3/d-uscalurn-1aa67cc8/failures.md); revision nền d496a4f313aa4a3757ffacf599499d3f3224d8e5, hash working tree ghi trong summary | Không đo được |
 
 Không tạo test extension reservations/current vì nhóm chưa bật; không nhầm extension reservations với core customers.reserved. Spec/manifest/source và nội dung A/B/C giữ nguyên. File kho.json xuất hiện đồng thời ngoài phạm vi đã được bảo toàn; không coi là đóng góp của D. Chưa commit/push/merge/tag.
+
+### Phase 4 — D / uscalurn — QA Release & Verification v1.3
+
+| Công cụ | Phần việc của D | Kiểm chứng / kết quả | Token / chi phí / thời gian AI |
+|---|---|---|---|
+| Codex | Rà soát TICKET-04, Contract v1.3 và regression P1–P4; cập nhật fixture, khôi phục 2 module legacy và bổ sung test QA | **233/233 PASS**, 0 FAIL/ERROR/SKIP trên `c6573f3`; lưu regression JSON và log | Không đo được |
+| Codex | Bổ sung test kiểm tra bàn giao kho, freshness, pause/restart, mua nâng cấp, Shop và exit code subprocess | Các test mới PASS; harness phân biệt lỗi môi trường Windows với lỗi implementation, bảo toàn exit code | Không đo được |
+| Codex | Xây dựng và chạy QA proof runner cho benchmark 3 giây warmup + 30 giây đo | **294,70 FPS trung bình**, **110,17 FPS 1% low**, load **27 ms**. Đo framebuffer phần mềm, không đại diện trực tiếp cho GPU/Chrome | Không đo được |
+| Codex | Chạy soak 10 ngày liên tục hai lần, kiểm tra crash và đối chiếu tính tất định | Cả hai lần **10/10 ngày**, **0 crash**, dữ liệu gameplay nhất quán; lưu JSON và execution log | Không đo được |
+| Codex + Chrome automation | Kiểm tra Live Day, 3 cảnh báo, chế độ tương phản cao, chuyển pha Gather → Quán → Shop, nâng cấp, restart và kết thúc ngày | **24 PASS, 1 FAIL**; lưu browser trace, snapshot và ảnh tại `docs/proof/phase-4/d-uscalurn/browser-final/` | Không đo được |
+| Codex | Phát hiện lỗi giữ phím `W` khi chuyển Gather → Quán khiến hướng di chuyển bị đảo | Snapshot vận tốc `[0,-4]` thay vì hướng `+z`; giữ assertion FAIL và proof để bàn giao frontend, không sửa gameplay | Không đo được |
+| Codex | Kiểm tra khởi động Live Day từ `git archive` sạch trên Windows; tổng hợp verification, proof và SHA-256 | Live Day trả HTML/Canvas và snapshot qua HTTP; tạo `docs/verification/phase-4-d.md`, kiểm tra `git diff --check` PASS và cú pháp JS PASS | Không đo được |
+
+**Ghi chú kiểm chứng Phase 4:** AI hỗ trợ tạo test và automation, nhưng kết quả được đối chiếu bằng unittest, subprocess, JSONL, benchmark, soak và Chrome thực tế. Browser automation phát hiện lỗi input xuyên pha dù regression Python đạt 233/233 PASS. D giữ nguyên test FAIL để báo cáo đúng trạng thái, không chỉnh assertion nhằm làm xanh kết quả.
+
+**Trạng thái bàn giao:** QA Phase 4 đã có báo cáo và proof trên nhánh `d/phase-4-qa-uscalurn` tại revision nền `c6573f3`; chưa xác nhận commit/push phần QA mới. Lỗi input đang chờ frontend owner xử lý và D kiểm thử lại.

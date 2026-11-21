@@ -1,0 +1,174 @@
+[
+  {
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.soak",
+      "--seed",
+      "7",
+      "--days",
+      "10",
+      "--out",
+      "docs\\proof\\phase-4\\d-uscalurn-audit-02ba5032\\soak-current-1.json"
+    ],
+    "exit_code": 0,
+    "wall_s": 6.653559000000314,
+    "stdout": "{\"days\": 10, \"days_completed\": 10, \"crashes\": 0, \"duration_s\": 6.563}\r\n",
+    "stderr": "",
+    "output": {
+      "days": 10,
+      "days_completed": 10,
+      "crashes": 0,
+      "results": [
+        {
+          "day": 1,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 2,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 3,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 4,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 5,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 6,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 7,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 8,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 9,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 10,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        }
+      ],
+      "duration_s": 6.563
+    }
+  },
+  {
+    "argv": [
+      "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "chonoi.soak",
+      "--seed",
+      "7",
+      "--days",
+      "10",
+      "--out",
+      "docs\\proof\\phase-4\\d-uscalurn-audit-02ba5032\\soak-current-2.json"
+    ],
+    "exit_code": 0,
+    "wall_s": 7.497097099998427,
+    "stdout": "{\"days\": 10, \"days_completed\": 10, \"crashes\": 0, \"duration_s\": 7.34}\r\n",
+    "stderr": "",
+    "output": {
+      "days": 10,
+      "days_completed": 10,
+      "crashes": 0,
+      "results": [
+        {
+          "day": 1,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 2,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 3,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 4,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 5,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 6,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 7,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 8,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 9,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        },
+        {
+          "day": 10,
+          "earned": 0,
+          "reputation": 3.0,
+          "score": 300
+        }
+      ],
+      "duration_s": 7.34
+    }
+  }
+]

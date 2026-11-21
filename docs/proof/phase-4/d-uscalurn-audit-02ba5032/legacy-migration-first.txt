@@ -1,0 +1,106 @@
+test_catch_accepts_whole_yield_when_free_space_is_exact (test_gather_rules.GatherRules.test_catch_accepts_whole_yield_when_free_space_is_exact) ... ok
+test_catch_cooldown_can_be_reused_at_exact_deadline (test_gather_rules.GatherRules.test_catch_cooldown_can_be_reused_at_exact_deadline) ... ok
+test_catch_requires_underwater_inclusive_radius_and_expired_cooldown (test_gather_rules.GatherRules.test_catch_requires_underwater_inclusive_radius_and_expired_cooldown) ... ok
+test_catch_selects_nearest_school_then_numeric_id (test_gather_rules.GatherRules.test_catch_selects_nearest_school_then_numeric_id) ... ok
+test_catch_without_a_school_does_not_set_cooldown (test_gather_rules.GatherRules.test_catch_without_a_school_does_not_set_cooldown) ... ok
+test_dive_and_surface_only_when_movement_crosses_boundary (test_gather_rules.GatherRules.test_dive_and_surface_only_when_movement_crosses_boundary) ... ok
+test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory (test_gather_rules.GatherRules.test_docking_at_radius_on_last_tick_precedes_gather_and_writes_exact_inventory) ... ok
+test_faint_discards_hold_lifo_and_precedes_actions_and_time_end (test_gather_rules.GatherRules.test_faint_discards_hold_lifo_and_precedes_actions_and_time_end) ... ok
+test_fixture_actions_produce_identical_jsonl_and_inventory_bytes (test_gather_rules.GatherRules.test_fixture_actions_produce_identical_jsonl_and_inventory_bytes) ... ok
+test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order (test_gather_rules.GatherRules.test_fixture_regrowth_counts_down_once_and_emits_ready_events_in_id_order) ... ok
+test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event (test_gather_rules.GatherRules.test_fixture_zero_oxygen_counter_continues_without_duplicate_empty_event) ... ok
+test_full_hold_emits_hold_full_without_changing_ready_node (test_gather_rules.GatherRules.test_full_hold_emits_hold_full_without_changing_ready_node) ... ok
+test_gather_radius_uses_depth_as_well_as_horizontal_distance (test_gather_rules.GatherRules.test_gather_radius_uses_depth_as_well_as_horizontal_distance) ... ok
+test_gather_requires_surface_ready_node_and_inclusive_radius (test_gather_rules.GatherRules.test_gather_requires_surface_ready_node_and_inclusive_radius) ... ok
+test_gather_selects_nearest_ready_node_then_numeric_id (test_gather_rules.GatherRules.test_gather_selects_nearest_ready_node_then_numeric_id) ... ok
+test_held_catch_does_not_repeat_after_cooldown_expires (test_gather_rules.GatherRules.test_held_catch_does_not_repeat_after_cooldown_expires) ... ok
+test_held_interact_does_not_pick_second_node_until_new_rising_edge (test_gather_rules.GatherRules.test_held_interact_does_not_pick_second_node_until_new_rising_edge) ... ok
+test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school (test_gather_rules.GatherRules.test_insufficient_space_keeps_whole_fish_and_does_not_try_smaller_school) ... ok
+test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick (test_gather_rules.GatherRules.test_node_regrows_exactly_after_configured_delay_and_can_be_picked_that_tick) ... ok
+test_nonfatal_choke_preserves_every_item_in_hold (test_gather_rules.GatherRules.test_nonfatal_choke_preserves_every_item_in_hold) ... ok
+test_oxygen_decreases_one_per_underwater_step_including_sixty_steps (test_gather_rules.GatherRules.test_oxygen_decreases_one_per_underwater_step_including_sixty_steps) ... ok
+test_oxygen_empty_occurs_only_on_positive_to_zero_transition (test_gather_rules.GatherRules.test_oxygen_empty_occurs_only_on_positive_to_zero_transition) ... ok
+test_stationary_player_emits_no_boundary_crossing_events (test_gather_rules.GatherRules.test_stationary_player_emits_no_boundary_crossing_events) ... ok
+test_surface_refill_uses_tuning_and_clamps_at_maximum (test_gather_rules.GatherRules.test_surface_refill_uses_tuning_and_clamps_at_maximum) ... ok
+test_surfacing_on_choke_deadline_refills_and_resets_counter (test_gather_rules.GatherRules.test_surfacing_on_choke_deadline_refills_and_resets_counter) ... ok
+test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius (test_gather_rules.GatherRules.test_underwater_docking_precedes_catch_and_uses_two_dimensional_radius) ... ok
+test_valid_gather_or_catch_on_last_tick_is_included_in_inventory (test_gather_rules.GatherRules.test_valid_gather_or_catch_on_last_tick_is_included_in_inventory) ... ok
+test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals (test_gather_rules.GatherRules.test_zero_oxygen_counts_empty_step_and_chokes_at_exact_intervals) ... ok
+test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding (test_quan_rules.QuanRules.test_closing_discards_assigned_dishes_in_stove_or_hand_without_refunding) ... ok
+test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline (test_quan_rules.QuanRules.test_closing_pays_eaters_and_preserves_finished_eating_reason_on_exact_deadline) ... ok
+test_closing_suppresses_customer_attempt_even_when_schedule_is_due (test_quan_rules.QuanRules.test_closing_suppresses_customer_attempt_even_when_schedule_is_due) ... ok
+test_closing_waiter_releases_raw_reservation_without_patience_penalty (test_quan_rules.QuanRules.test_closing_waiter_releases_raw_reservation_without_patience_penalty) ... ok
+test_customer_attempts_follow_exact_interval_even_in_shortened_shift (test_quan_rules.QuanRules.test_customer_attempts_follow_exact_interval_even_in_shortened_shift) ... ok
+test_customer_selects_only_recipes_affordable_from_available_stock (test_quan_rules.QuanRules.test_customer_selects_only_recipes_affordable_from_available_stock) ... ok
+test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund (test_quan_rules.QuanRules.test_expired_assigned_order_discards_cooking_ready_or_carried_dish_without_refund) ... ok
+test_first_customer_arrives_at_configured_tick_with_full_patience (test_quan_rules.QuanRules.test_first_customer_arrives_at_configured_tick_with_full_patience) ... ok
+test_held_interact_does_not_pick_ready_dish_without_a_new_edge (test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge) ... FAIL
+test_interaction_radius_is_inclusive_and_rejects_just_outside (test_quan_rules.QuanRules.test_interaction_radius_is_inclusive_and_rejects_just_outside) ... ok
+test_matching_order_is_served_then_paid_only_after_full_eating_duration (test_quan_rules.QuanRules.test_matching_order_is_served_then_paid_only_after_full_eating_duration) ... ok
+test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero (test_quan_rules.QuanRules.test_minimal_customer_fixture_receives_contract_defaults_at_tick_zero) ... ok
+test_no_dish_when_each_recipe_lacks_at_least_one_ingredient (test_quan_rules.QuanRules.test_no_dish_when_each_recipe_lacks_at_least_one_ingredient) ... ok
+test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove (test_quan_rules.QuanRules.test_occupied_hand_remains_one_payload_when_interacting_with_idle_stove) ... ok
+test_omitted_reservation_is_inferred_from_recipe_at_tick_zero (test_quan_rules.QuanRules.test_omitted_reservation_is_inferred_from_recipe_at_tick_zero) ... ok
+test_one_interact_picks_at_stove_before_colocated_table_without_serving (test_quan_rules.QuanRules.test_one_interact_picks_at_stove_before_colocated_table_without_serving) ... ok
+test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts (test_quan_rules.QuanRules.test_order_reserves_at_arrival_and_consumes_only_when_cooking_starts) ... ok
+test_patience_decreases_once_on_each_waiting_tick (test_quan_rules.QuanRules.test_patience_decreases_once_on_each_waiting_tick) ... ok
+test_patience_expiry_releases_reservation_and_applies_clamped_reputation (test_quan_rules.QuanRules.test_patience_expiry_releases_reservation_and_applies_clamped_reputation) ... ok
+test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged (test_quan_rules.QuanRules.test_payment_tip_reputation_is_clamped_and_no_tip_leaves_reputation_unchanged) ... ok
+test_pickup_requires_ready_and_empty_hand_then_resets_stove (test_quan_rules.QuanRules.test_pickup_requires_ready_and_empty_hand_then_resets_stove) ... ok
+test_ready_transition_allows_pickup_in_same_tick_before_interaction (test_quan_rules.QuanRules.test_ready_transition_allows_pickup_in_same_tick_before_interaction) ... ok
+test_released_raw_reservation_is_available_for_next_customer (test_quan_rules.QuanRules.test_released_raw_reservation_is_available_for_next_customer) ... ok
+test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals (test_quan_rules.QuanRules.test_reservations_never_exceed_physical_stock_and_full_table_skips_arrivals) ... ok
+test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload (test_quan_rules.QuanRules.test_scenario_rejects_assigned_order_with_missing_or_duplicate_payload) ... ok
+test_scenario_rejects_contradictory_stove_state_and_timer (test_quan_rules.QuanRules.test_scenario_rejects_contradictory_stove_state_and_timer) ... ok
+test_scenario_rejects_eating_without_payment_fields_or_positive_timer (test_quan_rules.QuanRules.test_scenario_rejects_eating_without_payment_fields_or_positive_timer) ... ok
+test_scenario_rejects_payload_for_unknown_order_or_wrong_dish (test_quan_rules.QuanRules.test_scenario_rejects_payload_for_unknown_order_or_wrong_dish) ... ok
+test_scenario_rejects_reservation_beyond_physical_stock_before_output (test_quan_rules.QuanRules.test_scenario_rejects_reservation_beyond_physical_stock_before_output) ... ok
+test_scenario_rejects_reservation_different_from_order_recipe (test_quan_rules.QuanRules.test_scenario_rejects_reservation_different_from_order_recipe) ... ok
+test_score_uses_earned_plus_multiplier_times_floor_reputation (test_quan_rules.QuanRules.test_score_uses_earned_plus_multiplier_times_floor_reputation) ... ok
+test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes (test_quan_rules.QuanRules.test_seeded_order_and_cooking_fixture_produce_identical_jsonl_bytes) ... ok
+test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table (test_quan_rules.QuanRules.test_selected_idle_stove_does_not_fall_back_to_colocated_serviceable_table) ... ok
+test_service_on_closing_tick_is_paid_immediately_before_quan_end (test_quan_rules.QuanRules.test_service_on_closing_tick_is_paid_immediately_before_quan_end) ... ok
+test_service_on_zero_patience_deadline_succeeds_before_departure (test_quan_rules.QuanRules.test_service_on_zero_patience_deadline_succeeds_before_departure) ... ok
+test_snapshot_preserves_fixture_player_position_and_velocity (test_quan_rules.QuanRules.test_snapshot_preserves_fixture_player_position_and_velocity) ... ok
+test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact (test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact) ... FAIL
+test_tip_threshold_uses_patience_after_decrement_and_floor_price (test_quan_rules.QuanRules.test_tip_threshold_uses_patience_after_decrement_and_floor_price) ... ok
+test_unfulfillable_waiting_order_cannot_start_cooking (test_quan_rules.QuanRules.test_unfulfillable_waiting_order_cannot_start_cooking) ... ok
+
+======================================================================
+FAIL: test_held_interact_does_not_pick_ready_dish_without_a_new_edge (test_quan_rules.QuanRules.test_held_interact_does_not_pick_ready_dish_without_a_new_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 466, in test_held_interact_does_not_pick_ready_dish_without_a_new_edge
+    self.assertEqual(self.s[cook + 4]["hand"], self.payload())
+AssertionError: {'order_id': 'C1', 'dish_id': 'ca_loc_nuong_trui', 'base_price': 59} != {'order_id': 'C1', 'dish_id': 'ca_loc_nuong_trui', 'base_price': 60}
+- {'base_price': 59, 'dish_id': 'ca_loc_nuong_trui', 'order_id': 'C1'}
+?                ^^
+
++ {'base_price': 60, 'dish_id': 'ca_loc_nuong_trui', 'order_id': 'C1'}
+?                ^^
+
+
+======================================================================
+FAIL: test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact (test_quan_rules.QuanRules.test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 437, in test_stove_idle_cooking_ready_transitions_and_countdowns_are_exact
+    self.one_event(rows, "cook_started", 1,
+  File "D:\vinuni\Lab12\K5-L3B-LAB-Day12-AI-SDLC-T77\tests\test_quan_rules.py", line 186, in one_event
+    self.assertEqual(found[0]["data"], data)
+AssertionError: {'sto[39 chars]d': 'ca_loc_nuong_trui', 'items': ['ca_loc'], 'base_price': 59} != {'sto[39 chars]d': 'ca_loc_nuong_trui', 'base_price': 60, 'items': ['ca_loc']}
+- {'base_price': 59,
+?                ^^
+
++ {'base_price': 60,
+?                ^^
+
+   'dish_id': 'ca_loc_nuong_trui',
+   'items': ['ca_loc'],
+   'order_id': 'C1',
+   'stove_id': 'B1'}
+
+----------------------------------------------------------------------
+Ran 67 tests in 12.230s
+
+FAILED (failures=2)

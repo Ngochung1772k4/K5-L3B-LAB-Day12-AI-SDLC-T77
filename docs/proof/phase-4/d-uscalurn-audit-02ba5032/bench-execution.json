@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "C:\\Users\\Siuuu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "-m",
+    "chonoi.bench",
+    "--seed",
+    "42",
+    "--duration",
+    "30",
+    "--out",
+    "docs\\proof\\phase-4\\d-uscalurn-audit-02ba5032\\bench-current.json"
+  ],
+  "exit_code": 0,
+  "wall_s": 33.086071299998366,
+  "stdout": "{\"avg_fps\": 286.38, \"p1_low_fps\": 106.47, \"frames\": 8592, \"measured_s\": 30.002, \"load_ms\": 28}\r\n",
+  "stderr": "",
+  "output": {
+    "avg_fps": 286.38,
+    "p1_low_fps": 106.47,
+    "frames": 8592,
+    "measured_s": 30.002,
+    "load_ms": 28
+  }
+}

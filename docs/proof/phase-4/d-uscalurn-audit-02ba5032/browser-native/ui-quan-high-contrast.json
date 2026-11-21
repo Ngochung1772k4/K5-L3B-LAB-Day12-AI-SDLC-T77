@@ -1,0 +1,782 @@
+{
+  "HC": true,
+  "mode": "quan",
+  "phase": "quan",
+  "state": "playing",
+  "canvas": [
+    1280,
+    720
+  ],
+  "drawn": [
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 14s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 13s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    },
+    {
+      "text": "B1 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "B2 · rảnh",
+      "color": "#111111",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T1",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "Gọi: Cá lóc nướng trui",
+      "color": "#2a1a0a",
+      "font": "11px system-ui, sans-serif"
+    },
+    {
+      "text": "chờ 13s",
+      "color": "#2a1a0a",
+      "font": "10px system-ui, sans-serif"
+    },
+    {
+      "text": "T2",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T3",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "T4",
+      "color": "#ffffff",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "⏱ 0:10",
+      "color": "#e8eef2",
+      "font": "20px system-ui, sans-serif"
+    },
+    {
+      "text": "Tiền 0k · uy tín 3.0 · điểm 300",
+      "color": "#e8eef2",
+      "font": "16px system-ui, sans-serif"
+    },
+    {
+      "text": "Kho khả dụng: (trống)  ·  Trên tay: —",
+      "color": "#cfd8dc",
+      "font": "13px system-ui, sans-serif"
+    },
+    {
+      "text": "WASD/mũi tên đi · E tương tác (bếp / bàn) · R chơi lại",
+      "color": "#9fb3c0",
+      "font": "12px system-ui, sans-serif"
+    },
+    {
+      "text": "😠  KHÁCH SẮP GIẬN! (T1)",
+      "color": "#ffff00",
+      "font": "28px system-ui, sans-serif"
+    },
+    {
+      "text": "Tương phản cao (H)",
+      "color": "#ffff00",
+      "font": "14px system-ui, sans-serif"
+    }
+  ]
+}
