@@ -13,6 +13,7 @@
 
 | Phase | Công cụ / model | Việc | Token / chi phí ước tính | Ghi chú (AI sai ở đâu?) |
 |---|---|---|---|---|
+| 1 | Claude Code (Sonnet 4.6) | Hoàn thiện `sim/quan.py` phần 3+4: khách, bếp, bàn, tiền, uy tín | ~15k tokens | Ban đầu dùng `inp.interact` thay vì `inp.pressed("interact")` — fix ngay sau khi chạy test. Snap đúng 32/32. |
 
 
 ## C — `client/ui` + Integrator
