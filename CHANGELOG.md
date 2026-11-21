@@ -34,6 +34,8 @@ Các luật sau đã được xác minh chạy đúng trên code C:
 
 Đơn `unfulfillable` không nhận `no_dish` — khách tiếp tục chờ tới hết kiên nhẫn rồi rời.
 
+**Bằng chứng (C bổ sung khi rà):** mỗi luật trong bảng có test hộp đen chạy xanh — `tests/test_freshness_c.py` (`test_p3_01`, `test_p3_03`…`test_p3_06b`), `tests/test_quan_rules_c.py::test_ac16_cook_ready_pick` (giá 40 → 39); log: `docs/proof/phase-3/test-output.txt`.
+
 ### Cách cập nhật fixture
 ```jsonc
 // cũ (v1.1)                         // mới (v1.2)

@@ -308,6 +308,8 @@ class GatherRulesA(unittest.TestCase):
             with open(inv, encoding="utf-8") as f:
                 data = json.load(f)
                 self.assertEqual(counts(data["items"]), {"bong_sung": 1})
+                # v1.2: hái ở bước cuối vẫn vào kho với id mới và fresh 100 (chưa hao vì hàng mới hao từ bước sau)
+                self.assertEqual(data["items"], [{"id": "I1", "kind": "bong_sung", "fresh": 100}])
 
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {

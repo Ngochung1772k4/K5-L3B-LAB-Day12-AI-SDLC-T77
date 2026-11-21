@@ -87,6 +87,18 @@ class Freshness(unittest.TestCase):
             self.assertEqual([i["id"] for i in d["items"]], ["I7"])
             self.assertEqual(d["base_price"], 29)  # floor(60 × (50 − 1/240) / 100)
 
+    def test_p3_06b_tip_uses_fresh_adjusted_price(self):
+        """Boa = floor(giá đã chốt theo tươi × 0.2), không dùng giá niêm yết (bằng chứng cho bảng rà soát của B)."""
+        sc = {"quan": {"player": {"pos": [9, 2]}, "random_customers": False,
+                       "hand": {"order_id": "C1", "dish_id": "ca_loc_nuong_trui", "base_price": 29},
+                       "customers": [dict(C1, order_status="assigned")]}}
+        with Workdir() as w:
+            code, err, rows = run(w, "quan", 601, sc, frames({"tick": 0, "interact": True}))
+            self.assertEqual(code, 0, err)
+            self.assertEqual(events(rows, "served")[0]["data"]["tip"], 5)  # floor(29 × 0.2), không phải floor(60 × 0.2)
+            p = events(rows, "paid")[0]["data"]
+            self.assertEqual((p["base_price"], p["tip"], p["amount"]), (29, 5, 34))
+
     def test_p3_07_scenario_conflicts_exit_2(self):
         bad = [{"quan": {"stock": items("ca_loc"), "customers": [dict(C1, reserved=["I9"])]}},
                {"quan": {"stock": [{"id": "I1", "kind": "ca_loc", "fresh": 20}], "customers": [dict(C1, reserved=["I1"])]}},

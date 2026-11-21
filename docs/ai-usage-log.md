@@ -16,7 +16,7 @@
 | Phase | Công cụ / model | Việc | Token / chi phí ước tính | Ghi chú (AI sai ở đâu?) |
 |---|---|---|---|---|
 | 1 | Claude Code (Sonnet 4.6) | Hoàn thiện `sim/quan.py` phần 3+4: khách, bếp, bàn, tiền, uy tín | ~15k tokens | Ban đầu dùng `inp.interact` thay vì `inp.pressed("interact")` — fix ngay sau khi chạy test. Snap đúng 32/32. |
-| 2 | Claude Code (Sonnet 4.6) | `sim/monsters.py` (patrol/chase/hit/recoil/faint) + `sim/quan.py` ctx day | ~12k tokens | Không lỗi logic nào khi test smoke; bắt đúng hit_radius và LIFO. |
+| 2 | Claude Code (Sonnet 4.6) | `sim/monsters.py` (patrol/chase/hit/recoil/faint) + `sim/quan.py` ctx day | ~12k tokens | Không lỗi logic nào khi test smoke; bắt đúng hit_radius và LIFO. *Ghi chú C (Integrator) khi merge `f4ba76c`: phải sửa 2 lỗi — Cá Sấu hết recoil vẫn di chuyển/chạm ngay trong cùng bước (Ticket 1.2: từ bước kế) và snapshot `monsters[]` thiếu `waypoints/target_idx/recoil_dir`.* |
 | 3 | Claude Code (Sonnet 4.6) | Rà luật quán v1.2 (hao tươi, spoiled, giữ chỗ theo id, giữ lại, giá theo tươi); viết CHANGELOG.md | ~8k tokens | Luật C cài đặt chính xác, không cần sửa. Thêm bảng xác minh vào CHANGELOG. |
 
 
