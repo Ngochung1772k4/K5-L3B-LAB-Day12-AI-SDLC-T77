@@ -8,6 +8,7 @@
 |---|---|---|---|---|
 | 1 | Antigravity AI | Cài đặt luật buổi sáng trong `chonoi/sim/gather.py`, viết bộ test `tests/test_gather_unit_a.py`, ghi `docs/clarify.md` theo Contract E & F | Chưa đo tự động | Cần đối chiếu kỹ edge-case ngạt tại tick chạm `oxy = 0` (`t+59`) và thứ tự ưu tiên ở tick cuối (`fainted` > `docked` > hái/bắt + `time`); đã kiểm chứng bằng headless test. |
 | 2 | Antigravity AI | Cài đặt cá bơi 1.5 m/s, phản xạ mép x ∈ [4,96] và dải độ sâu từng loài, đổi hướng chu kỳ 120 tick (stream `fish_turn`); sinh cá chu kỳ 360 tick theo trọng số (linh 40%, lóc 30%, kèo 30%), trần 12 đàn, clearance > 1.0 m; hỗ trợ bắt cá kèo (yield = 2); tích hợp ctx (day, hp_max, oxygen_max_s) và hook quái vật `monsters.py`; viết bộ test `tests/test_gather_p2_a.py`. | Chưa đo tự động | AI ban đầu cho cá bơi trong môi trường test tĩnh Phase 1 dẫn tới cá di chuyển ra khỏi tầm với trong thời gian hồi chiêu 30 tick; phát hiện nhờ chạy regression test và khắc phục bằng điều kiện chỉ bơi khi cấu hình có `fish_speed`. |
+| 3 | Antigravity AI | Di chuyển toàn bộ fixture và assertion trong `tests/test_gather_unit_a.py` và `tests/test_gather_p2_a.py` sang schema kho cá thể v1.2 (`items`, `stock_of`, `counts`); bổ sung test `test_gather_hold_freshness_decay_and_spoiled_event`; cập nhật clarify PO và phản tư cá nhân. | Chưa đo tự động | AI ban đầu so sánh `faint.lost` trực tiếp dạng string, cần đổi sang kiểm tra mảng cá thể `[it["kind"] for it in lost]` và `[it["id"] for it in lost]` (LIFO I3, I2, I1) theo Contract v1.2. |
 
 
 ## B — `sim/quan` + Scrum

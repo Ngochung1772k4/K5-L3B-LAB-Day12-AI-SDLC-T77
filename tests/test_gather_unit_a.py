@@ -3,14 +3,7 @@
 import json
 import unittest
 
-from helpers import Workdir, events, frames, read_jsonl, run_headless, snapshots, write_json
-
-
-
-# TẠM SKIP (Phase 3, C/Integrator): fixture còn schema v1.1 (hold chuỗi, stock map, kho đếm).
-# v1.2 đổi sang kho cá thể {id, kind, fresh} — xem docs/adr/0001-kho-ca-the-do-tuoi.md, CHANGELOG.md.
-# Chủ file A (hal2332004): đổi fixture bằng helpers.items(...)/stock_of(...)/counts(...) rồi XÓA 2 dòng dưới.
-raise unittest.SkipTest("fixture v1.1 chờ A (hal2332004) chuyển sang kho cá thể v1.2 (ADR 0001)")
+from helpers import Workdir, counts, events, frames, items, read_jsonl, run_headless, snapshots, write_json
 
 
 class GatherRulesA(unittest.TestCase):
@@ -114,7 +107,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 5], "hp": 1, "oxygen_ticks": 0, "zero_oxy_ticks": 59},
-                "hold": ["ca_loc", "bong_sung", "bong_dien_dien"],
+                "hold": items("ca_loc", "bong_sung", "bong_dien_dien"),
                 "random_fish": False,
             }})
             inv = w.path("inv.json")
@@ -124,20 +117,20 @@ class GatherRulesA(unittest.TestCase):
             rows = read_jsonl(w.path("o.jsonl"))
             self.assertEqual([r["name"] for r in events(rows)], ["choke", "faint", "gather_end"])
             self.assertEqual(events(rows, "choke")[0]["data"], {"hp": 0})
-            self.assertEqual(events(rows, "faint")[0]["data"], {
-                "cause": "choke",
-                "lost": ["bong_dien_dien", "bong_sung", "ca_loc"],
-                "hp": 0,
-            })
+            faint_ev = events(rows, "faint")[0]["data"]
+            self.assertEqual(faint_ev["cause"], "choke")
+            self.assertEqual(faint_ev["hp"], 0)
+            self.assertEqual([it["kind"] for it in faint_ev["lost"]], ["bong_dien_dien", "bong_sung", "ca_loc"])
+            self.assertEqual([it["id"] for it in faint_ev["lost"]], ["I3", "I2", "I1"])
             self.assertEqual(events(rows, "gather_end")[0]["data"], {
                 "reason": "fainted",
-                "inventory": {"items": {}},
+                "inventory": {"items": []},
             })
             self.assertEqual(rows[-1]["ticks"], 1)
             self.assertEqual(rows[-1]["reason"], "fainted")
             self.assertEqual(snapshots(rows)[-1]["hold"], [])
             with open(inv, encoding="utf-8") as f:
-                self.assertEqual(json.load(f), {"items": {}})
+                self.assertEqual(json.load(f), {"items": []})
 
     def test_harvest_regrow_and_tiebreak(self):
         with Workdir() as w:
@@ -188,7 +181,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 0]},
-                "hold": ["ca_loc"] * 12,
+                "hold": items(*["ca_loc"] * 12),
                 "nodes": [{"id": "N1", "kind": "bong_sung", "pos": [20.5, 0]}],
                 "random_fish": False,
             }})
@@ -229,7 +222,7 @@ class GatherRulesA(unittest.TestCase):
             self.assertEqual(fc[1]["tick"], 32)
             self.assertEqual(fc[1]["data"], {"fish_id": "F10", "kind": "ca_loc", "yield": 1})
             last_snap = snapshots(rows)[-1]
-            self.assertEqual(last_snap["hold"], ["ca_linh", "ca_linh", "ca_linh", "ca_loc"])
+            self.assertEqual([it["kind"] for it in last_snap["hold"]], ["ca_linh", "ca_linh", "ca_linh", "ca_loc"])
             self.assertEqual(last_snap["fish"], [])
 
         with Workdir() as w:
@@ -261,7 +254,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [20, 5]},
-                "hold": ["bong_sung"] * 11,
+                "hold": items(*["bong_sung"] * 11),
                 "random_fish": False, "fish": [
                     {"id": "F1", "kind": "ca_linh", "pos": [20.5, 5]},
                     {"id": "F2", "kind": "ca_loc", "pos": [21.5, 5]},
@@ -284,7 +277,7 @@ class GatherRulesA(unittest.TestCase):
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [5, 0]},
-                "hold": ["ca_loc"],
+                "hold": items("ca_loc"),
                 "time_left_ticks": 1,
                 "random_fish": False,
             }})
@@ -313,12 +306,13 @@ class GatherRulesA(unittest.TestCase):
             self.assertEqual([r["name"] for r in events(rows)], ["gather", "gather_end"])
             self.assertEqual(events(rows, "gather_end")[0]["data"]["reason"], "time")
             with open(inv, encoding="utf-8") as f:
-                self.assertEqual(json.load(f), {"items": {"bong_sung": 1}})
+                data = json.load(f)
+                self.assertEqual(counts(data["items"]), {"bong_sung": 1})
 
         with Workdir() as w:
             sc = write_json(w.path("sc.json"), {"gather": {
                 "player": {"pos": [2, 0.6], "hp": 1, "oxygen_ticks": 0, "zero_oxy_ticks": 59},
-                "hold": ["ca_loc"],
+                "hold": items("ca_loc"),
                 "time_left_ticks": 1,
                 "random_fish": False,
             }})
@@ -331,7 +325,7 @@ class GatherRulesA(unittest.TestCase):
             rows = read_jsonl(w.path("o.jsonl"))
             self.assertEqual(events(rows, "gather_end")[0]["data"]["reason"], "fainted")
             with open(inv, encoding="utf-8") as f:
-                self.assertEqual(json.load(f), {"items": {}})
+                self.assertEqual(json.load(f), {"items": []})
 
     def test_gather_determinism_with_interact_and_catch(self):
         with Workdir() as w:
@@ -352,6 +346,22 @@ class GatherRulesA(unittest.TestCase):
                 self.assertEqual(code, 0, err)
             with open(w.path("o1.jsonl"), "rb") as a, open(w.path("o2.jsonl"), "rb") as b:
                 self.assertEqual(a.read(), b.read())
+
+    def test_gather_hold_freshness_decay_and_spoiled_event(self):
+        """Ticket-03: cá thể trong giỏ bắt đầu ở fresh 30 -> tick 1 hao 0.5/s (< 30) -> phát spoiled đúng 1 lần."""
+        with Workdir() as w:
+            sc = write_json(w.path("sc.json"), {"gather": {
+                "hold": [{"id": "I1", "kind": "ca_linh", "fresh": 30}],
+                "random_fish": False, "monsters": [],
+            }})
+            code, err = run_headless("--mode", "gather", "--seed", "1", "--ticks", "2",
+                                     "--scenario", sc, "--snapshot-every", "1", "--out", w.path("o.jsonl"))
+            self.assertEqual(code, 0, err)
+            rows = read_jsonl(w.path("o.jsonl"))
+            sp = events(rows, "spoiled")
+            self.assertEqual(len(sp), 1)
+            self.assertEqual(sp[0]["tick"], 1)
+            self.assertEqual(sp[0]["data"], {"item_id": "I1", "kind": "ca_linh", "location": "hold"})
 
 
 if __name__ == "__main__":

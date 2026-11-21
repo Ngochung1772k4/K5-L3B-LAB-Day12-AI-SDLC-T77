@@ -3,18 +3,17 @@
 import math
 import unittest
 
-from helpers import Workdir, events, frames, read_jsonl, run_headless, snapshots, write_json
-
-
-
-# TẠM SKIP (Phase 3, C/Integrator): fixture còn schema v1.1 (hold chuỗi, stock map, kho đếm).
-# v1.2 đổi sang kho cá thể {id, kind, fresh} — xem docs/adr/0001-kho-ca-the-do-tuoi.md, CHANGELOG.md.
-# Chủ file A (hal2332004): đổi fixture bằng helpers.items(...)/stock_of(...)/counts(...) rồi XÓA 2 dòng dưới.
-raise unittest.SkipTest("fixture v1.1 chờ A (hal2332004) chuyển sang kho cá thể v1.2 (ADR 0001)")
+from helpers import Workdir, counts, events, frames, items, read_jsonl, run_headless, snapshots, write_json
 
 
 def tuning_p2():
     return {
+        "freshness": {
+            "initial": 100,
+            "gather_decay_per_s": 0.5,
+            "quan_decay_per_s": 0.25,
+            "spoiled_below": 30,
+        },
         "gather": {
             "duration_s": 180,
             "bounds": {"x": [0, 100], "d": [0, 30]},
@@ -241,7 +240,7 @@ class GatherPhase2Tests(unittest.TestCase):
         self.assertEqual(len(caught_evs), 1)
         self.assertEqual(caught_evs[0][1]["yield"], 2)
         self.assertEqual(caught_evs[0][1]["kind"], "ca_keo")
-        self.assertEqual(sim.hold, ["ca_keo", "ca_keo"])
+        self.assertEqual([it["kind"] for it in sim.hold], ["ca_keo", "ca_keo"])
         self.assertEqual(sim.catch_cd_ticks, 30)
 
     def test_ctx_day_hp_and_oxygen_upgrade(self):

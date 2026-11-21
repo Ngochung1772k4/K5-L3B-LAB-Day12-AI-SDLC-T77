@@ -23,6 +23,6 @@
 - `test_smoke_p1`: so `gather_end.inventory` (JSONL làm tròn 3 chữ số) với file kho trong dung sai ±0.01.
 
 ## Chưa đạt (ghi trung thực)
-- **4 module tạm skip** vì fixture còn v1.1: `test_gather_unit_a`, `test_gather_p2_a` (A), `test_gather_rules`, `test_quan_rules` (D). Luật đã đổi đúng Ticket; chủ file cần đổi fixture sang cá thể rồi xóa dòng skip.
+- **2 module tạm skip** vì fixture còn v1.1: `test_gather_rules`, `test_quan_rules` (D). A đã đổi xong `test_gather_unit_a`, `test_gather_p2_a` (nhánh `a/p3-tests`) — 93 test chạy, OK. Luật đã đổi đúng Ticket; chủ file cần đổi fixture sang cá thể rồi xóa dòng skip.
 - Không làm mở rộng (dòng lũ, khách đặt trước) — nhóm 4 người không bắt buộc.
-- **Đóng góp P3 tới giờ tag:** C (lõi v1.2, test, HUD, CHANGELOG, ADR); B (ducpham13) rà luật quán v1.2 trên code C — bảng xác minh 8 luật trong CHANGELOG (nhánh `b/p3-changelog`). A, D chưa push phần P3.
+- **Đóng góp P3 tới giờ tag:** C (lõi v1.2, test, HUD, CHANGELOG, ADR); B (ducpham13) rà luật quán v1.2 trên code C — bảng xác minh 8 luật trong CHANGELOG (nhánh `b/p3-changelog`). A (hal2332004) đổi fixture 2 module test gather sang kho cá thể v1.2 và bỏ skip (nhánh `a/p3-tests`). D chưa push phần P3.
